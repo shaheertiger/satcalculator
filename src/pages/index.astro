@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+---
+
+<Layout title="satcalculator.co | Digital SAT Score Estimator">
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+        </div>
+        <span class="text-xl font-bold text-slate-800 tracking-tight font-heading">satcalculator<span class="text-indigo-600">.co</span></span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">How it Works</a>
+        <a href="#" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Digital SAT Guide</a>
+        <a href="#" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Practice Tests</a>
+      </nav>
+      <div class="flex items-center gap-4">
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <SATCalculator client:load />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-50 border-t border-slate-200 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <div class="flex items-center gap-2 mb-4 justify-center md:justify-start">
+            <div class="w-6 h-6 gradient-bg rounded flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+            </div>
+            <span class="text-lg font-bold text-slate-800 tracking-tight font-heading">satcalculator.co</span>
+          </div>
+          <p class="text-sm text-slate-500">The most accurate Digital SAT score estimator based on real practice data.</p>
+        </div>
+        <div>
+          <h5 class="font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest font-heading">Resources</h5>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="#" class="hover:text-indigo-600 transition-colors">Digital SAT 101</a></li>
+            <li><a href="#" class="hover:text-indigo-600 transition-colors">Study Schedules</a></li>
+            <li><a href="#" class="hover:text-indigo-600 transition-colors">Vocabulary Lists</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest font-heading">Tools</h5>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="#" class="hover:text-indigo-600 transition-colors">Score Calculator</a></li>
+            <li><a href="#" class="hover:text-indigo-600 transition-colors">ACT Converter</a></li>
+            <li><a href="#" class="hover:text-indigo-600 transition-colors">Super Score Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest font-heading">Contact</h5>
+          <ul class="space-y-2 text-sm text-slate-500">
+            <li><a href="#" class="hover:text-indigo-600 transition-colors">Support Center</a></li>
+            <li><a href="#" class="hover:text-indigo-600 transition-colors">Partner Program</a></li>
+            <li><a href="#" class="flex items-center gap-1 hover:text-indigo-600 transition-colors justify-center md:justify-start">Instagram <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" x2="21" y1="14" y2="3"></line></svg></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-slate-400">&copy; {new Date().getFullYear()} satcalculator.co. All rights reserved. SAT&reg; is a registered trademark of the College Board.</p>
+        <div class="flex items-center gap-6 text-xs text-slate-400">
+          <a href="#" class="hover:text-slate-600">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-600">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
