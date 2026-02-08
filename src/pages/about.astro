@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Us | satcalculator.co";
+const pageDescription = "Learn about satcalculator.co, a free Digital SAT score estimation tool built on real Bluebook practice test data. Meet our mission to make SAT prep accessible.";
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2" aria-label="satcalculator.co homepage">
+        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+        </div>
+        <span class="text-xl font-bold text-slate-800 tracking-tight font-heading">satcalculator<span class="text-indigo-600">.co</span></span>
+      </a>
+      <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Score Calculator</a>
+        <a href="/privacy-policy" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Privacy Policy</a>
+        <a href="/terms-of-service" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Terms of Service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 font-heading mb-6">About satcalculator.co</h1>
+
+      <div class="prose prose-slate max-w-none space-y-8 text-sm leading-relaxed text-slate-600">
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">Our Mission</h2>
+          <p>satcalculator.co was built with a simple mission: to give every student <strong>free, instant access</strong> to a reliable Digital SAT score estimation tool. We believe that understanding where you stand shouldn't cost a dime.</p>
+          <p>Since the SAT transitioned to a fully digital, adaptive format in 2023, students have faced increased uncertainty about how their raw scores translate to final scaled scores. Traditional scoring tables don't capture the complexity of the adaptive routing system, and many paid services gatekeep this information. We're here to change that.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">What We Do</h2>
+          <p>Our calculator uses scoring curve data derived from the <strong>official College Board Bluebook practice tests</strong> combined with adaptive routing simulation to estimate your total SAT score. Here's what makes our tool different:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>Adaptive routing simulation:</strong> We account for whether you were routed to an easy or hard Module 2, which significantly impacts your scoring ceiling.</li>
+            <li><strong>Confidence ranges:</strong> Instead of a single number, we provide a score range that reflects the inherent uncertainty in any third-party scoring estimate.</li>
+            <li><strong>Percentile context:</strong> We show where your estimated score falls relative to the national test-taking population.</li>
+            <li><strong>Visual distribution:</strong> A bell curve visualization helps you understand the broader scoring landscape.</li>
+            <li><strong>AI-powered study advice:</strong> Our optional AI prep strategy feature provides personalized, data-driven suggestions for improving your score.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">How Our Calculator Works</h2>
+          <p>The Digital SAT consists of four modules: Reading & Writing Module 1 and 2 (27 questions each) and Math Module 1 and 2 (22 questions each). Your performance on Module 1 determines whether you're routed to an easier or harder Module 2.</p>
+          <p>Our algorithm takes your raw scores from each module, applies adaptive routing multipliers, and converts them to estimated scaled scores (200-800 per section, 400-1600 total) using curve data from official practice tests. All calculations happen <strong>locally in your browser</strong> -- we never send your scores to our servers.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">Our Values</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <h3 class="font-bold text-slate-800 mb-1 font-heading">Free Forever</h3>
+              <p>Our core calculator tool will always be free to use. We sustain the site through advertising, not paywalls.</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <h3 class="font-bold text-slate-800 mb-1 font-heading">Transparency</h3>
+              <p>We're upfront about the limitations of score estimation and always show confidence ranges, not just point estimates.</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <h3 class="font-bold text-slate-800 mb-1 font-heading">Privacy-First</h3>
+              <p>Your scores are processed in your browser. We don't store your academic data or require account creation.</p>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4">
+              <h3 class="font-bold text-slate-800 mb-1 font-heading">Data-Driven</h3>
+              <p>Our estimates are built on real scoring curves from official College Board practice test releases.</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">Important Note</h2>
+          <p>satcalculator.co is an independent educational tool and is <strong>not affiliated with, endorsed by, or connected to the College Board</strong> in any way. SAT&reg; is a registered trademark of the College Board. Our score estimates are approximations and should not replace official score reports from the College Board.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">Contact Us</h2>
+          <p>We'd love to hear from you. Whether you have questions, feedback, or partnership inquiries, reach out to us:</p>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 mt-2">
+            <p><strong>satcalculator.co</strong></p>
+            <p>General inquiries: <a href="mailto:contact@satcalculator.co" class="text-indigo-600 hover:underline">contact@satcalculator.co</a></p>
+            <p>Privacy concerns: <a href="mailto:privacy@satcalculator.co" class="text-indigo-600 hover:underline">privacy@satcalculator.co</a></p>
+            <p>Website: <a href="https://satcalculator.co" class="text-indigo-600 hover:underline">https://satcalculator.co</a></p>
+          </div>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-50 border-t border-slate-200 py-8">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-400">&copy; {new Date().getFullYear()} satcalculator.co. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-xs text-slate-400">
+        <a href="/" class="hover:text-slate-600">Home</a>
+        <a href="/privacy-policy" class="hover:text-slate-600">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:text-slate-600">Terms of Service</a>
+        <a href="/disclaimer" class="hover:text-slate-600">Disclaimer</a>
+        <a href="/about" class="text-slate-600 font-medium">About</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
