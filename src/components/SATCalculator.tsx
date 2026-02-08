@@ -163,9 +163,9 @@ const SATCalculator: React.FC = () => {
 
           <div className="text-center mb-8">
             <span className="text-xs font-bold text-indigo-600 uppercase tracking-[0.2em] mb-2 block">Estimated Total Score</span>
-            <h1 className="text-7xl font-black text-slate-900 tracking-tight mb-2 font-heading">
+            <div className="text-7xl font-black text-slate-900 tracking-tight mb-2 font-heading" aria-live="polite">
               {finalScore.total}
-            </h1>
+            </div>
             <div className="inline-flex items-center gap-2 bg-indigo-50 px-4 py-1.5 rounded-full text-indigo-700 text-sm font-semibold">
               <span>Range: {finalScore.totalRange[0]} - {finalScore.totalRange[1]}</span>
               <div className="w-1 h-1 bg-indigo-300 rounded-full"></div>
