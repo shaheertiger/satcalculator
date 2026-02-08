@@ -1,7 +1,3 @@
-
-import React from 'react';
-import { MAX_QUESTIONS } from '../constants';
-
 interface ModuleInputProps {
   label: string;
   value: number;

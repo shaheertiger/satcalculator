@@ -1,4 +1,3 @@
-
 export enum ModuleDifficulty {
   EASY = 'easy',
   HARD = 'hard',
@@ -19,7 +18,7 @@ export interface SATState {
   mathM2: number;
   rwDifficulty: ModuleDifficulty;
   mathDifficulty: ModuleDifficulty;
-  practiceTest: number; // 1-6
+  practiceTest: number;
 }
 
 export interface ScoringCurve {

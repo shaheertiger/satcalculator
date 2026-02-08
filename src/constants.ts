@@ -1,5 +1,4 @@
-
-import { ScoringCurve } from './types';
+import type { ScoringCurve } from './types';
 
 export const PRACTICE_TESTS: ScoringCurve[] = [
   { id: 1, name: "Bluebook Practice Test 1", rwMax: 54, mathMax: 44 },
@@ -16,7 +15,5 @@ export const MAX_QUESTIONS = {
   MATH_MODULE: 22
 };
 
-// Simplified curve lookup logic coefficients (for modeling purposes)
-// In a real production app, these would be precise JSON tables from Bluebook data
 export const BASE_SCORE = 200;
 export const MAX_SECTION = 800;

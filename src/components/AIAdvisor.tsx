@@ -1,7 +1,6 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { GoogleGenAI } from "@google/genai";
-import { SATState, SectionScore } from '../types';
+import type { SATState, SectionScore } from '../types';
 import { Send, Sparkles, Loader2 } from 'lucide-react';
 
 interface AIAdvisorProps {
@@ -23,10 +22,10 @@ const AIAdvisor: React.FC<AIAdvisorProps> = ({ state, score }) => {
         - Total: ${score.total}
         - Reading & Writing: ${score.rw.scaled} (Raw: ${state.rwM1}/${state.rwM2} out of 27 each)
         - Math: ${score.math.scaled} (Raw: ${state.mathM1}/${state.mathM2} out of 22 each)
-        
+
         The adaptive modules I selected were: RW Module 2 is ${state.rwDifficulty}, Math Module 2 is ${state.mathDifficulty}.
-        
-        Provide a concise, motivating, and highly specific strategy to improve my score. 
+
+        Provide a concise, motivating, and highly specific strategy to improve my score.
         Focus on whether I should prioritize RW or Math based on these scores, and mention how the adaptive nature of the digital SAT might be affecting me.
         Limit to 3 punchy bullet points.
       `;
@@ -53,15 +52,15 @@ const AIAdvisor: React.FC<AIAdvisorProps> = ({ state, score }) => {
     <div className="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-2xl border border-indigo-100 shadow-sm mt-8">
       <div className="flex items-center gap-2 mb-4">
         <Sparkles className="w-5 h-5 text-indigo-600" />
-        <h3 className="text-lg font-bold text-slate-800">AI Prep Strategy</h3>
+        <h3 className="text-lg font-bold text-slate-800 font-heading">AI Prep Strategy</h3>
       </div>
-      
+
       {advice ? (
         <div className="prose prose-slate max-w-none">
           <div className="whitespace-pre-line text-slate-700 text-sm leading-relaxed mb-4">
             {advice}
           </div>
-          <button 
+          <button
             onClick={() => setAdvice(null)}
             className="text-xs font-semibold text-indigo-600 hover:underline"
           >

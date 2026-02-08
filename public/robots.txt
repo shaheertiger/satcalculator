@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://satcalculator.co/sitemap-index.xml
