@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import SATCalculator from '../components/SATCalculator';
 import DarkModeToggle from '../components/DarkModeToggle';
 
-const pageTitle = "SAT Score Calculator 2026 | Free Digital SAT Score Estimator";
-const pageDescription = "Free 2026 Digital SAT score calculator. Enter your raw module scores to estimate your total score (400-1600), percentile ranking, and confidence range. Uses official Bluebook curves.";
+const pageTitle = "SAT Score Calculator - Free Digital SAT Score Calculator 2026";
+const pageDescription = "Free SAT score calculator for the 2026 Digital SAT. Calculate your SAT score from raw module scores. Get your estimated SAT total score (400-1600), SAT percentile ranking, and confidence range using official Bluebook scoring curves.";
+const pageKeywords = "SAT score calculator, SAT calculator, Digital SAT score calculator, calculate SAT score, SAT score estimator, free SAT calculator, SAT percentile calculator, SAT score range, SAT raw score converter, Digital SAT 2026, SAT score chart, SAT scoring calculator, SAT practice test score calculator, Bluebook SAT calculator, SAT section score calculator, SAT composite score calculator";
 
 const faqData = [
   {
@@ -36,15 +37,21 @@ const faqData = [
 const webAppSchema = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Digital SAT Score Calculator",
+  "name": "SAT Score Calculator",
+  "alternateName": ["SAT Calculator", "Digital SAT Score Calculator", "SAT Score Estimator", "Free SAT Calculator"],
   "url": "https://satcalculator.co",
   "description": pageDescription,
   "applicationCategory": "EducationalApplication",
   "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "2026",
+  "inLanguage": "en-US",
+  "isAccessibleForFree": true,
   "offers": {
     "@type": "Offer",
     "price": "0",
-    "priceCurrency": "USD"
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock"
   },
   "author": {
     "@type": "Organization",
@@ -55,7 +62,24 @@ const webAppSchema = {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
     "ratingCount": "1250",
-    "bestRating": "5"
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "keywords": "SAT score calculator, SAT calculator, calculate SAT score, Digital SAT score calculator, free SAT calculator"
+};
+
+const siteNavSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "SAT Score Calculator",
+  "alternateName": "satcalculator.co",
+  "url": "https://satcalculator.co",
+  "description": "Free SAT score calculator for the 2026 Digital SAT. Calculate your SAT score from raw module scores.",
+  "inLanguage": "en-US",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://satcalculator.co/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
   }
 };
 
@@ -92,9 +116,10 @@ const breadcrumbSchema = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
   <!-- Structured Data -->
   <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(siteNavSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
@@ -163,13 +188,13 @@ const breadcrumbSchema = {
     <section class="bg-gradient-to-b from-white to-slate-50 py-10 sm:py-14 border-b border-slate-100">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
-          Digital SAT Score Calculator
+          SAT Score Calculator
         </h1>
         <p class="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto mb-3">
-          Estimate your SAT score from raw module results. Built on official Bluebook practice test curves with adaptive routing simulation.
+          Free Digital SAT score calculator — calculate your SAT score from raw module results. Built on official Bluebook practice test scoring curves with adaptive routing simulation.
         </p>
         <p class="text-sm text-slate-400">
-          Free, instant, and updated for the <time datetime="2026">2026</time> Digital SAT format.
+          The most accurate free SAT calculator, updated for the <time datetime="2026">2026</time> Digital SAT format.
         </p>
       </div>
     </section>
@@ -183,7 +208,7 @@ const breadcrumbSchema = {
     <section id="how-it-works" class="bg-white border-t border-b border-slate-200 py-12 sm:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading text-center mb-10">
-          How the Digital SAT Score Calculator Works
+          How the SAT Score Calculator Works
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <article class="text-center">
@@ -215,10 +240,10 @@ const breadcrumbSchema = {
     <section class="py-12 sm:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading text-center mb-4">
-          Digital SAT Score Ranges & Percentiles
+          SAT Score Ranges & SAT Percentile Chart
         </h2>
         <p class="text-center text-slate-500 text-sm mb-8 max-w-xl mx-auto">
-          Understanding where your estimated score falls relative to all test-takers nationally.
+          Use this SAT score chart to understand where your calculated SAT score falls relative to all test-takers nationally.
         </p>
         <div class="overflow-x-auto">
           <table class="w-full max-w-2xl mx-auto text-sm border-collapse">
@@ -265,7 +290,7 @@ const breadcrumbSchema = {
     <section id="faq" class="bg-white border-t border-slate-200 py-12 sm:py-16">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading text-center mb-10">
-          Frequently Asked Questions About Digital SAT Scoring
+          SAT Score Calculator FAQ — Digital SAT Scoring Questions
         </h2>
         <dl class="space-y-4 sm:space-y-6">
           {faqData.map((faq) => (
@@ -290,7 +315,7 @@ const breadcrumbSchema = {
             </div>
             <span class="text-lg font-bold text-slate-800 tracking-tight font-heading">satcalculator.co</span>
           </a>
-          <p class="text-sm text-slate-500">The most accurate Digital SAT score estimator based on real Bluebook practice test data.</p>
+          <p class="text-sm text-slate-500">Free SAT score calculator — the most accurate Digital SAT score calculator based on real Bluebook practice test scoring data. Calculate your SAT score instantly.</p>
         </div>
         <nav aria-label="Resources">
           <h2 class="font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest font-heading">Resources</h2>

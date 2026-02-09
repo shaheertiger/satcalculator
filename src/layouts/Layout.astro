@@ -4,6 +4,7 @@ interface Props {
   description: string;
   canonical?: string;
   ogImage?: string;
+  keywords?: string;
 }
 
 const {
@@ -11,6 +12,7 @@ const {
   description,
   canonical = Astro.url.href,
   ogImage = 'https://satcalculator.co/og-image.png',
+  keywords = 'SAT score calculator, SAT calculator, Digital SAT score calculator, SAT score estimator, SAT score, calculate SAT score, free SAT calculator, SAT percentile calculator, Digital SAT 2026',
 } = Astro.props;
 ---
 
@@ -23,9 +25,24 @@ const {
     <!-- Primary Meta -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="satcalculator.co" />
     <link rel="canonical" href={canonical} />
+
+    <!-- Bing-Optimized Meta Tags -->
+    <meta http-equiv="content-language" content="en-US" />
+    <meta name="language" content="English" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="geo.region" content="US" />
+    <meta name="geo.placename" content="United States" />
+    <meta name="category" content="Education" />
+    <meta name="coverage" content="Worldwide" />
+    <meta name="target" content="all" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />

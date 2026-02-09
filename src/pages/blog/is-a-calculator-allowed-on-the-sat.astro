@@ -1,13 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const pageTitle = "Is a Calculator Allowed on the SAT? 2026 Approved Calculator List";
-const pageDescription = "Complete 2026 guide to which calculators are allowed on the SAT. See approved TI, Casio, and HP models, CAS rules, Desmos details, banned calculators, and how to convert PSAT scores to SAT.";
+const pageTitle = "Is a Calculator Allowed on the SAT? 2026 SAT Approved Calculator List";
+const pageDescription = "Is a calculator allowed on the SAT? Yes — see the complete 2026 list of calculators allowed on the SAT. Approved TI-84, Casio, HP models, CAS rules, Desmos calculator details, banned SAT calculators, and how to convert PSAT score to SAT.";
+const pageKeywords = "is a calculator allowed on the SAT, calculators allowed on the SAT, SAT approved calculators, which calculators are allowed on the SAT, TI-84 SAT, Casio SAT calculator, CAS calculator SAT, are graphing calculators allowed on the SAT, SAT calculator list 2026, Desmos SAT, PSAT to SAT score conversion, are scientific calculators allowed on SAT, SAT score calculator";
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Is a Calculator Allowed on the SAT? 2026 Approved Calculator List",
+  "headline": "Is a Calculator Allowed on the SAT? 2026 SAT Approved Calculator List",
+  "keywords": "is a calculator allowed on the SAT, calculators allowed on the SAT, SAT approved calculators, CAS calculator SAT, PSAT to SAT score",
+  "inLanguage": "en-US",
   "description": pageDescription,
   "author": {
     "@type": "Organization",
@@ -125,11 +128,20 @@ const breadcrumbSchema = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <meta property="article:published_time" content="2026-02-09" />
+    <meta property="article:modified_time" content="2026-02-09" />
+    <meta property="article:section" content="SAT Test Prep" />
+    <meta property="article:tag" content="is a calculator allowed on the SAT" />
+    <meta property="article:tag" content="SAT approved calculators" />
+    <meta property="article:tag" content="calculators allowed on the SAT" />
+    <meta property="article:tag" content="CAS calculator SAT" />
+    <meta property="article:tag" content="PSAT to SAT score conversion" />
+    <meta property="article:tag" content="SAT score calculator" />
   </Fragment>
 
   <!-- Header -->
@@ -142,7 +154,7 @@ const breadcrumbSchema = {
         <span class="text-xl font-bold text-slate-800 tracking-tight font-heading">satcalculator<span class="text-indigo-600">.co</span></span>
       </a>
       <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Score Calculator</a>
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">SAT Score Calculator</a>
         <a href="/blog/is-a-calculator-allowed-on-the-sat" class="text-sm font-medium text-indigo-600 transition-colors">Blog</a>
         <a href="/about" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">About</a>
       </nav>

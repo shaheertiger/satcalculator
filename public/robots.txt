@@ -1,4 +1,23 @@
+# Default rules for all crawlers
 User-agent: *
 Allow: /
+Disallow: /api/
+Crawl-delay: 1
 
+# Bing-specific directives
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: msnbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: BingPreview
+Allow: /
+
+# Sitemaps
 Sitemap: https://satcalculator.co/sitemap-index.xml
+
+# Host directive (Bing uses this)
+Host: https://satcalculator.co

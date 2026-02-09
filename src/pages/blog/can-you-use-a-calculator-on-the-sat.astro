@@ -1,13 +1,16 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-const pageTitle = "Can You Use a Calculator on the SAT? 2026 Rules & Guide";
-const pageDescription = "Yes, calculators are allowed on the 2026 Digital SAT. See approved calculators, Desmos tips, no-calculator section changes, and how SAT scores are calculated.";
+const pageTitle = "Can You Use a Calculator on the SAT? 2026 Calculator Rules & SAT Scoring Guide";
+const pageDescription = "Can you use a calculator on the SAT? Yes — calculators are allowed on the entire 2026 Digital SAT Math section. See SAT approved calculators, Desmos calculator tips, and how SAT scores are calculated.";
+const pageKeywords = "can you use a calculator on the SAT, SAT calculator, calculators allowed on SAT, SAT calculator rules, what calculators are allowed on the SAT, Desmos SAT calculator, how are SAT scores calculated, SAT calculator 2026, TI-84 SAT, no calculator section SAT, Digital SAT calculator, SAT score calculator";
 
 const articleSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Can You Use a Calculator on the SAT? 2026 Rules & Guide",
+  "headline": "Can You Use a Calculator on the SAT? 2026 Calculator Rules & SAT Scoring Guide",
+  "keywords": "can you use a calculator on the SAT, SAT calculator, calculators allowed on SAT, how are SAT scores calculated",
+  "inLanguage": "en-US",
   "description": pageDescription,
   "author": {
     "@type": "Organization",
@@ -101,11 +104,20 @@ const breadcrumbSchema = {
 };
 ---
 
-<Layout title={pageTitle} description={pageDescription}>
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+    <meta property="article:published_time" content="2025-06-01" />
+    <meta property="article:modified_time" content="2026-02-09" />
+    <meta property="article:section" content="SAT Test Prep" />
+    <meta property="article:tag" content="SAT calculator" />
+    <meta property="article:tag" content="can you use a calculator on the SAT" />
+    <meta property="article:tag" content="SAT calculator rules" />
+    <meta property="article:tag" content="Digital SAT calculator" />
+    <meta property="article:tag" content="SAT score calculator" />
+    <meta property="article:tag" content="how are SAT scores calculated" />
   </Fragment>
 
   <!-- Header -->
@@ -118,7 +130,7 @@ const breadcrumbSchema = {
         <span class="text-xl font-bold text-slate-800 tracking-tight font-heading">satcalculator<span class="text-indigo-600">.co</span></span>
       </a>
       <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
-        <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Score Calculator</a>
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">SAT Score Calculator</a>
         <a href="/blog/can-you-use-a-calculator-on-the-sat" class="text-sm font-medium text-indigo-600 transition-colors">Blog</a>
         <a href="/about" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">About</a>
       </nav>
