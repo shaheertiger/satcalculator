@@ -15,7 +15,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -59,8 +59,18 @@ const {
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet" />
 
     <slot name="head" />
+
+    <!-- Dark mode initialization (prevent FOUC) -->
+    <script is:inline>
+      (function() {
+        const theme = localStorage.getItem('sat_theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-slate-50">
+  <body class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 transition-colors">
     <slot />
   </body>
 </html>

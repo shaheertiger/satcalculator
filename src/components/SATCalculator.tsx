@@ -7,6 +7,11 @@ import ModuleInput from './ModuleInput';
 import ScoreHistory from './ScoreHistory';
 import SuperscoreCalculator from './SuperscoreCalculator';
 import CollegeMatch from './CollegeMatch';
+import ScoreGoalTracker from './ScoreGoalTracker';
+import ScoreShareExport from './ScoreShareExport';
+import ACTSATConcordance from './ACTSATConcordance';
+import TestDateCountdown from './TestDateCountdown';
+import PSATCalculator from './PSATCalculator';
 import {
   Calculator,
   BookOpen,
@@ -158,7 +163,13 @@ const SATCalculator: React.FC = () => {
       {/* Right Column: Results */}
       <div className="lg:col-span-7 space-y-6">
         <section className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-slate-100 relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-3 sm:p-4">
+          <div className="absolute top-0 right-0 p-3 sm:p-4 flex items-center gap-1">
+            <ScoreShareExport
+              total={finalScore.total}
+              rw={finalScore.rw.scaled}
+              math={finalScore.math.scaled}
+              percentile={Math.round((finalScore.rw.percentile + finalScore.math.percentile) / 2)}
+            />
             <button className="text-slate-400 hover:text-indigo-600 transition-colors">
               <HelpCircle className="w-5 h-5" />
             </button>
@@ -256,6 +267,9 @@ const SATCalculator: React.FC = () => {
           </div>
         </section>
 
+        {/* Score Goal Tracker */}
+        <ScoreGoalTracker currentTotal={finalScore.total} />
+
         {/* Score History */}
         <ScoreHistory
           currentTotal={finalScore.total}
@@ -267,9 +281,16 @@ const SATCalculator: React.FC = () => {
         <CollegeMatch totalScore={finalScore.total} />
       </div>
 
-      {/* Full-width Superscore Calculator */}
-      <div className="lg:col-span-12">
+      {/* Full-width tools */}
+      <div className="lg:col-span-12 space-y-6">
         <SuperscoreCalculator />
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <ACTSATConcordance />
+          <PSATCalculator />
+        </div>
+
+        <TestDateCountdown />
       </div>
     </div>
   );
