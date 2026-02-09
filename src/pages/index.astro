@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SATCalculator from '../components/SATCalculator';
-import DarkModeToggle from '../components/DarkModeToggle';
 
 const pageTitle = "SAT Score Calculator - Free Digital SAT Score Calculator 2026";
 const pageDescription = "Free SAT score calculator for the 2026 Digital SAT. Calculate your SAT score from raw module scores. Get your estimated SAT total score (400-1600), SAT percentile ranking, and confidence range using official Bluebook scoring curves.";
@@ -126,7 +125,7 @@ const breadcrumbSchema = {
   </Fragment>
 
   <!-- Header -->
-  <header class="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-30">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-2" aria-label="satcalculator.co homepage">
         <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
@@ -135,11 +134,10 @@ const breadcrumbSchema = {
         <span class="text-lg sm:text-xl font-bold text-slate-800 tracking-tight font-heading">satcalculator<span class="text-indigo-600">.co</span></span>
       </a>
       <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
-        <a href="#calculator" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors">Score Calculator</a>
-        <a href="#how-it-works" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors">How it Works</a>
-        <a href="#faq" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors">FAQ</a>
-        <a href="/blog/can-you-use-a-calculator-on-the-sat" class="text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600 transition-colors">Blog</a>
-        <DarkModeToggle client:load />
+        <a href="#calculator" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Score Calculator</a>
+        <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">How it Works</a>
+        <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">FAQ</a>
+        <a href="/blog/can-you-use-a-calculator-on-the-sat" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Blog</a>
       </nav>
       <!-- Mobile menu button -->
       <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors" aria-label="Toggle menu" aria-expanded="false">
