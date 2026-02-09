@@ -54,10 +54,10 @@ const SATCalculator: React.FC = () => {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
       {/* Left Column: Controls */}
       <div className="lg:col-span-5 space-y-6">
-        <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-          <div className="flex items-center gap-2 mb-6">
+        <section className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200">
+          <div className="flex items-center gap-2 mb-4 sm:mb-6">
             <Target className="w-5 h-5 text-indigo-600" />
-            <h2 className="text-xl font-bold text-slate-800 font-heading">Input Raw Scores</h2>
+            <h2 className="text-lg sm:text-xl font-bold text-slate-800 font-heading">Input Raw Scores</h2>
           </div>
 
           <div className="space-y-8">
@@ -144,10 +144,10 @@ const SATCalculator: React.FC = () => {
           </div>
         </section>
 
-        <div className="bg-slate-800 p-6 rounded-2xl text-white">
-          <div className="flex items-center gap-2 mb-3">
-            <BrainCircuit className="w-5 h-5 text-indigo-400" />
-            <h4 className="font-bold font-heading">Pro Tip: IRT Matters</h4>
+        <div className="bg-slate-800 p-4 sm:p-6 rounded-2xl text-white">
+          <div className="flex items-center gap-2 mb-2 sm:mb-3">
+            <BrainCircuit className="w-5 h-5 text-indigo-400 flex-shrink-0" />
+            <h4 className="font-bold font-heading text-sm sm:text-base">Pro Tip: IRT Matters</h4>
           </div>
           <p className="text-sm text-slate-300 leading-relaxed">
             The Digital SAT uses Item Response Theory. This means getting harder questions wrong hurts your score less than missing easy ones. Our calculator estimates the curve based on the latest Bluebook data.
@@ -157,46 +157,46 @@ const SATCalculator: React.FC = () => {
 
       {/* Right Column: Results */}
       <div className="lg:col-span-7 space-y-6">
-        <section className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-4">
+        <section className="bg-white p-5 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg border border-slate-100 relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-3 sm:p-4">
             <button className="text-slate-400 hover:text-indigo-600 transition-colors">
               <HelpCircle className="w-5 h-5" />
             </button>
           </div>
 
-          <div className="text-center mb-8">
+          <div className="text-center mb-6 sm:mb-8">
             <span className="text-xs font-bold text-indigo-600 uppercase tracking-[0.2em] mb-2 block">Estimated Total Score</span>
-            <div className="text-7xl font-black text-slate-900 tracking-tight mb-2 font-heading" aria-live="polite">
+            <div className="text-5xl sm:text-7xl font-black text-slate-900 tracking-tight mb-2 font-heading" aria-live="polite">
               {finalScore.total}
             </div>
-            <div className="inline-flex items-center gap-2 bg-indigo-50 px-4 py-1.5 rounded-full text-indigo-700 text-sm font-semibold">
+            <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-2 bg-indigo-50 px-4 py-2 sm:py-1.5 rounded-xl sm:rounded-full text-indigo-700 text-sm font-semibold">
               <span>Range: {finalScore.totalRange[0]} - {finalScore.totalRange[1]}</span>
-              <div className="w-1 h-1 bg-indigo-300 rounded-full"></div>
+              <div className="hidden sm:block w-1 h-1 bg-indigo-300 rounded-full"></div>
               <span>Percentile: ~{(finalScore.rw.percentile + finalScore.math.percentile) / 2}%</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-sm font-bold text-blue-800 uppercase">Reading & Writing</span>
-                <BarChart3 className="w-4 h-4 text-blue-400" />
+          <div className="grid grid-cols-2 gap-3 sm:gap-6 mb-6 sm:mb-8">
+            <div className="bg-blue-50/50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-blue-100">
+              <div className="flex justify-between items-center mb-2 sm:mb-4">
+                <span className="text-xs sm:text-sm font-bold text-blue-800 uppercase">Reading & Writing</span>
+                <BarChart3 className="w-4 h-4 text-blue-400 hidden sm:block" />
               </div>
-              <div className="text-3xl font-bold text-slate-800 mb-1">{finalScore.rw.scaled}</div>
-              <div className="text-xs text-blue-600 font-medium">Confidence: {finalScore.rw.range[0]}-{finalScore.rw.range[1]}</div>
+              <div className="text-2xl sm:text-3xl font-bold text-slate-800 mb-1">{finalScore.rw.scaled}</div>
+              <div className="text-[11px] sm:text-xs text-blue-600 font-medium">Confidence: {finalScore.rw.range[0]}-{finalScore.rw.range[1]}</div>
             </div>
-            <div className="bg-emerald-50/50 p-6 rounded-2xl border border-emerald-100">
-              <div className="flex justify-between items-center mb-4">
-                <span className="text-sm font-bold text-emerald-800 uppercase">Mathematics</span>
-                <BarChart3 className="w-4 h-4 text-emerald-400" />
+            <div className="bg-emerald-50/50 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-emerald-100">
+              <div className="flex justify-between items-center mb-2 sm:mb-4">
+                <span className="text-xs sm:text-sm font-bold text-emerald-800 uppercase">Mathematics</span>
+                <BarChart3 className="w-4 h-4 text-emerald-400 hidden sm:block" />
               </div>
-              <div className="text-3xl font-bold text-slate-800 mb-1">{finalScore.math.scaled}</div>
-              <div className="text-xs text-emerald-600 font-medium">Confidence: {finalScore.math.range[0]}-{finalScore.math.range[1]}</div>
+              <div className="text-2xl sm:text-3xl font-bold text-slate-800 mb-1">{finalScore.math.scaled}</div>
+              <div className="text-[11px] sm:text-xs text-emerald-600 font-medium">Confidence: {finalScore.math.range[0]}-{finalScore.math.range[1]}</div>
             </div>
           </div>
 
           {/* Chart Visualizer */}
-          <div className="h-48 w-full mt-4">
+          <div className="h-36 sm:h-48 w-full mt-4">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={chartData}>
                 <defs>
@@ -221,12 +221,12 @@ const SATCalculator: React.FC = () => {
                 <ReferenceLine x={finalScore.total} stroke="#ef4444" strokeWidth={2} label={{ position: 'top', value: 'You', fill: '#ef4444', fontSize: 12, fontWeight: 700 }} />
               </AreaChart>
             </ResponsiveContainer>
-            <div className="flex justify-between text-[10px] text-slate-400 font-medium px-2 mt-2">
+            <div className="flex justify-between text-[10px] text-slate-400 font-medium px-1 sm:px-2 mt-1 sm:mt-2">
               <span>400</span>
-              <span>600</span>
+              <span className="hidden sm:inline">600</span>
               <span>800</span>
-              <span>1000 (Avg)</span>
-              <span>1200</span>
+              <span>1050</span>
+              <span className="hidden sm:inline">1200</span>
               <span>1400</span>
               <span>1600</span>
             </div>
@@ -234,21 +234,21 @@ const SATCalculator: React.FC = () => {
         </section>
 
         {/* Educational Section */}
-        <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-          <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2 font-heading">
-            <AlertCircle className="w-5 h-5 text-amber-500" />
+        <section className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200">
+          <h3 className="text-base sm:text-lg font-bold text-slate-800 mb-3 sm:mb-4 flex items-center gap-2 font-heading">
+            <AlertCircle className="w-5 h-5 text-amber-500 flex-shrink-0" />
             Why calculators are "just estimates"
           </h3>
-          <div className="space-y-4 text-sm text-slate-600 leading-relaxed">
+          <div className="space-y-3 sm:space-y-4 text-sm text-slate-600 leading-relaxed">
             <p>
               Since the SAT went digital in 2023, the scoring algorithm has become <strong>multistage adaptive</strong>.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-100">
                 <h4 className="font-bold text-slate-800 mb-1 font-heading">Easy vs. Hard M2</h4>
                 <p>If you don't perform well in Module 1, you are routed to an easier Module 2, which effectively caps your maximum possible score around 600-650.</p>
               </div>
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+              <div className="p-3 sm:p-4 rounded-xl bg-slate-50 border border-slate-100">
                 <h4 className="font-bold text-slate-800 mb-1 font-heading">Point Weights</h4>
                 <p>Two students with 10 wrong answers can have scores that differ by 50+ points depending on which specific questions they missed.</p>
               </div>

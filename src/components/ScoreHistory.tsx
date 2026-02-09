@@ -94,8 +94,8 @@ const ScoreHistory: React.FC<ScoreHistoryProps> = ({ currentTotal, currentRW, cu
   }));
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-      <div className="flex items-center justify-between mb-4">
+    <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200">
+      <div className="flex items-center justify-between mb-3 sm:mb-4">
         <div className="flex items-center gap-2">
           <History className="w-5 h-5 text-indigo-600" />
           <h3 className="text-lg font-bold text-slate-800 font-heading">Score History</h3>
@@ -103,30 +103,30 @@ const ScoreHistory: React.FC<ScoreHistoryProps> = ({ currentTotal, currentRW, cu
         {history.length > 0 && (
           <button
             onClick={clearAll}
-            className="text-xs text-slate-400 hover:text-red-500 transition-colors"
+            className="text-xs text-slate-400 hover:text-red-500 transition-colors py-1 px-2"
           >
             Clear all
           </button>
         )}
       </div>
 
-      <p className="text-sm text-slate-500 mb-4">
+      <p className="text-sm text-slate-500 mb-3 sm:mb-4">
         Save your scores from each practice test to track your progress over time.
       </p>
 
       {/* Save current score */}
-      <div className="flex gap-2 mb-6">
+      <div className="flex flex-col sm:flex-row gap-2 mb-4 sm:mb-6">
         <input
           type="text"
           value={label}
           onChange={e => setLabel(e.target.value)}
           placeholder="Label (e.g. Practice Test 3)"
-          className="flex-grow text-sm border border-slate-200 rounded-lg px-3 py-2 outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50"
+          className="flex-grow text-sm border border-slate-200 rounded-lg px-3 py-2.5 sm:py-2 outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50"
           maxLength={40}
         />
         <button
           onClick={addEntry}
-          className="bg-indigo-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors whitespace-nowrap"
+          className="bg-indigo-600 text-white text-sm font-semibold px-4 py-2.5 sm:py-2 rounded-lg hover:bg-indigo-700 transition-colors whitespace-nowrap"
         >
           Save {currentTotal}
         </button>
@@ -164,9 +164,9 @@ const ScoreHistory: React.FC<ScoreHistoryProps> = ({ currentTotal, currentRW, cu
         </div>
       )}
 
-      {/* History table */}
+      {/* History table - desktop */}
       {history.length > 0 && (
-        <div className="overflow-x-auto">
+        <div className="hidden sm:block overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-left text-xs text-slate-400 uppercase tracking-wider border-b border-slate-100">
@@ -187,7 +187,7 @@ const ScoreHistory: React.FC<ScoreHistoryProps> = ({ currentTotal, currentRW, cu
                   <td className="py-2 pr-2 text-right text-emerald-600 font-semibold">{entry.math}</td>
                   <td className="py-2 pr-2 text-right text-slate-800 font-bold">{entry.total}</td>
                   <td className="py-2">
-                    <button onClick={() => removeEntry(entry.id)} className="text-slate-300 hover:text-red-400 transition-colors">
+                    <button onClick={() => removeEntry(entry.id)} className="text-slate-300 hover:text-red-400 transition-colors p-1">
                       <Trash2 className="w-3.5 h-3.5" />
                     </button>
                   </td>
@@ -195,6 +195,29 @@ const ScoreHistory: React.FC<ScoreHistoryProps> = ({ currentTotal, currentRW, cu
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {/* History cards - mobile */}
+      {history.length > 0 && (
+        <div className="sm:hidden space-y-2">
+          {history.map(entry => (
+            <div key={entry.id} className="flex items-center justify-between bg-slate-50 rounded-lg px-3 py-2.5 border border-slate-100">
+              <div className="min-w-0 flex-1">
+                <div className="text-sm font-bold text-slate-800">{entry.total}</div>
+                <div className="text-xs text-slate-500 truncate">{entry.label || entry.date}</div>
+              </div>
+              <div className="flex items-center gap-3 ml-3">
+                <div className="text-right">
+                  <div className="text-xs font-semibold text-blue-600">{entry.rw}</div>
+                  <div className="text-xs font-semibold text-emerald-600">{entry.math}</div>
+                </div>
+                <button onClick={() => removeEntry(entry.id)} className="text-slate-300 hover:text-red-400 transition-colors p-1.5">
+                  <Trash2 className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          ))}
         </div>
       )}
 

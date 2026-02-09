@@ -74,9 +74,9 @@ const CollegeMatch: React.FC<CollegeMatchProps> = ({ totalScore }) => {
     const config = tierConfig[tierKey];
     if (schools.length === 0) return null;
     return (
-      <div className="mb-5">
-        <div className="flex items-center gap-2 mb-2">
-          <span className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded ${config.badge}`}>
+      <div className="mb-4 sm:mb-5">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 mb-2">
+          <span className={`text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded self-start ${config.badge}`}>
             {config.label}
           </span>
           <span className="text-xs text-slate-400">{config.desc}</span>
@@ -85,11 +85,11 @@ const CollegeMatch: React.FC<CollegeMatchProps> = ({ totalScore }) => {
           {schools.map(school => (
             <div
               key={school.name}
-              className={`flex items-center justify-between px-4 py-2.5 rounded-lg ${config.bg} ${config.border} border`}
+              className={`flex items-center justify-between px-3 sm:px-4 py-2.5 rounded-lg ${config.bg} ${config.border} border`}
             >
-              <span className="text-sm font-medium text-slate-700">{school.name}</span>
-              <div className="flex items-center gap-2 text-xs text-slate-500">
-                <span>{school.sat25} - {school.sat75}</span>
+              <span className="text-sm font-medium text-slate-700 truncate mr-2">{school.name}</span>
+              <div className="flex items-center gap-1 sm:gap-2 text-xs text-slate-500 flex-shrink-0">
+                <span>{school.sat25}-{school.sat75}</span>
                 <ChevronRight className="w-3 h-3" />
               </div>
             </div>
@@ -100,12 +100,12 @@ const CollegeMatch: React.FC<CollegeMatchProps> = ({ totalScore }) => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+    <div className="bg-white p-4 sm:p-6 rounded-2xl shadow-sm border border-slate-200">
       <div className="flex items-center gap-2 mb-2">
         <GraduationCap className="w-5 h-5 text-indigo-600" />
         <h3 className="text-lg font-bold text-slate-800 font-heading">College Match</h3>
       </div>
-      <p className="text-sm text-slate-500 mb-5">
+      <p className="text-sm text-slate-500 mb-4 sm:mb-5">
         See how your estimated score of <strong>{totalScore}</strong> compares to the middle 50% SAT range at popular colleges.
         SAT is just one factor in admissions.
       </p>
