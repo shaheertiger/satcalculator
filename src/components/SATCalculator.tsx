@@ -4,6 +4,9 @@ import type { SATState } from '../types';
 import { PRACTICE_TESTS, MAX_QUESTIONS } from '../constants';
 import { getFullScore } from '../utils/scoring';
 import ModuleInput from './ModuleInput';
+import ScoreHistory from './ScoreHistory';
+import SuperscoreCalculator from './SuperscoreCalculator';
+import CollegeMatch from './CollegeMatch';
 import {
   Calculator,
   BookOpen,
@@ -252,6 +255,21 @@ const SATCalculator: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Score History */}
+        <ScoreHistory
+          currentTotal={finalScore.total}
+          currentRW={finalScore.rw.scaled}
+          currentMath={finalScore.math.scaled}
+        />
+
+        {/* College Match */}
+        <CollegeMatch totalScore={finalScore.total} />
+      </div>
+
+      {/* Full-width Superscore Calculator */}
+      <div className="lg:col-span-12">
+        <SuperscoreCalculator />
       </div>
     </div>
   );
