@@ -1,0 +1,845 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const pageTitle = "Is a Calculator Allowed on the SAT? 2026 Approved Calculator List";
+const pageDescription = "Complete 2026 guide to which calculators are allowed on the SAT. See approved TI, Casio, and HP models, CAS rules, Desmos details, banned calculators, and how to convert PSAT scores to SAT.";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Is a Calculator Allowed on the SAT? 2026 Approved Calculator List",
+  "description": pageDescription,
+  "author": {
+    "@type": "Organization",
+    "name": "satcalculator.co",
+    "url": "https://satcalculator.co"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "satcalculator.co",
+    "url": "https://satcalculator.co"
+  },
+  "datePublished": "2026-02-09",
+  "dateUpdated": "2026-02-09",
+  "dateModified": new Date().toISOString().split('T')[0],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://satcalculator.co/blog/is-a-calculator-allowed-on-the-sat"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is a calculator allowed on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Calculators are allowed on the entire Math section of the Digital SAT. There is no longer a no-calculator portion. You can use the built-in Desmos graphing calculator or bring your own approved physical calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which calculators are allowed on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most graphing calculators (TI-84 Plus, TI-84 Plus CE, TI-83 Plus, Casio fx-9750GII), scientific calculators (TI-30XS MultiView, Casio fx-300ES PLUS, Casio fx-991EX), and four-function calculators are allowed. CAS calculators like the TI-89 and TI-Nspire CAS are banned."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are CAS calculators allowed on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Calculators with Computer Algebra System (CAS) capabilities are not allowed on the SAT. This includes the TI-89, TI-89 Titanium, TI-Nspire CAS, HP Prime, and Casio ClassPad. The standard TI-Nspire (non-CAS) is allowed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are TI-30XS calculators allowed on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The TI-30XS MultiView is fully approved for the SAT. It is a scientific calculator that handles fractions, statistics, trigonometry, and multi-line displays, making it a solid budget-friendly choice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my own calculator on the Digital SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can bring your own approved calculator to the Digital SAT in addition to using the built-in Desmos graphing calculator. Many students bring their own device for quick arithmetic and use Desmos for graphing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are Casio calculators allowed on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most Casio calculators are approved, including the Casio fx-9750GII and fx-9750GIII (graphing), Casio fx-991EX and fx-300ES PLUS (scientific), and basic Casio four-function models. The Casio ClassPad (CAS) is not allowed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are TI-Nspire calculators allowed on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The standard TI-Nspire (non-CAS version) is allowed on the SAT. However, the TI-Nspire CAS is banned because it has Computer Algebra System functionality. Check the back of your TI-Nspire — if it says 'CAS' anywhere, it is not permitted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you calculate PSAT score into SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PSAT scores range from 320-1520 while SAT scores range from 400-1600. To estimate your SAT equivalent, add approximately 40-80 points to your PSAT total score. For a more accurate projection, compare your PSAT section scores to SAT scoring curves, as the difficulty level differs between the two tests."
+      }
+    }
+  ]
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://satcalculator.co"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://satcalculator.co/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Is a Calculator Allowed on the SAT?",
+      "item": "https://satcalculator.co/blog/is-a-calculator-allowed-on-the-sat"
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  </Fragment>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2" aria-label="satcalculator.co homepage">
+        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+        </div>
+        <span class="text-xl font-bold text-slate-800 tracking-tight font-heading">satcalculator<span class="text-indigo-600">.co</span></span>
+      </a>
+      <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Score Calculator</a>
+        <a href="/blog/is-a-calculator-allowed-on-the-sat" class="text-sm font-medium text-indigo-600 transition-colors">Blog</a>
+        <a href="/about" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <ol class="flex items-center gap-2 text-xs text-slate-400">
+        <li><a href="/" class="hover:text-indigo-600 transition-colors">Home</a></li>
+        <li>/</li>
+        <li><span class="text-slate-600">Blog</span></li>
+        <li>/</li>
+        <li><span class="text-slate-600">Calculator Allowed on the SAT</span></li>
+      </ol>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <header class="mb-10">
+        <h1 class="text-3xl sm:text-4xl font-black text-slate-900 font-heading mb-4 leading-tight">
+          Is a Calculator Allowed on the SAT? The Complete 2026 Approved Calculator List
+        </h1>
+        <p class="text-lg text-slate-500 leading-relaxed">
+          A brand-by-brand breakdown of every calculator approved for the Digital SAT, which models are banned, how the built-in Desmos calculator works, and how to convert your PSAT score to an SAT equivalent.
+        </p>
+        <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
+          <time datetime="2026-02-09">Updated February 2026</time>
+          <span>20 min read</span>
+        </div>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-8 text-[15px] leading-relaxed text-slate-600">
+
+        <p>
+          If you're preparing for the SAT and wondering <strong>"is a calculator allowed on the SAT?"</strong> — the answer is yes. The College Board permits calculator use on every question in the Math section of the Digital SAT. There is no longer a no-calculator portion, and you have two options: use the built-in Desmos graphing calculator provided in the Bluebook app, or bring your own approved physical calculator.
+        </p>
+        <p>
+          But the real question most students need answered is more specific: <strong>which calculator is allowed for SAT</strong> testing, and which models will get confiscated at the door? This guide provides a complete, model-by-model breakdown of approved and banned calculators, covers the built-in Desmos calculator, explains whether you actually <em>need</em> a calculator, and shows you how to convert your PSAT score into an SAT equivalent.
+        </p>
+
+        <!-- Section 1 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="is-calculator-allowed">Is a Calculator Allowed on the SAT?</h2>
+
+        <p>
+          Yes, <strong>a calculator is allowed on the SAT</strong>. Since the College Board transitioned to the Digital SAT format, calculators have been permitted on the entire Math section — both Module 1 and Module 2. This applies to every test administration in 2025 and 2026.
+        </p>
+        <p>
+          If you've been searching <strong>"is the calculator allowed on the SAT"</strong> or <strong>"are you allowed to have a calculator on the SAT"</strong> because you heard conflicting information, the confusion likely comes from the old paper-based SAT. That version had a no-calculator math section (Section 3) and a calculator-allowed math section (Section 4). The Digital SAT eliminated this distinction entirely.
+        </p>
+        <p>
+          Here is how calculator access works on the current Digital SAT:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Math Module 1</strong> (22 questions, 35 minutes) — Calculator allowed on all questions</li>
+          <li><strong>Math Module 2</strong> (22 questions, 35 minutes) — Calculator allowed on all questions</li>
+          <li><strong>Reading & Writing Modules</strong> — No calculator available or needed</li>
+        </ul>
+        <p>
+          So whether <strong>you are allowed calculator on SAT</strong> math is no longer a question — you absolutely are, on every single math problem.
+        </p>
+
+        <!-- Section 2 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="calculator-digital-sat">Is Calculator Allowed in Digital SAT?</h2>
+
+        <p>
+          Yes, <strong>calculator is allowed in Digital SAT</strong> on all math questions. This is one of the most student-friendly changes in the redesigned test. When the College Board launched the Digital SAT in March 2024, they confirmed that calculators would be available throughout the entire Math section.
+        </p>
+        <p>
+          If you're specifically wondering <strong>"are calculators allowed on the Digital SAT"</strong>, here's what you get:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Built-in Desmos graphing calculator</strong> — Embedded in the Bluebook testing app, available with one click on every math question. No setup or download required.</li>
+          <li><strong>Your own approved calculator</strong> — You can bring a physical calculator from the College Board's approved list. It must be placed on your desk and visible to proctors.</li>
+          <li><strong>Both simultaneously</strong> — You can switch between Desmos and your physical calculator freely during the test.</li>
+        </ul>
+        <p>
+          The Digital SAT also uses adaptive testing, meaning your performance on Module 1 determines whether you get an easier or harder Module 2. Regardless of which Module 2 you're routed to, <strong>calculators are allowed on both difficulty levels</strong>.
+        </p>
+
+        <!-- Section 3 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="which-calculators-allowed">Which Calculators Are Allowed on the SAT? Complete Brand-by-Brand Guide</h2>
+
+        <p>
+          Now for the question that actually matters on test day: <strong>which calculators are allowed on the SAT?</strong> The College Board maintains an official list of approved calculators, organized by type and manufacturer. Below is a comprehensive breakdown by brand.
+        </p>
+
+        <!-- TI Section -->
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3" id="ti-calculators">Texas Instruments (TI) Calculators Allowed on the SAT</h3>
+
+        <p>
+          Texas Instruments makes the most popular calculators for standardized testing. Here are all approved TI models:
+        </p>
+
+        <h4 class="text-base font-semibold text-slate-700 !mt-4 !mb-2">TI Graphing Calculators (Approved)</h4>
+        <div class="overflow-x-auto !my-4">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="px-4 py-3 text-left rounded-tl-lg">Model</th>
+                <th class="px-4 py-3 text-left">Type</th>
+                <th class="px-4 py-3 text-left rounded-tr-lg">SAT Approved?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-84 Plus</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-84 Plus CE</td>
+                <td class="px-4 py-3">Graphing (color)</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-84 Plus Silver Edition</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-83 Plus</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-83 Plus Silver Edition</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-Nspire (non-CAS)</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-Nspire CX (non-CAS)</td>
+                <td class="px-4 py-3">Graphing (color)</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold">TI-73 Explorer</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 class="text-base font-semibold text-slate-700 !mt-4 !mb-2">Are TI-30XS Calculators Allowed on the SAT?</h4>
+        <p>
+          Yes, <strong>TI-30XS calculators are allowed on the SAT</strong>. The TI-30XS MultiView is one of the most popular scientific calculators for standardized tests. It handles fractions, exponents, trigonometric functions, statistics, and has a multi-line display that lets you see your input and results simultaneously. At around $15-20, it's one of the most affordable options that still provides strong SAT functionality.
+        </p>
+        <p>
+          Other approved TI scientific calculators include:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>TI-30X IIS</strong> — Two-line display, solid for basic SAT math</li>
+          <li><strong>TI-30XS MultiView</strong> — Four-line display, excellent for checking multi-step calculations</li>
+          <li><strong>TI-30X Plus MathPrint</strong> — Natural textbook display, easy to read</li>
+          <li><strong>TI-34 MultiView</strong> — Similar to TI-30XS with a few extra features</li>
+          <li><strong>TI-36X Pro</strong> — Advanced scientific calculator with equation solver</li>
+        </ul>
+
+        <!-- Casio Section -->
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3" id="casio-calculators">Are Casio Calculators Allowed on the SAT?</h3>
+
+        <p>
+          Yes, <strong>Casio calculators are allowed on the SAT</strong> — with the exception of CAS models. Casio makes a wide range of affordable graphing and scientific calculators that are fully approved by the College Board.
+        </p>
+
+        <h4 class="text-base font-semibold text-slate-700 !mt-4 !mb-2">Casio Graphing Calculators (Approved)</h4>
+        <div class="overflow-x-auto !my-4">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="px-4 py-3 text-left rounded-tl-lg">Model</th>
+                <th class="px-4 py-3 text-left">Type</th>
+                <th class="px-4 py-3 text-left rounded-tr-lg">SAT Approved?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">Casio fx-9750GII</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">Casio fx-9750GIII</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">Casio fx-9860GII</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">Casio fx-9860GIII</td>
+                <td class="px-4 py-3">Graphing</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-semibold">Casio fx-CG50 (PRIZM)</td>
+                <td class="px-4 py-3">Graphing (color)</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4 class="text-base font-semibold text-slate-700 !mt-4 !mb-2">Casio Scientific Calculators (Approved)</h4>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Casio fx-300ES PLUS</strong> — Natural textbook display, widely used in schools</li>
+          <li><strong>Casio fx-300MS PLUS</strong> — Budget-friendly two-line scientific calculator</li>
+          <li><strong>Casio fx-991EX (ClassWiz)</strong> — Advanced scientific with spreadsheet function</li>
+          <li><strong>Casio fx-115ES PLUS</strong> — Popular for its equation solver and matrix functions</li>
+          <li><strong>Casio fx-82/83/85 series</strong> — Basic scientific calculators, all approved</li>
+        </ul>
+
+        <!-- HP Section -->
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3" id="hp-calculators">HP Calculators Allowed on the SAT</h3>
+        <p>
+          Hewlett-Packard calculators are less common in schools but several models are approved:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>HP 39gII</strong> — Graphing calculator, approved</li>
+          <li><strong>HP 300s+</strong> — Scientific calculator, approved</li>
+          <li><strong>HP 10s+</strong> — Scientific calculator, approved</li>
+          <li><strong>HP Prime</strong> — <strong class="text-red-600">NOT allowed</strong> (has CAS functionality)</li>
+        </ul>
+
+        <!-- Section 4 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="cas-calculators">Are CAS Calculators Allowed on the SAT?</h2>
+
+        <p>
+          <strong>No, CAS calculators are not allowed on the SAT.</strong> This is one of the most important rules to understand, because bringing a CAS calculator to the test could result in it being confiscated and you being forced to use only the built-in Desmos calculator.
+        </p>
+        <p>
+          CAS stands for <strong>Computer Algebra System</strong>. A CAS calculator can manipulate algebraic expressions symbolically — it can factor polynomials, solve equations symbolically, simplify expressions with variables, and perform calculus operations. The College Board bans CAS devices because they give an unfair advantage on algebra-heavy questions.
+        </p>
+        <p>
+          <strong>Banned CAS calculators include:</strong>
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>TI-89</strong> — CAS built in, not allowed</li>
+          <li><strong>TI-89 Titanium</strong> — CAS built in, not allowed</li>
+          <li><strong>TI-Nspire CAS</strong> — The CAS version is banned; the standard TI-Nspire is allowed</li>
+          <li><strong>TI-Nspire CX CAS</strong> — Banned, despite the non-CAS CX being approved</li>
+          <li><strong>HP Prime</strong> — Has CAS functionality, not allowed</li>
+          <li><strong>Casio ClassPad</strong> — CAS device, not allowed</li>
+          <li><strong>Casio Algebra FX 2.0</strong> — CAS device, not allowed</li>
+        </ul>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-6 !my-6">
+          <h4 class="text-base font-bold text-amber-800 mb-2">How to Check if Your Calculator Has CAS</h4>
+          <p class="text-sm text-amber-700 mb-3">Not sure if your calculator is a CAS model? Here's how to tell:</p>
+          <ul class="list-disc pl-6 space-y-1 text-sm text-amber-700">
+            <li>Look for "CAS" printed on the calculator body or screen</li>
+            <li>Check if it can factor expressions like <em>x² + 5x + 6</em> into <em>(x+2)(x+3)</em></li>
+            <li>See if it can solve equations symbolically (returning <em>x = 3</em> rather than just computing numbers)</li>
+            <li>Check the model number against the College Board's official prohibited list</li>
+          </ul>
+        </div>
+
+        <p>
+          If you currently own a CAS calculator and are wondering whether to risk bringing it, don't. Test proctors are trained to identify common CAS models, and having your calculator confiscated mid-test would be far worse than switching to a non-CAS device ahead of time.
+        </p>
+
+        <!-- Section 5 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="graphing-calculators">Can You Bring a Graphing Calculator to the SAT?</h2>
+
+        <p>
+          Yes, <strong>you can bring a graphing calculator to the SAT</strong>. Graphing calculators are among the most popular devices used on test day, and the College Board approves most major models. If you're asking <strong>"are you allowed a graphing calculator on the SAT"</strong> or <strong>"are you allowed to use graphing calculators on the SAT"</strong>, the answer is yes — as long as it's not a CAS model.
+        </p>
+        <p>
+          Graphing calculators offer several advantages on the SAT:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Graph functions visually</strong> to find intercepts, vertices, and intersections</li>
+          <li><strong>Solve systems of equations</strong> by graphing both and finding intersection points</li>
+          <li><strong>Store formulas and programs</strong> (the College Board does not require memory clearing)</li>
+          <li><strong>Perform regression analysis</strong> to fit data to equations</li>
+          <li><strong>Use table functionality</strong> to evaluate functions at multiple x-values quickly</li>
+        </ul>
+        <p>
+          The most popular graphing calculators for the SAT are the <strong>TI-84 Plus CE</strong> (color screen, rechargeable battery) and the <strong>Casio fx-9750GIII</strong> (more affordable, Python support). Either is an excellent choice.
+        </p>
+        <p>
+          If you're wondering <strong>"can I bring a graphing calculator to the SAT"</strong> — yes, and it's recommended if you own one. However, you don't <em>need</em> to buy a graphing calculator just for the SAT, since the built-in Desmos calculator provides full graphing capabilities at no cost.
+        </p>
+
+        <!-- Section 6 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="scientific-calculators">Are Scientific Calculators Allowed in SAT?</h2>
+
+        <p>
+          Yes, <strong>scientific calculators are allowed in SAT</strong> testing. Scientific calculators handle trigonometry, logarithms, exponents, fractions, and statistical functions, which covers the vast majority of what you'll encounter on SAT Math. They cannot graph, but they're faster for pure computation than graphing calculators.
+        </p>
+        <p>
+          Popular approved scientific calculators for the SAT include:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>TI-30XS MultiView</strong> — Best overall value, four-line display, handles everything on the SAT</li>
+          <li><strong>TI-36X Pro</strong> — More advanced, with equation solving and unit conversion</li>
+          <li><strong>Casio fx-991EX</strong> — Feature-rich, with spreadsheet and QR code functions</li>
+          <li><strong>Casio fx-300ES PLUS</strong> — Affordable, natural textbook display</li>
+          <li><strong>Casio fx-115ES PLUS</strong> — Matrix operations and equation solver</li>
+        </ul>
+        <p>
+          Scientific calculators are a practical choice if you're comfortable using the built-in Desmos for graphing questions and want a physical device for arithmetic and algebra. They're also significantly cheaper than graphing calculators — most cost between $10 and $25.
+        </p>
+
+        <!-- Section 7 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="not-allowed">What Calculators Are Not Allowed on the SAT?</h2>
+
+        <p>
+          The College Board maintains a strict list of devices that are <strong>not allowed on the SAT</strong>. Bringing a prohibited calculator could result in confiscation, test invalidation, or score cancellation. Here is the complete list of <strong>what calculators are not allowed on the SAT</strong>:
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-6 !mb-3">Banned Calculator Categories</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>CAS (Computer Algebra System) calculators</strong> — TI-89, TI-89 Titanium, TI-Nspire CAS, TI-Nspire CX CAS, HP Prime, Casio ClassPad, Casio Algebra FX 2.0</li>
+          <li><strong>Calculators with QWERTY keyboards</strong> — The TI-92, TI-92 Plus, and Voyage 200 all have full QWERTY layouts and are banned</li>
+          <li><strong>Calculators with internet or Bluetooth</strong> — Any device that can connect to the internet or communicate wirelessly is prohibited</li>
+          <li><strong>Cell phones and smartphones</strong> — Calculator apps on phones are never allowed, even in airplane mode</li>
+          <li><strong>Tablets and iPads</strong> — Including calculator apps on these devices</li>
+          <li><strong>Smartwatches</strong> — Apple Watch, Samsung Galaxy Watch, and all other smartwatches are banned</li>
+          <li><strong>Laptops and Chromebooks</strong> — Cannot use any computer as a calculator</li>
+          <li><strong>Calculators that make noise</strong> — Devices with audible alerts that cannot be silenced</li>
+          <li><strong>Calculators with paper tape</strong> — Printing calculators are not permitted</li>
+          <li><strong>Calculators that need to be plugged in</strong> — Your calculator must run on batteries or a built-in rechargeable battery</li>
+        </ul>
+
+        <div class="bg-red-50 border border-red-200 rounded-xl p-6 !my-6">
+          <h4 class="text-base font-bold text-red-800 mb-2">Common Models Students Accidentally Bring (And Get Confiscated)</h4>
+          <ul class="list-disc pl-6 space-y-1 text-sm text-red-700">
+            <li><strong>TI-89 Titanium</strong> — Looks similar to the TI-84 but has CAS. Check the model number.</li>
+            <li><strong>TI-Nspire CX CAS</strong> — The CAS version is banned, but the standard CX is fine. Look for "CAS" on the device.</li>
+            <li><strong>HP Prime</strong> — Popular in some schools but has CAS. Not allowed.</li>
+            <li><strong>Casio fx-CP400</strong> — Casio's CAS device. Not allowed.</li>
+          </ul>
+        </div>
+
+        <!-- Section 8 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="bring-own-calculator">Can I Use My Own Calculator on the Digital SAT?</h2>
+
+        <p>
+          Yes, <strong>you can use your own calculator on the Digital SAT</strong>. The College Board explicitly allows students to bring their own approved calculator to the testing center, even though a built-in Desmos calculator is provided. If you're wondering <strong>"can you use your own calculator on SAT"</strong> or <strong>"can I bring a calculator to the SAT"</strong>, the answer is yes to both.
+        </p>
+        <p>
+          Here's what you need to know about bringing your own device:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>It must be on the approved list</strong> — Check the model against the College Board's approved calculator list before test day.</li>
+          <li><strong>Fresh batteries recommended</strong> — Replace batteries the night before or make sure it's fully charged if rechargeable. There are no outlets at testing desks.</li>
+          <li><strong>No sharing allowed</strong> — You cannot lend your calculator to another student during the test.</li>
+          <li><strong>Backup calculators</strong> — You can bring a backup calculator and keep it under your desk. If your primary dies, you can switch.</li>
+          <li><strong>Memory does not need to be cleared</strong> — The College Board does not require you to clear your calculator's memory before the test. Stored programs and notes are allowed.</li>
+        </ul>
+        <p>
+          Many students use a dual strategy: their physical calculator for quick arithmetic (since button presses can be faster than clicking on-screen) and the built-in Desmos for graphing and visual problem-solving. This gives you the best of both worlds.
+        </p>
+
+        <!-- Section 9 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="desmos-calculator">What Calculator Is on the Digital SAT?</h2>
+
+        <p>
+          The calculator built into the Digital SAT is the <strong>Desmos graphing calculator</strong>. It's embedded directly in the Bluebook testing app and appears as a clickable icon on every math question. If you've been searching <strong>"what calculator is on the Digital SAT"</strong> or <strong>"is there a calculator on the SAT"</strong> — this is it.
+        </p>
+        <p>
+          Desmos is a full-featured graphing calculator that includes:
+        </p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Graphing</strong> — Plot any function, from linear to trigonometric to piecewise</li>
+          <li><strong>Tables</strong> — Generate x/y value tables for any function</li>
+          <li><strong>Arithmetic</strong> — Use the expression bar as a standard calculator for any computation</li>
+          <li><strong>Sliders</strong> — Adjust parameters dynamically to see how equations change</li>
+          <li><strong>Intersection points</strong> — Click on graph intersections to read coordinates</li>
+          <li><strong>Regression</strong> — Fit curves to data points</li>
+          <li><strong>Statistics</strong> — Compute mean, median, standard deviation, and more</li>
+          <li><strong>Trigonometry</strong> — Full trig functions in both degree and radian mode</li>
+        </ul>
+        <p>
+          The SAT version of Desmos is nearly identical to the free version available at <a href="https://www.desmos.com/calculator" class="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">desmos.com/calculator</a>. Practice with the online version before your test so you're familiar with the interface. Students who practice with Desmos regularly report saving significant time on graphing-heavy questions.
+        </p>
+
+        <!-- Section 10 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="calculators-provided">Are Calculators Provided for the SAT?</h2>
+
+        <p>
+          Yes, <strong>calculators are provided for the SAT</strong> — in digital form. Every student taking the Digital SAT has access to the built-in Desmos graphing calculator at no additional cost. You do not need to purchase or bring a physical calculator unless you want to.
+        </p>
+        <p>
+          However, the College Board does <em>not</em> provide physical calculators at the testing center. If you want a physical device, you must bring your own. Test centers do not have loaners or spares available.
+        </p>
+        <p>
+          So when students ask <strong>"do you have a calculator on the SAT"</strong> — yes, Desmos is always available. But if you prefer pressing physical buttons, bring your own approved calculator.
+        </p>
+
+        <!-- Section 11 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="do-you-need-calculator">Do You Need a Calculator for the SAT?</h2>
+
+        <p>
+          Strictly speaking, <strong>you do not need a calculator for the SAT</strong> — every math question is designed to be solvable without one. The College Board confirms that all SAT math problems can be answered through algebraic reasoning and arithmetic alone.
+        </p>
+        <p>
+          That said, having a calculator available is a significant practical advantage. Here's a realistic assessment:
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-6 !mb-3">Questions Where a Calculator Saves Time</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Complex arithmetic</strong> — Multi-step calculations with decimals or large numbers</li>
+          <li><strong>Systems of equations</strong> — Graphing two functions and reading the intersection is often faster than algebraic elimination</li>
+          <li><strong>Quadratic problems</strong> — Finding roots, vertex coordinates, or axis of symmetry</li>
+          <li><strong>Statistics questions</strong> — Computing mean, median, or standard deviation from data sets</li>
+          <li><strong>Trigonometry</strong> — Evaluating sin, cos, tan at specific angles</li>
+          <li><strong>Checking work</strong> — Verifying mental math quickly before submitting</li>
+        </ul>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-6 !mb-3">Questions Where a Calculator Slows You Down</h3>
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Conceptual questions</strong> — "Which equation represents..." questions that test understanding, not computation</li>
+          <li><strong>Simple algebra</strong> — Solving <em>2x + 5 = 11</em> is faster mentally than typing it in</li>
+          <li><strong>Estimation questions</strong> — When the answer choices are far apart, mental estimation is faster</li>
+          <li><strong>Pattern recognition</strong> — Questions about function behavior, graph shapes, or number properties</li>
+        </ul>
+
+        <p>
+          The bottom line: <strong>does SAT math allow calculator?</strong> Yes, on every question. <strong>Do you need one?</strong> Technically no, but using a calculator strategically will improve your speed and accuracy on roughly half the math questions.
+        </p>
+
+        <!-- Section 12 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="psat-to-sat">How to Calculate PSAT Score into SAT</h2>
+
+        <p>
+          Many students take the PSAT before the SAT and want to know <strong>how to calculate PSAT score into SAT</strong> to estimate where they stand. While the two tests are closely related, they're not scored on identical scales.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-6 !mb-3">PSAT vs. SAT Score Ranges</h3>
+        <div class="overflow-x-auto !my-4">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="px-4 py-3 text-left rounded-tl-lg">Component</th>
+                <th class="px-4 py-3 text-left">PSAT/NMSQT Range</th>
+                <th class="px-4 py-3 text-left rounded-tr-lg">SAT Range</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">Total Score</td>
+                <td class="px-4 py-3">320 - 1520</td>
+                <td class="px-4 py-3">400 - 1600</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">Reading & Writing</td>
+                <td class="px-4 py-3">160 - 760</td>
+                <td class="px-4 py-3">200 - 800</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-semibold">Math</td>
+                <td class="px-4 py-3">160 - 760</td>
+                <td class="px-4 py-3">200 - 800</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-6 !mb-3">Quick PSAT-to-SAT Conversion Method</h3>
+        <p>
+          There is no official formula from the College Board to convert PSAT scores to SAT scores, but you can estimate using these approaches:
+        </p>
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>
+            <strong>Add 40-80 points to your PSAT total.</strong> Since the SAT has a higher ceiling (1600 vs. 1520) and slightly harder questions at the top end, most students score 40-80 points higher on the SAT after preparation. A PSAT score of 1100 roughly corresponds to an SAT score of 1140-1180.
+          </li>
+          <li>
+            <strong>Compare percentiles, not raw scores.</strong> A more accurate method is to look at your PSAT percentile and find the corresponding SAT score at that same percentile. If you scored in the 75th percentile on the PSAT, look up what SAT score corresponds to the 75th percentile.
+          </li>
+          <li>
+            <strong>Use section-level comparison.</strong> Compare your PSAT Reading & Writing and Math section scores separately to SAT scoring curves. This gives you a more granular picture of where you stand in each subject.
+          </li>
+        </ol>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-6 !mb-3">Approximate PSAT to SAT Conversion Table</h3>
+        <div class="overflow-x-auto !my-4">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="px-4 py-3 text-left rounded-tl-lg">PSAT Score</th>
+                <th class="px-4 py-3 text-left">Estimated SAT Range</th>
+                <th class="px-4 py-3 text-left rounded-tr-lg">Percentile (Approx.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">1400 - 1520</td>
+                <td class="px-4 py-3">1460 - 1600</td>
+                <td class="px-4 py-3">96th - 99th+</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">1200 - 1390</td>
+                <td class="px-4 py-3">1250 - 1460</td>
+                <td class="px-4 py-3">80th - 96th</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">1000 - 1190</td>
+                <td class="px-4 py-3">1050 - 1260</td>
+                <td class="px-4 py-3">45th - 80th</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">800 - 990</td>
+                <td class="px-4 py-3">860 - 1060</td>
+                <td class="px-4 py-3">15th - 45th</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-semibold">320 - 790</td>
+                <td class="px-4 py-3">400 - 870</td>
+                <td class="px-4 py-3">1st - 15th</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          These are rough estimates. Your actual SAT score will depend on how much you study between tests, familiarity with the Digital SAT format, and test-day factors. Use our <a href="/" class="text-indigo-600 hover:underline">free SAT score calculator</a> to estimate your scaled score from practice test results.
+        </p>
+
+        <!-- Section 13 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="calculator-tips">Best Calculator Strategies for the SAT</h2>
+
+        <p>
+          Knowing that <strong>calculators are allowed on the SAT</strong> is just the starting point. Here's how to use your calculator most effectively on test day:
+        </p>
+
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>
+            <strong>Practice with the same calculator you'll use on test day.</strong> Whether it's a TI-84, a Casio scientific, or the Desmos app, use it during all your practice sessions. Familiarity with your calculator's buttons and workflow is more valuable than its feature set.
+          </li>
+          <li>
+            <strong>Learn Desmos keyboard shortcuts.</strong> If you plan to use the built-in calculator, learn to type equations quickly. Use <em>^</em> for exponents, <em>sqrt()</em> for square roots, and <em>{}</em> for piecewise functions. These shortcuts save significant time.
+          </li>
+          <li>
+            <strong>Use graphing for systems of equations.</strong> Any question that asks you to find where two expressions are equal can be solved by graphing both and clicking the intersection. This approach is often faster and less error-prone than algebraic methods.
+          </li>
+          <li>
+            <strong>Know your calculator's limitations.</strong> A four-function calculator won't help with trig or exponents. A scientific calculator won't graph. Understand what your device can and cannot do so you don't waste time attempting impossible operations.
+          </li>
+          <li>
+            <strong>Don't use the calculator for every question.</strong> On easy arithmetic (adding two-digit numbers, multiplying by 2 or 5, evaluating simple expressions), your brain is faster than any calculator. Save the calculator for questions that genuinely benefit from it.
+          </li>
+          <li>
+            <strong>Use tables to check multiple values at once.</strong> Both Desmos and graphing calculators let you generate tables of values for any function. If a question asks you to identify which x-value satisfies a condition, a table can check all answer choices simultaneously.
+          </li>
+          <li>
+            <strong>Bring fresh batteries or a charged device.</strong> A dead calculator mid-test is preventable. Replace batteries the night before, or fully charge your TI-84 Plus CE if it's rechargeable. Bring a backup calculator if you have one.
+          </li>
+        </ol>
+
+        <!-- Section 14: TI Nspire specific -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="ti-nspire">Are TI-Nspire Calculators Allowed on the SAT?</h2>
+
+        <p>
+          This depends on which TI-Nspire model you own. <strong>The standard TI-Nspire and TI-Nspire CX (non-CAS versions) are allowed on the SAT.</strong> However, <strong>the TI-Nspire CAS and TI-Nspire CX CAS are banned</strong> because they include Computer Algebra System functionality.
+        </p>
+        <p>
+          Here's the breakdown:
+        </p>
+        <div class="overflow-x-auto !my-4">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="px-4 py-3 text-left rounded-tl-lg">TI-Nspire Model</th>
+                <th class="px-4 py-3 text-left">CAS?</th>
+                <th class="px-4 py-3 text-left rounded-tr-lg">SAT Allowed?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-Nspire</td>
+                <td class="px-4 py-3">No</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-Nspire CX</td>
+                <td class="px-4 py-3">No</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-Nspire CX II</td>
+                <td class="px-4 py-3">No</td>
+                <td class="px-4 py-3 text-green-600 font-semibold">Yes</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-Nspire CAS</td>
+                <td class="px-4 py-3">Yes</td>
+                <td class="px-4 py-3 text-red-600 font-semibold">No</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">TI-Nspire CX CAS</td>
+                <td class="px-4 py-3">Yes</td>
+                <td class="px-4 py-3 text-red-600 font-semibold">No</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold">TI-Nspire CX II CAS</td>
+                <td class="px-4 py-3">Yes</td>
+                <td class="px-4 py-3 text-red-600 font-semibold">No</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          If you own a TI-Nspire and aren't sure which version it is, check the back of the device. CAS models clearly say "CAS" on the casing. You can also check by trying to factor an algebraic expression — if it can factor <em>x² - 4</em> into <em>(x-2)(x+2)</em>, it's a CAS model and is not allowed.
+        </p>
+
+        <!-- FAQ Section -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="faq">Frequently Asked Questions</h2>
+
+        <div class="space-y-6 !mt-6">
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Are calculators allowed in the SAT?</h3>
+            <p class="text-sm">Yes, calculators are allowed on the entire Math section of the Digital SAT. Both Module 1 and Module 2 permit calculator use. You can use the built-in Desmos graphing calculator, bring your own approved physical calculator, or use both.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Are we allowed to use calculator in SAT?</h3>
+            <p class="text-sm">Yes. The Digital SAT allows calculator use on all 44 math questions. There is no no-calculator section. This applies to all test dates in 2025 and 2026.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Are you allowed to use calculator on SAT?</h3>
+            <p class="text-sm">Yes. You are allowed to use a calculator on every math question on the Digital SAT. You can use the built-in Desmos graphing calculator, your own approved physical calculator, or both simultaneously during the test.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Does SAT math allow calculator?</h3>
+            <p class="text-sm">Yes, SAT math allows calculators on all questions. The Digital SAT eliminated the old no-calculator section. You have access to the built-in Desmos graphing calculator and can also bring your own approved calculator.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Can you use your own calculator on SAT?</h3>
+            <p class="text-sm">Yes. You can bring your own approved calculator in addition to using the built-in Desmos calculator. The College Board allows most graphing calculators, scientific calculators, and four-function calculators. CAS calculators, phones, and devices with internet access are not allowed.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Are calculators provided for the SAT?</h3>
+            <p class="text-sm">A digital calculator (Desmos graphing calculator) is provided within the Bluebook testing app. However, physical calculators are not provided at the testing center. If you want a physical device, you must bring your own approved model.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Is there a calculator on the SAT?</h3>
+            <p class="text-sm">Yes. The Digital SAT includes a built-in Desmos graphing calculator accessible on every math question. It's a full-featured graphing calculator that can plot functions, generate tables, perform arithmetic, and handle regression analysis. You can also bring your own approved physical calculator.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Do you need a calculator for the SAT?</h3>
+            <p class="text-sm">You don't strictly need one — all SAT math questions can be solved without a calculator. However, using a calculator strategically will save time and reduce errors on computation-heavy questions. Since Desmos is provided free for all students, there's no reason not to use it.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Are four-function calculators allowed on the SAT?</h3>
+            <p class="text-sm">Yes, basic four-function calculators (add, subtract, multiply, divide) are allowed. However, they're limited compared to scientific or graphing calculators and won't help with trigonometry, exponents, or graphing. Since Desmos is available for free, a four-function calculator alone is rarely the best choice.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Can I bring a backup calculator to the SAT?</h3>
+            <p class="text-sm">Yes. You can bring a backup calculator and store it under your desk. If your primary calculator fails during the test, you can switch to your backup. Both must be approved models. The built-in Desmos calculator also serves as a permanent backup.</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-br from-indigo-50 to-slate-50 border border-indigo-100 rounded-2xl p-8 text-center !mt-12">
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">Estimate Your SAT Score</h2>
+          <p class="text-sm text-slate-600 mb-6 max-w-lg mx-auto">
+            Now that you know which calculators are allowed, take a practice test and use our free Digital SAT score calculator to convert your raw scores into an estimated total score with percentile ranking.
+          </p>
+          <a href="/" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors text-sm">
+            Calculate Your SAT Score
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-50 border-t border-slate-200 py-8">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-400">&copy; {new Date().getFullYear()} satcalculator.co. All rights reserved. SAT&reg; is a registered trademark of the College Board, which is not affiliated with satcalculator.co.</p>
+      <div class="flex items-center gap-6 text-xs text-slate-400">
+        <a href="/" class="hover:text-slate-600">Home</a>
+        <a href="/privacy-policy" class="hover:text-slate-600">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:text-slate-600">Terms of Service</a>
+        <a href="/disclaimer" class="hover:text-slate-600">Disclaimer</a>
+        <a href="/about" class="hover:text-slate-600">About</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
