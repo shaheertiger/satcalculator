@@ -21,3 +21,6 @@ Sitemap: https://satcalculator.co/sitemap-index.xml
 
 # Host directive (Bing uses this)
 Host: https://satcalculator.co
+
+# IndexNow key for instant Bing indexing
+# Key file: https://satcalculator.co/indexnow-key.txt
