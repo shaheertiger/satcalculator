@@ -5,9 +5,47 @@ import SATCalculator from '../components/SATCalculator';
 const pageTitle = "SAT Percentile Calculator - See Your National Ranking";
 const pageDescription = "Convert your SAT score (400-1600) to a national percentile rank. See how you compare to other high school students and college applicants nationwide.";
 const pageKeywords = "SAT percentile calculator, SAT score percentile, SAT national rank, SAT percentile chart 2026, good SAT percentile";
+
+const breadcrumbs = [
+  { name: "SAT Percentile Calculator", item: "/sat-percentile-calculator" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does SAT percentile mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your SAT percentile tells you the percentage of test-takers who scored lower than or equal to you. For example, the 90th percentile means you scored higher than 90% of all students who took the SAT."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What percentile is a 1200 SAT score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 1200 SAT score is approximately the 74th percentile, meaning you scored higher than about 74% of test-takers nationally. This is above average and competitive for many state universities."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do colleges look at percentile or total score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Colleges primarily look at your total score (400-1600) and section scores (200-800 each). However, they are aware of what percentile each score represents. The percentile helps contextualize your score within the national applicant pool."
+      }
+    }
+  ]
+};
 ---
 
-<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -15,7 +53,7 @@ const pageKeywords = "SAT percentile calculator, SAT score percentile, SAT natio
         SAT Percentile Calculator
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        What does your score really mean? Convert your total SAT score to a national percentile rank to see how you stack up against other test-takers.
+        What does your score really mean? Convert your total SAT score to a national percentile rank to see how you stack up against over 1.9 million test-takers.
       </p>
     </div>
 
@@ -28,18 +66,22 @@ const pageKeywords = "SAT percentile calculator, SAT score percentile, SAT natio
     <article class="prose prose-slate max-w-3xl mx-auto">
       <h2>Understanding SAT Percentiles</h2>
       <p>
-        Your SAT percentile rank tells you the percentage of test-takers who scored lower than or equal to you. For example, if you are in the <strong>75th percentile</strong>, you scored better than 75% of all students who took the SAT.
+        Your SAT percentile rank tells you the percentage of test-takers who scored lower than or equal to you. For example, if you are in the <strong>75th percentile</strong>, you scored better than 75% of all students who took the SAT. This is a more meaningful way to understand your score than the raw number alone.
       </p>
-      
+      <p>
+        Percentiles are calculated using data from the entire population of test-takers for a given year. The College Board publishes updated percentile tables annually based on the most recent testing cohort.
+      </p>
+
       <h3>What is a "Good" Percentile?</h3>
       <p>
-        "Good" is relative to your college goals, but here are general benchmarks:
+        "Good" is relative to your college goals. A score in the 50th percentile means you are exactly average — not bad, but not standing out either. Here are benchmarks for different admissions levels:
       </p>
       <ul>
-        <li><strong>99th Percentile (1520+):</strong> Top tier. Competitive for Ivy League and highly selective universities.</li>
-        <li><strong>90th Percentile (1350+):</strong> Excellent. Competitive for most top public universities and many private colleges.</li>
-        <li><strong>75th Percentile (1200+):</strong> Strong. Above average and solid for many state flagship universities.</li>
-        <li><strong>50th Percentile (~1050):</strong> Average. Exactly in the middle of the pack.</li>
+        <li><strong>99th Percentile (1520+):</strong> Top tier. Competitive for Ivy League and the most highly selective universities (Harvard, MIT, Stanford, etc.).</li>
+        <li><strong>90th Percentile (1350+):</strong> Excellent. Competitive for most top-50 universities, strong for merit scholarships.</li>
+        <li><strong>75th Percentile (1200+):</strong> Strong. Above average and solid for many state flagship universities and competitive four-year colleges.</li>
+        <li><strong>50th Percentile (~1050):</strong> Average. Exactly in the middle of the national distribution. Sufficient for many open-admission and moderately selective colleges.</li>
+        <li><strong>25th Percentile (~900):</strong> Below average. May limit options at four-year institutions but does not preclude admission to many colleges.</li>
       </ul>
 
       <h2>SAT Score Percentile Chart (2025-2026 Estimates)</h2>
@@ -66,12 +108,90 @@ const pageKeywords = "SAT percentile calculator, SAT score percentile, SAT natio
             <tr><td class="px-4 py-3 font-semibold">1100</td><td class="px-4 py-3">59</td><td class="px-4 py-3 text-slate-600">Above Average</td></tr>
             <tr><td class="px-4 py-3 font-semibold">1050</td><td class="px-4 py-3">50</td><td class="px-4 py-3 text-slate-600">Average</td></tr>
             <tr><td class="px-4 py-3 font-semibold">1000</td><td class="px-4 py-3">41</td><td class="px-4 py-3 text-slate-500">Below Average</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">950</td><td class="px-4 py-3">32</td><td class="px-4 py-3 text-slate-500">Below Average</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">900</td><td class="px-4 py-3">24</td><td class="px-4 py-3 text-slate-500">Below Average</td></tr>
           </tbody>
         </table>
       </div>
       <p class="text-xs text-slate-400">
-        Note: Percentiles are based on the latest available College Board data for college-bound seniors and may vary slightly year to year.
+        Percentiles are based on the latest available College Board data for college-bound seniors and may vary slightly year to year.
       </p>
+
+      <h2>How Percentiles Are Calculated</h2>
+      <p>
+        The College Board calculates percentile ranks using data from the entire cohort of SAT test-takers in a given year. There are two types of percentiles reported:
+      </p>
+      <ul>
+        <li><strong>Nationally Representative Sample Percentile:</strong> Based on a sample designed to represent all US students, including those who did not take the SAT. This tends to show higher percentiles for the same score.</li>
+        <li><strong>SAT User Percentile:</strong> Based only on students who actually took the SAT. This is the more commonly referenced figure and the one shown in the table above.</li>
+      </ul>
+      <p>
+        Both percentiles appear on your score report. The SAT User Percentile is more useful for college admissions context because it compares you to other applicants who are actually submitting test scores.
+      </p>
+
+      <h2>Section-Level Percentiles</h2>
+      <p>
+        In addition to your total score percentile, the College Board provides separate percentiles for each section. This can reveal important imbalances:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Reading & Writing Percentiles</h3>
+          <ul class="text-sm text-blue-700 space-y-1">
+            <li><strong>750+:</strong> 99th percentile</li>
+            <li><strong>700:</strong> 95th percentile</li>
+            <li><strong>650:</strong> 87th percentile</li>
+            <li><strong>600:</strong> 75th percentile</li>
+            <li><strong>550:</strong> 60th percentile</li>
+            <li><strong>500:</strong> 42nd percentile</li>
+          </ul>
+        </div>
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">Math Percentiles</h3>
+          <ul class="text-sm text-emerald-700 space-y-1">
+            <li><strong>780+:</strong> 99th percentile</li>
+            <li><strong>720:</strong> 95th percentile</li>
+            <li><strong>660:</strong> 87th percentile</li>
+            <li><strong>600:</strong> 74th percentile</li>
+            <li><strong>540:</strong> 57th percentile</li>
+            <li><strong>500:</strong> 46th percentile</li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        If your section percentiles are significantly different (for example, 95th in Reading but 70th in Math), it highlights a clear area for improvement. Raising your weaker section is typically the fastest way to increase your total score and overall percentile.
+      </p>
+
+      <h2>Using Percentiles for College Planning</h2>
+      <p>
+        Percentiles are valuable for setting realistic college targets. Most colleges publish the middle 50% range of admitted students' SAT scores. For example, if a school's middle 50% range is 1350-1500:
+      </p>
+      <ul>
+        <li>Scoring above 1500 puts you in the top 25% of admitted students — a strong position.</li>
+        <li>Scoring 1350-1500 means you are in the typical range — competitive but not a standout on scores alone.</li>
+        <li>Scoring below 1350 means you are in the bottom 25% of admits — your application will need to be strong in other areas (GPA, essays, extracurriculars).</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What does SAT percentile mean?</h3>
+          <p class="text-slate-600 text-sm">
+            Your SAT percentile tells you the percentage of test-takers who scored lower than or equal to you. For example, the 90th percentile means you scored higher than 90% of all students who took the SAT.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What percentile is a 1200 SAT score?</h3>
+          <p class="text-slate-600 text-sm">
+            A 1200 SAT score is approximately the 74th percentile, meaning you scored higher than about 74% of test-takers nationally. This is above average and competitive for many state universities.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Do colleges look at percentile or total score?</h3>
+          <p class="text-slate-600 text-sm">
+            Colleges primarily look at your total score (400-1600) and section scores (200-800 each). However, they are aware of what percentile each score represents. The percentile helps contextualize your score within the national applicant pool.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

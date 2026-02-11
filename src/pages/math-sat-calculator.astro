@@ -9,9 +9,43 @@ const pageKeywords = "math SAT calculator, Digital SAT score calculator math, SA
 const breadcrumbs = [
   { name: "Math SAT Calculator", item: "/math-sat-calculator" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What math topics are on the Digital SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Digital SAT Math section covers four domains: Algebra (linear equations, inequalities, systems), Advanced Math (quadratics, polynomials, exponential functions), Problem-Solving and Data Analysis (ratios, percentages, probability), and Geometry and Trigonometry (area, volume, trig functions)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many math questions are on the Digital SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are 44 math questions total, split across two modules of 22 questions each. Module 1 is the routing module, and Module 2 difficulty depends on your Module 1 performance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use a calculator on the entire SAT math section?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Unlike the old paper SAT which had a no-calculator section, the Digital SAT allows calculator use on every single math question. A built-in Desmos graphing calculator is provided on screen."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -32,38 +66,118 @@ const breadcrumbs = [
     <article class="prose prose-slate max-w-3xl mx-auto">
       <h2>Understanding Digital SAT Math Scoring</h2>
       <p>
-        The Math section is unique because it features a built-in Desmos graphing calculator and is fully adaptive. Your score depends heavily on which questions you answer correctly in Module 1.
+        The Math section accounts for half of your total SAT score, contributing 200 to 800 points toward the overall 400-1600 scale. Unlike the old paper-based SAT, the Digital SAT Math section is fully adaptive and allows calculator use on every question, with a built-in Desmos graphing calculator available on screen.
+      </p>
+      <p>
+        Your final scaled score is determined by a combination of how many questions you answer correctly, the difficulty of those questions, and which module path you are routed to after Module 1.
       </p>
 
       <h3>The "Routing" Module</h3>
       <p>
-        The first module (22 questions) contains a mix of easy, medium, and hard questions.
+        The first module (22 questions, 35 minutes) contains a mix of easy, medium, and hard questions. Your performance here determines everything:
       </p>
       <ul>
-        <li><strong>Perform Well:</strong> You are routed to the <strong>Harder Module 2</strong>. This is critical for high scorers. Even if you miss a few questions here, you can still score a 700-800.</li>
-        <li><strong>Perform Poorly:</strong> You are routed to the <strong>Easier Module 2</strong>. Your score will be capped, typically around <strong>600-650</strong>, regardless of how well you do on the second module.</li>
+        <li><strong>Perform Well (roughly 60-70%+ correct):</strong> You are routed to the <strong>Harder Module 2</strong>. This is critical for high scorers. Even if you miss a few questions in Module 2, you can still score in the 700-800 range because each correct answer on the harder module is worth more.</li>
+        <li><strong>Perform Poorly (below ~50% correct):</strong> You are routed to the <strong>Easier Module 2</strong>. Your score ceiling drops significantly, typically capping around <strong>600-650</strong> regardless of how well you do on the second module.</li>
       </ul>
 
-      <h2>Strategies for a Top Score</h2>
+      <h2>Math Section Content Breakdown</h2>
+      <p>
+        The 44 math questions are drawn from four content domains. Understanding the weight and focus of each domain helps you allocate study time effectively:
+      </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
         <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-          <h3 class="text-lg font-bold text-blue-900 mb-2">Master Desmos</h3>
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Algebra (~35%)</h3>
           <p class="text-sm text-blue-700">
-            For systems of equations, inequalities, and function questions, the Desmos calculator is often faster than solving by hand. Learn to type equations quickly.
+            Linear equations and inequalities, systems of two linear equations, and linear functions. This is the most heavily tested domain and the foundation for higher-level questions.
+          </p>
+        </div>
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">Advanced Math (~35%)</h3>
+          <p class="text-sm text-emerald-700">
+            Quadratics, polynomials, exponential and radical equations, and rational expressions. Mastery here is essential for scores above 650. These questions frequently appear in the harder Module 2.
           </p>
         </div>
         <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
-          <h3 class="text-lg font-bold text-amber-900 mb-2">Identify Question Types</h3>
+          <h3 class="text-lg font-bold text-amber-900 mb-2">Problem-Solving & Data (~15%)</h3>
           <p class="text-sm text-amber-700">
-            Know the difference between "Heart of Algebra" and "Passport to Advanced Math." Each has predictable patterns on the Digital SAT.
+            Ratios, rates, proportional relationships, percentages, probability, and interpreting data from tables and graphs. These questions are typically more straightforward but require careful reading.
+          </p>
+        </div>
+        <div class="bg-violet-50 p-6 rounded-xl border border-violet-100">
+          <h3 class="text-lg font-bold text-violet-900 mb-2">Geometry & Trig (~15%)</h3>
+          <p class="text-sm text-violet-700">
+            Area, volume, lines and angles, right triangles, and trigonometric functions (sine, cosine, tangent). Fewer questions, but they tend to be among the hardest on the test.
           </p>
         </div>
       </div>
 
+      <h2>Strategies for a Top Math Score</h2>
+      <p>
+        Scoring 750+ on the math section requires a strategic approach beyond just knowing the content. Here are proven strategies from top scorers:
+      </p>
+      <ol>
+        <li><strong>Master Desmos:</strong> The built-in Desmos graphing calculator can solve systems of equations, find intercepts, graph inequalities, and even run regressions. For many "hard" questions, typing the equation into Desmos is faster and more reliable than solving by hand. Practice using it before test day.</li>
+        <li><strong>Prioritize Module 1 Accuracy:</strong> Since Module 1 determines your scoring ceiling, double-check every answer. It is better to spend extra time ensuring accuracy on Module 1 than to rush through it.</li>
+        <li><strong>Back-solve from Answer Choices:</strong> On multiple-choice questions, plugging answer choices back into the equation can be faster than algebraic manipulation, especially for advanced math questions.</li>
+        <li><strong>Know the Grid-In Traps:</strong> Student-produced response questions (grid-ins) have no answer choices to guide you. Common mistakes include entering negative signs incorrectly, forgetting to reduce fractions, and rounding errors.</li>
+        <li><strong>Eliminate Careless Errors:</strong> At the 750+ level, the difference between scores often comes down to avoiding simple mistakes. Read each question twice, check units, and verify that your answer makes sense in context.</li>
+      </ol>
+
+      <h2>Understanding the Math Scoring Curve</h2>
+      <p>
+        The math scoring curve can be unforgiving at the top. On some test forms, missing just one question drops your score to 790 or even 780. On harder test forms, you may be able to miss one or two and still score 800. Here is a general estimate for the <strong>Hard Module 2</strong> path:
+      </p>
+      <div class="not-prose overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
+          <thead class="bg-slate-100 text-slate-700">
+            <tr>
+              <th class="px-4 py-2 border border-slate-200">Questions Missed (out of 44)</th>
+              <th class="px-4 py-2 border border-slate-200">Estimated Score (Hard Module 2)</th>
+              <th class="px-4 py-2 border border-slate-200">Estimated Score (Easy Module 2)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="border border-slate-200 py-1">0</td><td class="border border-slate-200 py-1 font-bold">800</td><td class="border border-slate-200 py-1">~650</td></tr>
+            <tr><td class="border border-slate-200 py-1">1</td><td class="border border-slate-200 py-1 font-bold">790</td><td class="border border-slate-200 py-1">~640</td></tr>
+            <tr><td class="border border-slate-200 py-1">2</td><td class="border border-slate-200 py-1 font-bold">780</td><td class="border border-slate-200 py-1">~630</td></tr>
+            <tr><td class="border border-slate-200 py-1">3</td><td class="border border-slate-200 py-1 font-bold">760</td><td class="border border-slate-200 py-1">~620</td></tr>
+            <tr><td class="border border-slate-200 py-1">5</td><td class="border border-slate-200 py-1 font-bold">730</td><td class="border border-slate-200 py-1">~600</td></tr>
+            <tr><td class="border border-slate-200 py-1">8</td><td class="border border-slate-200 py-1 font-bold">680</td><td class="border border-slate-200 py-1">~560</td></tr>
+            <tr><td class="border border-slate-200 py-1">12</td><td class="border border-slate-200 py-1 font-bold">620</td><td class="border border-slate-200 py-1">~500</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-400">
+        These are estimates based on official Bluebook practice test data. Actual test curves vary by form.
+      </p>
+
       <h2>Using This Calculator</h2>
       <p>
-        Input your raw correct answers for Math Module 1 and Math Module 2. Our calculator will estimate your scaled score (200-800) based on the official Bluebook curves, accounting for difficulty routing.
+        Input your raw correct answers for Math Module 1 (out of 22) and Math Module 2 (out of 22). Our calculator estimates your scaled score (200-800) based on official Bluebook curves, accounting for difficulty routing. If you are practicing with official College Board materials, this gives you the most realistic score estimate available outside of the real test.
       </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What math topics are on the Digital SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            The Digital SAT Math section covers four domains: Algebra (linear equations, inequalities, systems), Advanced Math (quadratics, polynomials, exponential functions), Problem-Solving and Data Analysis (ratios, percentages, probability), and Geometry and Trigonometry (area, volume, trig functions).
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How many math questions are on the Digital SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            There are 44 math questions total, split across two modules of 22 questions each. Module 1 is the routing module, and Module 2 difficulty depends on your Module 1 performance.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can I use a calculator on the entire SAT math section?</h3>
+          <p class="text-slate-600 text-sm">
+            Yes. Unlike the old paper SAT which had a no-calculator section, the Digital SAT allows calculator use on every single math question. A built-in Desmos graphing calculator is provided on screen.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

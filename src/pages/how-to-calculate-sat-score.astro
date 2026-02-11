@@ -8,9 +8,43 @@ const pageKeywords = "how to calculate SAT score, SAT scoring chart, calculate S
 const breadcrumbs = [
   { name: "How to Calculate SAT Score", item: "/how-to-calculate-sat-score" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a penalty for wrong answers on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The Digital SAT has no guessing penalty. Wrong answers simply count as zero points. Always answer every question, even if you need to guess."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate my exact SAT score from practice tests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can get a very close estimate using the official scoring tables for each Bluebook practice test. However, exact precision is impossible because the real SAT uses Item Response Theory with question-level weights that are not publicly available."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did my score change between practice tests even though I got the same number right?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each test form has a unique scoring curve (equating table) that accounts for differences in difficulty. A harder test is more generous, while an easier test is stricter. This ensures that a 1400 means the same level of achievement regardless of which form you took."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -18,7 +52,7 @@ const breadcrumbs = [
         How to Calculate Your SAT Score
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        Wondering **how to calculate SAT score** results from your raw answers? Here is the step-by-step breakdown of how the College Board turns your raw answers into a scaled score.
+        Wondering <strong>how to calculate SAT score</strong> results from your raw answers? Here is the step-by-step breakdown of how the College Board turns your raw answers into a scaled score on the 400-1600 scale.
       </p>
     </div>
 
@@ -29,64 +63,122 @@ const breadcrumbs = [
         Your total SAT score is the sum of two section scores:
       </p>
       <ul>
-        <li><strong>Reading and Writing (RW):</strong> 200–800 points</li>
-        <li><strong>Math:</strong> 200–800 points</li>
+        <li><strong>Reading and Writing (RW):</strong> 200-800 points</li>
+        <li><strong>Math:</strong> 200-800 points</li>
       </ul>
       <p>
-        <strong>Total Score = RW Score + Math Score</strong> (Range: 400–1600)
+        <strong>Total Score = RW Score + Math Score</strong> (Range: 400-1600)
+      </p>
+      <p>
+        Each section contributes equally to your total. A student scoring 700 in both sections would have a total of 1400. The median score is approximately 1050, meaning roughly half of test-takers score above and half below that mark.
       </p>
 
       <h2>Step 1: Calculate Your Raw Score</h2>
       <p>
-        Your "raw score" is simply the number of questions you answered correctly.
+        Your "raw score" is the number of questions you answered correctly in each section. This is the starting point for all scoring calculations.
       </p>
       <ul>
-        <li>There is <strong>no penalty for guessing</strong>. Incorrect answers count as 0 points, not negative points.</li>
-        <li><strong>Reading & Writing:</strong> 54 questions total (2 modules of 27). Max raw score = 54.</li>
-        <li><strong>Math:</strong> 44 questions total (2 modules of 22). Max raw score = 44.</li>
+        <li>There is <strong>no penalty for guessing</strong>. Incorrect answers count as 0 points, not negative points. This is a change from the pre-2016 SAT, which deducted 1/4 point for wrong answers.</li>
+        <li><strong>Reading & Writing:</strong> 54 questions total (2 modules of 27). Maximum raw score = 54.</li>
+        <li><strong>Math:</strong> 44 questions total (2 modules of 22). Maximum raw score = 44.</li>
       </ul>
-
-      <h2>Step 2: Convert to Scaled Score</h2>
       <p>
-        This is where it gets tricky. You cannot simply multiply your raw score by a number. The College Board uses a process called <strong>equating</strong> to account for small differences in difficulty between different test versions.
-      </p>
-      <p>
-        For example, on one test date, a raw math score of 40/44 might result in a <strong>760</strong>. On a harder test date, that same 40/44 might be worth a <strong>780</strong>.
+        Simply count the number of correct answers in each section. Do not subtract for incorrect answers or blank responses.
       </p>
 
-      <h3>Sample Scoring Chart (Estimate)</h3>
+      <h2>Step 2: Account for Module Difficulty</h2>
+      <p>
+        This is the step that makes Digital SAT scoring different from any previous version. Because the test is adaptive, your raw score alone does not determine your scaled score — the <strong>difficulty path</strong> matters too.
+      </p>
+      <ul>
+        <li><strong>Hard Module 2:</strong> If you performed well on Module 1 and were routed to the harder second module, your scoring ceiling is higher. Getting 38/44 correct on the hard path might yield a 760 in math.</li>
+        <li><strong>Easy Module 2:</strong> If you were routed to the easier second module, the same 38/44 correct answers might only yield a 620-640 because of the lower scoring ceiling.</li>
+      </ul>
+      <p>
+        This is why two students with identical raw scores can receive very different scaled scores — the difficulty of the questions they answered makes a significant difference.
+      </p>
+
+      <h2>Step 3: Convert to Scaled Score (Equating)</h2>
+      <p>
+        You cannot simply multiply your raw score by a fixed number to get your scaled score. The College Board uses a statistical process called <strong>equating</strong> to account for small differences in difficulty between different test versions.
+      </p>
+      <p>
+        Equating ensures that a score of 1400 on the March test represents the same academic ability as 1400 on the October test, even though the questions were completely different.
+      </p>
+      <p>
+        For example, on one test date, a raw math score of 40/44 might result in a <strong>760</strong>. On a harder test date, that same 40/44 might be worth a <strong>780</strong> because the equating process recognized the test was more difficult.
+      </p>
+
+      <h3>Sample Scoring Chart (Hard Module 2 Path)</h3>
       <div class="not-prose overflow-x-auto my-6">
         <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
           <thead class="bg-slate-100 text-slate-700">
             <tr>
               <th class="px-4 py-2 border border-slate-200">Raw Score (Correct Answers)</th>
-              <th class="px-4 py-2 border border-slate-200">Est. Math Score</th>
-              <th class="px-4 py-2 border border-slate-200">Est. RW Score</th>
+              <th class="px-4 py-2 border border-slate-200">Est. Math Score (out of 44)</th>
+              <th class="px-4 py-2 border border-slate-200">Est. RW Score (out of 54)</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td class="border border-slate-200 py-1">Max (44/54)</td><td class="border border-slate-200 py-1 font-bold">800</td><td class="border border-slate-200 py-1 font-bold">800</td></tr>
+            <tr><td class="border border-slate-200 py-1">All Correct (44/54)</td><td class="border border-slate-200 py-1 font-bold">800</td><td class="border border-slate-200 py-1 font-bold">800</td></tr>
             <tr><td class="border border-slate-200 py-1">-1</td><td class="border border-slate-200 py-1">790</td><td class="border border-slate-200 py-1">790</td></tr>
             <tr><td class="border border-slate-200 py-1">-2</td><td class="border border-slate-200 py-1">780</td><td class="border border-slate-200 py-1">780</td></tr>
             <tr><td class="border border-slate-200 py-1">-3</td><td class="border border-slate-200 py-1">760</td><td class="border border-slate-200 py-1">760</td></tr>
             <tr><td class="border border-slate-200 py-1">-4</td><td class="border border-slate-200 py-1">750</td><td class="border border-slate-200 py-1">740</td></tr>
             <tr><td class="border border-slate-200 py-1">-5</td><td class="border border-slate-200 py-1">730</td><td class="border border-slate-200 py-1">720</td></tr>
+            <tr><td class="border border-slate-200 py-1">-8</td><td class="border border-slate-200 py-1">680</td><td class="border border-slate-200 py-1">680</td></tr>
+            <tr><td class="border border-slate-200 py-1">-12</td><td class="border border-slate-200 py-1">620</td><td class="border border-slate-200 py-1">620</td></tr>
+            <tr><td class="border border-slate-200 py-1">-20</td><td class="border border-slate-200 py-1">480</td><td class="border border-slate-200 py-1">500</td></tr>
           </tbody>
         </table>
       </div>
+      <p class="text-xs text-slate-400">
+        These estimates are based on official Bluebook practice test data. Actual curves vary by test form. Scores assume the Hard Module 2 path.
+      </p>
 
       <h2>The Digital SAT Difference</h2>
       <p>
-        On the <a href="/digital-sat-score-calculator" class="text-indigo-600 hover:underline">Digital SAT</a>, scoring is even more complex due to <strong>Item Response Theory (IRT)</strong>.
+        On the <a href="/digital-sat-score-calculator" class="text-indigo-600 hover:underline">Digital SAT</a>, scoring is more complex than the old paper test due to <strong>Item Response Theory (IRT)</strong>. Here is what makes it different:
       </p>
       <ul>
-        <li>Not all questions are worth the same amount.</li>
-        <li>Harder questions may be weighted more heavily in calculating your ability level.</li>
-        <li>Your score is also influenced by which module path (Easy or Hard) you are routed to after the first module.</li>
+        <li><strong>Not all questions are worth the same amount.</strong> Each question has unique statistical parameters (difficulty, discrimination, guessing) that determine its weight in your final score.</li>
+        <li><strong>Harder questions are worth more.</strong> A correct answer on a difficult question boosts your score more than a correct answer on an easy question.</li>
+        <li><strong>The module path affects your ceiling.</strong> Being routed to the easy Module 2 caps your maximum score at approximately 600-650 per section, regardless of how many questions you answer correctly.</li>
+        <li><strong>Scores are pre-equated.</strong> Unlike the paper SAT where curves were calculated after the test, Digital SAT questions are pre-calibrated with known IRT parameters, allowing for faster score reporting.</li>
       </ul>
       <p>
-        Because of this, it is impossible to calculate your exact Digital SAT score manually with 100% precision. However, you can use our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT tools</a> to get a highly accurate estimate based on official practice curves.
+        Because of this complexity, it is impossible to calculate your exact Digital SAT score manually with 100% precision. However, you can use our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT Score Calculator</a> to get a highly accurate estimate based on official practice test curves.
       </p>
+
+      <h2>Common Scoring Misconceptions</h2>
+      <ul>
+        <li><strong>"Each question is worth X points"</strong> — This is not how the Digital SAT works. Question weights vary based on IRT parameters.</li>
+        <li><strong>"The curve is the same for every test"</strong> — Each test form has its own equating table. What costs you 10 points on one form might cost 20 on another.</li>
+        <li><strong>"I need to answer every question correctly to get an 800"</strong> — On some harder test forms, you can miss 1-2 questions and still receive a perfect 800 in a section.</li>
+        <li><strong>"Leaving questions blank is better than guessing"</strong> — There is no guessing penalty. Always answer every question.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is there a penalty for wrong answers on the SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            No. The Digital SAT has no guessing penalty. Wrong answers simply count as zero points. Always answer every question, even if you need to guess.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can I calculate my exact SAT score from practice tests?</h3>
+          <p class="text-slate-600 text-sm">
+            You can get a very close estimate using the official scoring tables for each Bluebook practice test. However, exact precision is impossible because the real SAT uses Item Response Theory with question-level weights that are not publicly available.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Why did my score change between practice tests even though I got the same number right?</h3>
+          <p class="text-slate-600 text-sm">
+            Each test form has a unique scoring curve (equating table) that accounts for differences in difficulty. A harder test is more generous, while an easier test is stricter. This ensures that a 1400 means the same level of achievement regardless of which form you took.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

@@ -9,9 +9,43 @@ const pageKeywords = "ACT percentile calculator, ACT score percentile, ACT natio
 const breadcrumbs = [
   { name: "ACT Percentile Calculator", item: "/act-percentile-calculator" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the average ACT score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The national average ACT Composite score is approximately 19-20, which corresponds to roughly the 50th percentile. This means half of all ACT test-takers score above a 20 and half score below."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ACT score do I need for Ivy League schools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most Ivy League schools have middle 50% ACT ranges of 33-36. Scoring a 34 or above (99th percentile) makes you competitive at any university in the country. A 33 (98th percentile) is still very strong for all Ivy League schools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a 25 a good ACT score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 25 ACT is approximately the 77th percentile, meaning you scored higher than 77% of test-takers. This is above average and competitive for many state universities and four-year colleges, though it may be below the typical range for highly selective schools."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -19,7 +53,7 @@ const breadcrumbs = [
         ACT Percentile Calculator
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        Your ACT score is more than just a number. Use this <strong>ACT Percentile Calculator</strong> to see your standing among millions of students and find your exact percentile ranking.
+        Your ACT score is more than just a number. Use this <strong>ACT Percentile Calculator</strong> to see your standing among millions of students and find your exact percentile ranking for 2026 admissions.
       </p>
     </div>
 
@@ -32,9 +66,9 @@ const breadcrumbs = [
     <article class="prose prose-slate max-w-3xl mx-auto">
       <h2>ACT Percentile Chart (2025-2026 Estimates)</h2>
       <p>
-        The following table shows the national percentile rank for each ACT Composite Score.
+        The following table shows the national percentile rank for each ACT Composite Score. Percentiles are based on the most recent ACT testing cohort data, which includes approximately 1.4 million test-takers.
       </p>
-      
+
       <div class="not-prose overflow-x-auto my-8">
         <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
           <thead class="bg-indigo-800 text-white">
@@ -62,19 +96,91 @@ const breadcrumbs = [
             <tr><td class="px-4 py-2 font-semibold text-slate-700">22</td><td class="px-4 py-2">64th</td><td>Average</td></tr>
             <tr><td class="px-4 py-2 font-semibold text-slate-700">21</td><td class="px-4 py-2">59th</td><td>Average</td></tr>
             <tr><td class="px-4 py-2 font-semibold text-slate-700">20</td><td class="px-4 py-2">54th</td><td>Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">19</td><td class="px-4 py-2">48th</td><td>Below Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">18</td><td class="px-4 py-2">42nd</td><td>Below Average</td></tr>
           </tbody>
         </table>
       </div>
 
       <h2>What is a Good ACT Percentile?</h2>
       <p>
-        The national average ACT score is roughly a <strong>19-20</strong>.
+        The national average ACT score is roughly a <strong>19-20</strong>, which falls near the 50th percentile. Whether your score is "good" depends entirely on your goals:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
+          <h3 class="text-lg font-bold text-indigo-900 mb-2">Top 10% (30-36)</h3>
+          <p class="text-sm text-indigo-700">
+            Scores in this range make you a strong candidate for the most selective universities in the US, including Ivy League schools, Stanford, MIT, and top-20 programs. A 34+ puts you in the 99th percentile — elite territory.
+          </p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Top 25% (25-29)</h3>
+          <p class="text-sm text-blue-700">
+            This is a solid range for state flagship universities, many private colleges, and merit scholarship consideration. A 27+ opens doors at schools like University of Michigan, UT Austin, and similar institutions.
+          </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+          <h3 class="text-lg font-bold text-amber-900 mb-2">Top 50% (20-24)</h3>
+          <p class="text-sm text-amber-700">
+            You are scoring above average nationally. This range is sufficient for admission to many four-year colleges and universities. Scores of 23-24 are particularly competitive at moderately selective schools.
+          </p>
+        </div>
+        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">Below 20</h3>
+          <p class="text-sm text-slate-700">
+            Below the national average. While this does not prevent college admission, it may limit options at four-year institutions. Community colleges and open-admission universities typically do not have minimum score requirements.
+          </p>
+        </div>
+      </div>
+
+      <h2>ACT Section Percentiles</h2>
+      <p>
+        Your ACT Composite score is the average of your four (or three, if skipping Science) section scores. But percentiles for individual sections can reveal important strengths and weaknesses:
       </p>
       <ul>
-        <li><strong>Top 10% (30-36):</strong> Scores in this range make you a strong candidate for most universities in the US.</li>
-        <li><strong>Top 25% (25-29):</strong> This is a solid range for state flagship universities and many private colleges.</li>
-        <li><strong>Top 50% (20-24):</strong> You are scoring above average, which is sufficient for admission to many four-year colleges.</li>
+        <li><strong>English:</strong> The average score is around 19. A 30+ puts you in the 90th+ percentile for this section. Students who read frequently tend to score highest here.</li>
+        <li><strong>Math:</strong> The average is approximately 19-20. Math percentiles tend to be slightly more compressed at the top — a 30 in Math is roughly the 90th percentile.</li>
+        <li><strong>Reading:</strong> Average around 20-21. This section tests reading speed and comprehension. Time management is critical since you have limited time per passage.</li>
+        <li><strong>Science:</strong> Average around 20. Despite its name, the ACT Science section is primarily a data interpretation and scientific reasoning test, not a test of science content knowledge.</li>
       </ul>
+      <p>
+        If one section score is significantly lower than your others, improving it is the most efficient way to raise your Composite. For example, raising your weakest section by 3 points increases your Composite by approximately 1 point.
+      </p>
+
+      <h2>How ACT Percentiles Compare to SAT</h2>
+      <p>
+        If you have taken both tests, you can use the percentile to determine which score is relatively stronger:
+      </p>
+      <ul>
+        <li>A <strong>30 ACT</strong> (93rd percentile) is approximately equivalent to a <strong>1360-1380 SAT</strong>.</li>
+        <li>A <strong>25 ACT</strong> (77th percentile) is approximately equivalent to a <strong>1200-1220 SAT</strong>.</li>
+        <li>A <strong>20 ACT</strong> (54th percentile) is approximately equivalent to a <strong>1030-1050 SAT</strong>.</li>
+      </ul>
+      <p>
+        Use the concordance tool above to find your exact SAT equivalent and compare percentiles directly.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the average ACT score?</h3>
+          <p class="text-slate-600 text-sm">
+            The national average ACT Composite score is approximately 19-20, which corresponds to roughly the 50th percentile. This means half of all ACT test-takers score above a 20 and half score below.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What ACT score do I need for Ivy League schools?</h3>
+          <p class="text-slate-600 text-sm">
+            Most Ivy League schools have middle 50% ACT ranges of 33-36. Scoring a 34 or above (99th percentile) makes you competitive at any university in the country. A 33 (98th percentile) is still very strong for all Ivy League schools.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is a 25 a good ACT score?</h3>
+          <p class="text-slate-600 text-sm">
+            A 25 ACT is approximately the 77th percentile, meaning you scored higher than 77% of test-takers. This is above average and competitive for many state universities and four-year colleges, though it may be below the typical range for highly selective schools.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>
