@@ -10,9 +10,43 @@ const pageKeywords = "ACT calculator without science, ACT no science score, calc
 const breadcrumbs = [
   { name: "ACT Score Calculator (No Science)", item: "/act-score-calculator-without-science" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do colleges accept ACT scores without Science?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Starting in Spring 2025, the ACT will allow students to skip the Science section. Colleges are currently updating their policies, but it is expected that most will accept the new format, similar to how they accepted the SAT when it removed the Essay section."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the new ACT Composite score calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If you skip the Science section, your Composite score is the average of your English, Math, and Reading scores, rounded to the nearest whole number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will skipping Science lower my score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your strengths. If Science is your lowest scoring section, skipping it will likely increase your Composite. If Science is your best section, skipping it could lower your overall score."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -55,8 +89,31 @@ const breadcrumbs = [
       <h2>Should You Skip the Science Section?</h2>
       <ul>
         <li><strong>Skip it if:</strong> Science is your weakest subject and lowers your overall average. Focusing on the other three could boost your Composite score.</li>
-        <li><strong>Take it if:</strong> You are applying to STEM programs (Engineering, Pre-Med, Biology) which may still require or strongly prefer seeing a Science score.</li>
+        <li><strong>Take it if:</strong> You are applying to STEM programs (Engineering, Pre-Med, Biology) which may still require or strongly prefer seeing a Science score. Also, some highly competitive colleges may still prefer the 4-section test until new data is available.</li>
       </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Do colleges accept ACT scores without Science?</h3>
+          <p class="text-slate-600 text-sm">
+             Starting in Spring 2025, the ACT will allow students to skip the Science section. Colleges are currently updating their policies, but it is expected that most will accept the new format, similar to how they accepted the SAT when it removed the Essay section.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How is the new ACT Composite score calculated?</h3>
+          <p class="text-slate-600 text-sm">
+            If you skip the Science section, your Composite score is the average of your English, Math, and Reading scores, rounded to the nearest whole number.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Will skipping Science lower my score?</h3>
+          <p class="text-slate-600 text-sm">
+            It depends on your strengths. If Science is your lowest scoring section, skipping it will likely increase your Composite. If Science is your best section, skipping it could lower your overall score.
+          </p>
+        </div>
+      </div>
+    </article>
 
       <h2>Compare with SAT</h2>
       <p>

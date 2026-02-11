@@ -9,9 +9,43 @@ const pageKeywords = "ACT score equivalent to SAT, ACT to SAT conversion, conver
 const breadcrumbs = [
   { name: "ACT Score Equivalent to SAT", item: "/act-score-equivalent-sat" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the ACT easier than the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The ACT is generally considered 'faster-paced' while the SAT is 'deeper.' The ACT allows less time per question but the questions are often more straightforward. The SAT gives more time but requires more critical thinking. Neither is objectively easier; it depends on your personal test-taking style."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do colleges prefer SAT or ACT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All US colleges accept both the SAT and ACT equally. Admissions officers do not prefer one over the other. You should submit the score that is higher on a concordance table."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the ACT to SAT conversion?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This conversion uses the official concordance tables released jointly by the College Board and ACT, Inc. in 2018. It is the gold standard for comparing scores."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -41,20 +75,88 @@ const breadcrumbs = [
       </p>
 
       <h2>Conversion Chart (ACT → SAT)</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-white">
+              <th class="px-4 py-3 text-left rounded-tl-lg">ACT Composite</th>
+              <th class="px-4 py-3 text-left rounded-tr-lg">SAT Range (Approx)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">36</td>
+              <td class="px-4 py-3">1570 - 1600</td>
+            </tr>
+            <tr class="bg-slate-50 border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">35</td>
+              <td class="px-4 py-3">1530 - 1560</td>
+            </tr>
+            <tr class="bg-white border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">34</td>
+              <td class="px-4 py-3">1490 - 1520</td>
+            </tr>
+            <tr class="bg-slate-50 border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">33</td>
+              <td class="px-4 py-3">1450 - 1480</td>
+            </tr>
+            <tr class="bg-white border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">32</td>
+              <td class="px-4 py-3">1420 - 1440</td>
+            </tr>
+            <tr class="bg-slate-50 border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">31</td>
+              <td class="px-4 py-3">1390 - 1410</td>
+            </tr>
+            <tr class="bg-white border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">30</td>
+              <td class="px-4 py-3">1360 - 1380</td>
+            </tr>
+            <tr class="bg-slate-50 border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">29</td>
+              <td class="px-4 py-3">1330 - 1350</td>
+            </tr>
+             <tr class="bg-white border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">28</td>
+              <td class="px-4 py-3">1300 - 1320</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>How to Choose Which Score to Send</h2>
       <p>
-        Here is a quick reference for common score ranges:
+        If you have taken both tests, you have a strategic advantage. Use the concordance table to see which score is higher.
       </p>
       <ul>
-        <li><strong>36 ACT</strong> ≈ <strong>1590 SAT</strong></li>
-        <li><strong>35 ACT</strong> ≈ <strong>1540 SAT</strong></li>
-        <li><strong>34 ACT</strong> ≈ <strong>1500 SAT</strong></li>
-        <li><strong>33 ACT</strong> ≈ <strong>1460 SAT</strong></li>
-        <li><strong>32 ACT</strong> ≈ <strong>1430 SAT</strong></li>
-        <li><strong>31 ACT</strong> ≈ <strong>1400 SAT</strong></li>
-        <li><strong>30 ACT</strong> ≈ <strong>1370 SAT</strong></li>
-        <li><strong>29 ACT</strong> ≈ <strong>1340 SAT</strong></li>
-        <li><strong>28 ACT</strong> ≈ <strong>1310 SAT</strong></li>
+        <li><strong>Scenario A:</strong> You have a 30 ACT and a 1400 SAT. The concordance says a 30 ACT is roughly a 1370 SAT. Therefore, your <strong>1400 SAT is stronger</strong> and you should submit that.</li>
+        <li><strong>Scenario B:</strong> You have a 32 ACT and a 1400 SAT. A 32 ACT is roughly a 1430 SAT. In this case, your <strong>32 ACT is stronger</strong>.</li>
       </ul>
+      <p>
+        Always submit your strongest score. Colleges will not look down on you for submitting an ACT score over an SAT score, or vice-versa.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is the ACT easier than the SAT?</h3>
+          <p class="text-slate-600 text-sm">
+             The ACT is generally considered "faster-paced" while the SAT is "deeper." The ACT allows less time per question but the questions are often more straightforward. The SAT gives more time but requires more critical thinking. Neither is objectively easier; it depends on your personal test-taking style.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Do colleges prefer SAT or ACT?</h3>
+          <p class="text-slate-600 text-sm">
+            No. All US colleges accept both the SAT and ACT equally. Admissions officers do not prefer one over the other. You should submit the score that is higher on a concordance table.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How accurate is the ACT to SAT conversion?</h3>
+          <p class="text-slate-600 text-sm">
+            This conversion uses the official concordance tables released jointly by the College Board and ACT, Inc. in 2018. It is the gold standard for comparing scores.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

@@ -9,9 +9,43 @@ const pageKeywords = "SAT math score calculator, SAT math calculator, calculate 
 const breadcrumbs = [
   { name: "SAT Math Score Calculator", item: "/sat-math-score-calculator" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is the SAT Math section scored?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Digital SAT Math section is scored on a scale of 200-800. It uses an adaptive format where your performance on Module 1 determines the difficulty of Module 2. The final score is calculated using Item Response Theory (IRT), meaning harder questions are weighted more heavily."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I get an 800 on SAT Math if I miss one question?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the difficulty of the specific test form. On harder test versions, it is possible to miss one question and still score an 800. On easier versions, missing even one question can drop your score to 790 or 780."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the hardest topic in SAT Math?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "'Advanced Math' (quadratics, nonlinear equations) and 'Geometry and Trigonometry' are often considered the most challenging areas. However, mastering the built-in Desmos calculator can make these questions much easier."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -58,15 +92,40 @@ const breadcrumbs = [
       </div>
 
       <h2>How to Use This Calculator for Math Only</h2>
-      <p>
-        If you only want to know your Math score:
-      </p>
-      <ol>
-        <li>Leave the "Reading & Writing" inputs blank or set to 0.</li>
-        <li>Enter your correct answers for Math Module 1 (out of 22).</li>
-        <li>Enter your correct answers for Math Module 2 (out of 22).</li>
         <li>Check the "Math Score" output in the results section.</li>
       </ol>
+
+      <h2>How to Improve Your Math Score</h2>
+      <p>
+        Since the Digital SAT is adaptive, the most important strategy is to <strong>maximize your performance on Module 1</strong>.
+      </p>
+      <ul>
+        <li><strong>Don't Rush Module 1:</strong> You need to get roughly 65-70% of questions right in Module 1 to be routed to the harder Module 2. If you fall into the easy module, your score is capped.</li>
+        <li><strong>Master Desmos:</strong> Learn to use regression to solve systems of equations and find intercepts without doing any algebra by hand.</li>
+        <li><strong>Plug in Answers:</strong> For multiple-choice questions, if you're stuck, try plugging the answer choices back into the problem.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How is the SAT Math section scored?</h3>
+          <p class="text-slate-600 text-sm">
+             The Digital SAT Math section is scored on a scale of 200-800. It uses an adaptive format where your performance on Module 1 determines the difficulty of Module 2. The final score is calculated using Item Response Theory (IRT), meaning harder questions are weighted more heavily.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can I get an 800 on SAT Math if I miss one question?</h3>
+          <p class="text-slate-600 text-sm">
+            It depends on the difficulty of the specific test form. On harder test versions, it is possible to miss one question and still score an 800. On easier versions, missing even one question can drop your score to 790 or 780.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the hardest topic in SAT Math?</h3>
+          <p class="text-slate-600 text-sm">
+            "Advanced Math" (quadratics, nonlinear equations) and "Geometry and Trigonometry" are often considered the most challenging areas. However, mastering the built-in Desmos calculator can make these questions much easier.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

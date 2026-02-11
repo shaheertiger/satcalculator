@@ -9,9 +9,43 @@ const pageKeywords = "SAT score equivalent to ACT, SAT to ACT conversion, conver
 const breadcrumbs = [
   { name: "SAT Score Equivalent to ACT", item: "/sat-score-equivalent-act" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is the SAT score equivalent the same as the ACT score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The SAT uses a scale of 400-1600, while the ACT uses 1-36. They test similar skills, but the scores are not one-to-one. You must use a concordance table to find the equivalent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do colleges compare SAT and ACT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Admissions officers use the official ACT/SAT concordance tables to compare applicants. If you submit an SAT score, they will look at its ACT equivalent to see how you stack up against ACT test-takers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I take both tests?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can be beneficial to take a practice test for both to see which format you prefer. If you score significantly higher on one, focus your studying on that test."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -45,20 +79,81 @@ const breadcrumbs = [
       </ul>
 
       <h2>Conversion Chart (SAT → ACT)</h2>
+      <div class="overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-white">
+              <th class="px-4 py-3 text-left rounded-tl-lg">SAT Range</th>
+              <th class="px-4 py-3 text-left rounded-tr-lg">ACT Composite</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-white border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">1570–1600</td>
+              <td class="px-4 py-3">36</td>
+            </tr>
+            <tr class="bg-slate-50 border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">1530–1560</td>
+              <td class="px-4 py-3">35</td>
+            </tr>
+            <tr class="bg-white border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">1490–1520</td>
+              <td class="px-4 py-3">34</td>
+            </tr>
+            <tr class="bg-slate-50 border-b border-slate-100">
+              <td class="px-4 py-3 font-semibold">1450–1480</td>
+              <td class="px-4 py-3">33</td>
+            </tr>
+             <tr class="bg-white border-b border-slate-100">
+               <td class="px-4 py-3 font-semibold">1420–1440</td>
+               <td class="px-4 py-3">32</td>
+             </tr>
+             <tr class="bg-slate-50 border-b border-slate-100">
+               <td class="px-4 py-3 font-semibold">1390–1410</td>
+               <td class="px-4 py-3">31</td>
+             </tr>
+             <tr class="bg-white border-b border-slate-100">
+               <td class="px-4 py-3 font-semibold">1360–1380</td>
+               <td class="px-4 py-3">30</td>
+             </tr>
+             <tr class="bg-slate-50 border-b border-slate-100">
+               <td class="px-4 py-3 font-semibold">1330–1350</td>
+               <td class="px-4 py-3">29</td>
+             </tr>
+             <tr class="bg-white border-b border-slate-100">
+               <td class="px-4 py-3 font-semibold">1300–1320</td>
+               <td class="px-4 py-3">28</td>
+             </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Strategies for High Scorers</h2>
       <p>
-        Here is a quick reference for common score ranges:
+        If your SAT score is already in the 1500+ range, switching to the ACT acts as a "second chance" to get a perfect score. Because the ACT science section (if taken) is essentially a reading test with graphs, strong readers often find they can "superscore" their way into a top-tier college by submitting a perfect ACT instead of a near-perfect SAT.
       </p>
-      <ul>
-        <li><strong>1570–1600 SAT</strong> ≈ <strong>36 ACT</strong></li>
-        <li><strong>1530–1550 SAT</strong> ≈ <strong>35 ACT</strong></li>
-        <li><strong>1490–1520 SAT</strong> ≈ <strong>34 ACT</strong></li>
-        <li><strong>1450–1480 SAT</strong> ≈ <strong>33 ACT</strong></li>
-        <li><strong>1420–1440 SAT</strong> ≈ <strong>32 ACT</strong></li>
-        <li><strong>1390–1410 SAT</strong> ≈ <strong>31 ACT</strong></li>
-        <li><strong>1360–1380 SAT</strong> ≈ <strong>30 ACT</strong></li>
-        <li><strong>1330–1350 SAT</strong> ≈ <strong>29 ACT</strong></li>
-        <li><strong>1300–1320 SAT</strong> ≈ <strong>28 ACT</strong></li>
-      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is the SAT score equivalent the same as the ACT score?</h3>
+          <p class="text-slate-600 text-sm">
+             No. The SAT uses a scale of 400-1600, while the ACT uses 1-36. They test similar skills, but the scores are not one-to-one. You must use a concordance table to find the equivalent.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How do colleges compare SAT and ACT?</h3>
+          <p class="text-slate-600 text-sm">
+            Admissions officers use the official ACT/SAT concordance tables to compare applicants. If you submit an SAT score, they will look at its ACT equivalent to see how you stack up against ACT test-takers.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Should I take both tests?</h3>
+          <p class="text-slate-600 text-sm">
+            It can be beneficial to take a practice test for both to see which format you prefer. If you score significantly higher on one, focus your studying on that test.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>
