@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ACTSATConcordance from '../components/ACTSATConcordance';
+
+const pageTitle = "SAT to ACT Score Converter - Official Concordance 2026";
+const pageDescription = "Convert your SAT score to an ACT score and vice versa. Use the official College Board & ACT concordance tables to compare your performance and decide which score to send.";
+const pageKeywords = "SAT to ACT converter, ACT to SAT converter, SAT vs ACT score, SAT score conversion, ACT score conversion, official SAT ACT concordance";
+
+const breadcrumbs = [
+  { name: "SAT to ACT Score Converter", item: "/sat-act-score-converter" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        SAT to ACT Score Converter
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Wondering how your SAT score translates to the ACT? Use our free <strong>SAT to ACT Score Converter</strong> based on the official concordance tables from the College Board and ACT, Inc.
+      </p>
+    </div>
+
+    <!-- Concordance Component -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <ACTSATConcordance client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>Comparison Table (2018 Official Concordance)</h2>
+      <p>
+        The table below shows the official relationship between SAT Total Scores (400-1600) and ACT Composite Scores (1-36).
+      </p>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
+          <thead class="bg-violet-800 text-white">
+            <tr>
+              <th class="px-4 py-3">SAT Score Range</th>
+              <th class="px-4 py-3">ACT Score</th>
+              <th class="px-4 py-3">Competitiveness</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-violet-100 border border-violet-200">
+            <tr><td class="px-4 py-2 font-semibold">1570-1600</td><td class="px-4 py-2 font-bold text-violet-700">36</td><td>Perfect</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1530-1560</td><td class="px-4 py-2 font-bold text-violet-700">35</td><td>Elite</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1490-1520</td><td class="px-4 py-2 font-bold text-violet-700">34</td><td>Elite</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1450-1480</td><td class="px-4 py-2 font-bold text-violet-700">33</td><td>High</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1420-1440</td><td class="px-4 py-2 font-bold text-violet-700">32</td><td>High</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1390-1410</td><td class="px-4 py-2 font-bold text-violet-700">31</td><td>Very Good</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1360-1380</td><td class="px-4 py-2 font-bold text-violet-700">30</td><td>Very Good</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1330-1350</td><td class="px-4 py-2 font-bold text-violet-700">29</td><td>Good</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1300-1320</td><td class="px-4 py-2 font-bold text-violet-700">28</td><td>Good</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1260-1290</td><td class="px-4 py-2 font-bold text-violet-700">27</td><td>Above Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1230-1250</td><td class="px-4 py-2 font-bold text-violet-700">26</td><td>Above Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1200-1220</td><td class="px-4 py-2 font-bold text-violet-700">25</td><td>Above Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1160-1190</td><td class="px-4 py-2 font-bold text-violet-700">24</td><td>Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1130-1150</td><td class="px-4 py-2 font-bold text-violet-700">23</td><td>Average</td></tr>
+             <tr><td class="px-4 py-2 font-semibold">1100-1120</td><td class="px-4 py-2 font-bold text-violet-700">22</td><td>Average</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Key Differences Between SAT and ACT</h2>
+      <ul>
+        <li><strong>Time per Question:</strong> The ACT is faster-paced. You have less time per question compared to the SAT.</li>
+        <li><strong>Science Section:</strong> The ACT has a dedicated Science section (mostly chart reading), while the SAT incorporates science topics into Reading/Writing passages.</li>
+        <li><strong>Math:</strong> SAT Math covers fewer topics but in more depth (heavy on algebra). ACT Math is broader, including more geometry and trigonometry.</li>
+        <li><strong>Digital vs. Paper:</strong> The SAT is fully digital and adaptive. The ACT is also moving to a digital format but offers a paper option in some cases, and is experimenting with optional sections.</li>
+      </ul>
+    </article>
+  </main>
+</Layout>

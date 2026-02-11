@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+
+const pageTitle = "SAT Percentile Calculator - See Your National Ranking";
+const pageDescription = "Convert your SAT score (400-1600) to a national percentile rank. See how you compare to other high school students and college applicants nationwide.";
+const pageKeywords = "SAT percentile calculator, SAT score percentile, SAT national rank, SAT percentile chart 2026, good SAT percentile";
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        SAT Percentile Calculator
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        What does your score really mean? Convert your total SAT score to a national percentile rank to see how you stack up against other test-takers.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16">
+      <SATCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>Understanding SAT Percentiles</h2>
+      <p>
+        Your SAT percentile rank tells you the percentage of test-takers who scored lower than or equal to you. For example, if you are in the <strong>75th percentile</strong>, you scored better than 75% of all students who took the SAT.
+      </p>
+      
+      <h3>What is a "Good" Percentile?</h3>
+      <p>
+        "Good" is relative to your college goals, but here are general benchmarks:
+      </p>
+      <ul>
+        <li><strong>99th Percentile (1520+):</strong> Top tier. Competitive for Ivy League and highly selective universities.</li>
+        <li><strong>90th Percentile (1350+):</strong> Excellent. Competitive for most top public universities and many private colleges.</li>
+        <li><strong>75th Percentile (1200+):</strong> Strong. Above average and solid for many state flagship universities.</li>
+        <li><strong>50th Percentile (~1050):</strong> Average. Exactly in the middle of the pack.</li>
+      </ul>
+
+      <h2>SAT Score Percentile Chart (2025-2026 Estimates)</h2>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">SAT Total Score</th>
+              <th class="px-4 py-3 text-left">National Percentile</th>
+              <th class="px-4 py-3 text-left">Competitiveness</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 border border-slate-200">
+            <tr><td class="px-4 py-3 font-semibold">1600</td><td class="px-4 py-3">99+</td><td class="px-4 py-3 text-emerald-600 font-bold">Perfect</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1550</td><td class="px-4 py-3">99</td><td class="px-4 py-3 text-emerald-600 font-bold">Elite</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1500</td><td class="px-4 py-3">98</td><td class="px-4 py-3 text-emerald-600 font-bold">Elite</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1450</td><td class="px-4 py-3">96</td><td class="px-4 py-3 text-emerald-600">Highly Competitive</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1400</td><td class="px-4 py-3">93</td><td class="px-4 py-3 text-emerald-600">Highly Competitive</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1350</td><td class="px-4 py-3">90</td><td class="px-4 py-3 text-blue-600">Very Competitive</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1300</td><td class="px-4 py-3">86</td><td class="px-4 py-3 text-blue-600">Very Competitive</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1250</td><td class="px-4 py-3">81</td><td class="px-4 py-3 text-blue-600">Competitive</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1200</td><td class="px-4 py-3">74</td><td class="px-4 py-3 text-blue-600">Competitive</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1150</td><td class="px-4 py-3">67</td><td class="px-4 py-3 text-slate-600">Above Average</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1100</td><td class="px-4 py-3">59</td><td class="px-4 py-3 text-slate-600">Above Average</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1050</td><td class="px-4 py-3">50</td><td class="px-4 py-3 text-slate-600">Average</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1000</td><td class="px-4 py-3">41</td><td class="px-4 py-3 text-slate-500">Below Average</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-400">
+        Note: Percentiles are based on the latest available College Board data for college-bound seniors and may vary slightly year to year.
+      </p>
+    </article>
+  </main>
+</Layout>

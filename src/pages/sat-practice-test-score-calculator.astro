@@ -1,0 +1,67 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+
+const pageTitle = "SAT Practice Test Score Calculator - Score Bluebook Tests 1-6";
+const pageDescription = "Calculate accurate scores for official Bluebook Practice Tests 1, 2, 3, 4, 5, and 6. Use the specific scoring curves for each official practice exam.";
+const pageKeywords = "SAT practice test calculator, Bluebook score calculator, score Bluebook practice test, SAT practice test 1 score calculator, SAT practice test 2 score calculator, SAT practice test 3 score calculator, SAT practice test 4 score calculator, SAT practice test 5 score calculator, SAT practice test 6 score calculator";
+
+const breadcrumbs = [
+  { name: "SAT Practice Test Score Calculator", item: "/sat-practice-test-score-calculator" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        SAT Practice Test Score Calculator
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Don't guess your score. Our **SAT Practice Test Score Calculator** uses the official scoring curves for each Bluebook practice test (1-6) to give you the most accurate result possible.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16">
+      <SATCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>Why Use Specific Practice Test Curves?</h2>
+      <p>
+        Every SAT test form has a slightly different difficulty level, and therefore a slightly different scoring "curve" (or equating process). Getting 5 questions wrong on Practice Test 1 might result in a 740, while getting 5 wrong on a harder test like Practice Test 4 might result in a 760.
+      </p>
+      <p>
+        To get an accurate score, you must use the scoring table that corresponds to the specific test you took. Our calculator automatically handles this when you select which Bluebook practice test you are scoring.
+      </p>
+
+      <h2>Supported Practice Tests</h2>
+      <ul>
+        <li><strong>Bluebook Practice Test 1:</strong> The baseline test. Good for initial diagnostics.</li>
+        <li><strong>Bluebook Practice Test 2:</strong> Similar in difficulty to Test 1.</li>
+        <li><strong>Bluebook Practice Test 3:</strong> Includes slightly harder reading passages.</li>
+        <li><strong>Bluebook Practice Test 4:</strong> Known for a challenging math section.</li>
+        <li><strong>Bluebook Practice Test 5:</strong> Released in 2024, reflects current question trends.</li>
+        <li><strong>Bluebook Practice Test 6:</strong> The most recent official practice test.</li>
+      </ul>
+
+      <h2>How to Find Your Raw Scores</h2>
+      <ol>
+        <li>Complete the practice test in the Bluebook app.</li>
+        <li>Go to "My Practice" on the College Board website to view your score report.</li>
+        <li>Expand the "Knowledge and Skills" section or review individual questions to count how many you answered correctly in each module.</li>
+        <li>Enter those raw numbers (e.g., 25/27) into our calculator above.</li>
+      </ol>
+
+      <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 not-prose my-8">
+        <h3 class="text-lg font-bold text-indigo-900 mb-2">Analyzing Your Mistakes</h3>
+        <p class="text-sm text-indigo-700">
+          Scoring is just the first step. To improve, review every incorrect answer. Was it a content gap (you didn't know the math formula) or a strategy error (you misread the question)? Categorizing your errors is the fastest way to increase your score.
+        </p>
+      </div>
+    </article>
+  </main>
+</Layout>

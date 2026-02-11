@@ -95,33 +95,13 @@ const faqSchema = {
   }))
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://satcalculator.co"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "SAT Score Calculator",
-      "item": "https://satcalculator.co"
-    }
-  ]
-};
+
 ---
 
-<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
-  <!-- Structured Data -->
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(siteNavSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   </Fragment>
 
   <!-- Header -->
@@ -324,18 +304,20 @@ const breadcrumbSchema = {
             <li><a href="/blog/can-you-use-a-calculator-on-the-sat" class="hover:text-indigo-600 transition-colors">Calculator Guide</a></li>
           </ul>
         </nav>
-        <nav aria-label="Tools">
-          <h2 class="font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest font-heading">Tools</h2>
-          <ul class="space-y-2 text-sm text-slate-500">
-            <li><a href="#calculator" class="hover:text-indigo-600 transition-colors">SAT Score Calculator</a></li>
-            <li><a href="#calculator" class="hover:text-indigo-600 transition-colors">Score History Tracker</a></li>
-            <li><a href="#calculator" class="hover:text-indigo-600 transition-colors">Superscore Calculator</a></li>
-            <li><a href="#calculator" class="hover:text-indigo-600 transition-colors">College Match (100+ Schools)</a></li>
-            <li><a href="#calculator" class="hover:text-indigo-600 transition-colors">ACT/SAT Concordance</a></li>
-            <li><a href="#calculator" class="hover:text-indigo-600 transition-colors">PSAT/NMSQT Calculator</a></li>
-            <li><a href="#calculator" class="hover:text-indigo-600 transition-colors">Score Goal Tracker</a></li>
-          </ul>
-        </nav>
+          <nav aria-label="Tools">
+            <h2 class="font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest font-heading">Tools</h2>
+            <ul class="space-y-2 text-sm text-slate-500">
+              <li><a href="/sat-score-calculator" class="hover:text-indigo-600 transition-colors">SAT Score Calculator</a></li>
+              <li><a href="/digital-sat-score-calculator" class="hover:text-indigo-600 transition-colors">Digital SAT Calculator (Adaptive)</a></li>
+              <li><a href="/can-you-superscore-digital-sat" class="hover:text-indigo-600 transition-colors">Superscore Calculator</a></li>
+              <li><a href="/sat-percentile-calculator" class="hover:text-indigo-600 transition-colors">SAT Percentile Calculator</a></li>
+              <li><a href="/sat-act-score-converter" class="hover:text-indigo-600 transition-colors">ACT/SAT Concordance</a></li>
+              <li><a href="/sat-practice-test-score-calculator" class="hover:text-indigo-600 transition-colors">Practice Test Calculator</a></li>
+              <li><a href="/sat-math-score-calculator" class="hover:text-indigo-600 transition-colors">SAT Math Calculator</a></li>
+              <li><a href="/act-score-calculator-without-science" class="hover:text-indigo-600 transition-colors">ACT Calculator (No Science)</a></li>
+              <li><a href="/act-percentile-calculator" class="hover:text-indigo-600 transition-colors">ACT Percentile Calculator</a></li>
+            </ul>
+          </nav>
         <nav aria-label="Company">
           <h2 class="font-bold text-slate-800 mb-4 uppercase text-xs tracking-widest font-heading">Company</h2>
           <ul class="space-y-2 text-sm text-slate-500">

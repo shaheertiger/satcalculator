@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ACTNoScienceCalculator from '../components/ACTNoScienceCalculator';
+import ACTSATConcordance from '../components/ACTSATConcordance';
+
+const pageTitle = "ACT Score Calculator Without Science - 2026 Format";
+const pageDescription = "Calculate your ACT Composite score using only English, Math, and Reading sections. Designed for the new optional-Science ACT format. See how skipping science affects your score.";
+const pageKeywords = "ACT calculator without science, ACT no science score, calculate ACT score without science, new ACT format calculator, ACT super scoring without science";
+
+const breadcrumbs = [
+  { name: "ACT Score Calculator (No Science)", item: "/act-score-calculator-without-science" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        ACT Score Calculator (No Science)
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        The ACT is changing. With the Science section becoming optional, use this **ACT Score Calculator** to estimate your Composite score based only on English, Math, and Reading.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <ACTNoScienceCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>The New ACT Format (2025-2026)</h2>
+      <p>
+        Starting in Spring 2025, the ACT is introducing significant changes, including making the <strong>Science section optional</strong>. This aligns the ACT more closely with the SAT, which has never had a dedicated science section.
+      </p>
+
+      <h3>How is the "No Science" ACT Scored?</h3>
+      <p>
+        Traditionally, the ACT Composite score was the average of four sections: English, Math, Reading, and Science.
+      </p>
+      <p>
+        If you choose to skip the Science section, your Composite score will be calculated as the average of your three remaining sections:
+      </p>
+      <div class="bg-indigo-50 border border-indigo-100 p-6 rounded-xl not-prose text-center my-6">
+        <p class="text-xl font-bold text-indigo-900">
+          (English + Math + Reading) ÷ 3
+        </p>
+      </div>
+      <p>
+        The result is rounded to the nearest whole number. For example, if your average is 29.5, your score becomes a 30. If it is 29.33, your score remains 29.
+      </p>
+
+      <h2>Should You Skip the Science Section?</h2>
+      <ul>
+        <li><strong>Skip it if:</strong> Science is your weakest subject and lowers your overall average. Focusing on the other three could boost your Composite score.</li>
+        <li><strong>Take it if:</strong> You are applying to STEM programs (Engineering, Pre-Med, Biology) which may still require or strongly prefer seeing a Science score.</li>
+      </ul>
+
+      <h2>Compare with SAT</h2>
+      <p>
+        Without the Science section, the ACT structure is very similar to the SAT. You can use the concordance tool below to see how your "No Science" ACT score compares to an SAT score.
+      </p>
+    </article>
+
+    <div class="mt-16 pt-16 border-t border-slate-200">
+      <h3 class="text-2xl font-bold text-slate-900 text-center mb-8">Compare to SAT Score</h3>
+      <div class="max-w-2xl mx-auto">
+        <ACTSATConcordance client:load defaultDirection="act-to-sat" />
+      </div>
+    </div>
+  </main>
+</Layout>

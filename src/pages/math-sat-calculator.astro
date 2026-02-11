@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+
+const pageTitle = "Math SAT Calculator - Digital SAT Math Scoring Guide";
+const pageDescription = "Calculate your math SAT score instantly. Understand the Digital SAT math scoring curve and how adaptive modules affect your math result. Essential for targeting an 800.";
+const pageKeywords = "math SAT calculator, Digital SAT score calculator math, SAT math scoring curve, SAT math calculator 800 guide, SAT math difficulty levels";
+
+const breadcrumbs = [
+  { name: "Math SAT Calculator", item: "/math-sat-calculator" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        Math SAT Calculator
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Use this <strong>Math SAT Calculator</strong> to estimate your digital SAT math score using the official adaptive algorithm. See exactly how many questions you need to get right for your target score.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16">
+      <SATCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>Understanding Digital SAT Math Scoring</h2>
+      <p>
+        The Math section is unique because it features a built-in Desmos graphing calculator and is fully adaptive. Your score depends heavily on which questions you answer correctly in Module 1.
+      </p>
+
+      <h3>The "Routing" Module</h3>
+      <p>
+        The first module (22 questions) contains a mix of easy, medium, and hard questions.
+      </p>
+      <ul>
+        <li><strong>Perform Well:</strong> You are routed to the <strong>Harder Module 2</strong>. This is critical for high scorers. Even if you miss a few questions here, you can still score a 700-800.</li>
+        <li><strong>Perform Poorly:</strong> You are routed to the <strong>Easier Module 2</strong>. Your score will be capped, typically around <strong>600-650</strong>, regardless of how well you do on the second module.</li>
+      </ul>
+
+      <h2>Strategies for a Top Score</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Master Desmos</h3>
+          <p class="text-sm text-blue-700">
+            For systems of equations, inequalities, and function questions, the Desmos calculator is often faster than solving by hand. Learn to type equations quickly.
+          </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+          <h3 class="text-lg font-bold text-amber-900 mb-2">Identify Question Types</h3>
+          <p class="text-sm text-amber-700">
+            Know the difference between "Heart of Algebra" and "Passport to Advanced Math." Each has predictable patterns on the Digital SAT.
+          </p>
+        </div>
+      </div>
+
+      <h2>Using This Calculator</h2>
+      <p>
+        Input your raw correct answers for Math Module 1 and Math Module 2. Our calculator will estimate your scaled score (200-800) based on the official Bluebook curves, accounting for difficulty routing.
+      </p>
+    </article>
+  </main>
+</Layout>

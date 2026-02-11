@@ -31,8 +31,12 @@ const CONCORDANCE_TABLE: { act: number; sat: number }[] = [
   { act: 11, sat: 760 },
 ];
 
-const ACTSATConcordance: React.FC = () => {
-  const [direction, setDirection] = useState<'act-to-sat' | 'sat-to-act'>('act-to-sat');
+interface Props {
+  defaultDirection?: 'act-to-sat' | 'sat-to-act';
+}
+
+const ACTSATConcordance: React.FC<Props> = ({ defaultDirection = 'act-to-sat' }) => {
+  const [direction, setDirection] = useState<'act-to-sat' | 'sat-to-act'>(defaultDirection);
   const [actInput, setActInput] = useState(28);
   const [satInput, setSatInput] = useState(1350);
   const [isExpanded, setIsExpanded] = useState(false);

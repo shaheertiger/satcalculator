@@ -1,0 +1,93 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+
+const pageTitle = "SAT Score Calculator 2026 - Digital SAT Score Estimator";
+const pageDescription = "Calculate your total SAT score (400-1600) based on raw module results. This free Digital SAT score calculator uses official Bluebook practice test curves to provide accurate estimates.";
+const pageKeywords = "SAT score calculator, Digital SAT score calculator, calculate SAT score, SAT score estimator, SAT raw score conversion, Bluebook SAT calculator";
+
+const breadcrumbs = [
+  { name: "SAT Score Calculator", item: "/sat-score-calculator" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is the Digital SAT scored differently?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unlike the paper SAT, the Digital SAT uses multistage adaptive testing. Your performance on the first module of each section determines the difficulty of the second module. This routing affects your maximum possible score."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": " Is this calculator accurate for the 2026 Digital SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our calculator is built using scoring data from the official College Board Bluebook practice tests, which reflect the current adaptive scoring model for the 2026 testing year."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        SAT Score Calculator 2026
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Use this <strong>SAT Score Calculator</strong> to estimate your total score (400-1600) based on raw module results. Uses official Bluebook practice test curves.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16">
+      <SATCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>How to Use This Calculator</h2>
+      <p>
+        The Digital SAT is adaptive, meaning your score isn't determined solely by how many questions you get right. The difficulty of the questions matters. Here is how to use our tool to get the best estimate:
+      </p>
+      <ol>
+        <li><strong>Enter Reading and Writing Scores:</strong> Input the number of correct answers for Module 1 (out of 27) and Module 2 (out of 27).</li>
+        <li><strong>Enter Math Scores:</strong> Input the number of correct answers for Module 1 (out of 22) and Module 2 (out of 22).</li>
+        <li><strong>Select Expected Difficulty:</strong> If you performed well on Module 1, you were likely routed to the "Hard" Module 2. If you struggled, you may have received the "Easy" Module 2. Our calculator can auto-detect this based on your Module 1 score.</li>
+      </ol>
+
+      <h2>Understanding the 1600 Scale</h2>
+      <p>
+        The SAT is scored on a scale between 400 and 1600.
+      </p>
+      <ul>
+        <li><strong>Reading & Writing:</strong> 200–800 points</li>
+        <li><strong>Math:</strong> 200–800 points</li>
+      </ul>
+      <p>
+        The total score is simply the sum of these two section scores. The "raw score" (total number of correct questions) is converted to this scaled score using a process called equating, which ensures that scores are consistent across different test dates.
+      </p>
+
+      <h2>Is This Accurate for the Digital SAT?</h2>
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 not-prose mb-6">
+        <p class="text-sm text-blue-700 m-0">
+          <strong>Note:</strong> This calculator uses curves derived from official College Board Bluebook practice tests. While highly accurate for practice exams, the real SAT uses Item Response Theory (IRT) with pre-equated questions, meaning the exact weight of each question can vary slightly from test to test.
+        </p>
+      </div>
+      <p>
+        Because the Digital SAT is adaptive, two students with the same number of correct answers can receive different scores depending on which module path they took. This calculator simulates that adaptive nature to give you a realistic score range.
+      </p>
+    </article>
+  </main>
+</Layout>

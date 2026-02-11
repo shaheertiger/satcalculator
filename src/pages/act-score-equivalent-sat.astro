@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ACTSATConcordance from '../components/ACTSATConcordance';
+
+const pageTitle = "ACT Score Equivalent to SAT - Official Score Comparison";
+const pageDescription = "Convert your ACT Composite score to the SAT 1600 scale. Use the official concordance tables to see how your ACT performance translates to the SAT.";
+const pageKeywords = "ACT score equivalent to SAT, ACT to SAT conversion, convert ACT to SAT, what is my ACT score in SAT";
+
+const breadcrumbs = [
+  { name: "ACT Score Equivalent to SAT", item: "/act-score-equivalent-sat" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        ACT Score Equivalent to SAT
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Curious about your potential SAT score? Find your <strong>ACT score equivalent to SAT</strong> based on your existing ACT composite.
+      </p>
+    </div>
+
+    <!-- Concordance Component (Default: ACT to SAT) -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <ACTSATConcordance client:load defaultDirection="act-to-sat" />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>Why You Should Know Both Scores</h2>
+      <p>
+        Even if you only took the ACT, knowing your SAT equivalent is valuable. Many scholarship programs list requirements for both tests, but sometimes only one is explicitly mentioned on a flyer or website. Being able to quickly convert your score ensures you don't miss opportunities.
+      </p>
+
+      <h3>Is One Test Easier?</h3>
+      <p>
+        Not necessarily. The ACT is faster-paced but more straightforward. The SAT gives you more time per question but requires deeper critical thinking, especially in math. However, the <strong>concordance</strong> ensures that a "34" on the ACT represents the same level of academic achievement as a "1500" on the SAT.
+      </p>
+
+      <h2>Conversion Chart (ACT → SAT)</h2>
+      <p>
+        Here is a quick reference for common score ranges:
+      </p>
+      <ul>
+        <li><strong>36 ACT</strong> ≈ <strong>1590 SAT</strong></li>
+        <li><strong>35 ACT</strong> ≈ <strong>1540 SAT</strong></li>
+        <li><strong>34 ACT</strong> ≈ <strong>1500 SAT</strong></li>
+        <li><strong>33 ACT</strong> ≈ <strong>1460 SAT</strong></li>
+        <li><strong>32 ACT</strong> ≈ <strong>1430 SAT</strong></li>
+        <li><strong>31 ACT</strong> ≈ <strong>1400 SAT</strong></li>
+        <li><strong>30 ACT</strong> ≈ <strong>1370 SAT</strong></li>
+        <li><strong>29 ACT</strong> ≈ <strong>1340 SAT</strong></li>
+        <li><strong>28 ACT</strong> ≈ <strong>1310 SAT</strong></li>
+      </ul>
+    </article>
+  </main>
+</Layout>

@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "How to Calculate SAT Score - Step-by-Step Guide";
+const pageDescription = "Learn the math behind SAT scoring. From raw scores to scaled scores (200-800) and the total 1600. Understand equating and how the Digital SAT curves work.";
+const pageKeywords = "how to calculate SAT score, SAT scoring chart, calculate SAT score manually, SAT raw score to scaled score, SAT scoring guide";
+
+const breadcrumbs = [
+  { name: "How to Calculate SAT Score", item: "/how-to-calculate-sat-score" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        How to Calculate Your SAT Score
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Wondering **how to calculate SAT score** results from your raw answers? Here is the step-by-step breakdown of how the College Board turns your raw answers into a scaled score.
+      </p>
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>The Basic Formula</h2>
+      <p>
+        Your total SAT score is the sum of two section scores:
+      </p>
+      <ul>
+        <li><strong>Reading and Writing (RW):</strong> 200–800 points</li>
+        <li><strong>Math:</strong> 200–800 points</li>
+      </ul>
+      <p>
+        <strong>Total Score = RW Score + Math Score</strong> (Range: 400–1600)
+      </p>
+
+      <h2>Step 1: Calculate Your Raw Score</h2>
+      <p>
+        Your "raw score" is simply the number of questions you answered correctly.
+      </p>
+      <ul>
+        <li>There is <strong>no penalty for guessing</strong>. Incorrect answers count as 0 points, not negative points.</li>
+        <li><strong>Reading & Writing:</strong> 54 questions total (2 modules of 27). Max raw score = 54.</li>
+        <li><strong>Math:</strong> 44 questions total (2 modules of 22). Max raw score = 44.</li>
+      </ul>
+
+      <h2>Step 2: Convert to Scaled Score</h2>
+      <p>
+        This is where it gets tricky. You cannot simply multiply your raw score by a number. The College Board uses a process called <strong>equating</strong> to account for small differences in difficulty between different test versions.
+      </p>
+      <p>
+        For example, on one test date, a raw math score of 40/44 might result in a <strong>760</strong>. On a harder test date, that same 40/44 might be worth a <strong>780</strong>.
+      </p>
+
+      <h3>Sample Scoring Chart (Estimate)</h3>
+      <div class="not-prose overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
+          <thead class="bg-slate-100 text-slate-700">
+            <tr>
+              <th class="px-4 py-2 border border-slate-200">Raw Score (Correct Answers)</th>
+              <th class="px-4 py-2 border border-slate-200">Est. Math Score</th>
+              <th class="px-4 py-2 border border-slate-200">Est. RW Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="border border-slate-200 py-1">Max (44/54)</td><td class="border border-slate-200 py-1 font-bold">800</td><td class="border border-slate-200 py-1 font-bold">800</td></tr>
+            <tr><td class="border border-slate-200 py-1">-1</td><td class="border border-slate-200 py-1">790</td><td class="border border-slate-200 py-1">790</td></tr>
+            <tr><td class="border border-slate-200 py-1">-2</td><td class="border border-slate-200 py-1">780</td><td class="border border-slate-200 py-1">780</td></tr>
+            <tr><td class="border border-slate-200 py-1">-3</td><td class="border border-slate-200 py-1">760</td><td class="border border-slate-200 py-1">760</td></tr>
+            <tr><td class="border border-slate-200 py-1">-4</td><td class="border border-slate-200 py-1">750</td><td class="border border-slate-200 py-1">740</td></tr>
+            <tr><td class="border border-slate-200 py-1">-5</td><td class="border border-slate-200 py-1">730</td><td class="border border-slate-200 py-1">720</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>The Digital SAT Difference</h2>
+      <p>
+        On the <a href="/digital-sat-score-calculator" class="text-indigo-600 hover:underline">Digital SAT</a>, scoring is even more complex due to <strong>Item Response Theory (IRT)</strong>.
+      </p>
+      <ul>
+        <li>Not all questions are worth the same amount.</li>
+        <li>Harder questions may be weighted more heavily in calculating your ability level.</li>
+        <li>Your score is also influenced by which module path (Easy or Hard) you are routed to after the first module.</li>
+      </ul>
+      <p>
+        Because of this, it is impossible to calculate your exact Digital SAT score manually with 100% precision. However, you can use our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT tools</a> to get a highly accurate estimate based on official practice curves.
+      </p>
+    </article>
+  </main>
+</Layout>

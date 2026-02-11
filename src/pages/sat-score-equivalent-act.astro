@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ACTSATConcordance from '../components/ACTSATConcordance';
+
+const pageTitle = "SAT Score Equivalent to ACT - Official Score Comparison";
+const pageDescription = "Find your ACT score equivalent based on your SAT total. Use the official College Board concordance tables to see if your SAT score is stronger than your ACT score.";
+const pageKeywords = "SAT score equivalent to ACT, SAT to ACT conversion, convert SAT to ACT, what is my SAT score in ACT";
+
+const breadcrumbs = [
+  { name: "SAT Score Equivalent to ACT", item: "/sat-score-equivalent-act" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        SAT Score Equivalent to ACT
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Many colleges accept both test scores. Use this tool to find out what your <strong>SAT score equivalent to ACT</strong> is on the 36-point scale.
+      </p>
+    </div>
+
+    <!-- Concordance Component (Default: SAT to ACT) -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <ACTSATConcordance client:load defaultDirection="sat-to-act" />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>Why Convert Scores?</h2>
+      <p>
+        If you have taken both the SAT and the ACT, you should submit the score that is relatively higher. But since the scoring scales are completely different (400-1600 vs. 1-36), you need an official conversion chart to compare them.
+      </p>
+
+      <h3>How Colleges View Equivalent Scores</h3>
+      <p>
+        Admissions officers use these exact concordance tables to standardize applicant data. An SAT score of <strong>1400</strong> is treated as roughly equal to an ACT score of <strong>30</strong>.
+      </p>
+      <ul>
+        <li><strong>Sending Scores:</strong> You generally do not need to send both scores unless a specific program requests it. Send your strongest one.</li>
+        <li><strong>Merit Aid:</strong> Some scholarships have specific cutoffs for each test (e.g., "1350 SAT or 29 ACT"). Always check the conversion to see if you qualify.</li>
+      </ul>
+
+      <h2>Conversion Chart (SAT → ACT)</h2>
+      <p>
+        Here is a quick reference for common score ranges:
+      </p>
+      <ul>
+        <li><strong>1570–1600 SAT</strong> ≈ <strong>36 ACT</strong></li>
+        <li><strong>1530–1550 SAT</strong> ≈ <strong>35 ACT</strong></li>
+        <li><strong>1490–1520 SAT</strong> ≈ <strong>34 ACT</strong></li>
+        <li><strong>1450–1480 SAT</strong> ≈ <strong>33 ACT</strong></li>
+        <li><strong>1420–1440 SAT</strong> ≈ <strong>32 ACT</strong></li>
+        <li><strong>1390–1410 SAT</strong> ≈ <strong>31 ACT</strong></li>
+        <li><strong>1360–1380 SAT</strong> ≈ <strong>30 ACT</strong></li>
+        <li><strong>1330–1350 SAT</strong> ≈ <strong>29 ACT</strong></li>
+        <li><strong>1300–1320 SAT</strong> ≈ <strong>28 ACT</strong></li>
+      </ul>
+    </article>
+  </main>
+</Layout>

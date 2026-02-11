@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ACTSATConcordance from '../components/ACTSATConcordance';
+
+const pageTitle = "ACT Percentile Calculator - National Rankings 2026";
+const pageDescription = "Check your ACT percentile rank. Understand what your ACT composite score means compared to other test-takers nationwide. Accurate percentile data for 2026 admissions.";
+const pageKeywords = "ACT percentile calculator, ACT score percentile, ACT national rank, ACT score ranking, what is a good ACT percentile";
+
+const breadcrumbs = [
+  { name: "ACT Percentile Calculator", item: "/act-percentile-calculator" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        ACT Percentile Calculator
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Your ACT score is more than just a number. Use this <strong>ACT Percentile Calculator</strong> to see your standing among millions of students and find your exact percentile ranking.
+      </p>
+    </div>
+
+    <!-- Concordance Component (Useful for context) -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <ACTSATConcordance client:load defaultDirection="act-to-sat" />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>ACT Percentile Chart (2025-2026 Estimates)</h2>
+      <p>
+        The following table shows the national percentile rank for each ACT Composite Score.
+      </p>
+      
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
+          <thead class="bg-indigo-800 text-white">
+            <tr>
+              <th class="px-4 py-3">ACT Score</th>
+              <th class="px-4 py-3">Percentile</th>
+              <th class="px-4 py-3">Competitiveness</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-indigo-100 border border-indigo-200">
+            <tr><td class="px-4 py-2 font-bold text-slate-900">36</td><td class="px-4 py-2 font-bold text-indigo-700">100th</td><td>Perfect</td></tr>
+            <tr><td class="px-4 py-2 font-bold text-slate-900">35</td><td class="px-4 py-2 font-bold text-indigo-700">99th</td><td>Elite</td></tr>
+            <tr><td class="px-4 py-2 font-bold text-slate-900">34</td><td class="px-4 py-2 font-bold text-indigo-700">99th</td><td>Elite</td></tr>
+            <tr><td class="px-4 py-2 font-bold text-slate-900">33</td><td class="px-4 py-2 font-bold text-indigo-700">98th</td><td>Ivy League Avg</td></tr>
+            <tr><td class="px-4 py-2 font-bold text-slate-900">32</td><td class="px-4 py-2 font-bold text-indigo-700">97th</td><td>Highly Competitive</td></tr>
+            <tr><td class="px-4 py-2 font-bold text-slate-900">31</td><td class="px-4 py-2 font-bold text-indigo-700">95th</td><td>Highly Competitive</td></tr>
+            <tr><td class="px-4 py-2 font-bold text-slate-900">30</td><td class="px-4 py-2 font-bold text-indigo-700">93rd</td><td>Competitive</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">29</td><td class="px-4 py-2">90th</td><td>Competitive</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">28</td><td class="px-4 py-2">87th</td><td>Competitive</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">27</td><td class="px-4 py-2">84th</td><td>Good</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">26</td><td class="px-4 py-2">81st</td><td>Good</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">25</td><td class="px-4 py-2">77th</td><td>Above Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">24</td><td class="px-4 py-2">73rd</td><td>Above Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">23</td><td class="px-4 py-2">69th</td><td>Above Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">22</td><td class="px-4 py-2">64th</td><td>Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">21</td><td class="px-4 py-2">59th</td><td>Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold text-slate-700">20</td><td class="px-4 py-2">54th</td><td>Average</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What is a Good ACT Percentile?</h2>
+      <p>
+        The national average ACT score is roughly a <strong>19-20</strong>.
+      </p>
+      <ul>
+        <li><strong>Top 10% (30-36):</strong> Scores in this range make you a strong candidate for most universities in the US.</li>
+        <li><strong>Top 25% (25-29):</strong> This is a solid range for state flagship universities and many private colleges.</li>
+        <li><strong>Top 50% (20-24):</strong> You are scoring above average, which is sufficient for admission to many four-year colleges.</li>
+      </ul>
+    </article>
+  </main>
+</Layout>

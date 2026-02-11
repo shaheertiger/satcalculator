@@ -1,0 +1,77 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SuperscoreCalculator from '../components/SuperscoreCalculator';
+
+const pageTitle = "Can You Superscore the Digital SAT? (Yes, Here's How)";
+const pageDescription = "Learn how superscoring works for the new Digital SAT. Use our calculator to find your highest composite score. See which colleges accept Digital SAT superscores.";
+const pageKeywords = "superscore Digital SAT, Digital SAT superscore policy, college superscore list, calculate SAT superscore, SAT score choice";
+
+const breadcrumbs = [
+  { name: "Can You Superscore the Digital SAT?", item: "/can-you-superscore-digital-sat" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        Can You Superscore the Digital SAT?
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Yes! Most colleges treat the **Digital SAT** exactly the same as the paper SAT for superscoring. Use our calculator to see your best possible score.
+      </p>
+    </div>
+
+    <!-- Superscore Component -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <SuperscoreCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>How Superscoring Works</h2>
+      <p>
+        "Superscoring" means a college will take your highest section scores from different test dates to create a new, higher composite score.
+      </p>
+      <ul>
+        <li><strong>Example:</strong>
+          <ul>
+            <li>Test 1 (March): <strong>700 Math</strong>, 600 RW = 1300 Total</li>
+            <li>Test 2 (May): 650 Math, <strong>720 RW</strong> = 1370 Total</li>
+            <li><strong>Superscore:</strong> 700 (Test 1 Math) + 720 (Test 2 RW) = <strong>1420 Total</strong></li>
+          </ul>
+        </li>
+      </ul>
+
+      <h2>Does the Digital SAT Change Anything?</h2>
+      <p>
+        No. The College Board has confirmed that scores from the Digital SAT are valid for superscoring.
+      </p>
+      <p>
+        In fact, you can even superscore a **Paper SAT** score with a **Digital SAT** score if a college accepts scores from that far back (though most students now only have Digital scores).
+      </p>
+
+      <h2>How to Send Your Superscore</h2>
+      <ol>
+        <li>Go to the College Board website and navigate to "Send Scores."</li>
+        <li>Select the colleges you want to apply to.</li>
+        <li>Choose <strong>"Score Choice"</strong> to select which test dates to send.</li>
+        <li>Send <strong>all</strong> dates that contain a highest section score. The college's admissions system will automatically calculate the superscore for you.</li>
+      </ol>
+
+      <h2>Which Colleges Superscore?</h2>
+      <p>
+        The vast majority of US colleges superscore the SAT, including:
+      </p>
+      <ul>
+        <li><strong>Ivy League:</strong> Harvard, Yale, Princeton, Columbia, UPenn, Brown, Dartmouth, Cornell.</li>
+        <li><strong>Top Private Universities:</strong> Stanford, MIT, Duke, UChicago, Johns Hopkins.</li>
+        <li><strong>Public Universities:</strong> UVA, UNC Chapel Hill, Georgia Tech, and many others.</li>
+      </ul>
+      <p>
+        <em>Always assume a college superscores unless their website explicitly says they do not.</em>
+      </p>
+    </article>
+  </main>
+</Layout>

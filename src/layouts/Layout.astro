@@ -7,6 +7,7 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   keywords?: string;
+  breadcrumbs?: Array<{ name: string; item: string }>;
 }
 
 const {
@@ -15,7 +16,27 @@ const {
   canonical = Astro.url.href,
   ogImage = 'https://satcalculator.co/og-image.png',
   keywords = 'SAT score calculator, SAT calculator, Digital SAT score calculator, SAT score estimator, SAT score, calculate SAT score, free SAT calculator, SAT percentile calculator, Digital SAT 2026',
+  breadcrumbs = [],
 } = Astro.props;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://satcalculator.co"
+    },
+    ...breadcrumbs.map((crumb, index) => ({
+      "@type": "ListItem",
+      "position": index + 2,
+      "name": crumb.name,
+      "item": `https://satcalculator.co${crumb.item}`
+    }))
+  ]
+};
 ---
 
 <!doctype html>
@@ -80,6 +101,9 @@ const {
 
     <!-- Vercel Web Analytics -->
     <Analytics />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
     <slot name="head" />
   </head>

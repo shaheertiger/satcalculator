@@ -1,0 +1,72 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+
+const pageTitle = "SAT Math Score Calculator - Calculate Your 800 Section Score";
+const pageDescription = "Estimate your SAT Math section score (200-800). Enter your correct answers for Math Module 1 and 2 to see where you stand on the Digital SAT math curve.";
+const pageKeywords = "SAT math score calculator, SAT math calculator, calculate SAT math score, Digital SAT math score, 800 math score calculator, SAT math section score";
+
+const breadcrumbs = [
+  { name: "SAT Math Score Calculator", item: "/sat-math-score-calculator" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        SAT Math Score Calculator
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Calculate your precise <strong>SAT Math Score</strong>. Enter your raw results for both modules to see if you're on track for a perfect 800.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16">
+      <SATCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>Focusing on the Math Section</h2>
+      <p>
+        The Math section makes up 50% of your total SAT score (800 out of 1600). It consists of two modules, each with 22 questions (44 total).
+      </p>
+      
+      <h3>Math Section Breakdown</h3>
+      <p>
+        To get a high score, you need mastery in four key areas:
+      </p>
+      <ul>
+        <li><strong>Algebra:</strong> Linear equations, systems of equations, and inequalities. This is the foundation of the test.</li>
+        <li><strong>Advanced Math:</strong> Quadratics, exponential functions, and polynomials. Essential for scores above 600.</li>
+        <li><strong>Problem-Solving and Data Analysis:</strong> Ratios, percentages, probability, and statistics.</li>
+        <li><strong>Geometry and Trigonometry:</strong> Area, volume, angles, and trigonometric functions (sine, cosine, tangent).</li>
+      </ul>
+
+      <h2>The Math Scoring Curve</h2>
+      <p>
+        The math curve can be unforgiving at the top end. On some easier test forms, missing just <strong>one question</strong> can drop your score to a 790 or even 780. On harder test forms, you might be able to miss one or two questions and still score a perfect 800.
+      </p>
+      <div class="not-prose bg-emerald-50 border border-emerald-100 p-6 rounded-xl my-8">
+        <h3 class="text-lg font-bold text-emerald-900 mb-2">Tip: Use the Desmos Calculator</h3>
+        <p class="text-sm text-emerald-700">
+          The Digital SAT includes a built-in Desmos graphing calculator for the entire math section. Mastering this tool is the single biggest "hack" for improving your math score. Many "hard" algebra and graphing questions can be solved in seconds by simply typing the equation into Desmos.
+        </p>
+      </div>
+
+      <h2>How to Use This Calculator for Math Only</h2>
+      <p>
+        If you only want to know your Math score:
+      </p>
+      <ol>
+        <li>Leave the "Reading & Writing" inputs blank or set to 0.</li>
+        <li>Enter your correct answers for Math Module 1 (out of 22).</li>
+        <li>Enter your correct answers for Math Module 2 (out of 22).</li>
+        <li>Check the "Math Score" output in the results section.</li>
+      </ol>
+    </article>
+  </main>
+</Layout>

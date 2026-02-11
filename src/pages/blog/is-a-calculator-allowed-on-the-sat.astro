@@ -102,37 +102,13 @@ const faqSchema = {
   ]
 };
 
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://satcalculator.co"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Blog",
-      "item": "https://satcalculator.co/blog"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Is a Calculator Allowed on the SAT?",
-      "item": "https://satcalculator.co/blog/is-a-calculator-allowed-on-the-sat"
-    }
-  ]
-};
+
 ---
 
-<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={[{ name: "Blog", item: "/blog" }, { name: "Is a Calculator Allowed on the SAT?", item: "/blog/is-a-calculator-allowed-on-the-sat" }]}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
     <meta property="article:published_time" content="2026-02-09" />
     <meta property="article:modified_time" content="2026-02-09" />
     <meta property="article:section" content="SAT Test Prep" />

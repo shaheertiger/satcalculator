@@ -1,0 +1,70 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+
+const pageTitle = "Digital SAT Score Calculator - Adaptive Scoring Simulation";
+const pageDescription = "Free Digital SAT calculator specific for the computer-based format. Simulates the adaptive scoring model including easy/hard module routing and score ceilings.";
+const pageKeywords = "Digital SAT score calculator, adaptive SAT scoring, Digital SAT calculator, SAT module routing, SAT scoring algorithm";
+
+const breadcrumbs = [
+  { name: "Digital SAT Score Calculator", item: "/digital-sat-score-calculator" }
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        Digital SAT Score Calculator (Adaptive)
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        The <strong>Digital SAT Score Calculator</strong> simulates the real adaptive scoring algorithm. Calculate scores based on adaptive routing and module difficulty.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16">
+      <SATCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>How Adaptive Scoring Works</h2>
+      <p>
+        The Digital SAT is not just a computerized version of the old paper test—it uses a Multistage Adaptive Testing (MST) model. This means the test adapts to your performance in real-time.
+      </p>
+      <p>
+        Each section (Reading/Writing and Math) is divided into two modules:
+      </p>
+      <ul>
+        <li><strong>Module 1:</strong> Contains a mix of easy, medium, and hard questions. This is the "Routing Module."</li>
+        <li><strong>Module 2:</strong> based on your performance in Module 1, you are routed to either an Easier Module 2 or a Harder Module 2.</li>
+      </ul>
+
+      <h2>Easy vs. Hard Module 2</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
+          <h3 class="text-lg font-bold text-indigo-900 mb-2">Lower Difficulty Path</h3>
+          <p class="text-sm text-indigo-700">
+            If you struggle on Module 1, you get easier questions in Module 2. While this may feel less stressful, it caps your maximum possible score, typically around <strong>600-650</strong> per section.
+          </p>
+        </div>
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">Higher Difficulty Path</h3>
+          <p class="text-sm text-emerald-700">
+            If you do well on Module 1, you get harder questions. This path unlocks the full scoring potential, allowing you to reach up to an <strong>800</strong> per section.
+          </p>
+        </div>
+      </div>
+
+      <h2>Why Raw Score ≠ Scaled Score</h2>
+      <p>
+        On paper tests, 30 correct answers always meant the same thing. On the Digital SAT, <strong>which</strong> questions you answer correctly matters.
+      </p>
+      <p>
+        Because of Item Response Theory (IRT), questions are weighted by difficulty. Getting a hard question wrong penalizes you less than missing an easy one. Conversely, getting easy questions right is "expected" and doesn't boost your score as much as solving the hardest problems. Our calculator uses official College Board data to simulate these weights.
+      </p>
+    </article>
+  </main>
+</Layout>
