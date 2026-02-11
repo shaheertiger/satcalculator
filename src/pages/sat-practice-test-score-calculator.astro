@@ -9,9 +9,43 @@ const pageKeywords = "SAT practice test calculator, Bluebook score calculator, s
 const breadcrumbs = [
   { name: "SAT Practice Test Score Calculator", item: "/sat-practice-test-score-calculator" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are Bluebook practice test scores accurate predictors of real SAT scores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bluebook practice tests are the most accurate predictor available because they use the same adaptive format and are created by the College Board. Most students score within 30-40 points of their practice test average on test day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do different practice tests give different scores for the same number correct?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each practice test has a unique scoring curve (equating table) because the difficulty of questions varies between tests. A harder test form is more generous with its curve to ensure fairness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many Bluebook practice tests are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of 2026, the College Board has released 6 official Bluebook practice tests. Tests 1-4 were part of the original launch, while Tests 5 and 6 were added later and reflect the most current question styles."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -19,7 +53,7 @@ const breadcrumbs = [
         SAT Practice Test Score Calculator
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        Don't guess your score. Our **SAT Practice Test Score Calculator** uses the official scoring curves for each Bluebook practice test (1-6) to give you the most accurate result possible.
+        Get an accurate score for your Bluebook practice test. Our <strong>SAT Practice Test Score Calculator</strong> uses the official scoring curves for each Bluebook practice test (1-6) to give you the most accurate result possible.
       </p>
     </div>
 
@@ -32,35 +66,115 @@ const breadcrumbs = [
     <article class="prose prose-slate max-w-3xl mx-auto">
       <h2>Why Use Specific Practice Test Curves?</h2>
       <p>
-        Every SAT test form has a slightly different difficulty level, and therefore a slightly different scoring "curve" (or equating process). Getting 5 questions wrong on Practice Test 1 might result in a 740, while getting 5 wrong on a harder test like Practice Test 4 might result in a 760.
+        Every SAT test form has a slightly different difficulty level, and therefore a slightly different scoring "curve" (or equating process). Getting 5 questions wrong on Practice Test 1 might result in a 740, while getting 5 wrong on a harder test like Practice Test 4 might result in a 760. This is not random — it is the College Board's way of ensuring that a score of 1400 represents the same level of achievement regardless of which test form you took.
       </p>
       <p>
         To get an accurate score, you must use the scoring table that corresponds to the specific test you took. Our calculator automatically handles this when you select which Bluebook practice test you are scoring.
       </p>
 
       <h2>Supported Practice Tests</h2>
-      <ul>
-        <li><strong>Bluebook Practice Test 1:</strong> The baseline test. Good for initial diagnostics.</li>
-        <li><strong>Bluebook Practice Test 2:</strong> Similar in difficulty to Test 1.</li>
-        <li><strong>Bluebook Practice Test 3:</strong> Includes slightly harder reading passages.</li>
-        <li><strong>Bluebook Practice Test 4:</strong> Known for a challenging math section.</li>
-        <li><strong>Bluebook Practice Test 5:</strong> Released in 2024, reflects current question trends.</li>
-        <li><strong>Bluebook Practice Test 6:</strong> The most recent official practice test.</li>
-      </ul>
+      <p>
+        The College Board offers six official Bluebook practice tests, each with its own characteristics. Understanding the differences helps you plan which tests to take and when:
+      </p>
+      <div class="not-prose space-y-4 my-8">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-1">Bluebook Practice Test 1</h3>
+          <p class="text-slate-600 text-sm">The baseline diagnostic test. This was one of the first released and is ideal for establishing your initial score. The math curve is considered moderate, and the reading passages represent a standard difficulty level. Use this as your starting point.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-1">Bluebook Practice Test 2</h3>
+          <p class="text-slate-600 text-sm">Similar in overall difficulty to Test 1, with slightly different content emphasis. Some students find the reading passages more challenging. A good second test to take after reviewing mistakes from Test 1.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-1">Bluebook Practice Test 3</h3>
+          <p class="text-slate-600 text-sm">Includes slightly harder reading passages with more complex vocabulary and inference questions. The math section remains comparable to Tests 1 and 2. Useful for students who want to stress-test their reading comprehension skills.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-1">Bluebook Practice Test 4</h3>
+          <p class="text-slate-600 text-sm">Known for a more challenging math section, particularly in Module 2. The scoring curve compensates for this, meaning you can miss more questions and still achieve a high score compared to easier test forms. This test is a strong indicator of performance under pressure.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-1">Bluebook Practice Test 5</h3>
+          <p class="text-slate-600 text-sm">Released in 2024, this test reflects more current question trends and is considered a better representation of what students will see on test day. The question styles more closely match recent actual test administrations.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-1">Bluebook Practice Test 6</h3>
+          <p class="text-slate-600 text-sm">The most recently released official practice test. Together with Test 5, this provides the best approximation of the current Digital SAT format. Save this test for your final practice session before the real exam to get the most accurate score prediction.</p>
+        </div>
+      </div>
 
       <h2>How to Find Your Raw Scores</h2>
+      <p>
+        After completing a practice test in the Bluebook app, follow these steps to find the raw numbers you need for our calculator:
+      </p>
       <ol>
-        <li>Complete the practice test in the Bluebook app.</li>
-        <li>Go to "My Practice" on the College Board website to view your score report.</li>
-        <li>Expand the "Knowledge and Skills" section or review individual questions to count how many you answered correctly in each module.</li>
-        <li>Enter those raw numbers (e.g., 25/27) into our calculator above.</li>
+        <li>Complete the practice test in the <strong>Bluebook app</strong> (available for Mac, Windows, iPad, and Chromebook).</li>
+        <li>Go to <strong>"My Practice"</strong> on the College Board website to view your score report.</li>
+        <li>Expand the <strong>"Knowledge and Skills"</strong> section or review individual questions to count how many you answered correctly in each module.</li>
+        <li>Note the correct answers separately for each module: <strong>RW Module 1</strong> (out of 27), <strong>RW Module 2</strong> (out of 27), <strong>Math Module 1</strong> (out of 22), and <strong>Math Module 2</strong> (out of 22).</li>
+        <li>Enter those raw numbers into our calculator above and select the practice test number you took.</li>
       </ol>
+
+      <h2>Recommended Practice Test Schedule</h2>
+      <p>
+        How you schedule your practice tests matters as much as taking them. Here is a recommended approach:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 not-prose my-8">
+        <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
+          <h3 class="text-lg font-bold text-indigo-900 mb-2">Diagnostic Phase</h3>
+          <p class="text-sm text-indigo-700">
+            Take Practice Test 1 under real conditions (timed, no breaks, quiet room). Score it using our calculator. This establishes your baseline and identifies which sections need the most improvement.
+          </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+          <h3 class="text-lg font-bold text-amber-900 mb-2">Study Phase</h3>
+          <p class="text-sm text-amber-700">
+            Take Tests 2, 3, and 4 at regular intervals as you study. After each test, spend time analyzing every wrong answer. Categorize mistakes as content gaps, careless errors, or time management issues.
+          </p>
+        </div>
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">Final Preparation</h3>
+          <p class="text-sm text-emerald-700">
+            Save Tests 5 and 6 for your final week. These most closely match the current test format. Your scores on these tests are your best predictor of actual test day performance.
+          </p>
+        </div>
+      </div>
 
       <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 not-prose my-8">
         <h3 class="text-lg font-bold text-indigo-900 mb-2">Analyzing Your Mistakes</h3>
         <p class="text-sm text-indigo-700">
-          Scoring is just the first step. To improve, review every incorrect answer. Was it a content gap (you didn't know the math formula) or a strategy error (you misread the question)? Categorizing your errors is the fastest way to increase your score.
+          Scoring is just the first step. To actually improve, review every incorrect answer after each practice test. For each mistake, ask yourself: was it a <strong>content gap</strong> (you did not know the concept or formula), a <strong>strategy error</strong> (you misread the question or picked the wrong approach), or a <strong>careless mistake</strong> (you knew the material but made a sloppy error)? Categorizing your errors is the fastest way to identify patterns and increase your score.
         </p>
+      </div>
+
+      <h2>Score Trends Matter More Than Individual Scores</h2>
+      <p>
+        Do not panic if one practice test score is lower than expected. Focus on the trend across all your practice tests. A student who scores 1200, 1250, 1280, and 1320 is clearly improving, even if an individual test felt rough. The average of your last two or three practice tests is the best predictor of your real score.
+      </p>
+      <p>
+        If your scores plateau, it usually means you need to change your study strategy — not just study more. Target your weakest question types specifically rather than doing general review.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Are Bluebook practice test scores accurate predictors of real SAT scores?</h3>
+          <p class="text-slate-600 text-sm">
+            Bluebook practice tests are the most accurate predictor available because they use the same adaptive format and are created by the College Board. Most students score within 30-40 points of their practice test average on test day.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Why do different practice tests give different scores for the same number correct?</h3>
+          <p class="text-slate-600 text-sm">
+            Each practice test has a unique scoring curve (equating table) because the difficulty of questions varies between tests. A harder test form is more generous with its curve to ensure fairness.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How many Bluebook practice tests are available?</h3>
+          <p class="text-slate-600 text-sm">
+            As of 2026, the College Board has released 6 official Bluebook practice tests. Tests 1-4 were part of the original launch, while Tests 5 and 6 were added later and reflect the most current question styles.
+          </p>
+        </div>
       </div>
     </article>
   </main>

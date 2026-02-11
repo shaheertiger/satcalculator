@@ -9,9 +9,43 @@ const pageKeywords = "Digital SAT score calculator, adaptive SAT scoring, Digita
 const breadcrumbs = [
   { name: "Digital SAT Score Calculator", item: "/digital-sat-score-calculator" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between the Digital SAT and the paper SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Digital SAT is shorter (2 hours 14 minutes vs. 3 hours), uses adaptive testing that adjusts question difficulty based on performance, allows a calculator on all math questions, and delivers scores faster (typically within days instead of weeks)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can two students with the same number of correct answers get different scores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Because the Digital SAT is adaptive, a student who was routed to the harder Module 2 (and missed some questions there) can score higher than a student who was routed to the easier Module 2 and got them all correct. The difficulty path directly affects the scoring ceiling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to get Digital SAT scores back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Digital SAT scores are typically available within 2-3 days of taking the test, significantly faster than the paper SAT which took 2-4 weeks. Scores appear in your College Board account online."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -19,7 +53,7 @@ const breadcrumbs = [
         Digital SAT Score Calculator (Adaptive)
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        The <strong>Digital SAT Score Calculator</strong> simulates the real adaptive scoring algorithm. Calculate scores based on adaptive routing and module difficulty.
+        The <strong>Digital SAT Score Calculator</strong> simulates the real adaptive scoring algorithm. Calculate scores based on adaptive routing and module difficulty to see where you stand.
       </p>
     </div>
 
@@ -32,39 +66,122 @@ const breadcrumbs = [
     <article class="prose prose-slate max-w-3xl mx-auto">
       <h2>How Adaptive Scoring Works</h2>
       <p>
-        The Digital SAT is not just a computerized version of the old paper test—it uses a Multistage Adaptive Testing (MST) model. This means the test adapts to your performance in real-time.
+        The Digital SAT is not just a computerized version of the old paper test — it uses a <strong>Multistage Adaptive Testing (MST)</strong> model. This means the test adapts to your performance in real-time, creating a personalized testing experience for every student.
       </p>
       <p>
         Each section (Reading/Writing and Math) is divided into two modules:
       </p>
       <ul>
-        <li><strong>Module 1:</strong> Contains a mix of easy, medium, and hard questions. This is the "Routing Module."</li>
-        <li><strong>Module 2:</strong> based on your performance in Module 1, you are routed to either an Easier Module 2 or a Harder Module 2.</li>
+        <li><strong>Module 1 (The Routing Module):</strong> Contains a calibrated mix of easy, medium, and hard questions. Everyone receives the same Module 1 for a given test form. Your performance here determines your path.</li>
+        <li><strong>Module 2 (The Adaptive Module):</strong> Based on your Module 1 performance, you are routed to either an <strong>Easier Module 2</strong> or a <strong>Harder Module 2</strong>. This routing happens independently for Reading/Writing and Math — you could get the hard math module but the easy reading module, or vice versa.</li>
       </ul>
 
       <h2>Easy vs. Hard Module 2</h2>
+      <p>
+        The module you are routed to has a direct impact on your maximum possible score. Understanding this is critical for interpreting your results:
+      </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
         <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
           <h3 class="text-lg font-bold text-indigo-900 mb-2">Lower Difficulty Path</h3>
-          <p class="text-sm text-indigo-700">
-            If you struggle on Module 1, you get easier questions in Module 2. While this may feel less stressful, it caps your maximum possible score, typically around <strong>600-650</strong> per section.
+          <p class="text-sm text-indigo-700 mb-3">
+            If you struggle on Module 1 (typically below ~50% correct), you receive easier questions in Module 2. While this may feel less stressful, it caps your maximum possible score, typically around <strong>600-650</strong> per section.
+          </p>
+          <p class="text-xs text-indigo-600">
+            Even a perfect score on the easy Module 2 cannot make up for a poor Module 1 performance. The ceiling is hard-coded into the scoring algorithm.
           </p>
         </div>
         <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
           <h3 class="text-lg font-bold text-emerald-900 mb-2">Higher Difficulty Path</h3>
-          <p class="text-sm text-emerald-700">
-            If you do well on Module 1, you get harder questions. This path unlocks the full scoring potential, allowing you to reach up to an <strong>800</strong> per section.
+          <p class="text-sm text-emerald-700 mb-3">
+            If you do well on Module 1 (roughly 60-70%+ correct), you receive harder questions. This path unlocks the full scoring potential, allowing you to reach up to an <strong>800</strong> per section.
+          </p>
+          <p class="text-xs text-emerald-600">
+            Missing a few hard questions in Module 2 is expected and penalized less harshly than missing easy questions in Module 1. The algorithm accounts for the increased difficulty.
           </p>
         </div>
       </div>
 
-      <h2>Why Raw Score ≠ Scaled Score</h2>
+      <h2>Digital SAT Structure at a Glance</h2>
+      <div class="not-prose overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">Section</th>
+              <th class="px-4 py-3 text-left">Module 1</th>
+              <th class="px-4 py-3 text-left">Module 2</th>
+              <th class="px-4 py-3 text-left">Total Time</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 border border-slate-200">
+            <tr>
+              <td class="px-4 py-3 font-semibold">Reading & Writing</td>
+              <td class="px-4 py-3">27 questions, 32 min</td>
+              <td class="px-4 py-3">27 questions, 32 min</td>
+              <td class="px-4 py-3 font-bold">64 min</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold">Math</td>
+              <td class="px-4 py-3">22 questions, 35 min</td>
+              <td class="px-4 py-3">22 questions, 35 min</td>
+              <td class="px-4 py-3 font-bold">70 min</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p>
-        On paper tests, 30 correct answers always meant the same thing. On the Digital SAT, <strong>which</strong> questions you answer correctly matters.
+        Total test time is <strong>2 hours and 14 minutes</strong>, with an optional 10-minute break between the Reading/Writing and Math sections. This is significantly shorter than the old paper SAT, which ran over 3 hours.
+      </p>
+
+      <h2>Why Raw Score Does Not Equal Scaled Score</h2>
+      <p>
+        On the old paper SAT, if you got 50 questions right, that always mapped to the same score. On the Digital SAT, <strong>which</strong> questions you answer correctly matters just as much as how many.
       </p>
       <p>
-        Because of Item Response Theory (IRT), questions are weighted by difficulty. Getting a hard question wrong penalizes you less than missing an easy one. Conversely, getting easy questions right is "expected" and doesn't boost your score as much as solving the hardest problems. Our calculator uses official College Board data to simulate these weights.
+        The Digital SAT uses <strong>Item Response Theory (IRT)</strong>, where questions are individually weighted based on their statistical properties:
       </p>
+      <ul>
+        <li><strong>Difficulty:</strong> Harder questions contribute more to your ability estimate when answered correctly.</li>
+        <li><strong>Discrimination:</strong> Some questions are better at separating high performers from low performers. These carry more weight.</li>
+        <li><strong>Guessing factor:</strong> The algorithm accounts for the probability that a student could guess the correct answer, particularly on multiple-choice questions.</li>
+      </ul>
+      <p>
+        This means missing a very difficult question (which few students get right) penalizes your score much less than missing an easy question (which most students get right). Our calculator uses official College Board data to simulate these weights and give you a realistic score estimate.
+      </p>
+
+      <h2>Key Differences from the Paper SAT</h2>
+      <p>
+        If you are familiar with the old paper-based SAT, here are the most important changes to understand:
+      </p>
+      <ul>
+        <li><strong>Shorter test:</strong> 2 hours 14 minutes instead of 3+ hours, with fewer total questions.</li>
+        <li><strong>Adaptive format:</strong> The test adjusts to your ability level, unlike the paper test where everyone answered the same questions.</li>
+        <li><strong>Calculator on all math:</strong> No more "no-calculator" math section. A built-in Desmos graphing calculator is available for every math question.</li>
+        <li><strong>Shorter reading passages:</strong> Instead of long 500-750 word passages, the Digital SAT uses shorter passages (25-150 words) with one question per passage.</li>
+        <li><strong>Faster scores:</strong> Results are available within days instead of weeks.</li>
+        <li><strong>Same score scale:</strong> The 400-1600 scale remains identical. A 1400 on the Digital SAT represents the same achievement level as a 1400 on the paper SAT.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the difference between the Digital SAT and the paper SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            The Digital SAT is shorter (2 hours 14 minutes vs. 3 hours), uses adaptive testing that adjusts question difficulty based on performance, allows a calculator on all math questions, and delivers scores faster (typically within days instead of weeks).
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can two students with the same number of correct answers get different scores?</h3>
+          <p class="text-slate-600 text-sm">
+            Yes. Because the Digital SAT is adaptive, a student who was routed to the harder Module 2 (and missed some questions there) can score higher than a student who was routed to the easier Module 2 and got them all correct. The difficulty path directly affects the scoring ceiling.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How long does it take to get Digital SAT scores back?</h3>
+          <p class="text-slate-600 text-sm">
+            Digital SAT scores are typically available within 2-3 days of taking the test, significantly faster than the paper SAT which took 2-4 weeks. Scores appear in your College Board account online.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

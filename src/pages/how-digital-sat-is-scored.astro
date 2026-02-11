@@ -8,9 +8,43 @@ const pageKeywords = "how digital SAT is scored, adaptive SAT scoring, SAT adapt
 const breadcrumbs = [
   { name: "How the Digital SAT is Scored", item: "/how-digital-sat-is-scored" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does the Digital SAT penalize for wrong answers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. There is no penalty for guessing on the Digital SAT. Incorrect answers count as zero points, not negative points. You should always answer every question, even if you have to guess."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Item Response Theory (IRT)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IRT is a statistical framework used to weight test questions based on their difficulty, discrimination, and guessing probability. Unlike classical testing where every question is worth 1 point, IRT assigns different weights to different questions, making the scoring more precise and fair across different test forms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I know during the test if I got routed to the hard or easy module?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not officially, but many students notice a shift in difficulty. If Module 2 questions feel noticeably harder than Module 1, you were likely routed to the harder path. If they feel about the same or easier, you may be on the easier path."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -18,7 +52,7 @@ const breadcrumbs = [
         How the Digital SAT is Scored
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        The Digital SAT uses a sophisticated scoring engine that adapts to your ability level in real-time. Here is exactly **how the digital SAT is scored** under the hood.
+        The Digital SAT uses a sophisticated scoring engine that adapts to your ability level in real-time. Here is exactly <strong>how the digital SAT is scored</strong> under the hood, from Module 1 routing to the final scaled score.
       </p>
     </div>
 
@@ -26,30 +60,31 @@ const breadcrumbs = [
     <article class="prose prose-slate max-w-3xl mx-auto">
       <h2>Multistage Adaptive Testing (MST)</h2>
       <p>
-        The core of the Digital SAT is <strong>Multistage Adaptive Testing (MST)</strong>.
+        The core of the Digital SAT is <strong>Multistage Adaptive Testing (MST)</strong>. Unlike Computer Adaptive Testing (CAT), where every single question adapts based on your previous answer, MST adapts at the module level. You complete an entire module of questions, and then the system uses your overall performance to select the next module.
       </p>
       <ul>
-        <li>The test is divided into two sections: Reading & Writing and Math.</li>
-        <li>Each section is further divided into two <strong>modules</strong>.</li>
-        <li><strong>Module 1</strong> contains a broad mix of Easy, Medium, and Hard questions.</li>
+        <li>The test is divided into two sections: <strong>Reading & Writing</strong> and <strong>Math</strong>.</li>
+        <li>Each section is further divided into two <strong>modules</strong> of equal length.</li>
+        <li><strong>Module 1</strong> contains a broad mix of Easy, Medium, and Hard questions, calibrated to measure a wide range of ability levels.</li>
         <li>Your performance on Module 1 determines the difficulty of <strong>Module 2</strong>.</li>
+        <li>Routing happens <strong>independently</strong> for each section — your Reading/Writing performance does not affect your Math module routing.</li>
       </ul>
 
-      <h2>The "Routing" Module</h2>
+      <h2>The "Routing" Module Explained</h2>
       <p>
-        Think of Module 1 as a placement test.
+        Think of Module 1 as a placement test within the test itself. The College Board uses your Module 1 responses to estimate your ability level, and then assigns you a Module 2 that will most precisely measure your true score within that range.
       </p>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
         <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
           <h3 class="text-lg font-bold text-indigo-900 mb-2">Scenario A: High Performance</h3>
           <p class="text-sm text-indigo-700 mb-2">
-            You do well on Module 1 (typically getting ~60-70% correct).
+            You do well on Module 1 (typically getting ~60-70%+ correct).
           </p>
           <p class="text-sm font-bold text-indigo-800">
             &rarr; Routed to Hard Module 2
           </p>
           <p class="text-xs text-indigo-600 mt-2">
-            Result: You face tougher questions, but your maximum score potential is capped at <strong>800</strong>.
+            Result: You face tougher questions, but your maximum score potential reaches <strong>800</strong>. The hard questions are worth more, so missing a few still allows for a high score.
           </p>
         </div>
         <div class="bg-rose-50 p-6 rounded-xl border border-rose-100">
@@ -61,31 +96,102 @@ const breadcrumbs = [
             &rarr; Routed to Easy Module 2
           </p>
           <p class="text-xs text-rose-600 mt-2">
-            Result: You face easier questions, but your score is capped. Even with a perfect Module 2, you likely won't score above <strong>600-650</strong>.
+            Result: You face easier questions, but your score is capped. Even with a perfect Module 2, you likely will not score above <strong>600-650</strong>.
           </p>
         </div>
       </div>
 
-      <h2>Item Response Theory (IRT)</h2>
+      <h2>Item Response Theory (IRT) — The Scoring Engine</h2>
       <p>
-        Unlike paper tests where every question was worth 1 point, the Digital SAT uses <strong>Item Response Theory</strong>.
+        Unlike paper tests where every question was worth 1 point, the Digital SAT uses <strong>Item Response Theory</strong>. IRT is a statistical framework that has been used in standardized testing for decades, but it plays an even more prominent role on the adaptive Digital SAT.
       </p>
       <p>
-        In IRT, questions have different statistical weights based on:
+        In IRT, each question has three statistical parameters that determine its weight:
       </p>
       <ol>
-        <li><strong>Difficulty:</strong> How hard is the question?</li>
-        <li><strong>Discrimination:</strong> How well does this question distinguish between high and low performers?</li>
-        <li><strong>Guessing:</strong> How likely is a student to guess the correct answer?</li>
+        <li><strong>Difficulty (b parameter):</strong> How hard is the question? This is measured on a continuous scale. A question with a high difficulty parameter means that only students with high ability levels are expected to answer it correctly.</li>
+        <li><strong>Discrimination (a parameter):</strong> How well does this question distinguish between students at different ability levels? A highly discriminating question is one where high-ability students almost always get it right and low-ability students almost always get it wrong. These questions carry more scoring weight.</li>
+        <li><strong>Guessing (c parameter):</strong> What is the probability that a student could guess the correct answer? For a four-choice multiple-choice question, the baseline guessing probability is 25%. The algorithm accounts for this to avoid inflating scores due to lucky guesses.</li>
       </ol>
+
+      <h3>What This Means in Practice</h3>
       <p>
-        This means that missing a very difficult question (which few students get right) penalizes your score much less than missing an easy question (which most students get right).
+        The practical implication of IRT scoring is significant:
+      </p>
+      <ul>
+        <li><strong>Missing a hard question hurts less</strong> than missing an easy one. If a question has a high difficulty parameter and you get it wrong, the algorithm "expected" that outcome for most students, so the penalty is small.</li>
+        <li><strong>Getting easy questions right is "expected"</strong> and does not boost your score as much as solving hard questions. The algorithm already assumed you would get easy questions correct if you are a high-ability student.</li>
+        <li><strong>High-discrimination questions matter most.</strong> These are the questions that most efficiently separate a 1300-level student from a 1400-level student. Getting these right (or wrong) has an outsized impact on your final score.</li>
+      </ul>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 not-prose my-8">
+        <h3 class="text-lg font-bold text-amber-900 mb-2">Why You Cannot Calculate Your Exact Score Manually</h3>
+        <p class="text-sm text-amber-700">
+          Because each question has unique IRT parameters that are not publicly released, it is impossible to calculate your exact Digital SAT score by hand. The College Board's scoring system uses proprietary algorithms that incorporate thousands of data points. Score calculators (including ours) use curves derived from official practice tests to provide the closest possible estimate.
+        </p>
+      </div>
+
+      <h2>The Equating Process</h2>
+      <p>
+        Every SAT test form has slightly different questions with different difficulty levels. To ensure that a score of 1400 on one test date means the same thing as 1400 on another, the College Board uses a process called <strong>equating</strong>.
+      </p>
+      <p>
+        Equating adjusts the raw-to-scaled score conversion table for each test form so that:
+      </p>
+      <ul>
+        <li>A harder test form has a more generous curve (you can miss more questions and still get the same score).</li>
+        <li>An easier test form has a stricter curve (missing even one question costs more points).</li>
+      </ul>
+      <p>
+        This is why students who take the SAT on different dates can fairly compare their scores, even though they answered entirely different questions.
       </p>
 
-      <h2>Summary</h2>
+      <h2>Score Reports Breakdown</h2>
       <p>
-        To get a top score on the Digital SAT, accuracy on <strong>Module 1</strong> is paramount. You must perform well enough to "unlock" the Hard Module 2, where the 700+ scores are possible.
+        When you receive your Digital SAT score report, you will see several components:
       </p>
+      <ul>
+        <li><strong>Total Score (400-1600):</strong> The sum of your two section scores. This is the number colleges primarily look at.</li>
+        <li><strong>Section Scores (200-800 each):</strong> Separate scores for Reading & Writing and Math.</li>
+        <li><strong>Test Scores (10-40):</strong> More granular sub-scores for specific skill areas within each section.</li>
+        <li><strong>Percentile Rank:</strong> Shows what percentage of students scored lower than you nationally.</li>
+        <li><strong>Benchmark Status:</strong> Indicates whether your score meets the College Board's "college readiness" benchmarks.</li>
+      </ul>
+
+      <h2>Summary: How to Maximize Your Score</h2>
+      <p>
+        Understanding the scoring system reveals a clear strategic priority: <strong>accuracy on Module 1 is paramount</strong>. You must perform well enough to "unlock" the Hard Module 2, where scores above 700 become possible. Once you are on the hard path, the algorithm is more forgiving of mistakes because it accounts for the increased difficulty of the questions you are facing.
+      </p>
+      <p>
+        In practical terms, this means:
+      </p>
+      <ul>
+        <li>Spend extra time on Module 1 questions. Double-check answers before submitting the module.</li>
+        <li>Do not rush through easy questions — missing them is penalized more heavily than missing hard ones.</li>
+        <li>Answer every question, even if you must guess. There is no penalty for incorrect answers.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Does the Digital SAT penalize for wrong answers?</h3>
+          <p class="text-slate-600 text-sm">
+            No. There is no penalty for guessing on the Digital SAT. Incorrect answers count as zero points, not negative points. You should always answer every question, even if you have to guess.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is Item Response Theory (IRT)?</h3>
+          <p class="text-slate-600 text-sm">
+            IRT is a statistical framework used to weight test questions based on their difficulty, discrimination, and guessing probability. Unlike classical testing where every question is worth 1 point, IRT assigns different weights to different questions, making the scoring more precise and fair across different test forms.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can I know during the test if I got routed to the hard or easy module?</h3>
+          <p class="text-slate-600 text-sm">
+            Not officially, but many students notice a shift in difficulty. If Module 2 questions feel noticeably harder than Module 1, you were likely routed to the harder path. If they feel about the same or easier, you may be on the easier path.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

@@ -24,10 +24,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": " Is this calculator accurate for the 2026 Digital SAT?",
+      "name": "Is this calculator accurate for the 2026 Digital SAT?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Yes, our calculator is built using scoring data from the official College Board Bluebook practice tests, which reflect the current adaptive scoring model for the 2026 testing year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good SAT score for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The national average is approximately 1050. A score of 1200+ is above average. Scores of 1400+ are competitive for selective universities, and 1500+ places you in the top 2% of test-takers nationally."
       }
     }
   ]
@@ -46,7 +54,7 @@ const faqSchema = {
         SAT Score Calculator 2026
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        Use this <strong>SAT Score Calculator</strong> to estimate your total score (400-1600) based on raw module results. Uses official Bluebook practice test curves.
+        Use this <strong>SAT Score Calculator</strong> to estimate your total score (400-1600) based on raw module results. Built with official Bluebook practice test curves for the 2026 testing year.
       </p>
     </div>
 
@@ -59,25 +67,56 @@ const faqSchema = {
     <article class="prose prose-slate max-w-3xl mx-auto">
       <h2>How to Use This Calculator</h2>
       <p>
-        The Digital SAT is adaptive, meaning your score isn't determined solely by how many questions you get right. The difficulty of the questions matters. Here is how to use our tool to get the best estimate:
+        The Digital SAT is adaptive, meaning your score is not determined solely by how many questions you get right — the difficulty of the questions matters too. Follow these steps to get the most accurate estimate:
       </p>
       <ol>
-        <li><strong>Enter Reading and Writing Scores:</strong> Input the number of correct answers for Module 1 (out of 27) and Module 2 (out of 27).</li>
-        <li><strong>Enter Math Scores:</strong> Input the number of correct answers for Module 1 (out of 22) and Module 2 (out of 22).</li>
-        <li><strong>Select Expected Difficulty:</strong> If you performed well on Module 1, you were likely routed to the "Hard" Module 2. If you struggled, you may have received the "Easy" Module 2. Our calculator can auto-detect this based on your Module 1 score.</li>
+        <li><strong>Enter Reading and Writing Scores:</strong> Input the number of correct answers for Module 1 (out of 27) and Module 2 (out of 27). Total possible: 54 questions.</li>
+        <li><strong>Enter Math Scores:</strong> Input the number of correct answers for Module 1 (out of 22) and Module 2 (out of 22). Total possible: 44 questions.</li>
+        <li><strong>Select Expected Difficulty:</strong> If you performed well on Module 1, you were likely routed to the "Hard" Module 2. If you struggled, you may have received the "Easy" Module 2. Our calculator can auto-detect this based on your Module 1 score, or you can manually select the difficulty.</li>
       </ol>
 
       <h2>Understanding the 1600 Scale</h2>
       <p>
-        The SAT is scored on a scale between 400 and 1600.
+        The SAT is scored on a composite scale between 400 and 1600, composed of two equally weighted sections:
       </p>
       <ul>
-        <li><strong>Reading & Writing:</strong> 200–800 points</li>
-        <li><strong>Math:</strong> 200–800 points</li>
+        <li><strong>Reading & Writing:</strong> 200-800 points (54 questions across 2 modules)</li>
+        <li><strong>Math:</strong> 200-800 points (44 questions across 2 modules)</li>
       </ul>
       <p>
-        The total score is simply the sum of these two section scores. The "raw score" (total number of correct questions) is converted to this scaled score using a process called equating, which ensures that scores are consistent across different test dates.
+        The total score is the sum of these two section scores. The "raw score" (total number of correct questions) is converted to scaled scores using <strong>equating</strong>, a statistical process that ensures scores are comparable across different test dates and forms.
       </p>
+
+      <h2>What Counts as a Good Score?</h2>
+      <p>
+        "Good" depends on your goals, but here are the general benchmarks that most students use as reference points:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">1500+ (Top 2%)</h3>
+          <p class="text-sm text-emerald-700">
+            Competitive for Ivy League and top-20 universities. Many of these schools have median scores in the 1500-1560 range for admitted students.
+          </p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">1350-1490 (Top 10%)</h3>
+          <p class="text-sm text-blue-700">
+            Strong for most selective universities. Within range for schools like UVA, UNC, Georgia Tech, NYU, Boston College, and many others.
+          </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+          <h3 class="text-lg font-bold text-amber-900 mb-2">1200-1340 (Top 25%)</h3>
+          <p class="text-sm text-amber-700">
+            Above average. Competitive for state flagship universities and many four-year colleges. Often meets merit scholarship thresholds.
+          </p>
+        </div>
+        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">1050-1190 (Average)</h3>
+          <p class="text-sm text-slate-700">
+            Near the national median. Sufficient for admission to many four-year colleges, particularly non-selective and moderately selective institutions.
+          </p>
+        </div>
+      </div>
 
       <h2>Is This Accurate for the Digital SAT?</h2>
       <div class="bg-blue-50 border-l-4 border-blue-500 p-4 not-prose mb-6">
@@ -86,8 +125,52 @@ const faqSchema = {
         </p>
       </div>
       <p>
-        Because the Digital SAT is adaptive, two students with the same number of correct answers can receive different scores depending on which module path they took. This calculator simulates that adaptive nature to give you a realistic score range.
+        Because the Digital SAT is adaptive, two students with the same number of correct answers can receive different scores depending on which module path they took. This calculator simulates that adaptive nature to give you a realistic score range. For most students, the estimate is within 20-30 points of their actual score.
       </p>
+
+      <h2>How the Adaptive Algorithm Affects Your Score</h2>
+      <p>
+        The most important concept to understand about Digital SAT scoring is the <strong>module routing</strong> system:
+      </p>
+      <ul>
+        <li><strong>Module 1</strong> is the same for everyone on a given test form. It contains a mix of easy, medium, and hard questions designed to estimate your ability level.</li>
+        <li>If you score well on Module 1 (typically 60-70%+ correct), you are routed to <strong>Hard Module 2</strong>, which unlocks the full 200-800 scoring range.</li>
+        <li>If you score poorly on Module 1, you are routed to <strong>Easy Module 2</strong>, which caps your maximum score at approximately 600-650.</li>
+        <li>This routing happens <strong>independently</strong> for Reading/Writing and Math — you could be on the hard path for one section and the easy path for the other.</li>
+      </ul>
+      <p>
+        This is why Module 1 performance is so critical. Even if you perform perfectly on an easy Module 2, your score cannot exceed the cap imposed by the routing system.
+      </p>
+
+      <h2>Tips for Maximizing Your Score</h2>
+      <ol>
+        <li><strong>Prioritize Module 1:</strong> Take extra care with Module 1 questions. Getting routed to the hard module is the single most important factor in achieving a high score.</li>
+        <li><strong>Never leave questions blank:</strong> There is no guessing penalty. Even a random guess has a 25% chance of being correct on multiple-choice questions.</li>
+        <li><strong>Use the Desmos calculator:</strong> The built-in graphing calculator can solve many math questions faster than algebraic methods.</li>
+        <li><strong>Manage your time:</strong> You have roughly 1.2 minutes per Reading/Writing question and 1.6 minutes per Math question. Monitor your pace.</li>
+      </ol>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How is the Digital SAT scored differently?</h3>
+          <p class="text-slate-600 text-sm">
+            Unlike the paper SAT, the Digital SAT uses multistage adaptive testing. Your performance on the first module of each section determines the difficulty of the second module. This routing affects your maximum possible score.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is this calculator accurate for the 2026 Digital SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            Yes, our calculator is built using scoring data from the official College Board Bluebook practice tests, which reflect the current adaptive scoring model for the 2026 testing year.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is a good SAT score for 2026?</h3>
+          <p class="text-slate-600 text-sm">
+            The national average is approximately 1050. A score of 1200+ is above average. Scores of 1400+ are competitive for selective universities, and 1500+ places you in the top 2% of test-takers nationally.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>

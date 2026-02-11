@@ -9,9 +9,43 @@ const pageKeywords = "SAT to ACT converter, ACT to SAT converter, SAT vs ACT sco
 const breadcrumbs = [
   { name: "SAT to ACT Score Converter", item: "/sat-act-score-converter" }
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are SAT and ACT scores directly comparable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not directly, since the SAT uses a 400-1600 scale and the ACT uses a 1-36 scale. However, the official concordance tables released by the College Board and ACT, Inc. provide a standardized way to compare equivalent scores across both tests."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I submit my SAT or ACT score to colleges?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Submit whichever score is relatively higher when converted using the concordance table. For example, if your SAT converts to a 32 ACT equivalent but you only scored a 30 on the actual ACT, submit the SAT. Colleges do not prefer one test over the other."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do colleges accept both SAT and ACT equally?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All US colleges and universities that require or accept standardized tests treat SAT and ACT scores equally. Admissions officers use concordance tables to compare applicants who submitted different tests."
+      }
+    }
+  ]
+};
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
     <div class="text-center mb-10">
@@ -30,9 +64,9 @@ const breadcrumbs = [
 
     <!-- Content -->
     <article class="prose prose-slate max-w-3xl mx-auto">
-      <h2>Comparison Table (2018 Official Concordance)</h2>
+      <h2>Official Concordance Table (2018)</h2>
       <p>
-        The table below shows the official relationship between SAT Total Scores (400-1600) and ACT Composite Scores (1-36).
+        The table below shows the official relationship between SAT Total Scores (400-1600) and ACT Composite Scores (1-36). This concordance was jointly developed by the College Board and ACT, Inc. and is the standard used by admissions offices nationwide.
       </p>
       <div class="not-prose overflow-x-auto my-8">
         <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
@@ -58,18 +92,97 @@ const breadcrumbs = [
             <tr><td class="px-4 py-2 font-semibold">1200-1220</td><td class="px-4 py-2 font-bold text-violet-700">25</td><td>Above Average</td></tr>
             <tr><td class="px-4 py-2 font-semibold">1160-1190</td><td class="px-4 py-2 font-bold text-violet-700">24</td><td>Average</td></tr>
             <tr><td class="px-4 py-2 font-semibold">1130-1150</td><td class="px-4 py-2 font-bold text-violet-700">23</td><td>Average</td></tr>
-             <tr><td class="px-4 py-2 font-semibold">1100-1120</td><td class="px-4 py-2 font-bold text-violet-700">22</td><td>Average</td></tr>
+            <tr><td class="px-4 py-2 font-semibold">1100-1120</td><td class="px-4 py-2 font-bold text-violet-700">22</td><td>Average</td></tr>
           </tbody>
         </table>
       </div>
 
       <h2>Key Differences Between SAT and ACT</h2>
+      <p>
+        While both tests measure college readiness, they differ in important ways. Understanding these differences can help you decide which test to focus on:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">SAT Characteristics</h3>
+          <ul class="text-sm text-blue-700 space-y-2 list-disc pl-5">
+            <li>Scored 400-1600</li>
+            <li>Fully digital and adaptive</li>
+            <li>2 hours 14 minutes</li>
+            <li>More time per question</li>
+            <li>Emphasis on algebra and data analysis</li>
+            <li>Shorter reading passages (1 question each)</li>
+            <li>Built-in Desmos calculator for all math</li>
+          </ul>
+        </div>
+        <div class="bg-violet-50 p-6 rounded-xl border border-violet-100">
+          <h3 class="text-lg font-bold text-violet-900 mb-2">ACT Characteristics</h3>
+          <ul class="text-sm text-violet-700 space-y-2 list-disc pl-5">
+            <li>Scored 1-36</li>
+            <li>Transitioning to digital format</li>
+            <li>2 hours 55 minutes (without writing)</li>
+            <li>Less time per question, faster pace</li>
+            <li>Broader math coverage (more geometry/trig)</li>
+            <li>Optional Science section</li>
+            <li>Bring your own calculator</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2>How to Decide Which Score to Send</h2>
+      <p>
+        If you have taken both tests, follow this process to determine which score gives you a stronger application:
+      </p>
+      <ol>
+        <li><strong>Convert both scores</strong> using the concordance table above. For example, if you scored a 1380 SAT and a 29 ACT, convert both to the same scale.</li>
+        <li><strong>Compare the equivalents:</strong> A 1380 SAT converts to approximately a 30 ACT. Since you scored a 29 on the actual ACT, your SAT score is relatively stronger.</li>
+        <li><strong>Submit the stronger score.</strong> In this example, you would submit the 1380 SAT because it is equivalent to a higher ACT score than what you actually achieved.</li>
+      </ol>
+      <p>
+        Colleges will not view your application differently based on which test you submit. Both are treated equally in the admissions process.
+      </p>
+
+      <h2>When to Consider Taking the Other Test</h2>
+      <p>
+        Some students perform significantly better on one test over the other due to differences in format and pacing. Consider taking the other test if:
+      </p>
       <ul>
-        <li><strong>Time per Question:</strong> The ACT is faster-paced. You have less time per question compared to the SAT.</li>
-        <li><strong>Science Section:</strong> The ACT has a dedicated Science section (mostly chart reading), while the SAT incorporates science topics into Reading/Writing passages.</li>
-        <li><strong>Math:</strong> SAT Math covers fewer topics but in more depth (heavy on algebra). ACT Math is broader, including more geometry and trigonometry.</li>
-        <li><strong>Digital vs. Paper:</strong> The SAT is fully digital and adaptive. The ACT is also moving to a digital format but offers a paper option in some cases, and is experimenting with optional sections.</li>
+        <li><strong>Your scores do not match the concordance:</strong> If your SAT converts to a 33 ACT but you only scored a 29 on the actual ACT (or vice versa), the test formats may suit you differently.</li>
+        <li><strong>You struggle with time pressure:</strong> The SAT gives more time per question. If you frequently run out of time on the ACT, the SAT may be a better fit.</li>
+        <li><strong>You excel in science reading:</strong> The ACT Science section is essentially a data interpretation and reading test. Students with strong chart-reading skills often score well here, boosting their composite.</li>
+        <li><strong>You prefer deeper math:</strong> The SAT math section covers fewer topics in more depth (heavy on algebra). The ACT covers more topics including additional geometry and trigonometry.</li>
       </ul>
+
+      <h2>Merit Scholarship Considerations</h2>
+      <p>
+        Many merit scholarships have specific score thresholds that are listed in terms of one test or the other. Common examples:
+      </p>
+      <ul>
+        <li>A scholarship might require "1350 SAT or 29 ACT." Using the concordance, a 1350 actually converts to a 29, so these cutoffs are equivalent.</li>
+        <li>However, some scholarships round differently. Always check both the SAT and ACT thresholds and submit whichever score meets or exceeds the requirement.</li>
+        <li>If a scholarship only lists one test's requirement, use the concordance table to check if your score on the other test qualifies.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Are SAT and ACT scores directly comparable?</h3>
+          <p class="text-slate-600 text-sm">
+            Not directly, since the SAT uses a 400-1600 scale and the ACT uses a 1-36 scale. However, the official concordance tables released by the College Board and ACT, Inc. provide a standardized way to compare equivalent scores across both tests.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Should I submit my SAT or ACT score to colleges?</h3>
+          <p class="text-slate-600 text-sm">
+            Submit whichever score is relatively higher when converted using the concordance table. For example, if your SAT converts to a 32 ACT equivalent but you only scored a 30 on the actual ACT, submit the SAT. Colleges do not prefer one test over the other.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Do colleges accept both SAT and ACT equally?</h3>
+          <p class="text-slate-600 text-sm">
+            Yes. All US colleges and universities that require or accept standardized tests treat SAT and ACT scores equally. Admissions officers use concordance tables to compare applicants who submitted different tests.
+          </p>
+        </div>
+      </div>
     </article>
   </main>
 </Layout>
