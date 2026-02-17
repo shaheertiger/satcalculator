@@ -1,0 +1,645 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const pageTitle = "How to Calculate Your Math SAT Score: Predict Your Score Step by Step (2026)";
+const pageDescription = "Learn how to calculate your math SAT score using the Digital SAT scoring curve. Use our math SAT calculator to predict your score, understand adaptive module routing, and plan your target score for 2026.";
+const pageKeywords = "math sat calculator, math sat score calculator, predict sat score, sat score calc, sat calc, calculator sat, how to calculate SAT math score, Digital SAT math scoring, SAT math score prediction, SAT math curve 2026";
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Calculate Your Math SAT Score: Predict Your Score Step by Step (2026)",
+  "keywords": "math sat calculator, math sat score calculator, predict sat score, sat score calc, calculator sat, SAT math scoring curve 2026",
+  "inLanguage": "en-US",
+  "description": pageDescription,
+  "author": {
+    "@type": "Organization",
+    "name": "satcalculator.co",
+    "url": "https://satcalculator.co"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "satcalculator.co",
+    "url": "https://satcalculator.co"
+  },
+  "datePublished": "2026-02-17",
+  "dateUpdated": "2026-02-17",
+  "dateModified": new Date().toISOString().split('T')[0],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://satcalculator.co/blog/how-to-calculate-sat-math-score"
+  }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I calculate my SAT Math score from a practice test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Count the number of questions you answered correctly in Math Module 1 (out of 22) and Math Module 2 (out of 22). Your raw score is the total correct answers. Then use a scoring curve — either from the official Bluebook practice test or a math SAT calculator — to convert that raw score into a scaled score between 200 and 800."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I predict my SAT score before taking the test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Take a full-length official practice test under timed conditions using the College Board's Bluebook app. Enter your raw scores into a SAT score calculator to get an estimated scaled score. Practice test scores are strong predictors of actual test-day performance, typically within 30-40 points."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the SAT Math scoring curve?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SAT Math scoring curve is the conversion table that translates your raw score (number correct) into a scaled score (200-800). The curve varies by test form and depends on which Module 2 difficulty path you receive. On the harder Module 2 path, each correct answer is weighted more heavily, allowing scores up to 800. On the easier path, scores are capped around 600-650."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many math questions can I miss and still get a 700?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the harder Module 2 path, you can typically miss about 5-7 questions out of 44 and still score around 700. On the easier Module 2 path, a 700 is extremely difficult to reach regardless of how many you get correct, since the scoring ceiling is capped around 600-650."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does getting routed to the easy Module 2 ruin my SAT Math score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It significantly limits your score ceiling. If you are routed to the easier Module 2, your Math score will typically cap around 600-650 even if you answer every question in Module 2 correctly. This is why performing well on Module 1 is critical — it determines your scoring potential for the entire Math section."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the SAT Math curve the same on every test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The College Board uses a process called equating to adjust curves for each test form, accounting for differences in question difficulty. Some test forms have slightly more forgiving curves than others, which is why estimated score ranges include a margin of about plus or minus 30 points."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={[{ name: "Blog", item: "/blog" }, { name: "How to Calculate Your Math SAT Score", item: "/blog/how-to-calculate-sat-math-score" }]}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <meta property="article:published_time" content="2026-02-17" />
+    <meta property="article:modified_time" content="2026-02-17" />
+    <meta property="article:section" content="SAT Test Prep" />
+    <meta property="article:tag" content="math sat calculator" />
+    <meta property="article:tag" content="math sat score calculator" />
+    <meta property="article:tag" content="predict sat score" />
+    <meta property="article:tag" content="sat score calc" />
+    <meta property="article:tag" content="SAT math scoring curve" />
+    <meta property="article:tag" content="Digital SAT 2026" />
+    <meta property="article:tag" content="SAT math calculator" />
+  </Fragment>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2" aria-label="satcalculator.co homepage">
+        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+        </div>
+        <span class="text-xl font-bold text-slate-800 tracking-tight font-heading">satcalculator<span class="text-indigo-600">.co</span></span>
+      </a>
+      <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">SAT Score Calculator</a>
+        <a href="/blog/what-is-a-good-sat-score" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Blog</a>
+        <a href="/about" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
+      <ol class="flex items-center gap-2 text-xs text-slate-400">
+        <li><a href="/" class="hover:text-indigo-600 transition-colors">Home</a></li>
+        <li>/</li>
+        <li><a href="/blog/what-is-a-good-sat-score" class="hover:text-indigo-600 transition-colors">Blog</a></li>
+        <li>/</li>
+        <li><span class="text-slate-600">How to Calculate Your Math SAT Score</span></li>
+      </ol>
+    </nav>
+
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <header class="mb-10">
+        <h1 class="text-3xl sm:text-4xl font-black text-slate-900 font-heading mb-4 leading-tight">
+          How to Calculate Your Math SAT Score: Predict Your Score Step by Step
+        </h1>
+        <p class="text-lg text-slate-500 leading-relaxed">
+          A complete guide to understanding the Digital SAT math scoring curve, converting raw scores to scaled scores, and using a math SAT calculator to predict your results before test day.
+        </p>
+        <div class="flex items-center gap-4 mt-4 text-xs text-slate-400">
+          <time datetime="2026-02-17">Updated February 2026</time>
+          <span>15 min read</span>
+        </div>
+      </header>
+
+      <div class="prose prose-slate max-w-none space-y-8 text-[15px] leading-relaxed text-slate-600">
+
+        <p>
+          You just finished a practice test and you have your raw numbers in front of you. Now what? How do those correct answers turn into a score between 200 and 800? And more importantly, can you use those results to predict your actual SAT math score on test day?
+        </p>
+        <p>
+          The short answer: yes, you can predict your SAT score with reasonable accuracy. Practice test results are one of the strongest predictors of real test performance, and the math behind the scoring curve is well understood. This guide walks through the entire process — from counting raw scores to applying the adaptive scoring curve — so you know exactly where you stand and what you need to hit your target.
+        </p>
+        <p>
+          If you want to skip straight to the numbers, plug your practice test results into our <a href="/math-sat-calculator" class="text-indigo-600 hover:underline">math SAT calculator</a> and get an instant estimate.
+        </p>
+
+        <!-- Section 1 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="sat-math-structure">How the SAT Math Section Is Structured</h2>
+
+        <p>
+          Before you can calculate your score, you need to understand what you are calculating. The Digital SAT Math section has a two-module adaptive structure that directly affects how your final score is determined.
+        </p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Module 1:</strong> 22 questions, 35 minutes. Contains a mix of easy, medium, and hard questions. This is the routing module — your performance here determines everything that follows.</li>
+          <li><strong>Module 2:</strong> 22 questions, 35 minutes. Difficulty is set based on your Module 1 results. You will receive either a harder or easier set of questions.</li>
+        </ul>
+
+        <p>
+          The total is 44 math questions across 70 minutes. Every question counts equally toward your raw score — there is no penalty for guessing, so you should answer every question.
+        </p>
+
+        <p>
+          The four content domains tested are <strong>Algebra</strong> (about 35% of questions), <strong>Advanced Math</strong> (about 35%), <strong>Problem-Solving and Data Analysis</strong> (about 15%), and <strong>Geometry and Trigonometry</strong> (about 15%). Unlike the old paper SAT, the Digital SAT allows calculator use on every single math question. A built-in <strong>Desmos graphing calculator</strong> is available on screen throughout the section.
+        </p>
+
+        <!-- Section 2 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="raw-to-scaled">Step 1: Count Your Raw Score</h2>
+
+        <p>
+          Your raw math score is the total number of questions you answered correctly across both modules. No points are subtracted for wrong answers or skipped questions. If you got 18 correct in Module 1 and 16 correct in Module 2, your raw score is 34 out of 44.
+        </p>
+
+        <p>
+          This is straightforward for practice tests where you have the answer key. For the real SAT, the College Board calculates this for you. But when using a <strong>sat score calc</strong> tool to estimate your results, your raw score is the starting point.
+        </p>
+
+        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
+          <h4 class="text-base font-semibold text-indigo-800 !mt-0 !mb-2">Keep Module Scores Separate</h4>
+          <p class="text-sm !mb-0">When using a math SAT calculator, enter your Module 1 and Module 2 scores separately — not as a single combined number. The calculator needs to know your per-module performance to determine which difficulty path you were on and apply the correct scoring curve.</p>
+        </div>
+
+        <!-- Section 3 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="adaptive-routing">Step 2: Determine Your Difficulty Path</h2>
+
+        <p>
+          This is the part that makes SAT Math scoring different from any standardized test you have taken before. The Digital SAT uses <strong>adaptive module routing</strong>, which means not all test-takers answer the same questions.
+        </p>
+
+        <p>
+          After you complete Module 1, the system evaluates your performance and assigns you one of two Module 2 difficulty levels:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+          <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+            <h3 class="text-lg font-bold text-emerald-900 mb-2">Harder Module 2</h3>
+            <p class="text-sm text-emerald-700 mb-3">
+              Triggered when you answer roughly <strong>60-70% or more</strong> of Module 1 questions correctly. This unlocks the full scoring range.
+            </p>
+            <p class="text-sm text-emerald-700 font-semibold">
+              Score ceiling: up to 800
+            </p>
+          </div>
+          <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+            <h3 class="text-lg font-bold text-amber-900 mb-2">Easier Module 2</h3>
+            <p class="text-sm text-amber-700 mb-3">
+              Triggered when you answer below roughly <strong>50-60%</strong> of Module 1 correctly. Your scoring ceiling drops significantly.
+            </p>
+            <p class="text-sm text-amber-700 font-semibold">
+              Score ceiling: approximately 600-650
+            </p>
+          </div>
+        </div>
+
+        <p>
+          This routing mechanism is the single most important factor in your SAT math score. Two students with the same total raw score can receive different scaled scores depending on which Module 2 path they were assigned. A student who got 15 correct in Module 1 and 19 correct in Module 2 (hard path) will score higher than a student who got 10 correct in Module 1 and 24 correct in Module 2 (easy path), even though the second student answered more total questions correctly.
+        </p>
+
+        <p>
+          When you use our <a href="/" class="text-indigo-600 hover:underline">SAT score calculator</a>, it automatically detects your likely routing based on your Module 1 accuracy. If you scored above 70% on Module 1, it applies the harder module curve. If below, it uses the easier module curve.
+        </p>
+
+        <!-- Section 4 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="scoring-curve">Step 3: Apply the Scoring Curve</h2>
+
+        <p>
+          The scoring curve converts your raw score into a scaled score between 200 and 800. The College Board uses a statistical method called <strong>Item Response Theory (IRT)</strong> combined with equating to create this curve. In practice, what matters to you is how many questions you can miss and still hit your target score.
+        </p>
+
+        <p>
+          Here is an estimated scoring curve for the <strong>harder Module 2 path</strong>, based on analysis of official Bluebook practice test data:
+        </p>
+
+        <div class="overflow-x-auto !my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="px-4 py-3 text-left rounded-tl-lg">Raw Score (out of 44)</th>
+                <th class="px-4 py-3 text-left">Questions Missed</th>
+                <th class="px-4 py-3 text-left rounded-tr-lg">Estimated Scaled Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">44</td>
+                <td class="px-4 py-3">0</td>
+                <td class="px-4 py-3 font-bold text-emerald-700">800</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">43</td>
+                <td class="px-4 py-3">1</td>
+                <td class="px-4 py-3 font-bold">790</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">42</td>
+                <td class="px-4 py-3">2</td>
+                <td class="px-4 py-3 font-bold">780</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">41</td>
+                <td class="px-4 py-3">3</td>
+                <td class="px-4 py-3 font-bold">760</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">39</td>
+                <td class="px-4 py-3">5</td>
+                <td class="px-4 py-3 font-bold">730</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">37</td>
+                <td class="px-4 py-3">7</td>
+                <td class="px-4 py-3 font-bold">700</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">34</td>
+                <td class="px-4 py-3">10</td>
+                <td class="px-4 py-3 font-bold">650</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">30</td>
+                <td class="px-4 py-3">14</td>
+                <td class="px-4 py-3 font-bold">580</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">25</td>
+                <td class="px-4 py-3">19</td>
+                <td class="px-4 py-3 font-bold">500</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold rounded-bl-lg">20</td>
+                <td class="px-4 py-3">24</td>
+                <td class="px-4 py-3 font-bold rounded-br-lg">430</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-xs text-slate-400">
+          Estimates derived from official College Board Bluebook practice test scoring tables. Actual curves vary by test form.
+        </p>
+
+        <p>
+          And here is the estimated curve for the <strong>easier Module 2 path</strong>:
+        </p>
+
+        <div class="overflow-x-auto !my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="px-4 py-3 text-left rounded-tl-lg">Raw Score (out of 44)</th>
+                <th class="px-4 py-3 text-left">Questions Missed</th>
+                <th class="px-4 py-3 text-left rounded-tr-lg">Estimated Scaled Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">44</td>
+                <td class="px-4 py-3">0</td>
+                <td class="px-4 py-3 font-bold text-amber-700">~650</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">42</td>
+                <td class="px-4 py-3">2</td>
+                <td class="px-4 py-3 font-bold">~630</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">39</td>
+                <td class="px-4 py-3">5</td>
+                <td class="px-4 py-3 font-bold">~600</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">34</td>
+                <td class="px-4 py-3">10</td>
+                <td class="px-4 py-3 font-bold">~540</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">30</td>
+                <td class="px-4 py-3">14</td>
+                <td class="px-4 py-3 font-bold">~490</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold rounded-bl-lg">25</td>
+                <td class="px-4 py-3">19</td>
+                <td class="px-4 py-3 font-bold rounded-br-lg">~430</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The difference is dramatic. On the hard path, 39 out of 44 correct gives you an estimated 730. On the easy path, the same raw score gives you roughly 600. This is why Module 1 performance is the single most important factor in your SAT math result.
+        </p>
+
+        <!-- Section 5 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="predict-sat-score">How to Predict Your SAT Score Before the Real Test</h2>
+
+        <p>
+          If you have not taken the SAT yet, you can still predict your SAT score with solid accuracy. Here is a data-driven approach that works.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3">Take an Official Practice Test</h3>
+
+        <p>
+          Download the <strong>College Board Bluebook app</strong> and take one of the six official practice tests under real testing conditions. That means timed sections, no extra breaks, and no looking at your phone. The Bluebook app automatically scores your test and shows your routing path, making it the most reliable way to estimate your score.
+        </p>
+
+        <p>
+          If you want a second opinion or a more detailed breakdown, enter your per-module raw scores into our <a href="/sat-practice-test-score-calculator" class="text-indigo-600 hover:underline">practice test score calculator</a>. It uses curves matched to each specific Bluebook test form for higher accuracy.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3">How Accurate Are Practice Test Predictions?</h3>
+
+        <p>
+          Practice test scores are the best predictor of actual SAT performance. Most students score within <strong>30-40 points</strong> of their most recent full-length practice test. The prediction improves when you:
+        </p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li><strong>Simulate real conditions</strong> — timed, no distractions, complete both sections</li>
+          <li><strong>Use official materials</strong> — Bluebook practice tests use the same adaptive algorithm as the real test</li>
+          <li><strong>Average multiple practice tests</strong> — a single test can be an outlier due to luck or fatigue; the average of two or three tests is more reliable</li>
+          <li><strong>Account for test-day nerves</strong> — some students score slightly lower on the real test due to anxiety; factor in a small buffer when setting targets</li>
+        </ul>
+
+        <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
+          <h4 class="text-base font-semibold text-emerald-800 !mt-0 !mb-2">Prediction Formula</h4>
+          <p class="text-sm !mb-0">A simple but effective prediction: take the average of your two most recent practice test math scores. If you scored 680 and 720, your predicted score is <strong>700 &plusmn; 30 points</strong>, meaning your likely test-day math score falls between 670 and 730. Use our <a href="/math-sat-calculator" class="text-indigo-600 hover:underline">math SAT calculator</a> to refine this estimate with your exact per-module numbers.</p>
+        </div>
+
+        <!-- Section 6 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="score-targets">What Math Score Should You Aim For?</h2>
+
+        <p>
+          Your target math score should be based on the schools you are applying to and your intended major. Here is a practical reference:
+        </p>
+
+        <div class="overflow-x-auto !my-6">
+          <table class="w-full text-sm border-collapse">
+            <thead>
+              <tr class="bg-slate-800 text-white">
+                <th class="px-4 py-3 text-left rounded-tl-lg">Goal</th>
+                <th class="px-4 py-3 text-left">Target Math Score</th>
+                <th class="px-4 py-3 text-left rounded-tr-lg">Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">STEM at a Top-20 School</td>
+                <td class="px-4 py-3">770-800</td>
+                <td class="px-4 py-3">MIT, Caltech, and top engineering programs expect near-perfect math</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">Ivy League / Top-20</td>
+                <td class="px-4 py-3">740-800</td>
+                <td class="px-4 py-3">Competitive range for selective universities regardless of major</td>
+              </tr>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">Top-50 University</td>
+                <td class="px-4 py-3">680-750</td>
+                <td class="px-4 py-3">Solid for most selective schools</td>
+              </tr>
+              <tr class="bg-slate-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">State Flagship</td>
+                <td class="px-4 py-3">600-680</td>
+                <td class="px-4 py-3">Competitive for admission and scholarships</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-semibold rounded-bl-lg">Above Average</td>
+                <td class="px-4 py-3">550+</td>
+                <td class="px-4 py-3 rounded-br-lg">Above the national median of ~520</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          If you are applying to engineering or computer science programs, math scores carry extra weight. An admissions officer at a top engineering school is more likely to notice a 780 Math / 680 R&W split than a perfectly balanced 730/730. Focus your prep accordingly.
+        </p>
+
+        <!-- Section 7 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="improve-math-score">How to Improve Your Math Score</h2>
+
+        <p>
+          Knowing where you stand is the first step. Here is a targeted strategy for closing the gap between your current score and your target.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3">1. Protect Module 1 at All Costs</h3>
+
+        <p>
+          Since Module 1 determines your scoring ceiling, treat it as the highest-stakes 22 questions of the test. Double-check your work. Use every minute of the 35-minute time limit. Getting routed to the harder Module 2 is the prerequisite for any score above 650. If you are currently scoring in the 500-600 range, improving your Module 1 accuracy is the fastest way to see a large score jump.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3">2. Master the Desmos Calculator</h3>
+
+        <p>
+          The built-in Desmos graphing calculator is available on every math question. Many students underuse it. You can graph equations to find intercepts, solve systems of equations visually, check your algebra by plugging in values, and even use regression tools. Spending a few hours learning Desmos before test day can be worth 20-40 points. Practice using it at <a href="https://www.desmos.com/calculator" class="text-indigo-600 hover:underline" rel="noopener noreferrer" target="_blank">desmos.com</a> with SAT-style problems.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3">3. Focus on Algebra and Advanced Math First</h3>
+
+        <p>
+          These two domains account for roughly 70% of all math questions. If your algebra fundamentals are solid (linear equations, systems, inequalities) and you can handle quadratics and polynomials, you have the foundation for a 700+ score. Geometry and trig only appear in about 6-7 questions total — important, but not where you should start your prep unless your algebra is already strong.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3">4. Learn to Back-Solve</h3>
+
+        <p>
+          On multiple-choice questions, plugging answer choices back into the problem can be faster than solving algebraically, especially on Advanced Math questions with complex expressions. Start with the middle value (choice B or C) — if it is too large, try a smaller option; if too small, try larger. This technique works on a surprising number of questions and eliminates the risk of algebraic errors.
+        </p>
+
+        <h3 class="text-lg font-bold text-slate-800 font-heading !mt-8 !mb-3">5. Review Every Mistake</h3>
+
+        <p>
+          After each practice test, categorize every wrong answer: was it a conceptual gap (you didn't know how to solve it), a careless error (you knew the method but made a mistake), or a time management issue (you ran out of time)? This tells you exactly what to fix. Conceptual gaps require study. Careless errors require slower, more deliberate checking. Time issues require practicing under timed conditions.
+        </p>
+
+        <!-- Section 8 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="common-mistakes">Common Mistakes When Calculating Your SAT Math Score</h2>
+
+        <p>
+          Students frequently make these errors when estimating their scores:
+        </p>
+
+        <ul class="list-disc pl-6 space-y-3">
+          <li><strong>Ignoring the module path.</strong> Adding up all correct answers and looking at a single conversion table gives you a misleading number. The hard and easy Module 2 curves produce very different scaled scores from the same raw total. Always use a calculator that accounts for adaptive routing.</li>
+          <li><strong>Using old SAT conversion tables.</strong> The Digital SAT (launched in 2024) uses a different scoring model than the pre-2024 paper SAT. Old conversion charts from the 1600-point paper SAT do not apply to the Digital SAT. Make sure any <strong>sat score calc</strong> tool you use is built on Digital SAT data.</li>
+          <li><strong>Treating all practice tests as equal.</strong> The six Bluebook practice tests have slightly different curves. Bluebook Test 1 may be slightly more or less forgiving than Test 4 at the top of the scale. For the most accurate estimate, use a <a href="/sat-practice-test-score-calculator" class="text-indigo-600 hover:underline">calculator that matches curves to specific practice tests</a>.</li>
+          <li><strong>Ignoring the confidence range.</strong> A score estimate is not a single number — it is a range. When a math SAT calculator tells you 720, it means approximately 690-750 depending on the specific test form. Plan your study targets with this margin in mind.</li>
+        </ul>
+
+        <!-- Section 9 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="math-vs-total">Math Score vs. Total Score: What Matters More?</h2>
+
+        <p>
+          Your math score is half of your total SAT score, but its importance varies by context. For STEM-focused applications, admissions committees pay closer attention to math. Business programs at competitive schools also value strong quantitative scores. For humanities and social science applications, a balanced score or strong R&W score may carry slightly more weight.
+        </p>
+
+        <p>
+          Regardless of your major, most colleges publish and evaluate total scores. A 1400 total with a 650 Math / 750 R&W is treated the same as a 1400 with 750 Math / 650 R&W for general admissions at most schools. The exception is programs that specifically screen for quantitative ability.
+        </p>
+
+        <p>
+          If you are trying to maximize your total score efficiently, focus on whichever section has more room to grow. Going from 600 to 700 in math is typically easier than going from 700 to 750 — the first requires closing conceptual gaps, while the second requires eliminating nearly all mistakes.
+        </p>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-6">
+          <h4 class="text-base font-semibold text-amber-800 !mt-0 !mb-2">Superscoring Strategy</h4>
+          <p class="text-sm !mb-0">If your target schools <a href="/can-you-superscore-digital-sat" class="text-indigo-600 hover:underline">superscore the SAT</a>, you can focus on one section per test sitting. Take the SAT once focusing on R&W prep, then again focusing on math. Your superscore combines the best section scores from all sittings, potentially giving you a composite higher than any single test.</p>
+        </div>
+
+        <!-- Section 10 -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="using-the-calculator">Putting It All Together: Using the Math SAT Calculator</h2>
+
+        <p>
+          Here is the step-by-step process to calculate and predict your math SAT score:
+        </p>
+
+        <ol class="list-decimal pl-6 space-y-3">
+          <li>
+            <strong>Complete a practice test.</strong> Use an official Bluebook practice test for the most reliable data.
+          </li>
+          <li>
+            <strong>Count your raw scores by module.</strong> Note how many you got correct in Math Module 1 (out of 22) and Math Module 2 (out of 22) separately.
+          </li>
+          <li>
+            <strong>Open the <a href="/math-sat-calculator" class="text-indigo-600 hover:underline">math SAT calculator</a>.</strong> Enter your Module 1 and Module 2 correct answers. If you used a specific Bluebook test, select it from the practice test dropdown for a curve matched to that form.
+          </li>
+          <li>
+            <strong>Review your estimated score.</strong> The calculator will show your estimated math section score (200-800), the difficulty path you were routed to, a confidence range, and your approximate percentile.
+          </li>
+          <li>
+            <strong>Compare to your target.</strong> Use the <a href="/blog/what-is-a-good-sat-score" class="text-indigo-600 hover:underline">score benchmarks guide</a> to see if your estimated score is competitive for your target schools. If not, identify the gap and focus your study plan on closing it.
+          </li>
+        </ol>
+
+        <p>
+          Repeat this process with each practice test you take. Tracking your estimated scores over time shows whether your study plan is working and how close you are to your target.
+        </p>
+
+        <!-- FAQ -->
+        <h2 class="text-2xl font-bold text-slate-800 font-heading !mt-12 !mb-4" id="faq">Frequently Asked Questions</h2>
+
+        <div class="space-y-6 !mt-6">
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">How do I calculate my SAT Math score from a practice test?</h3>
+            <p class="text-sm">Count the number of questions you answered correctly in Math Module 1 (out of 22) and Math Module 2 (out of 22). Your raw score is the total correct answers. Then use a scoring curve — either from the official Bluebook practice test or a <a href="/math-sat-calculator" class="text-indigo-600 hover:underline">math SAT calculator</a> — to convert that raw score into a scaled score between 200 and 800.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Can I predict my SAT score before taking the test?</h3>
+            <p class="text-sm">Yes. Take a full-length official practice test under timed conditions using the College Board's Bluebook app. Enter your raw scores into a SAT score calculator to get an estimated scaled score. Practice test scores are strong predictors of actual test-day performance, typically within 30-40 points.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">What is the SAT Math scoring curve?</h3>
+            <p class="text-sm">The scoring curve converts your raw score (number correct) into a scaled score (200-800). It varies by test form and depends on your Module 2 difficulty path. On the harder path, each correct answer is weighted more heavily, allowing scores up to 800. On the easier path, scores are capped around 600-650.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">How many math questions can I miss and still get a 700?</h3>
+            <p class="text-sm">On the harder Module 2 path, you can typically miss about 5-7 questions out of 44 and still score around 700. On the easier Module 2 path, reaching 700 is extremely difficult since the scoring ceiling is capped around 600-650.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Does getting routed to the easy Module 2 ruin my score?</h3>
+            <p class="text-sm">It significantly limits your ceiling. If you are routed to the easier Module 2, your Math score will typically cap around 600-650 even if you answer every question in Module 2 correctly. Performing well on Module 1 is critical for accessing the full scoring range.</p>
+          </div>
+
+          <div class="border border-slate-200 rounded-xl p-6">
+            <h3 class="text-base font-bold text-slate-800 mb-2">Is the SAT Math curve the same on every test?</h3>
+            <p class="text-sm">No. The College Board adjusts curves for each test form through a process called equating. Some forms have slightly more forgiving curves. This is why score estimates include a confidence range of approximately &plusmn;30 points.</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-gradient-to-br from-indigo-50 to-slate-50 border border-indigo-100 rounded-2xl p-8 text-center !mt-12">
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">Calculate Your Math SAT Score Now</h2>
+          <p class="text-sm text-slate-600 mb-6 max-w-lg mx-auto">
+            Enter your practice test results into our free math SAT calculator. Get your estimated scaled score, see your difficulty routing path, and find out which colleges match your math performance.
+          </p>
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a href="/math-sat-calculator" class="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors text-sm">
+              Math SAT Calculator
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+            <a href="/" class="inline-flex items-center gap-2 px-6 py-3 bg-white text-indigo-600 font-semibold rounded-xl border border-indigo-200 hover:bg-indigo-50 transition-colors text-sm">
+              Full SAT Score Calculator
+            </a>
+          </div>
+        </div>
+
+        <!-- Related Reading -->
+        <div class="!mt-12">
+          <h2 class="text-2xl font-bold text-slate-800 font-heading !mb-6">Related Reading</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <a href="/how-to-calculate-sat-score" class="block border border-slate-200 rounded-xl p-5 hover:border-indigo-300 hover:shadow-sm transition-all">
+              <h3 class="text-sm font-bold text-slate-800 mb-1">How to Calculate Your SAT Score</h3>
+              <p class="text-xs text-slate-500">Step-by-step guide to converting raw scores into scaled scores on the Digital SAT.</p>
+            </a>
+            <a href="/how-digital-sat-is-scored" class="block border border-slate-200 rounded-xl p-5 hover:border-indigo-300 hover:shadow-sm transition-all">
+              <h3 class="text-sm font-bold text-slate-800 mb-1">How the Digital SAT Is Scored</h3>
+              <p class="text-xs text-slate-500">Understand adaptive testing, IRT scoring, and how your raw answers become a 400-1600 scaled score.</p>
+            </a>
+            <a href="/blog/what-is-a-good-sat-score" class="block border border-slate-200 rounded-xl p-5 hover:border-indigo-300 hover:shadow-sm transition-all">
+              <h3 class="text-sm font-bold text-slate-800 mb-1">What Is a Good SAT Score?</h3>
+              <p class="text-xs text-slate-500">Score ranges, percentile rankings, and college benchmarks to help you set a realistic target.</p>
+            </a>
+            <a href="/blog/can-you-use-a-calculator-on-the-sat" class="block border border-slate-200 rounded-xl p-5 hover:border-indigo-300 hover:shadow-sm transition-all">
+              <h3 class="text-sm font-bold text-slate-800 mb-1">Can You Use a Calculator on the SAT?</h3>
+              <p class="text-xs text-slate-500">2026 rules for calculator use on the Digital SAT, including the built-in Desmos calculator.</p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-50 border-t border-slate-200 py-8">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-400">&copy; {new Date().getFullYear()} satcalculator.co. All rights reserved. SAT&reg; is a registered trademark of the College Board, which is not affiliated with satcalculator.co.</p>
+      <div class="flex items-center gap-6 text-xs text-slate-400">
+        <a href="/" class="hover:text-slate-600">Home</a>
+        <a href="/privacy-policy" class="hover:text-slate-600">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:text-slate-600">Terms of Service</a>
+        <a href="/disclaimer" class="hover:text-slate-600">Disclaimer</a>
+        <a href="/about" class="hover:text-slate-600">About</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
