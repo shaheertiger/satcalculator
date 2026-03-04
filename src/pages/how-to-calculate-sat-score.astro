@@ -1,9 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const pageTitle = "How to Calculate SAT Score - Step-by-Step Guide";
-const pageDescription = "Learn the math behind SAT scoring. From raw scores to scaled scores (200-800) and the total 1600. Understand equating and how the Digital SAT curves work.";
-const pageKeywords = "how to calculate SAT score, SAT scoring chart, calculate SAT score manually, SAT raw score to scaled score, SAT scoring guide";
+const pageTitle = "How to Calculate SAT Score: Step-by-Step Guide (2025-2026)";
+const pageDescription = "Learn exactly how to calculate your SAT score step by step. From raw scores to scaled scores, digital SAT scoring, practice test scoring, math and reading breakdowns, and more.";
+const pageKeywords = "how to calculate SAT score, how are SAT scores calculated, calculate SAT score, SAT raw score to scaled score, how to calculate digital SAT score, SAT scoring guide, how to calculate SAT score from practice test, how to calculate SAT math score, how to calculate reading and writing SAT score, SAT composite score";
 
 const breadcrumbs = [
   { name: "How to Calculate SAT Score", item: "/how-to-calculate-sat-score" }
@@ -15,6 +15,14 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "How are SAT scores calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SAT scores are calculated in three steps: first, count your correct answers to get a raw score for each section (Reading & Writing and Math). Then, the College Board converts each raw score into a scaled section score between 200 and 800 using equating tables. Finally, the two section scores are added together for your total score on the 400-1600 scale. The Digital SAT also factors in which difficulty module you were routed to."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Is there a penalty for wrong answers on the SAT?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -23,10 +31,34 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      "name": "Can I calculate my exact SAT score from practice tests?",
+      "name": "How do I calculate my SAT score from a practice test?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can get a very close estimate using the official scoring tables for each Bluebook practice test. However, exact precision is impossible because the real SAT uses Item Response Theory with question-level weights that are not publicly available."
+        "text": "To calculate your SAT score from a practice test, count the number of correct answers in each section to get your raw scores. Then use the scoring table provided at the back of that specific Bluebook practice test to convert each raw score into a scaled section score (200-800). Add the two section scores together for your total. Each practice test has its own unique scoring table, so always use the one that matches your test."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate my exact Digital SAT score manually?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You cannot calculate an exact Digital SAT score manually because the real test uses Item Response Theory (IRT), which assigns different weights to different questions based on difficulty, discrimination, and guessing probability. These parameters are not publicly released. However, you can get a very close estimate using official practice test scoring tables or an SAT score calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate my SAT Math score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Count the number of correct answers across both Math modules (44 questions total). This is your raw Math score. Then convert it using the scoring table for your specific test form. On the hard module path, a raw score of 40 out of 44 typically converts to around 760-780. On the easy module path, the same raw score converts to a lower scaled score due to the scoring ceiling."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I convert a PSAT score to an SAT score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PSAT scores range from 320-1520 while SAT scores range from 400-1600. As a rough estimate, add 40-80 points to your PSAT total to approximate an equivalent SAT score. The College Board provides concordance tables for more precise conversions. A PSAT score of 1200 generally corresponds to an SAT score in the 1230-1280 range."
       }
     },
     {
@@ -34,16 +66,34 @@ const faqSchema = {
       "name": "Why did my score change between practice tests even though I got the same number right?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Each test form has a unique scoring curve (equating table) that accounts for differences in difficulty. A harder test is more generous, while an easier test is stricter. This ensures that a 1400 means the same level of achievement regardless of which form you took."
+        "text": "Each test form has a unique scoring curve (equating table) that accounts for differences in difficulty. A harder test is more generous with its curve, while an easier test is stricter. This ensures that a 1400 means the same level of achievement regardless of which form you took."
       }
     }
   ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "author": {
+    "@type": "Organization",
+    "name": "satcalculator.co"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "satcalculator.co"
+  },
+  "datePublished": "2025-01-15",
+  "dateModified": "2026-03-04"
 };
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
@@ -52,79 +102,115 @@ const faqSchema = {
         How to Calculate Your SAT Score
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        Wondering <strong>how to calculate SAT score</strong> results from your raw answers? Here is the step-by-step breakdown of how the College Board turns your raw answers into a scaled score on the 400-1600 scale.
+        Wondering <strong>how to calculate SAT score</strong> results from your raw answers? This step-by-step guide explains exactly <strong>how SAT scores are calculated</strong>, from raw scores to the final 400-1600 scale — including the Digital SAT's adaptive scoring system.
       </p>
     </div>
 
     <!-- Content -->
     <article class="prose prose-slate max-w-3xl mx-auto">
-      <h2>The Basic Formula</h2>
+
+      <h2>How Are SAT Scores Calculated? The Basic Formula</h2>
       <p>
-        Your total SAT score is the sum of two section scores:
+        Understanding <strong>how SAT scores are calculated</strong> starts with one simple formula. Your total SAT score is the sum of two equally weighted section scores:
       </p>
       <ul>
         <li><strong>Reading and Writing (RW):</strong> 200-800 points</li>
         <li><strong>Math:</strong> 200-800 points</li>
       </ul>
       <p>
-        <strong>Total Score = RW Score + Math Score</strong> (Range: 400-1600)
+        <strong>Total Score = RW Section Score + Math Section Score</strong> (Range: 400-1600)
       </p>
       <p>
-        Each section contributes equally to your total. A student scoring 700 in both sections would have a total of 1400. The median score is approximately 1050, meaning roughly half of test-takers score above and half below that mark.
+        Each section contributes equally to your composite score. A student scoring 650 in Reading & Writing and 700 in Math receives a total score of 1350. The national average total score is approximately 1050, meaning roughly half of test-takers score above and half below this mark.
+      </p>
+      <p>
+        But getting from your raw answers to those section scores involves three key steps: counting correct answers, accounting for module difficulty, and converting to scaled scores through equating.
       </p>
 
       <h2>Step 1: Calculate Your Raw Score</h2>
       <p>
-        Your "raw score" is the number of questions you answered correctly in each section. This is the starting point for all scoring calculations.
+        Your <strong>raw score</strong> is simply the number of questions you answered correctly in each section. This is the starting point for calculating your SAT score.
       </p>
       <ul>
-        <li>There is <strong>no penalty for guessing</strong>. Incorrect answers count as 0 points, not negative points. This is a change from the pre-2016 SAT, which deducted 1/4 point for wrong answers.</li>
-        <li><strong>Reading & Writing:</strong> 54 questions total (2 modules of 27). Maximum raw score = 54.</li>
-        <li><strong>Math:</strong> 44 questions total (2 modules of 22). Maximum raw score = 44.</li>
+        <li><strong>Reading & Writing:</strong> 54 questions total across 2 modules (27 questions each). Maximum raw score = 54.</li>
+        <li><strong>Math:</strong> 44 questions total across 2 modules (22 questions each). Maximum raw score = 44.</li>
       </ul>
       <p>
-        Simply count the number of correct answers in each section. Do not subtract for incorrect answers or blank responses.
+        There is <strong>no penalty for guessing</strong> on the Digital SAT. Incorrect answers count as 0 points — not negative points. This is a change from the pre-2016 SAT, which deducted a quarter point for each wrong answer. Always answer every question, even if you need to guess.
       </p>
 
-      <h2>Step 2: Account for Module Difficulty</h2>
+      <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 not-prose my-8">
+        <h3 class="text-lg font-bold text-indigo-900 mb-2">Quick Raw Score Calculation</h3>
+        <p class="text-sm text-indigo-700">
+          <strong>RW Raw Score</strong> = Total correct answers in Module 1 + Module 2 (out of 54)<br />
+          <strong>Math Raw Score</strong> = Total correct answers in Module 1 + Module 2 (out of 44)<br /><br />
+          Simply count correct answers. Do not subtract for incorrect answers or blank responses.
+        </p>
+      </div>
+
+      <h2>Step 2: Account for Module Difficulty (Digital SAT Adaptive Scoring)</h2>
       <p>
-        This is the step that makes Digital SAT scoring different from any previous version. Because the test is adaptive, your raw score alone does not determine your scaled score — the <strong>difficulty path</strong> matters too.
+        This step is what makes understanding <strong>how the Digital SAT score is calculated</strong> more complex than previous versions. The Digital SAT is adaptive at the module level, meaning your raw score alone does not determine your final score — the <strong>difficulty path</strong> you were routed to matters significantly.
       </p>
-      <ul>
-        <li><strong>Hard Module 2:</strong> If you performed well on Module 1 and were routed to the harder second module, your scoring ceiling is higher. Getting 38/44 correct on the hard path might yield a 760 in math.</li>
-        <li><strong>Easy Module 2:</strong> If you were routed to the easier second module, the same 38/44 correct answers might only yield a 620-640 because of the lower scoring ceiling.</li>
-      </ul>
       <p>
-        This is why two students with identical raw scores can receive very different scaled scores — the difficulty of the questions they answered makes a significant difference.
+        Here is how it works: Module 1 in each section contains a mix of easy, medium, and hard questions. Based on your performance on Module 1, the system routes you to either a harder or easier Module 2.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">Hard Module 2 Path</h3>
+          <p class="text-sm text-emerald-700 mb-2">
+            Strong Module 1 performance (~60-70%+ correct) routes you to harder questions.
+          </p>
+          <p class="text-sm font-bold text-emerald-800">
+            &rarr; Score ceiling: up to 800 per section
+          </p>
+          <p class="text-xs text-emerald-600 mt-2">
+            Harder questions are weighted more heavily, so missing a few still allows for a high score.
+          </p>
+        </div>
+        <div class="bg-rose-50 p-6 rounded-xl border border-rose-100">
+          <h3 class="text-lg font-bold text-rose-900 mb-2">Easy Module 2 Path</h3>
+          <p class="text-sm text-rose-700 mb-2">
+            Weaker Module 1 performance (&lt;50% correct) routes you to easier questions.
+          </p>
+          <p class="text-sm font-bold text-rose-800">
+            &rarr; Score ceiling: approximately 600-650
+          </p>
+          <p class="text-xs text-rose-600 mt-2">
+            Even a perfect Module 2 cannot push your score beyond the ceiling on this path.
+          </p>
+        </div>
+      </div>
+      <p>
+        This is why two students with identical raw scores can receive very different scaled scores. Routing happens independently for each section — your Reading & Writing performance does not affect your Math module routing.
       </p>
 
-      <h2>Step 3: Convert to Scaled Score (Equating)</h2>
+      <h2>Step 3: Convert Raw Scores to Scaled Scores (Equating)</h2>
       <p>
-        You cannot simply multiply your raw score by a fixed number to get your scaled score. The College Board uses a statistical process called <strong>equating</strong> to account for small differences in difficulty between different test versions.
+        You cannot simply multiply your raw score by a fixed number to get a scaled score. The College Board uses a statistical process called <strong>equating</strong> to convert raw scores into the 200-800 scale for each section.
       </p>
       <p>
-        Equating ensures that a score of 1400 on the March test represents the same academic ability as 1400 on the October test, even though the questions were completely different.
-      </p>
-      <p>
-        For example, on one test date, a raw math score of 40/44 might result in a <strong>760</strong>. On a harder test date, that same 40/44 might be worth a <strong>780</strong> because the equating process recognized the test was more difficult.
+        Equating ensures that a score of 1400 on one test date represents the same academic ability as 1400 on another, even though the questions were completely different. A harder test form receives a more generous curve (you can miss more questions and still earn the same score), while an easier form receives a stricter curve.
       </p>
 
-      <h3>Sample Scoring Chart (Hard Module 2 Path)</h3>
+      <h3>Sample Scoring Table (Hard Module 2 Path)</h3>
+      <p>
+        Below is an approximate scoring table based on official Bluebook practice test data. Actual curves vary by test form.
+      </p>
       <div class="not-prose overflow-x-auto my-6">
         <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
           <thead class="bg-slate-100 text-slate-700">
             <tr>
-              <th class="px-4 py-2 border border-slate-200">Raw Score (Correct Answers)</th>
-              <th class="px-4 py-2 border border-slate-200">Est. Math Score (out of 44)</th>
-              <th class="px-4 py-2 border border-slate-200">Est. RW Score (out of 54)</th>
+              <th class="px-4 py-2 border border-slate-200">Questions Missed</th>
+              <th class="px-4 py-2 border border-slate-200">Est. Math Score (of 44)</th>
+              <th class="px-4 py-2 border border-slate-200">Est. RW Score (of 54)</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td class="border border-slate-200 py-1">All Correct (44/54)</td><td class="border border-slate-200 py-1 font-bold">800</td><td class="border border-slate-200 py-1 font-bold">800</td></tr>
+            <tr><td class="border border-slate-200 py-1">0 (perfect)</td><td class="border border-slate-200 py-1 font-bold">800</td><td class="border border-slate-200 py-1 font-bold">800</td></tr>
             <tr><td class="border border-slate-200 py-1">-1</td><td class="border border-slate-200 py-1">790</td><td class="border border-slate-200 py-1">790</td></tr>
             <tr><td class="border border-slate-200 py-1">-2</td><td class="border border-slate-200 py-1">780</td><td class="border border-slate-200 py-1">780</td></tr>
             <tr><td class="border border-slate-200 py-1">-3</td><td class="border border-slate-200 py-1">760</td><td class="border border-slate-200 py-1">760</td></tr>
-            <tr><td class="border border-slate-200 py-1">-4</td><td class="border border-slate-200 py-1">750</td><td class="border border-slate-200 py-1">740</td></tr>
             <tr><td class="border border-slate-200 py-1">-5</td><td class="border border-slate-200 py-1">730</td><td class="border border-slate-200 py-1">720</td></tr>
             <tr><td class="border border-slate-200 py-1">-8</td><td class="border border-slate-200 py-1">680</td><td class="border border-slate-200 py-1">680</td></tr>
             <tr><td class="border border-slate-200 py-1">-12</td><td class="border border-slate-200 py-1">620</td><td class="border border-slate-200 py-1">620</td></tr>
@@ -133,33 +219,98 @@ const faqSchema = {
         </table>
       </div>
       <p class="text-xs text-slate-400">
-        These estimates are based on official Bluebook practice test data. Actual curves vary by test form. Scores assume the Hard Module 2 path.
+        Scores assume the Hard Module 2 path. Use our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT Score Calculator</a> for a personalized estimate.
       </p>
 
-      <h2>The Digital SAT Difference</h2>
+      <h2>How to Calculate SAT Math Score</h2>
       <p>
-        On the <a href="/digital-sat-score-calculator" class="text-indigo-600 hover:underline">Digital SAT</a>, scoring is more complex than the old paper test due to <strong>Item Response Theory (IRT)</strong>. Here is what makes it different:
+        To <strong>calculate your SAT Math score</strong> specifically, follow these steps:
+      </p>
+      <ol>
+        <li>Count your correct answers across both Math modules (22 questions each, 44 total). This is your Math raw score.</li>
+        <li>Determine which module path you were on. If Module 2 felt significantly harder than Module 1, you were likely routed to the hard path.</li>
+        <li>Use the scoring table for your specific test form to convert the raw score. On practice tests, this table is provided at the back of the test.</li>
+      </ol>
+      <p>
+        The Math section includes both multiple-choice questions and student-produced responses (grid-ins). Both question types are scored the same way — 1 point for correct, 0 for incorrect. On the hard module path, a raw Math score of 40 out of 44 typically converts to approximately 760-780.
+      </p>
+
+      <h2>How to Calculate SAT Reading and Writing Score</h2>
+      <p>
+        The process for <strong>calculating your Reading and Writing SAT score</strong> is similar to Math:
+      </p>
+      <ol>
+        <li>Count correct answers across both RW modules (27 questions each, 54 total) to get your RW raw score.</li>
+        <li>Identify your module difficulty path based on your Module 1 performance.</li>
+        <li>Convert using the appropriate scoring table.</li>
+      </ol>
+      <p>
+        The Reading & Writing section on the Digital SAT combines what used to be two separate sections on the paper test. Questions cover reading comprehension, vocabulary in context, grammar, and rhetoric. Because there are more questions (54 vs. 44 in Math), each individual question carries slightly less weight in the final section score.
+      </p>
+
+      <h2>How to Calculate SAT Score from a Practice Test</h2>
+      <p>
+        Calculating your score from a <strong>Bluebook practice test</strong> is the most accurate way to estimate your real SAT score. Here is exactly how to do it:
+      </p>
+      <ol>
+        <li><strong>Check your answers</strong> against the answer key provided for that specific practice test.</li>
+        <li><strong>Count correct answers</strong> separately for Reading & Writing and Math to get your raw scores.</li>
+        <li><strong>Look up the scoring table</strong> included with that practice test. Each Bluebook practice test has a unique conversion table — do not use the table from a different practice test.</li>
+        <li><strong>Convert each raw score</strong> to a scaled section score (200-800) using the table.</li>
+        <li><strong>Add the two section scores</strong> together for your total composite score.</li>
+      </ol>
+      <p>
+        Note that Bluebook practice tests simulate the adaptive experience, so the scoring table already accounts for the module difficulty path. If you are scoring a paper-based practice test from a prep book, the publisher should provide its own conversion chart.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 not-prose my-8">
+        <h3 class="text-lg font-bold text-amber-900 mb-2">Why You Cannot Calculate Your Exact Score Manually</h3>
+        <p class="text-sm text-amber-700">
+          The real Digital SAT uses <strong>Item Response Theory (IRT)</strong>, a statistical model where each question is weighted differently based on its difficulty, discrimination, and guessing probability. These question-level parameters are not publicly released, making exact manual calculation impossible. Score calculators — including <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">ours</a> — use curves derived from official practice tests to provide the closest possible estimate.
+        </p>
+      </div>
+
+      <h2>How to Convert PSAT Scores to SAT</h2>
+      <p>
+        Many students want to know <strong>how to calculate a PSAT score into an SAT equivalent</strong>. The PSAT uses the same scoring methodology but on a slightly different scale:
       </p>
       <ul>
-        <li><strong>Not all questions are worth the same amount.</strong> Each question has unique statistical parameters (difficulty, discrimination, guessing) that determine its weight in your final score.</li>
-        <li><strong>Harder questions are worth more.</strong> A correct answer on a difficult question boosts your score more than a correct answer on an easy question.</li>
-        <li><strong>The module path affects your ceiling.</strong> Being routed to the easy Module 2 caps your maximum score at approximately 600-650 per section, regardless of how many questions you answer correctly.</li>
-        <li><strong>Scores are pre-equated.</strong> Unlike the paper SAT where curves were calculated after the test, Digital SAT questions are pre-calibrated with known IRT parameters, allowing for faster score reporting.</li>
+        <li><strong>PSAT range:</strong> 320-1520 (160-760 per section)</li>
+        <li><strong>SAT range:</strong> 400-1600 (200-800 per section)</li>
       </ul>
       <p>
-        Because of this complexity, it is impossible to calculate your exact Digital SAT score manually with 100% precision. However, you can use our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT Score Calculator</a> to get a highly accurate estimate based on official practice test curves.
+        As a general rule, add approximately 40-80 points to your PSAT total score for a rough SAT equivalent. The College Board publishes official concordance tables for precise conversions. For example, a PSAT score of 1200 generally corresponds to an SAT score in the 1230-1280 range, assuming similar preparation levels.
       </p>
 
-      <h2>Common Scoring Misconceptions</h2>
+      <h2>Understanding Your Score Report</h2>
+      <p>
+        When you receive your official score report, you will see several components beyond the total score:
+      </p>
       <ul>
-        <li><strong>"Each question is worth X points"</strong> — This is not how the Digital SAT works. Question weights vary based on IRT parameters.</li>
-        <li><strong>"The curve is the same for every test"</strong> — Each test form has its own equating table. What costs you 10 points on one form might cost 20 on another.</li>
-        <li><strong>"I need to answer every question correctly to get an 800"</strong> — On some harder test forms, you can miss 1-2 questions and still receive a perfect 800 in a section.</li>
-        <li><strong>"Leaving questions blank is better than guessing"</strong> — There is no guessing penalty. Always answer every question.</li>
+        <li><strong>Total Score (400-1600):</strong> The composite sum of your two section scores. This is the primary number colleges evaluate.</li>
+        <li><strong>Section Scores (200-800 each):</strong> Separate scores for Reading & Writing and Math.</li>
+        <li><strong>Test Scores (10-40):</strong> More granular sub-scores for specific skill areas within each section.</li>
+        <li><strong>Percentile Rank:</strong> The percentage of students who scored lower than you nationally. Use our <a href="/sat-percentile-calculator" class="text-indigo-600 hover:underline">SAT Percentile Calculator</a> to look this up.</li>
+        <li><strong>Benchmark Status:</strong> Indicates whether your score meets the College Board's college readiness benchmarks (480 for RW, 530 for Math).</li>
+      </ul>
+
+      <h2>Common SAT Scoring Misconceptions</h2>
+      <ul>
+        <li><strong>"Each question is worth the same number of points"</strong> — On the Digital SAT, question weights vary based on IRT parameters. Some questions have more impact on your score than others.</li>
+        <li><strong>"The scoring curve is identical for every test"</strong> — Each test form has its own equating table. What costs you 10 points on one form might cost 20 on another.</li>
+        <li><strong>"I need a perfect raw score for an 800"</strong> — On harder test forms, you can miss 1-2 questions and still receive a perfect 800 in a section.</li>
+        <li><strong>"Leaving questions blank is safer than guessing"</strong> — There is absolutely no penalty for guessing. A blank answer and a wrong answer are scored identically (0 points).</li>
+        <li><strong>"My superscore is the same as my highest sitting score"</strong> — Your <a href="/can-you-superscore-digital-sat" class="text-indigo-600 hover:underline">SAT Superscore</a> combines the highest section scores from different test dates, which can be higher than any single sitting.</li>
       </ul>
 
       <h2>Frequently Asked Questions</h2>
       <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How are SAT scores calculated?</h3>
+          <p class="text-slate-600 text-sm">
+            SAT scores are calculated in three steps: count correct answers for your raw score, account for module difficulty (adaptive routing), and convert to scaled scores using equating tables. Your two section scores (200-800 each) are added together for the total score on the 400-1600 scale.
+          </p>
+        </div>
         <div class="bg-white border border-slate-200 rounded-xl p-6">
           <h3 class="font-bold text-slate-900 mb-2">Is there a penalty for wrong answers on the SAT?</h3>
           <p class="text-slate-600 text-sm">
@@ -167,15 +318,27 @@ const faqSchema = {
           </p>
         </div>
         <div class="bg-white border border-slate-200 rounded-xl p-6">
-          <h3 class="font-bold text-slate-900 mb-2">Can I calculate my exact SAT score from practice tests?</h3>
+          <h3 class="font-bold text-slate-900 mb-2">How do I calculate my SAT score from a practice test?</h3>
           <p class="text-slate-600 text-sm">
-            You can get a very close estimate using the official scoring tables for each Bluebook practice test. However, exact precision is impossible because the real SAT uses Item Response Theory with question-level weights that are not publicly available.
+            Count correct answers in each section to get raw scores, then use the specific scoring table provided with that practice test to convert to scaled scores. Add the two section scores for your total. Each practice test has a unique conversion table.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can I calculate my exact Digital SAT score manually?</h3>
+          <p class="text-slate-600 text-sm">
+            Not exactly. The Digital SAT uses Item Response Theory (IRT), which assigns different weights to different questions. These parameters are not publicly available. You can get a close estimate using practice test scoring tables or our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT Score Calculator</a>.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How do I convert my PSAT score to an SAT score?</h3>
+          <p class="text-slate-600 text-sm">
+            Add approximately 40-80 points to your PSAT total score for a rough SAT equivalent. The College Board provides official concordance tables for precise conversions. A PSAT score of 1200 generally corresponds to an SAT score in the 1230-1280 range.
           </p>
         </div>
         <div class="bg-white border border-slate-200 rounded-xl p-6">
           <h3 class="font-bold text-slate-900 mb-2">Why did my score change between practice tests even though I got the same number right?</h3>
           <p class="text-slate-600 text-sm">
-            Each test form has a unique scoring curve (equating table) that accounts for differences in difficulty. A harder test is more generous, while an easier test is stricter. This ensures that a 1400 means the same level of achievement regardless of which form you took.
+            Each test form has a unique equating table that accounts for differences in difficulty. A harder test has a more generous curve, while an easier test is stricter. This ensures consistent meaning across different test forms.
           </p>
         </div>
       </div>
