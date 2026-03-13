@@ -1,0 +1,310 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PSATCalculatorFull from '../components/PSATCalculatorFull';
+
+const pageTitle = "PSAT Score Calculator 2026 - PSAT/NMSQT Score Estimator & National Merit Checker";
+const pageDescription = "Calculate your PSAT/NMSQT score (320-1520) from raw module results. Check your National Merit Selection Index and see if you qualify for semifinalist status in your state.";
+const pageKeywords = "PSAT score calculator, PSAT/NMSQT calculator, National Merit calculator, PSAT Selection Index, PSAT score estimator, NMSQT cutoff scores, PSAT raw score conversion";
+
+const breadcrumbs = [
+  { name: "PSAT Score Calculator", item: "/psat-score-calculator" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good PSAT score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The average PSAT/NMSQT score is around 920. A score of 1150+ puts you in the top 25%, 1250+ is top 10%, and 1400+ is top 1%. To qualify for National Merit Semifinalist status, you typically need a Selection Index of 207-222, depending on your state."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the PSAT scored differently from the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The PSAT/NMSQT is scored on a scale of 320-1520 (vs. 400-1600 for the SAT), with each section scored 160-760 (vs. 200-800). The test has the same adaptive format with two modules per section, but the question difficulty is slightly lower than the SAT."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the National Merit Selection Index?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Selection Index is a number between 48 and 228 calculated from your PSAT section scores. It determines whether you qualify as a National Merit Semifinalist. The formula weights Reading & Writing scores more heavily than Math. Cutoff scores vary by state and change each year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When do PSAT scores come out?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PSAT/NMSQT scores are typically released in December for the October test date. Students access their scores through their College Board account. National Merit Semifinalist notifications are sent the following September."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do colleges see my PSAT score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. PSAT scores are not sent to colleges and are not used in admissions decisions. The only purpose of the PSAT is to qualify for National Merit Scholarships and to give you practice for the SAT. However, if you opt in, colleges may send you marketing materials based on your score range."
+      }
+    }
+  ]
+};
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PSAT Score Calculator",
+  "description": pageDescription,
+  "url": "https://satcalculator.co/psat-score-calculator",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+  </Fragment>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        PSAT Score Calculator 2026
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Estimate your <strong>PSAT/NMSQT score</strong> (320&ndash;1520) from raw module results and check if your Selection Index qualifies for <strong>National Merit Semifinalist</strong> status in your state.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <PSATCalculatorFull client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>How Is the PSAT/NMSQT Scored?</h2>
+      <p>
+        The PSAT/NMSQT uses the same adaptive testing format as the Digital SAT, but with a slightly lower score ceiling:
+      </p>
+      <ul>
+        <li><strong>Reading & Writing:</strong> 160&ndash;760 points (27 questions per module, 2 modules = 54 total)</li>
+        <li><strong>Math:</strong> 160&ndash;760 points (22 questions per module, 2 modules = 44 total)</li>
+        <li><strong>Total Score:</strong> 320&ndash;1520 (sum of both sections)</li>
+      </ul>
+      <p>
+        Like the Digital SAT, the PSAT is <strong>multistage adaptive</strong>. Your performance on Module 1 determines whether you get an easier or harder Module 2, which affects your maximum possible scaled score.
+      </p>
+
+      <h2>How to Use This Calculator</h2>
+      <ol>
+        <li><strong>Enter your raw scores:</strong> Use the sliders to input the number of correct answers for each module (R&W Module 1, R&W Module 2, Math Module 1, Math Module 2).</li>
+        <li><strong>View your estimated score:</strong> The calculator converts your raw scores to the 320&ndash;1520 scaled score and shows section-level breakdowns.</li>
+        <li><strong>Check National Merit eligibility:</strong> Select your state from the dropdown to see the estimated Selection Index cutoff and whether your score qualifies.</li>
+      </ol>
+
+      <h2>Understanding the National Merit Selection Index</h2>
+      <p>
+        The <strong>Selection Index</strong> is the number that determines National Merit Scholarship eligibility. It ranges from 48 to 228 and is calculated from your PSAT section scores, with Reading & Writing weighted more heavily than Math.
+      </p>
+      <p>
+        Each year, the National Merit Scholarship Corporation (NMSC) sets <strong>state-by-state cutoff scores</strong>. The top ~16,000 scorers nationwide become Semifinalists, but since the number of test-takers varies by state, cutoffs differ significantly:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-red-50 p-6 rounded-xl border border-red-100">
+          <h3 class="text-lg font-bold text-red-900 mb-2">Highest Cutoffs (219&ndash;222)</h3>
+          <p class="text-sm text-red-700">
+            Massachusetts, New Jersey, Connecticut, Maryland, and the District of Columbia typically have the highest cutoffs due to competitive test-taking populations.
+          </p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">High Cutoffs (215&ndash;218)</h3>
+          <p class="text-sm text-blue-700">
+            California, New York, Virginia, Washington, and Pennsylvania fall into this range. These are large states with many high-performing students.
+          </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+          <h3 class="text-lg font-bold text-amber-900 mb-2">Moderate Cutoffs (210&ndash;215)</h3>
+          <p class="text-sm text-amber-700">
+            Texas, Illinois, Georgia, Florida, North Carolina, Minnesota, and most other states fall in this range.
+          </p>
+        </div>
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">Lower Cutoffs (203&ndash;210)</h3>
+          <p class="text-sm text-emerald-700">
+            Wyoming, Mississippi, South Dakota, West Virginia, and some smaller states have lower cutoffs, making semifinalist status more achievable.
+          </p>
+        </div>
+      </div>
+
+      <h2>PSAT vs. SAT: Key Differences</h2>
+      <p>
+        The PSAT and SAT share the same format, but there are important differences:
+      </p>
+      <div class="overflow-x-auto not-prose my-8">
+        <table class="w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left p-3 font-bold text-slate-700 border-b border-slate-200"></th>
+              <th class="text-center p-3 font-bold text-teal-700 border-b border-slate-200">PSAT/NMSQT</th>
+              <th class="text-center p-3 font-bold text-indigo-700 border-b border-slate-200">SAT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3 text-slate-600 border-b border-slate-100">Score Range</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">320&ndash;1520</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">400&ndash;1600</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="p-3 text-slate-600 border-b border-slate-100">Section Scores</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">160&ndash;760</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">200&ndash;800</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600 border-b border-slate-100">Test Duration</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">2 hrs 14 min</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">2 hrs 14 min</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="p-3 text-slate-600 border-b border-slate-100">Question Count</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">98 questions</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">98 questions</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600 border-b border-slate-100">Adaptive Format</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Yes</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Yes</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="p-3 text-slate-600 border-b border-slate-100">Used for College Admissions</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">No</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Yes</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600">National Merit Eligible</td>
+              <td class="p-3 text-center font-semibold text-slate-800">Yes</td>
+              <td class="p-3 text-center font-semibold text-slate-800">No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What Counts as a Good PSAT Score?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">1400+ (Top 1%)</h3>
+          <p class="text-sm text-emerald-700">
+            Likely qualifies for National Merit Semifinalist in most states. Equivalent to a ~1470+ SAT score. Exceptional performance.
+          </p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">1250&ndash;1390 (Top 10%)</h3>
+          <p class="text-sm text-blue-700">
+            Strong score that may qualify for National Merit Commended Scholar (top 50,000 scorers). Shows strong SAT readiness.
+          </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+          <h3 class="text-lg font-bold text-amber-900 mb-2">1150&ndash;1240 (Top 25%)</h3>
+          <p class="text-sm text-amber-700">
+            Above average. Indicates solid academic ability. With focused SAT prep, students in this range often score 1300+ on the SAT.
+          </p>
+        </div>
+        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">920&ndash;1140 (Average)</h3>
+          <p class="text-sm text-slate-700">
+            Near the national median. The PSAT is meant as a practice test, so this is a useful baseline to identify areas for SAT improvement.
+          </p>
+        </div>
+      </div>
+
+      <h2>National Merit Scholarship Timeline</h2>
+      <p>
+        Understanding the National Merit process helps you plan your testing strategy:
+      </p>
+      <ol>
+        <li><strong>October (Junior Year):</strong> Take the PSAT/NMSQT. This is the only test date that counts for National Merit.</li>
+        <li><strong>December:</strong> PSAT scores are released through your College Board account.</li>
+        <li><strong>April:</strong> National Merit Commended Students are notified (top ~50,000 scorers, about 34,000 students).</li>
+        <li><strong>September (Senior Year):</strong> National Merit Semifinalists are announced (~16,000 students, top 1%).</li>
+        <li><strong>February:</strong> Semifinalists who complete the application become Finalists (~15,000 students).</li>
+        <li><strong>March&ndash;June:</strong> National Merit Scholarship winners are announced (~7,600 students receive scholarships worth $2,500&ndash;full tuition).</li>
+      </ol>
+
+      <h2>How to Prepare for the PSAT</h2>
+      <p>
+        Since the PSAT mirrors the Digital SAT format, the best preparation strategies are the same:
+      </p>
+      <ul>
+        <li><strong>Use official practice materials.</strong> College Board's Bluebook app offers free practice tests in the same adaptive digital format.</li>
+        <li><strong>Focus on Module 1 performance.</strong> Getting routed to the harder Module 2 is essential for reaching the 700+ section scores needed for National Merit.</li>
+        <li><strong>Practice with Khan Academy.</strong> The College Board partners with Khan Academy for free, personalized SAT/PSAT prep.</li>
+        <li><strong>Time yourself.</strong> The PSAT has the same time-per-question ratios as the SAT, so pacing practice is critical.</li>
+        <li><strong>Don't over-prepare.</strong> The PSAT is ultimately a practice test. If you're a junior, your SAT score matters much more for admissions.</li>
+      </ul>
+
+      <h2>Converting PSAT Scores to SAT Scores</h2>
+      <p>
+        While there's no official conversion table, PSAT and SAT scores are on comparable scales. A rough guideline:
+      </p>
+      <ul>
+        <li>Add <strong>40&ndash;80 points</strong> to your PSAT total to estimate your SAT score range.</li>
+        <li>This accounts for the PSAT's slightly lower difficulty ceiling and the fact that most students improve with additional preparation between the PSAT and SAT.</li>
+        <li>For example, a PSAT score of 1300 roughly corresponds to an SAT score of 1340&ndash;1380.</li>
+      </ul>
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 not-prose mb-6">
+        <p class="text-sm text-blue-700 m-0">
+          <strong>Remember:</strong> The PSAT is not sent to colleges and is not used for admissions. Its primary purpose is National Merit qualification and SAT practice. Focus on using your PSAT results to build a targeted SAT study plan.
+        </p>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is a good PSAT score?</h3>
+          <p class="text-slate-600 text-sm">
+            The average PSAT/NMSQT score is around 920. A score of 1150+ puts you in the top 25%, 1250+ is top 10%, and 1400+ is top 1%. To qualify for National Merit Semifinalist status, you typically need a Selection Index of 207&ndash;222, depending on your state.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How is the PSAT scored differently from the SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            The PSAT/NMSQT is scored on a scale of 320&ndash;1520 (vs. 400&ndash;1600 for the SAT), with each section scored 160&ndash;760 (vs. 200&ndash;800). The test has the same adaptive format with two modules per section, but the question difficulty is slightly lower than the SAT.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the National Merit Selection Index?</h3>
+          <p class="text-slate-600 text-sm">
+            The Selection Index is a number between 48 and 228 calculated from your PSAT section scores. It determines whether you qualify as a National Merit Semifinalist. The formula weights Reading & Writing scores more heavily than Math. Cutoff scores vary by state and change each year.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">When do PSAT scores come out?</h3>
+          <p class="text-slate-600 text-sm">
+            PSAT/NMSQT scores are typically released in December for the October test date. Students access their scores through their College Board account. National Merit Semifinalist notifications are sent the following September.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Do colleges see my PSAT score?</h3>
+          <p class="text-slate-600 text-sm">
+            No. PSAT scores are not sent to colleges and are not used in admissions decisions. The only purpose of the PSAT is to qualify for National Merit Scholarships and to give you practice for the SAT. However, if you opt in, colleges may send you marketing materials based on your score range.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
