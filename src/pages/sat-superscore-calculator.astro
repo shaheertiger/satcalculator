@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SuperscoreCalculator from '../components/SuperscoreCalculator';
+
+const pageTitle = "SAT Superscore Calculator 2026 - Find Your Highest Score";
+const pageDescription = "Calculate your SAT superscore by combining your highest section scores from multiple test dates. Free tool with college superscore policy info for the 2026 Digital SAT.";
+const pageKeywords = "SAT superscore calculator, calculate SAT superscore, SAT superscore tool, highest SAT score, combine SAT scores, Digital SAT superscore, college superscore policy";
+
+const breadcrumbs = [
+  { name: "SAT Superscore Calculator", item: "/sat-superscore-calculator" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an SAT superscore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An SAT superscore is the combination of your highest Reading & Writing score and your highest Math score from different test dates. For example, if you scored 700 R&W and 650 Math in March, then 660 R&W and 720 Math in May, your superscore would be 700 + 720 = 1420."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do colleges accept SAT superscores?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the majority of US colleges accept SAT superscores, including all Ivy League schools, MIT, Stanford, and most public flagship universities. A small number of schools like Georgetown require all scores from every sitting. Always check a college's specific policy on their admissions website."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many times should I take the SAT to maximize my superscore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most admissions experts recommend taking the SAT 2-3 times. Studies show the average score increase from the first to second attempt is about 40 points. After 3 attempts, gains typically diminish. Focus your study time on your weaker section between attempts to maximize your superscore."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the College Board send superscores automatically?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The College Board sends scores by test date, not as a superscore. You use Score Choice to select which test dates to send. Send every date that contains one of your highest section scores. The college will then calculate the superscore on their end."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I superscore the Digital SAT with the old paper SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Technically, the College Board reports both scores on the same 200-800 scale, so some colleges may combine them. However, most current students only have Digital SAT scores. Check with each college's admissions office if you have scores from both formats."
+      }
+    }
+  ]
+};
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SAT Superscore Calculator",
+  "description": pageDescription,
+  "url": "https://satcalculator.co/sat-superscore-calculator",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+  </Fragment>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        SAT Superscore Calculator
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Enter your section scores from multiple SAT attempts to instantly calculate your <strong>superscore</strong> &mdash; the highest possible combination of Reading & Writing and Math scores.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <SuperscoreCalculator client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>What Is an SAT Superscore?</h2>
+      <p>
+        Your SAT superscore is created by taking the <strong>highest Reading & Writing section score</strong> and the <strong>highest Math section score</strong> from across all your test dates, then adding them together. This gives you the best possible composite score, even if those top section scores came from different sittings.
+      </p>
+      <p>
+        For example:
+      </p>
+      <ul>
+        <li><strong>March SAT:</strong> 680 R&W + 720 Math = 1400</li>
+        <li><strong>May SAT:</strong> 730 R&W + 690 Math = 1420</li>
+        <li><strong>Superscore:</strong> 730 R&W (May) + 720 Math (March) = <strong>1450</strong></li>
+      </ul>
+      <p>
+        In this case, superscoring gains the student <strong>30 extra points</strong> over their best single-sitting score.
+      </p>
+
+      <h2>How to Use This Calculator</h2>
+      <ol>
+        <li><strong>Enter your scores:</strong> Input the R&W and Math section scores (200&ndash;800 each) for each test date.</li>
+        <li><strong>Add more attempts:</strong> Click "Add another attempt" if you've taken the SAT more than twice.</li>
+        <li><strong>Read your superscore:</strong> The calculator automatically finds your highest section scores and combines them into your superscore.</li>
+        <li><strong>See your improvement:</strong> The calculator shows how many points superscoring adds compared to your best single sitting.</li>
+      </ol>
+
+      <h2>Which Colleges Accept Superscores?</h2>
+      <p>
+        The vast majority of US colleges and universities accept SAT superscores. Here is a breakdown by category:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">Ivy League (All 8)</h3>
+          <p class="text-sm text-emerald-700">
+            Harvard, Yale, Princeton, Columbia, UPenn, Brown, Dartmouth, and Cornell all accept superscores.
+          </p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">Top Private Universities</h3>
+          <p class="text-sm text-blue-700">
+            Stanford, MIT, Duke, UChicago, Johns Hopkins, Caltech, Northwestern, and most other highly selective private schools superscore.
+          </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+          <h3 class="text-lg font-bold text-amber-900 mb-2">Public Flagships</h3>
+          <p class="text-sm text-amber-700">
+            UVA, UNC Chapel Hill, Georgia Tech, University of Michigan, UCLA, UC Berkeley, and many other public universities accept superscores.
+          </p>
+        </div>
+        <div class="bg-red-50 p-6 rounded-xl border border-red-100">
+          <h3 class="text-lg font-bold text-red-900 mb-2">Notable Exceptions</h3>
+          <p class="text-sm text-red-700">
+            Georgetown University requires all scores from every sitting. A few other schools have unique policies &mdash; always verify on each school's admissions page.
+          </p>
+        </div>
+      </div>
+
+      <h2>How to Send Your Superscore to Colleges</h2>
+      <p>
+        The College Board does not send a single "superscore" report. Instead, you control which test dates to send using <strong>Score Choice</strong>:
+      </p>
+      <ol>
+        <li>Log in to your College Board account and go to <strong>Send SAT Scores</strong>.</li>
+        <li>Select the colleges you're applying to.</li>
+        <li>Use <strong>Score Choice</strong> to pick only the test dates that contain your highest section scores.</li>
+        <li>The college's admissions office will automatically combine the best section scores from the dates you sent.</li>
+      </ol>
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 not-prose mb-6">
+        <p class="text-sm text-blue-700 m-0">
+          <strong>Tip:</strong> If your best R&W came from March and your best Math came from May, you need to send <em>both</em> test dates. The college will pull the highest section score from each.
+        </p>
+      </div>
+
+      <h2>Superscore Strategy: How to Maximize Your Score</h2>
+      <p>
+        Once you understand how superscoring works, it should change the way you prepare for retakes:
+      </p>
+      <ul>
+        <li><strong>Bank your strong section.</strong> If you got a 740 in R&W on your first attempt, that score is locked in. You don't need to study R&W for your next sitting.</li>
+        <li><strong>Focus 100% on your weaker section.</strong> Spend all your prep time on the section where you have the most room to improve.</li>
+        <li><strong>Don't stress about a bad day in one section.</strong> If Math goes poorly but R&W goes well, that R&W score still counts toward your superscore.</li>
+        <li><strong>Plan for 2&ndash;3 attempts.</strong> Research shows the biggest score gains come between the first and second attempt (about 40 points on average). After three attempts, returns diminish significantly.</li>
+      </ul>
+
+      <h2>Average Superscore Improvement</h2>
+      <p>
+        According to College Board data, students who take the SAT more than once typically see the following improvements through superscoring:
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 not-prose my-8">
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-center">
+          <div class="text-2xl font-black text-slate-900 font-heading">+20&ndash;40</div>
+          <div class="text-sm text-slate-600 mt-1">Points from 2 attempts</div>
+        </div>
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-center">
+          <div class="text-2xl font-black text-slate-900 font-heading">+30&ndash;60</div>
+          <div class="text-sm text-slate-600 mt-1">Points from 3 attempts</div>
+        </div>
+        <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 text-center">
+          <div class="text-2xl font-black text-slate-900 font-heading">90%+</div>
+          <div class="text-sm text-slate-600 mt-1">Of colleges accept superscores</div>
+        </div>
+      </div>
+
+      <h2>Superscore vs. Score Choice: What's the Difference?</h2>
+      <p>
+        These two terms are often confused, but they refer to different things:
+      </p>
+      <ul>
+        <li><strong>Score Choice</strong> is a College Board feature that lets you choose <em>which test dates</em> to send to colleges. It controls what scores colleges see.</li>
+        <li><strong>Superscoring</strong> is a <em>college policy</em> where the admissions office takes your best section scores across the dates you sent and combines them. It's how the college evaluates your scores.</li>
+      </ul>
+      <p>
+        You use Score Choice to send the right dates; the college then superscores them on their end.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is an SAT superscore?</h3>
+          <p class="text-slate-600 text-sm">
+            An SAT superscore is the combination of your highest Reading & Writing score and your highest Math score from different test dates. For example, if you scored 700 R&W and 650 Math in March, then 660 R&W and 720 Math in May, your superscore would be 700 + 720 = 1420.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Do colleges accept SAT superscores?</h3>
+          <p class="text-slate-600 text-sm">
+            Yes, the majority of US colleges accept SAT superscores, including all Ivy League schools, MIT, Stanford, and most public flagship universities. A small number of schools like Georgetown require all scores from every sitting. Always check a college's specific policy on their admissions website.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How many times should I take the SAT to maximize my superscore?</h3>
+          <p class="text-slate-600 text-sm">
+            Most admissions experts recommend taking the SAT 2-3 times. Studies show the average score increase from the first to second attempt is about 40 points. After 3 attempts, gains typically diminish. Focus your study time on your weaker section between attempts to maximize your superscore.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Does the College Board send superscores automatically?</h3>
+          <p class="text-slate-600 text-sm">
+            No. The College Board sends scores by test date, not as a superscore. You use Score Choice to select which test dates to send. Send every date that contains one of your highest section scores. The college will then calculate the superscore on their end.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can I superscore the Digital SAT with the old paper SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            Technically, the College Board reports both scores on the same 200-800 scale, so some colleges may combine them. However, most current students only have Digital SAT scores. Check with each college's admissions office if you have scores from both formats.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
