@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ACTSATConcordance from '../components/ACTSATConcordance';
+import ACTSATConcordanceFull from '../components/ACTSATConcordanceFull';
 
-const pageTitle = "SAT to ACT Score Converter - Official Concordance 2026";
-const pageDescription = "Convert your SAT score to an ACT score and vice versa using official College Board concordance tables. Compare and decide which to send.";
-const pageKeywords = "SAT to ACT converter, ACT to SAT converter, SAT vs ACT score, SAT score conversion, ACT score conversion, official SAT ACT concordance";
+const pageTitle = "SAT to ACT Score Converter 2026 - Official Concordance Calculator";
+const pageDescription = "Convert your SAT score to an ACT score and vice versa using official College Board concordance tables. Interactive calculator with slider input, quick reference chart, and guidance on which score to submit.";
+const pageKeywords = "SAT to ACT converter, ACT to SAT converter, SAT vs ACT score, SAT score conversion, ACT score conversion, official SAT ACT concordance, SAT ACT comparison";
 
 const breadcrumbs = [
   { name: "SAT to ACT Score Converter", item: "/sat-act-score-converter" }
@@ -37,14 +37,46 @@ const faqSchema = {
         "@type": "Answer",
         "text": "Yes. All US colleges and universities that require or accept standardized tests treat SAT and ACT scores equally. Admissions officers use concordance tables to compare applicants who submitted different tests."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a 1400 SAT or a 32 ACT better?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "According to the official concordance table, a 1400 SAT is approximately equivalent to a 31 ACT. So a 32 ACT is slightly stronger than a 1400 SAT. You should submit whichever score converts to a higher equivalent on the other scale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Has the concordance table been updated for the Digital SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The current concordance table was published in 2018. The College Board has stated that the Digital SAT maintains the same scoring scale (400-1600) as the paper SAT, so the existing concordance remains valid. An updated concordance may be released as more Digital SAT data becomes available."
+      }
     }
   ]
+};
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SAT to ACT Score Converter",
+  "description": pageDescription,
+  "url": "https://satcalculator.co/sat-act-score-converter",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 };
 ---
 
 <Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(appSchema)} />
   </Fragment>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
     <!-- Hero -->
@@ -53,121 +85,200 @@ const faqSchema = {
         SAT to ACT Score Converter
       </h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        Wondering how your SAT score translates to the ACT? Use our free <strong>SAT to ACT Score Converter</strong> based on the official concordance tables from the College Board and ACT, Inc.
+        Instantly convert between <strong>SAT</strong> and <strong>ACT</strong> scores using the official concordance tables from the College Board and ACT, Inc. Find out which score is stronger and which to submit to colleges.
       </p>
     </div>
 
     <!-- Concordance Component -->
     <div class="mb-16 max-w-2xl mx-auto">
-      <ACTSATConcordance client:load />
+      <ACTSATConcordanceFull client:load />
     </div>
 
     <!-- Content -->
     <article class="prose prose-slate max-w-3xl mx-auto">
-      <h2>Official Concordance Table (2018)</h2>
+      <h2>How the SAT to ACT Conversion Works</h2>
       <p>
-        The table below shows the official relationship between SAT Total Scores (400-1600) and ACT Composite Scores (1-36). This concordance was jointly developed by the College Board and ACT, Inc. and is the standard used by admissions offices nationwide.
+        The SAT (400&ndash;1600) and ACT (1&ndash;36) use completely different scoring scales, so comparing them requires a <strong>concordance table</strong> &mdash; a statistical mapping developed jointly by the College Board and ACT, Inc. based on data from students who took both tests.
+      </p>
+      <p>
+        The concordance matches scores that represent the same level of academic achievement. For example, a student who scores a 1350 on the SAT would be expected to score approximately a 28&ndash;29 on the ACT.
+      </p>
+
+      <h2>Complete SAT to ACT Concordance Table</h2>
+      <p>
+        This is the full official concordance table used by colleges and admissions offices nationwide:
       </p>
       <div class="not-prose overflow-x-auto my-8">
         <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
           <thead class="bg-violet-800 text-white">
             <tr>
-              <th class="px-4 py-3">SAT Score Range</th>
+              <th class="px-4 py-3">SAT Score</th>
               <th class="px-4 py-3">ACT Score</th>
               <th class="px-4 py-3">Competitiveness</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-violet-100 border border-violet-200">
-            <tr><td class="px-4 py-2 font-semibold">1570-1600</td><td class="px-4 py-2 font-bold text-violet-700">36</td><td>Perfect</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1530-1560</td><td class="px-4 py-2 font-bold text-violet-700">35</td><td>Elite</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1490-1520</td><td class="px-4 py-2 font-bold text-violet-700">34</td><td>Elite</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1450-1480</td><td class="px-4 py-2 font-bold text-violet-700">33</td><td>High</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1420-1440</td><td class="px-4 py-2 font-bold text-violet-700">32</td><td>High</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1390-1410</td><td class="px-4 py-2 font-bold text-violet-700">31</td><td>Very Good</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1360-1380</td><td class="px-4 py-2 font-bold text-violet-700">30</td><td>Very Good</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1330-1350</td><td class="px-4 py-2 font-bold text-violet-700">29</td><td>Good</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1300-1320</td><td class="px-4 py-2 font-bold text-violet-700">28</td><td>Good</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1260-1290</td><td class="px-4 py-2 font-bold text-violet-700">27</td><td>Above Average</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1230-1250</td><td class="px-4 py-2 font-bold text-violet-700">26</td><td>Above Average</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1200-1220</td><td class="px-4 py-2 font-bold text-violet-700">25</td><td>Above Average</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1160-1190</td><td class="px-4 py-2 font-bold text-violet-700">24</td><td>Average</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1130-1150</td><td class="px-4 py-2 font-bold text-violet-700">23</td><td>Average</td></tr>
-            <tr><td class="px-4 py-2 font-semibold">1100-1120</td><td class="px-4 py-2 font-bold text-violet-700">22</td><td>Average</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1570&ndash;1600</td><td class="px-4 py-2.5 font-bold text-violet-700">36</td><td class="text-purple-700 font-medium">Perfect</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">1530&ndash;1560</td><td class="px-4 py-2.5 font-bold text-violet-700">35</td><td class="text-purple-700 font-medium">Elite</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1490&ndash;1520</td><td class="px-4 py-2.5 font-bold text-violet-700">34</td><td class="text-purple-700 font-medium">Elite</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">1450&ndash;1480</td><td class="px-4 py-2.5 font-bold text-violet-700">33</td><td class="text-emerald-700 font-medium">Highly Competitive</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1420&ndash;1440</td><td class="px-4 py-2.5 font-bold text-violet-700">32</td><td class="text-emerald-700 font-medium">Highly Competitive</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">1390&ndash;1410</td><td class="px-4 py-2.5 font-bold text-violet-700">31</td><td class="text-emerald-700 font-medium">Highly Competitive</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1360&ndash;1380</td><td class="px-4 py-2.5 font-bold text-violet-700">30</td><td class="text-blue-700 font-medium">Very Competitive</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">1330&ndash;1350</td><td class="px-4 py-2.5 font-bold text-violet-700">29</td><td class="text-blue-700 font-medium">Very Competitive</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1300&ndash;1320</td><td class="px-4 py-2.5 font-bold text-violet-700">28</td><td class="text-blue-700 font-medium">Very Competitive</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">1260&ndash;1290</td><td class="px-4 py-2.5 font-bold text-violet-700">27</td><td class="text-teal-700 font-medium">Above Average</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1230&ndash;1250</td><td class="px-4 py-2.5 font-bold text-violet-700">26</td><td class="text-teal-700 font-medium">Above Average</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">1200&ndash;1220</td><td class="px-4 py-2.5 font-bold text-violet-700">25</td><td class="text-teal-700 font-medium">Above Average</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1160&ndash;1190</td><td class="px-4 py-2.5 font-bold text-violet-700">24</td><td class="text-amber-700 font-medium">Average</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">1130&ndash;1150</td><td class="px-4 py-2.5 font-bold text-violet-700">23</td><td class="text-amber-700 font-medium">Average</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1100&ndash;1120</td><td class="px-4 py-2.5 font-bold text-violet-700">22</td><td class="text-amber-700 font-medium">Average</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">1060&ndash;1090</td><td class="px-4 py-2.5 font-bold text-violet-700">21</td><td class="text-slate-500 font-medium">Below Average</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">1030&ndash;1050</td><td class="px-4 py-2.5 font-bold text-violet-700">20</td><td class="text-slate-500 font-medium">Below Average</td></tr>
+            <tr><td class="px-4 py-2.5 font-semibold">990&ndash;1020</td><td class="px-4 py-2.5 font-bold text-violet-700">19</td><td class="text-slate-500 font-medium">Below Average</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-semibold">960&ndash;980</td><td class="px-4 py-2.5 font-bold text-violet-700">18</td><td class="text-slate-500 font-medium">Below Average</td></tr>
           </tbody>
         </table>
       </div>
 
-      <h2>Key Differences Between SAT and ACT</h2>
+      <h2>SAT vs. ACT: Which Test Is Right for You?</h2>
       <p>
-        While both tests measure college readiness, they differ in important ways. Understanding these differences can help you decide which test to focus on:
+        Both the SAT and ACT are accepted equally by every US college, but they test slightly different skills and have different formats. Here's a detailed comparison:
       </p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
-        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
-          <h3 class="text-lg font-bold text-blue-900 mb-2">SAT Characteristics</h3>
-          <ul class="text-sm text-blue-700 space-y-2 list-disc pl-5">
-            <li>Scored 400-1600</li>
-            <li>Fully digital and adaptive</li>
-            <li>2 hours 14 minutes</li>
-            <li>More time per question</li>
-            <li>Emphasis on algebra and data analysis</li>
-            <li>Shorter reading passages (1 question each)</li>
-            <li>Built-in Desmos calculator for all math</li>
-          </ul>
-        </div>
-        <div class="bg-violet-50 p-6 rounded-xl border border-violet-100">
-          <h3 class="text-lg font-bold text-violet-900 mb-2">ACT Characteristics</h3>
-          <ul class="text-sm text-violet-700 space-y-2 list-disc pl-5">
-            <li>Scored 1-36</li>
-            <li>Transitioning to digital format</li>
-            <li>2 hours 55 minutes (without writing)</li>
-            <li>Less time per question, faster pace</li>
-            <li>Broader math coverage (more geometry/trig)</li>
-            <li>Optional Science section</li>
-            <li>Bring your own calculator</li>
-          </ul>
-        </div>
+      <div class="overflow-x-auto not-prose my-8">
+        <table class="w-full text-sm border border-slate-200 rounded-xl overflow-hidden">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="text-left p-3 font-bold text-slate-700 border-b border-slate-200"></th>
+              <th class="text-center p-3 font-bold text-blue-700 border-b border-slate-200">SAT</th>
+              <th class="text-center p-3 font-bold text-violet-700 border-b border-slate-200">ACT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-3 text-slate-600 border-b border-slate-100">Score Range</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">400&ndash;1600</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">1&ndash;36</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="p-3 text-slate-600 border-b border-slate-100">Sections</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Reading & Writing, Math</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">English, Math, Reading, Science</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600 border-b border-slate-100">Duration</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">2 hrs 14 min</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">2 hrs 55 min</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="p-3 text-slate-600 border-b border-slate-100">Total Questions</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">98</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">215</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600 border-b border-slate-100">Format</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Digital, Adaptive</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Transitioning to Digital</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="p-3 text-slate-600 border-b border-slate-100">Time per Question</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">~1.4 min</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">~0.8 min</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600 border-b border-slate-100">Science Section</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">No</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Yes</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="p-3 text-slate-600 border-b border-slate-100">Calculator Policy</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Built-in Desmos (all math)</td>
+              <td class="p-3 text-center font-semibold text-slate-800 border-b border-slate-100">Bring your own</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-slate-600">Reading Style</td>
+              <td class="p-3 text-center font-semibold text-slate-800">Short passages (1 question each)</td>
+              <td class="p-3 text-center font-semibold text-slate-800">Long passages (10 questions each)</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
       <h2>How to Decide Which Score to Send</h2>
       <p>
-        If you have taken both tests, follow this process to determine which score gives you a stronger application:
+        If you've taken both tests, here's a simple 3-step process:
       </p>
       <ol>
-        <li><strong>Convert both scores</strong> using the concordance table above. For example, if you scored a 1380 SAT and a 29 ACT, convert both to the same scale.</li>
+        <li><strong>Convert both scores</strong> using the calculator above. For example, if you scored a 1380 SAT and a 29 ACT, convert both to the same scale.</li>
         <li><strong>Compare the equivalents:</strong> A 1380 SAT converts to approximately a 30 ACT. Since you scored a 29 on the actual ACT, your SAT score is relatively stronger.</li>
-        <li><strong>Submit the stronger score.</strong> In this example, you would submit the 1380 SAT because it is equivalent to a higher ACT score than what you actually achieved.</li>
+        <li><strong>Submit the stronger score.</strong> In this example, submit the 1380 SAT because it is equivalent to a higher ACT score than what you actually achieved.</li>
       </ol>
-      <p>
-        Colleges will not view your application differently based on which test you submit. Both are treated equally in the admissions process.
-      </p>
+      <div class="bg-violet-50 border-l-4 border-violet-500 p-4 not-prose mb-6">
+        <p class="text-sm text-violet-700 m-0">
+          <strong>Key point:</strong> Colleges do not prefer one test over the other. Admissions officers use the same concordance table to evaluate applicants equally, regardless of which test was submitted.
+        </p>
+      </div>
+
+      <h2>Signs You Should Try the SAT Instead of the ACT</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">SAT May Be Better If You...</h3>
+          <ul class="text-sm text-blue-700 space-y-2 list-disc pl-5">
+            <li>Run out of time on timed tests</li>
+            <li>Are strong in algebra and data analysis</li>
+            <li>Prefer shorter reading passages</li>
+            <li>Like having a built-in calculator</li>
+            <li>Do well on adaptive tests</li>
+            <li>Prefer a shorter overall test (2 hrs 14 min)</li>
+          </ul>
+        </div>
+        <div class="bg-violet-50 p-6 rounded-xl border border-violet-100">
+          <h3 class="text-lg font-bold text-violet-900 mb-2">ACT May Be Better If You...</h3>
+          <ul class="text-sm text-violet-700 space-y-2 list-disc pl-5">
+            <li>Work quickly under time pressure</li>
+            <li>Are strong in geometry and trigonometry</li>
+            <li>Enjoy reading longer passages in depth</li>
+            <li>Are good at interpreting charts and data (Science section)</li>
+            <li>Prefer a straightforward, non-adaptive format</li>
+            <li>Want your score from a single test form</li>
+          </ul>
+        </div>
+      </div>
 
       <h2>When to Consider Taking the Other Test</h2>
       <p>
-        Some students perform significantly better on one test over the other due to differences in format and pacing. Consider taking the other test if:
+        If your actual scores don't match the concordance, it's a strong signal that you may be better suited to one test. Consider switching if:
       </p>
       <ul>
-        <li><strong>Your scores do not match the concordance:</strong> If your SAT converts to a 33 ACT but you only scored a 29 on the actual ACT (or vice versa), the test formats may suit you differently.</li>
-        <li><strong>You struggle with time pressure:</strong> The SAT gives more time per question. If you frequently run out of time on the ACT, the SAT may be a better fit.</li>
-        <li><strong>You excel in science reading:</strong> The ACT Science section is essentially a data interpretation and reading test. Students with strong chart-reading skills often score well here, boosting their composite.</li>
-        <li><strong>You prefer deeper math:</strong> The SAT math section covers fewer topics in more depth (heavy on algebra). The ACT covers more topics including additional geometry and trigonometry.</li>
+        <li><strong>Your scores are mismatched by 2+ ACT points.</strong> If your SAT converts to a 33 but you only scored a 30 on the ACT, you're clearly an SAT-favored test-taker.</li>
+        <li><strong>You've plateaued on one test.</strong> Some students hit a ceiling on one test but break through on the other due to format differences.</li>
+        <li><strong>You haven't tried both.</strong> Take a full-length timed practice test of each and compare your converted scores before committing to one.</li>
       </ul>
 
       <h2>Merit Scholarship Considerations</h2>
       <p>
-        Many merit scholarships have specific score thresholds that are listed in terms of one test or the other. Common examples:
+        Many merit scholarships set thresholds using one test's scale. Common examples:
       </p>
       <ul>
-        <li>A scholarship might require "1350 SAT or 29 ACT." Using the concordance, a 1350 actually converts to a 29, so these cutoffs are equivalent.</li>
-        <li>However, some scholarships round differently. Always check both the SAT and ACT thresholds and submit whichever score meets or exceeds the requirement.</li>
-        <li>If a scholarship only lists one test's requirement, use the concordance table to check if your score on the other test qualifies.</li>
+        <li>A scholarship requiring "<strong>1350 SAT or 29 ACT</strong>" &mdash; these are concordance equivalents, so either score qualifies.</li>
+        <li>Some scholarships round differently. A school might list "1400 SAT or 31 ACT," but the concordance says 1400 &asymp; 31, so these cutoffs are aligned.</li>
+        <li>If a scholarship only lists one test's cutoff, use this converter to check if your score on the other test meets the equivalent threshold.</li>
       </ul>
+
+      <h2>Does the Digital SAT Change the Concordance?</h2>
+      <p>
+        The current concordance table was published in 2018, before the transition to the Digital SAT. However, the College Board has confirmed that the <strong>Digital SAT uses the same 400&ndash;1600 scoring scale</strong> as the paper SAT, so the existing concordance remains valid.
+      </p>
+      <p>
+        An updated concordance may be released as more data from the Digital SAT becomes available, but for now, colleges continue to use the 2018 tables for all SAT/ACT comparisons.
+      </p>
 
       <h2>Frequently Asked Questions</h2>
       <div class="not-prose space-y-4">
         <div class="bg-white border border-slate-200 rounded-xl p-6">
           <h3 class="font-bold text-slate-900 mb-2">Are SAT and ACT scores directly comparable?</h3>
           <p class="text-slate-600 text-sm">
-            Not directly, since the SAT uses a 400-1600 scale and the ACT uses a 1-36 scale. However, the official concordance tables released by the College Board and ACT, Inc. provide a standardized way to compare equivalent scores across both tests.
+            Not directly, since the SAT uses a 400&ndash;1600 scale and the ACT uses a 1&ndash;36 scale. However, the official concordance tables released by the College Board and ACT, Inc. provide a standardized way to compare equivalent scores across both tests.
           </p>
         </div>
         <div class="bg-white border border-slate-200 rounded-xl p-6">
@@ -180,6 +291,18 @@ const faqSchema = {
           <h3 class="font-bold text-slate-900 mb-2">Do colleges accept both SAT and ACT equally?</h3>
           <p class="text-slate-600 text-sm">
             Yes. All US colleges and universities that require or accept standardized tests treat SAT and ACT scores equally. Admissions officers use concordance tables to compare applicants who submitted different tests.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is a 1400 SAT or a 32 ACT better?</h3>
+          <p class="text-slate-600 text-sm">
+            According to the official concordance table, a 1400 SAT is approximately equivalent to a 31 ACT. So a 32 ACT is slightly stronger than a 1400 SAT. You should submit whichever score converts to a higher equivalent on the other scale.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Has the concordance table been updated for the Digital SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            The current concordance table was published in 2018. The College Board has stated that the Digital SAT maintains the same scoring scale (400&ndash;1600) as the paper SAT, so the existing concordance remains valid. An updated concordance may be released as more Digital SAT data becomes available.
           </p>
         </div>
       </div>

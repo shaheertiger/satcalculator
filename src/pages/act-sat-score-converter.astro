@@ -1,0 +1,265 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ACTSATConcordanceFull from '../components/ACTSATConcordanceFull';
+
+const pageTitle = "ACT to SAT Score Converter 2026 - Official Concordance Calculator";
+const pageDescription = "Convert your ACT composite score to an equivalent SAT score using the official concordance table. Free interactive calculator to compare your ACT and SAT scores and decide which to submit.";
+const pageKeywords = "ACT to SAT converter, ACT to SAT score conversion, convert ACT score to SAT, ACT SAT concordance, ACT SAT comparison, ACT equivalent SAT score";
+
+const breadcrumbs = [
+  { name: "ACT to SAT Score Converter", item: "/act-sat-score-converter" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What SAT score is equivalent to a 30 ACT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 30 ACT composite score is equivalent to approximately a 1410 SAT score according to the official concordance table. This places you in roughly the 93rd percentile of test-takers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the ACT easier or harder than the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neither test is objectively easier. The ACT is faster-paced (less time per question) but questions tend to be more straightforward. The SAT gives more time per question but requires deeper critical thinking. Many students naturally perform better on one test due to these differences in format and pacing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I take both the ACT and SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can be strategic to take a full-length practice test of each to see which format suits you better. If your scores are similar when converted via the concordance table, focus on the one you're most comfortable with. If one is significantly higher, commit your prep time to that test."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What ACT score do I need for Ivy League schools?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most Ivy League schools have median ACT scores in the 33-35 range for admitted students, which is equivalent to approximately 1500-1560 on the SAT. However, admissions are holistic and a strong ACT score alone does not guarantee admission."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I superscore the ACT like the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some colleges do superscore the ACT (taking your best section scores from different test dates), but it is less common than SAT superscoring. ACT, Inc. also offers a 'superscore' option when sending scores. Check each college's policy individually."
+      }
+    }
+  ]
+};
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ACT to SAT Score Converter",
+  "description": pageDescription,
+  "url": "https://satcalculator.co/act-sat-score-converter",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+  </Fragment>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        ACT to SAT Score Converter
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Convert your <strong>ACT composite score</strong> to the equivalent <strong>SAT score</strong> using the official concordance table. See where you stand and decide which score to send to colleges.
+      </p>
+    </div>
+
+    <!-- Concordance Component -->
+    <div class="mb-16 max-w-2xl mx-auto">
+      <ACTSATConcordanceFull client:load />
+    </div>
+
+    <!-- Content -->
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>How ACT to SAT Conversion Works</h2>
+      <p>
+        The ACT (1&ndash;36) and SAT (400&ndash;1600) measure college readiness on completely different scales. To compare them, the College Board and ACT, Inc. jointly developed <strong>concordance tables</strong> based on data from hundreds of thousands of students who took both tests. These tables match scores that represent the same level of academic achievement.
+      </p>
+
+      <h2>ACT to SAT Conversion Chart</h2>
+      <p>
+        Here is the complete ACT to SAT concordance for commonly tested score ranges:
+      </p>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
+          <thead class="bg-violet-800 text-white">
+            <tr>
+              <th class="px-4 py-3">ACT Score</th>
+              <th class="px-4 py-3">SAT Equivalent</th>
+              <th class="px-4 py-3">Percentile (Approx)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-violet-100 border border-violet-200">
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">36</td><td class="px-4 py-2.5 font-semibold">1590</td><td class="text-slate-600">99+</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">35</td><td class="px-4 py-2.5 font-semibold">1560</td><td class="text-slate-600">99</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">34</td><td class="px-4 py-2.5 font-semibold">1530</td><td class="text-slate-600">99</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">33</td><td class="px-4 py-2.5 font-semibold">1500</td><td class="text-slate-600">98</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">32</td><td class="px-4 py-2.5 font-semibold">1470</td><td class="text-slate-600">96</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">31</td><td class="px-4 py-2.5 font-semibold">1440</td><td class="text-slate-600">95</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">30</td><td class="px-4 py-2.5 font-semibold">1410</td><td class="text-slate-600">93</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">29</td><td class="px-4 py-2.5 font-semibold">1380</td><td class="text-slate-600">91</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">28</td><td class="px-4 py-2.5 font-semibold">1350</td><td class="text-slate-600">88</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">27</td><td class="px-4 py-2.5 font-semibold">1320</td><td class="text-slate-600">85</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">26</td><td class="px-4 py-2.5 font-semibold">1290</td><td class="text-slate-600">82</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">25</td><td class="px-4 py-2.5 font-semibold">1260</td><td class="text-slate-600">78</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">24</td><td class="px-4 py-2.5 font-semibold">1230</td><td class="text-slate-600">74</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">23</td><td class="px-4 py-2.5 font-semibold">1200</td><td class="text-slate-600">68</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">22</td><td class="px-4 py-2.5 font-semibold">1170</td><td class="text-slate-600">63</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">21</td><td class="px-4 py-2.5 font-semibold">1140</td><td class="text-slate-600">57</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">20</td><td class="px-4 py-2.5 font-semibold">1110</td><td class="text-slate-600">50</td></tr>
+            <tr><td class="px-4 py-2.5 font-bold text-violet-700">19</td><td class="px-4 py-2.5 font-semibold">1080</td><td class="text-slate-600">44</td></tr>
+            <tr class="bg-purple-50/50"><td class="px-4 py-2.5 font-bold text-violet-700">18</td><td class="px-4 py-2.5 font-semibold">1050</td><td class="text-slate-600">38</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What ACT Score Do You Need?</h2>
+      <p>
+        Here are target ACT scores for different college tiers, with their SAT equivalents:
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 not-prose my-8">
+        <div class="bg-emerald-50 p-6 rounded-xl border border-emerald-100">
+          <h3 class="text-lg font-bold text-emerald-900 mb-2">ACT 34&ndash;36 (SAT 1530&ndash;1600)</h3>
+          <p class="text-sm text-emerald-700">
+            Competitive for Ivy League and top-10 universities. Harvard, MIT, Stanford, and Caltech have median scores in this range for admitted students.
+          </p>
+        </div>
+        <div class="bg-blue-50 p-6 rounded-xl border border-blue-100">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">ACT 30&ndash;33 (SAT 1410&ndash;1520)</h3>
+          <p class="text-sm text-blue-700">
+            Strong for top-25 universities and most selective schools. Within range for UVA, UNC, Georgetown, NYU, USC, and many more.
+          </p>
+        </div>
+        <div class="bg-amber-50 p-6 rounded-xl border border-amber-100">
+          <h3 class="text-lg font-bold text-amber-900 mb-2">ACT 25&ndash;29 (SAT 1260&ndash;1400)</h3>
+          <p class="text-sm text-amber-700">
+            Above average. Competitive for state flagship universities and many four-year colleges. Often meets merit scholarship thresholds.
+          </p>
+        </div>
+        <div class="bg-slate-50 p-6 rounded-xl border border-slate-100">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ACT 20&ndash;24 (SAT 1110&ndash;1250)</h3>
+          <p class="text-sm text-slate-700">
+            Near the national average (ACT composite average is ~20.6). Sufficient for admission to many four-year colleges and universities.
+          </p>
+        </div>
+      </div>
+
+      <h2>ACT vs. SAT: Which Is Better for You?</h2>
+      <p>
+        If you've only taken the ACT, you might be wondering whether to also try the SAT. Here are the key differences to consider:
+      </p>
+      <ul>
+        <li><strong>Pacing:</strong> The ACT has 215 questions in ~3 hours while the SAT has 98 questions in ~2 hours 14 minutes. ACT requires faster work; SAT gives more time per question.</li>
+        <li><strong>Science:</strong> The ACT has a dedicated Science section (data interpretation and reasoning). The SAT does not, though it includes science-related reading passages.</li>
+        <li><strong>Math coverage:</strong> The ACT covers more topics (geometry, trigonometry) while the SAT goes deeper on fewer topics (algebra, data analysis).</li>
+        <li><strong>Reading:</strong> ACT uses longer passages with multiple questions each. The Digital SAT uses shorter passages with one question each.</li>
+        <li><strong>Adaptive format:</strong> The Digital SAT is adaptive (Module 2 difficulty depends on Module 1 performance). The ACT is the same for all students.</li>
+      </ul>
+      <div class="bg-violet-50 border-l-4 border-violet-500 p-4 not-prose mb-6">
+        <p class="text-sm text-violet-700 m-0">
+          <strong>Pro tip:</strong> Take a full-length timed practice test of each. Convert both scores using this tool. If one is significantly higher (2+ ACT points difference), focus your prep on that test.
+        </p>
+      </div>
+
+      <h2>ACT Superscoring</h2>
+      <p>
+        Unlike the SAT, where superscoring is nearly universal, ACT superscoring policies vary more widely:
+      </p>
+      <ul>
+        <li><strong>ACT, Inc. now offers superscoring:</strong> Since September 2020, students can send a superscore directly through ACT. This combines your best section scores (English, Math, Reading, Science) from different test dates.</li>
+        <li><strong>Not all colleges accept it:</strong> While many schools now accept ACT superscores, some still only consider your best single-sitting composite. Check each school's policy.</li>
+        <li><strong>Strategic advantage:</strong> If a college does accept ACT superscores, you can focus on one or two sections per test date, similar to SAT superscoring strategy.</li>
+      </ul>
+
+      <h2>Common ACT Score Conversions</h2>
+      <p>
+        Here are the most commonly searched ACT to SAT conversions:
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 not-prose my-8">
+        <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+          <div class="text-sm text-violet-600 font-bold">ACT 36</div>
+          <div class="text-lg font-black text-slate-900 font-heading">&asymp; SAT 1590</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+          <div class="text-sm text-violet-600 font-bold">ACT 34</div>
+          <div class="text-lg font-black text-slate-900 font-heading">&asymp; SAT 1530</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+          <div class="text-sm text-violet-600 font-bold">ACT 32</div>
+          <div class="text-lg font-black text-slate-900 font-heading">&asymp; SAT 1470</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+          <div class="text-sm text-violet-600 font-bold">ACT 30</div>
+          <div class="text-lg font-black text-slate-900 font-heading">&asymp; SAT 1410</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+          <div class="text-sm text-violet-600 font-bold">ACT 28</div>
+          <div class="text-lg font-black text-slate-900 font-heading">&asymp; SAT 1350</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl border border-slate-200 text-center">
+          <div class="text-sm text-violet-600 font-bold">ACT 25</div>
+          <div class="text-lg font-black text-slate-900 font-heading">&asymp; SAT 1260</div>
+        </div>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What SAT score is equivalent to a 30 ACT?</h3>
+          <p class="text-slate-600 text-sm">
+            A 30 ACT composite score is equivalent to approximately a 1410 SAT score according to the official concordance table. This places you in roughly the 93rd percentile of test-takers.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is the ACT easier or harder than the SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            Neither test is objectively easier. The ACT is faster-paced (less time per question) but questions tend to be more straightforward. The SAT gives more time per question but requires deeper critical thinking. Many students naturally perform better on one test due to these differences in format and pacing.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Should I take both the ACT and SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            It can be strategic to take a full-length practice test of each to see which format suits you better. If your scores are similar when converted via the concordance table, focus on the one you're most comfortable with. If one is significantly higher, commit your prep time to that test.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What ACT score do I need for Ivy League schools?</h3>
+          <p class="text-slate-600 text-sm">
+            Most Ivy League schools have median ACT scores in the 33&ndash;35 range for admitted students, which is equivalent to approximately 1500&ndash;1560 on the SAT. However, admissions are holistic and a strong ACT score alone does not guarantee admission.
+          </p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can I superscore the ACT like the SAT?</h3>
+          <p class="text-slate-600 text-sm">
+            Some colleges do superscore the ACT (taking your best section scores from different test dates), but it is less common than SAT superscoring. ACT, Inc. also offers a "superscore" option when sending scores. Check each college's policy individually.
+          </p>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
