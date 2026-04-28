@@ -176,14 +176,15 @@ const SATCalculator: React.FC = () => {
           </div>
 
           <div className="text-center mb-6 sm:mb-8">
-            <span className="text-xs font-bold text-indigo-600 uppercase tracking-[0.2em] mb-2 block">Estimated Total Score</span>
-            <div className="text-5xl sm:text-7xl font-black text-slate-900 tracking-tight mb-2 font-heading" aria-live="polite">
+            <span className="text-xs font-bold text-indigo-500 uppercase tracking-[0.2em] mb-3 block">Your Estimated SAT Score</span>
+            <div className="text-6xl sm:text-8xl font-black text-slate-900 tracking-tight mb-3 font-heading" aria-live="polite" style={{ lineHeight: 1 }}>
               {finalScore.total}
             </div>
+            <p className="text-sm text-slate-500 mb-2">out of 1600</p>
             <div className="inline-flex flex-col sm:flex-row items-center gap-1 sm:gap-2 bg-indigo-50 px-4 py-2 sm:py-1.5 rounded-xl sm:rounded-full text-indigo-700 text-sm font-semibold">
-              <span>Range: {finalScore.totalRange[0]} - {finalScore.totalRange[1]}</span>
+              <span>Range: {finalScore.totalRange[0]}–{finalScore.totalRange[1]}</span>
               <div className="hidden sm:block w-1 h-1 bg-indigo-300 rounded-full"></div>
-              <span>Percentile: ~{(finalScore.rw.percentile + finalScore.math.percentile) / 2}%</span>
+              <span>~{(finalScore.rw.percentile + finalScore.math.percentile) / 2}th percentile</span>
             </div>
           </div>
 
@@ -207,36 +208,43 @@ const SATCalculator: React.FC = () => {
           </div>
 
           {/* Chart Visualizer */}
-          <div className="h-36 sm:h-48 w-full mt-4">
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={chartData}>
-                <defs>
-                  <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#4f46e5" stopOpacity={0.1}/>
-                    <stop offset="95%" stopColor="#4f46e5" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <XAxis dataKey="score" hide />
-                <YAxis hide />
-                <Tooltip
-                  contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                  formatter={() => ['', 'Population Density']}
-                />
-                <Area
-                  type="monotone"
-                  dataKey="density"
-                  stroke="#4f46e5"
-                  fillOpacity={1}
-                  fill="url(#colorScore)"
-                />
-                <ReferenceLine x={finalScore.total} stroke="#ef4444" strokeWidth={2} label={{ position: 'top', value: 'You', fill: '#ef4444', fontSize: 12, fontWeight: 700 }} />
-              </AreaChart>
-            </ResponsiveContainer>
-            <div className="flex justify-between text-[10px] text-slate-400 font-medium px-1 sm:px-2 mt-1 sm:mt-2">
+          <div className="mt-6">
+            <div className="flex items-center justify-between mb-2 px-1">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">How Do You Stack Up?</span>
+              <span className="text-xs text-slate-400">National score distribution</span>
+            </div>
+            <div className="h-36 sm:h-44 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={chartData}>
+                  <defs>
+                    <linearGradient id="colorScore" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#4f46e5" stopOpacity={0.15}/>
+                      <stop offset="95%" stopColor="#4f46e5" stopOpacity={0}/>
+                    </linearGradient>
+                  </defs>
+                  <XAxis dataKey="score" hide />
+                  <YAxis hide />
+                  <Tooltip
+                    contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                    formatter={() => ['', 'Population Density']}
+                  />
+                  <Area
+                    type="monotone"
+                    dataKey="density"
+                    stroke="#4f46e5"
+                    strokeWidth={2}
+                    fillOpacity={1}
+                    fill="url(#colorScore)"
+                  />
+                  <ReferenceLine x={finalScore.total} stroke="#ef4444" strokeWidth={2.5} label={{ position: 'top', value: 'You', fill: '#ef4444', fontSize: 12, fontWeight: 700 }} />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
+            <div className="flex justify-between text-[10px] text-slate-400 font-medium px-1 sm:px-2 mt-1">
               <span>400</span>
               <span className="hidden sm:inline">600</span>
               <span>800</span>
-              <span>1050</span>
+              <span>1050 avg</span>
               <span className="hidden sm:inline">1200</span>
               <span>1400</span>
               <span>1600</span>

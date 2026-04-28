@@ -21,15 +21,39 @@ const faqData = [
   },
   {
     question: "What is a good Digital SAT score?",
-    answer: "The average Digital SAT score is approximately 1050. A score of 1200+ puts you in roughly the 80th percentile, 1400+ in the 97th percentile, and 1500+ in the 99th percentile. However, what counts as 'good' depends on your target colleges."
+    answer: "The average Digital SAT score is approximately 1050. A score of 1200+ puts you in roughly the 80th percentile, 1400+ in the 95th percentile, and 1500+ in the 99th percentile. However, what counts as 'good' depends on your target colleges — selective universities typically expect 1400+ from admitted students."
+  },
+  {
+    question: "Is a 1200 a good SAT score?",
+    answer: "Yes, a 1200 is an above-average SAT score, placing you around the 74th percentile nationally. It meets the minimum threshold for many four-year colleges and qualifies for merit scholarships at some schools. However, for more selective universities (top 50), you'll want to aim higher — ideally 1350 or above."
+  },
+  {
+    question: "Is a 1400 a good SAT score?",
+    answer: "A 1400 is an excellent SAT score, placing you in approximately the 95th percentile. It makes you competitive for most selective universities, including many schools in the top 50. Colleges like UCLA, University of Michigan, and Georgetown typically have median admitted SAT scores in the 1380-1480 range."
+  },
+  {
+    question: "Is a 1500 a good SAT score?",
+    answer: "A 1500 is an outstanding SAT score, placing you in the 99th percentile — meaning you scored higher than 99% of all test-takers. It makes you competitive for Ivy League schools and other highly selective institutions. The median SAT score at schools like Harvard, Yale, and Princeton is typically 1510-1570."
+  },
+  {
+    question: "Is a 1300 a good SAT score?",
+    answer: "A 1300 is a solid, above-average SAT score placing you around the 87th percentile. It's competitive for many state flagship universities and four-year colleges, and meets merit scholarship requirements at numerous schools. To target highly selective universities, aim for 1400+."
   },
   {
     question: "How many questions are on each Digital SAT module?",
-    answer: "The Reading & Writing section has 27 questions per module (54 total). The Math section has 22 questions per module (44 total). The entire Digital SAT has 98 questions across four modules."
+    answer: "The Reading & Writing section has 27 questions per module (54 total across both modules). The Math section has 22 questions per module (44 total across both modules). The entire Digital SAT has 98 questions across four modules, completed in about 2 hours and 14 minutes."
   },
   {
     question: "What is Item Response Theory (IRT)?",
-    answer: "Item Response Theory is the statistical model the SAT uses to score your test. Under IRT, each question has a unique difficulty and discrimination parameter. This means getting a hard question wrong hurts your score less than missing an easy question, even though both count as one wrong answer."
+    answer: "Item Response Theory is the statistical model the SAT uses to score your test. Under IRT, each question has a unique difficulty and discrimination parameter. This means getting a hard question wrong hurts your score less than missing an easy question, even though both count as one wrong answer on a simple count."
+  },
+  {
+    question: "What is the difference between SAT raw score and scaled score?",
+    answer: "Your SAT raw score is simply the number of questions you answered correctly. Your scaled score (200-800 per section) is derived from the raw score using a statistical process called equating, which adjusts for differences in difficulty between test forms. Two correct answers on a hard test may produce a higher scaled score than two correct answers on an easier test."
+  },
+  {
+    question: "Why is the SAT exam curved?",
+    answer: "The SAT is curved through a process called equating to ensure that scores are comparable across different test dates. Since some test forms are slightly harder or easier than others, equating adjusts scaled scores so that a 1400 means the same level of ability regardless of which test date you took. The Digital SAT's adaptive format also uses Item Response Theory to further refine accuracy."
   }
 ];
 
@@ -224,39 +248,51 @@ const faqSchema = {
           Use this SAT score chart to understand where your calculated SAT score falls relative to all test-takers nationally.
         </p>
         <div class="overflow-x-auto">
-          <table class="w-full max-w-2xl mx-auto text-sm border-collapse">
+          <table class="w-full max-w-3xl mx-auto text-sm border-collapse shadow-sm rounded-lg overflow-hidden">
             <thead>
               <tr class="bg-slate-800 text-white">
-                <th class="px-4 py-3 text-left rounded-tl-lg">SAT Score Range</th>
+                <th class="px-4 py-3 text-left">SAT Score Range</th>
                 <th class="px-4 py-3 text-left">Percentile</th>
-                <th class="px-4 py-3 text-left rounded-tr-lg">Competitiveness</th>
+                <th class="px-4 py-3 text-left">Competitiveness</th>
+                <th class="px-4 py-3 text-left hidden md:table-cell">Example Schools</th>
               </tr>
             </thead>
             <tbody>
-              <tr class="bg-white border-b border-slate-100">
-                <td class="px-4 py-3 font-semibold">1500 - 1600</td>
-                <td class="px-4 py-3">99th+</td>
-                <td class="px-4 py-3">Ivy League / Top 20</td>
+              <tr class="bg-emerald-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-bold text-emerald-800">1500–1600</td>
+                <td class="px-4 py-3 font-medium">99th+</td>
+                <td class="px-4 py-3">Ivy League / Top 10</td>
+                <td class="px-4 py-3 text-slate-500 hidden md:table-cell">Harvard, Yale, MIT, Princeton</td>
               </tr>
-              <tr class="bg-slate-50 border-b border-slate-100">
-                <td class="px-4 py-3 font-semibold">1400 - 1490</td>
-                <td class="px-4 py-3">95th - 99th</td>
+              <tr class="bg-blue-50 border-b border-slate-100">
+                <td class="px-4 py-3 font-bold text-blue-800">1400–1490</td>
+                <td class="px-4 py-3 font-medium">95th–99th</td>
                 <td class="px-4 py-3">Highly Competitive</td>
+                <td class="px-4 py-3 text-slate-500 hidden md:table-cell">Georgetown, UCLA, UVA</td>
               </tr>
               <tr class="bg-white border-b border-slate-100">
-                <td class="px-4 py-3 font-semibold">1200 - 1390</td>
-                <td class="px-4 py-3">75th - 94th</td>
+                <td class="px-4 py-3 font-bold text-slate-800">1300–1390</td>
+                <td class="px-4 py-3 font-medium">87th–94th</td>
                 <td class="px-4 py-3">Competitive</td>
+                <td class="px-4 py-3 text-slate-500 hidden md:table-cell">Purdue, Penn State, UT Austin</td>
               </tr>
               <tr class="bg-slate-50 border-b border-slate-100">
-                <td class="px-4 py-3 font-semibold">1000 - 1190</td>
-                <td class="px-4 py-3">40th - 74th</td>
-                <td class="px-4 py-3">Average</td>
+                <td class="px-4 py-3 font-bold text-slate-800">1200–1290</td>
+                <td class="px-4 py-3 font-medium">74th–86th</td>
+                <td class="px-4 py-3">Above Average</td>
+                <td class="px-4 py-3 text-slate-500 hidden md:table-cell">Many state schools, some merit aid</td>
               </tr>
-              <tr class="bg-white">
-                <td class="px-4 py-3 font-semibold rounded-bl-lg">400 - 990</td>
-                <td class="px-4 py-3">1st - 39th</td>
-                <td class="px-4 py-3 rounded-br-lg">Below Average</td>
+              <tr class="bg-white border-b border-slate-100">
+                <td class="px-4 py-3 font-semibold">1000–1190</td>
+                <td class="px-4 py-3">40th–73rd</td>
+                <td class="px-4 py-3">Average</td>
+                <td class="px-4 py-3 text-slate-500 hidden md:table-cell">Most 4-year colleges</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold">400–990</td>
+                <td class="px-4 py-3">Below 40th</td>
+                <td class="px-4 py-3">Below Average</td>
+                <td class="px-4 py-3 text-slate-500 hidden md:table-cell">Community colleges, open enrollment</td>
               </tr>
             </tbody>
           </table>
@@ -264,15 +300,187 @@ const faqSchema = {
       </div>
     </section>
 
+    <!-- What is the Digital SAT -->
+    <section class="bg-white border-t border-slate-200 py-12 sm:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading mb-6">What is the Digital SAT?</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          The Digital SAT replaced the paper-based SAT in March 2024 for U.S. students. It is a computer-adaptive test administered through the College Board's <strong>Bluebook</strong> application. The test is shorter, faster to score, and uses an adaptive format that tailors question difficulty to your ability level.
+        </p>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+            <thead class="bg-slate-800 text-white">
+              <tr>
+                <th class="px-4 py-3 text-left">Section</th>
+                <th class="px-4 py-3 text-left">Module 1</th>
+                <th class="px-4 py-3 text-left">Module 2 (Adaptive)</th>
+                <th class="px-4 py-3 text-left">Score Range</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 border border-slate-200">
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-semibold">Reading &amp; Writing</td>
+                <td class="px-4 py-3">27 questions · 32 min</td>
+                <td class="px-4 py-3">27 questions · 32 min</td>
+                <td class="px-4 py-3 font-bold text-blue-700">200–800</td>
+              </tr>
+              <tr class="bg-slate-50">
+                <td class="px-4 py-3 font-semibold">Math</td>
+                <td class="px-4 py-3">22 questions · 35 min</td>
+                <td class="px-4 py-3">22 questions · 35 min</td>
+                <td class="px-4 py-3 font-bold text-emerald-700">200–800</td>
+              </tr>
+              <tr class="bg-white">
+                <td class="px-4 py-3 font-semibold text-indigo-700">Total</td>
+                <td class="px-4 py-3">98 questions</td>
+                <td class="px-4 py-3">~2 hr 14 min</td>
+                <td class="px-4 py-3 font-bold text-indigo-700">400–1600</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-slate-600 leading-relaxed text-sm">
+          An optional 10-minute break separates the Reading &amp; Writing and Math sections. Scores are typically released within <strong>2–3 days</strong> of testing — significantly faster than the weeks-long wait of the paper SAT.
+        </p>
+      </div>
+    </section>
+
+    <!-- Raw Score vs Scaled Score -->
+    <section class="py-12 sm:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading mb-6">What's the Difference Between SAT Raw Score and Scaled Score?</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          A <strong>raw score</strong> is the simple count of questions you answered correctly. There is no penalty for wrong answers — only correct answers count. A <strong>scaled score</strong> (200–800 per section, 400–1600 total) is derived from that raw score through a statistical process called <strong>equating</strong>.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Equating ensures that scores mean the same thing across different test dates and forms. Since some test forms are slightly harder than others, equating adjusts for that variation so a 680 in March represents the same skill level as a 680 in October. The Digital SAT takes this further by using <strong>Item Response Theory (IRT)</strong>, where each question carries its own difficulty weight — so <em>which</em> questions you get right matters, not just how many.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-blue-50 border border-blue-100 rounded-xl p-5">
+            <h3 class="font-bold text-blue-900 mb-2">Raw Score</h3>
+            <p class="text-sm text-blue-700">Number of correct answers. R&amp;W max: 54. Math max: 44. Simple to calculate — every correct answer is one point, no deductions for wrong answers.</p>
+          </div>
+          <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5">
+            <h3 class="font-bold text-indigo-900 mb-2">Scaled Score</h3>
+            <p class="text-sm text-indigo-700">Converted score (200–800 per section) adjusted for test difficulty, adaptive path, and IRT question weights. This is what appears on your official score report.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is a Good SAT Score -->
+    <section class="bg-white border-t border-slate-200 py-12 sm:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading mb-4">What is a Good SAT Score?</h2>
+        <p class="text-slate-600 leading-relaxed mb-8">
+          The national average SAT score is approximately <strong>1050</strong>. "Good" is relative to your college goals, but the benchmarks below give a practical picture of how scores translate to competitiveness.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+          <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-5">
+            <div class="text-2xl font-black text-emerald-700 font-heading mb-1">1500–1600</div>
+            <div class="text-xs font-bold uppercase tracking-wide text-emerald-600 mb-2">99th Percentile</div>
+            <p class="text-sm text-emerald-800">Competitive for Ivy League and top-10 universities. Median scores at Harvard, Yale, and MIT fall in the 1510–1580 range.</p>
+          </div>
+          <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+            <div class="text-2xl font-black text-blue-700 font-heading mb-1">1400–1490</div>
+            <div class="text-xs font-bold uppercase tracking-wide text-blue-600 mb-2">95th–99th Percentile</div>
+            <p class="text-sm text-blue-800">Strong for top-25 to top-50 universities like UCLA, Georgetown, NYU, and UVA. Qualifies for most merit scholarship programs.</p>
+          </div>
+          <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+            <div class="text-2xl font-black text-amber-700 font-heading mb-1">1200–1390</div>
+            <div class="text-xs font-bold uppercase tracking-wide text-amber-600 mb-2">74th–94th Percentile</div>
+            <p class="text-sm text-amber-800">Above average. Competitive for state flagship universities and many four-year colleges. Often qualifies for automatic merit aid.</p>
+          </div>
+          <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+            <div class="text-2xl font-black text-slate-600 font-heading mb-1">1000–1190</div>
+            <div class="text-xs font-bold uppercase tracking-wide text-slate-500 mb-2">40th–73rd Percentile</div>
+            <p class="text-sm text-slate-700">Near national average. Sufficient for many four-year colleges, particularly non-selective and moderately selective schools.</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-bold text-slate-900 font-heading mb-4">Is a 1200 a Good SAT Score?</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Yes — a 1200 places you in approximately the <strong>74th percentile</strong>, meaning you scored higher than nearly three-quarters of test-takers. It satisfies admission requirements for the majority of four-year colleges in the U.S. and qualifies for merit scholarships at many schools. However, if you're targeting highly selective universities (acceptance rates below 20%), aim for at least a 1350.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 font-heading mb-4">Is a 1400 a Good SAT Score?</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Absolutely. A 1400 is in approximately the <strong>95th percentile</strong> and makes you a competitive applicant at most selective universities. Schools like the University of Michigan (Ann Arbor), Boston College, Wake Forest, and Tulane have median admitted SAT scores in the 1380–1470 range. A 1400 also meets the threshold for many full-ride merit scholarships at state universities.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-900 font-heading mb-4">Is a 1500 a Good SAT Score?</h3>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          A 1500 is exceptional — it places you in the <strong>99th percentile</strong> nationally. Very few students achieve this score, and it makes you academically competitive at virtually every university in the U.S., including Ivy League schools. The median SAT at schools like Harvard (1510), Yale (1510), and Columbia (1505) confirms that 1500+ is the target for the most elite admissions pools.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why is the SAT Curved -->
+    <section class="py-12 sm:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading mb-6">Why is the SAT Exam Curved?</h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          The SAT is "curved" through a statistical process called <strong>equating</strong>, not grading on a curve in the traditional sense. Since different test forms are administered on different dates, some forms are inevitably slightly harder or easier than others. Equating adjusts for this so that a scaled score of 700 on one test date reflects the same level of ability as a 700 on any other date.
+        </p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          The College Board uses pre-tested "anchor items" — questions that have appeared on previous exams — to statistically link new forms to old ones. This ensures score comparability over time. The Digital SAT's Item Response Theory model adds another layer: each question's individual difficulty and discrimination parameters are calibrated in advance, so the final scaled score is even more precise than a simple raw-to-scaled table lookup.
+        </p>
+        <div class="bg-indigo-50 border-l-4 border-indigo-500 rounded-r-xl p-4 text-sm text-indigo-700">
+          <strong>Practical takeaway:</strong> You cannot game the curve by choosing a "harder" test date. The equating process is designed specifically to eliminate that advantage. Your goal is simply to maximize the number of correct answers — especially on Module 1, which determines your difficulty path.
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Read Your SAT Score Report -->
+    <section class="bg-white border-t border-slate-200 py-12 sm:py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading mb-6">How Do I Read My SAT Score Report?</h2>
+        <p class="text-slate-600 leading-relaxed mb-6">
+          Your official SAT score report is available in your College Board account, typically within 2–3 days of testing. Here's what each number means:
+        </p>
+        <div class="space-y-4">
+          <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700 font-bold font-heading flex-shrink-0">1</div>
+            <div>
+              <h3 class="font-bold text-slate-800 mb-1">Total Score (400–1600)</h3>
+              <p class="text-sm text-slate-600">The sum of your two section scores. This is the headline number colleges see first on your application.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-700 font-bold font-heading flex-shrink-0">2</div>
+            <div>
+              <h3 class="font-bold text-slate-800 mb-1">Section Scores (200–800 each)</h3>
+              <p class="text-sm text-slate-600">Reading &amp; Writing and Math are each scored 200–800. Both sections are weighted equally in the composite total.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-700 font-bold font-heading flex-shrink-0">3</div>
+            <div>
+              <h3 class="font-bold text-slate-800 mb-1">Percentile Rank</h3>
+              <p class="text-sm text-slate-600">Shows what percentage of students nationally you scored higher than. A 90th percentile means you outscored 90% of test-takers.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
+            <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-amber-700 font-bold font-heading flex-shrink-0">4</div>
+            <div>
+              <h3 class="font-bold text-slate-800 mb-1">Cross-Test Scores &amp; Subscores</h3>
+              <p class="text-sm text-slate-600">Detailed breakdowns by skill area (e.g., Heart of Algebra, Evidence-Based Reading). Useful for targeted study, but colleges primarily use section scores and totals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ Section -->
-    <section id="faq" class="bg-white border-t border-slate-200 py-12 sm:py-16">
+    <section id="faq" class="bg-slate-50 border-t border-slate-200 py-12 sm:py-16">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading text-center mb-10">
-          SAT Score Calculator FAQ — Digital SAT Scoring Questions
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 font-heading text-center mb-3">
+          Frequently Asked Questions About SAT Scores
         </h2>
-        <dl class="space-y-4 sm:space-y-6">
+        <p class="text-center text-slate-500 text-sm mb-10 max-w-xl mx-auto">Common questions about SAT scoring, score ranges, and how the Digital SAT calculator works.</p>
+        <dl class="space-y-4 sm:space-y-5">
           {faqData.map((faq) => (
-            <div class="border border-slate-200 rounded-xl p-4 sm:p-6">
+            <div class="border border-slate-200 bg-white rounded-xl p-4 sm:p-6">
               <dt class="text-sm sm:text-base font-bold text-slate-800 mb-2">{faq.question}</dt>
               <dd class="text-sm text-slate-600 leading-relaxed">{faq.answer}</dd>
             </div>
