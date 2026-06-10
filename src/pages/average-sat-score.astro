@@ -1,0 +1,197 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+
+const pageTitle = "Average SAT Score 2026 - National Averages & What's Above Average";
+const pageDescription = "What is the average SAT score in 2026? See the national average SAT score (~1050), section averages for Reading & Writing and Math, average scores by college, and how your score compares.";
+const pageKeywords = "average SAT score 2026, average SAT score, what is the average SAT score 2026, 2026 SAT average, national average SAT score, average SAT score by college, mean SAT score, average SAT score for college bound seniors";
+
+const breadcrumbs = [
+  { name: "Average SAT Score 2026", item: "/average-sat-score" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the average SAT score in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The national average SAT score for the 2025-2026 cycle is approximately 1050 out of 1600. This breaks down to roughly 530 in Reading & Writing and 520 in Math. Any score above 1050 is above the national average."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the average SAT score the same as a 50th percentile score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Roughly, yes. The average (mean) SAT score of about 1050 corresponds closely to the 50th percentile (the median), meaning a 1050 scorer performs better than about half of all test-takers. The mean and median are close because the SAT distribution is fairly symmetric around the middle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a 1200 above the average SAT score?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A 1200 is about 150 points above the national average of 1050 and lands near the 75th percentile, meaning you scored higher than roughly three-quarters of test-takers. It is a solidly above-average, competitive score for many four-year colleges."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the average SAT score for college admissions?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends heavily on the college. While the national average is about 1050, selective universities report average admitted scores of 1400+, top-20 schools average 1450-1550, and Ivy League admits average 1500+. Always compare your score to the middle-50% range of your specific target schools."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center gap-2 text-xs text-slate-400">
+        <li><a href="/" class="hover:text-indigo-600 transition-colors">Home</a></li>
+        <li>/</li>
+        <li><span class="text-slate-600">Average SAT Score 2026</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        Average SAT Score 2026
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        The national average SAT score is approximately <strong>1050</strong>. Here's how that breaks down by section, how averages compare across colleges, and where your own score stands.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16">
+      <SATCalculator client:load />
+    </div>
+
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>What Is the Average SAT Score in 2026?</h2>
+      <p>
+        The national average SAT score for the 2025–2026 testing year is approximately <strong>1050 out of 1600</strong>. This figure has stayed remarkably stable since the SAT moved to its digital, adaptive format, because College Board uses a process called <strong>equating</strong> to keep scores comparable across years and test dates.
+      </p>
+      <p>
+        The average composite breaks down roughly as:
+      </p>
+      <ul>
+        <li><strong>Reading &amp; Writing:</strong> ~530 (out of 800)</li>
+        <li><strong>Math:</strong> ~520 (out of 800)</li>
+      </ul>
+      <p>
+        If your total is above 1050, you have already outperformed more than half of all test-takers nationwide.
+      </p>
+
+      <h2>Average SAT Score by Section</h2>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">Section</th>
+              <th class="px-4 py-3 text-left">Score Range</th>
+              <th class="px-4 py-3 text-left">National Average</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 border border-slate-200">
+            <tr><td class="px-4 py-3 font-semibold">Reading &amp; Writing</td><td class="px-4 py-3">200–800</td><td class="px-4 py-3 font-bold text-blue-700">~530</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">Math</td><td class="px-4 py-3">200–800</td><td class="px-4 py-3 font-bold text-emerald-700">~520</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-indigo-700">Total (Composite)</td><td class="px-4 py-3">400–1600</td><td class="px-4 py-3 font-bold text-indigo-700">~1050</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Average vs. Above Average: Where Does Your Score Fall?</h2>
+      <p>
+        The average score of ~1050 lines up closely with the <strong>50th percentile</strong> — the median test-taker. Use the chart below to see how far above (or below) average a given score is:
+      </p>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">SAT Score</th>
+              <th class="px-4 py-3 text-left">Percentile</th>
+              <th class="px-4 py-3 text-left">vs. Average (1050)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 border border-slate-200">
+            <tr><td class="px-4 py-3 font-semibold">1400</td><td class="px-4 py-3">94th</td><td class="px-4 py-3 text-emerald-600 font-bold">+350 — Well above average</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">1300</td><td class="px-4 py-3">86th</td><td class="px-4 py-3 text-emerald-600">+250 — Above average</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1200</td><td class="px-4 py-3">75th</td><td class="px-4 py-3 text-blue-600">+150 — Above average</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">1100</td><td class="px-4 py-3">59th</td><td class="px-4 py-3 text-slate-600">+50 — Slightly above average</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1050</td><td class="px-4 py-3">50th</td><td class="px-4 py-3 text-slate-500">Exactly average</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">950</td><td class="px-4 py-3">31st</td><td class="px-4 py-3 text-slate-500">−100 — Below average</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">850</td><td class="px-4 py-3">17th</td><td class="px-4 py-3 text-slate-500">−200 — Well below average</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-400">
+        Percentiles are based on the latest College Board data for college-bound students and may shift slightly year to year. For a precise lookup, use our <a href="/sat-percentile-calculator" class="text-indigo-600 hover:underline">SAT percentile calculator</a>.
+      </p>
+
+      <h2>Average SAT Score by College Type</h2>
+      <p>
+        The national average is useful context, but the average score that <em>matters</em> is the one at the colleges you're targeting. Selective schools report admitted-student averages far above 1050:
+      </p>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">College Tier</th>
+              <th class="px-4 py-3 text-left">Average Admitted SAT</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 border border-slate-200">
+            <tr><td class="px-4 py-3 font-semibold">Ivy League / Top 10</td><td class="px-4 py-3 font-bold text-emerald-600">1500–1560</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">Top 20</td><td class="px-4 py-3 font-bold text-blue-600">1450–1540</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Top 50</td><td class="px-4 py-3 font-bold text-blue-600">1350–1480</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">State Flagships</td><td class="px-4 py-3 font-bold text-indigo-600">1150–1320</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Open / Moderate Admissions</td><td class="px-4 py-3 font-bold text-slate-600">950–1150</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Why the Average Stays Around 1050</h2>
+      <p>
+        The SAT is not graded on a simple curve against the people who took it on your test date. Instead, College Board <strong>equates</strong> every form so that a given scaled score reflects the same ability level regardless of which test you took. The Digital SAT adds Item Response Theory (IRT), where each question carries its own difficulty weight. Together these processes keep the national mean stable near 1050 year after year. Learn more in our guide on <a href="/how-digital-sat-is-scored" class="text-indigo-600 hover:underline">how the Digital SAT is scored</a>.
+      </p>
+
+      <h2>Is Above Average "Good Enough"?</h2>
+      <p>
+        Being above the national average is a real accomplishment, but "good" is always relative to your goals. A 1200 is excellent for many state universities yet below the typical range at top-50 schools. For a full breakdown by college tier and scholarship eligibility, see our guide on <a href="/blog/what-is-a-good-sat-score" class="text-indigo-600 hover:underline">what is a good SAT score</a>, or check the typical <a href="/sat-score-range" class="text-indigo-600 hover:underline">SAT score ranges</a>.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the average SAT score in 2026?</h3>
+          <p class="text-slate-600 text-sm">The national average SAT score for the 2025–2026 cycle is approximately 1050 out of 1600 — roughly 530 in Reading &amp; Writing and 520 in Math. Any score above 1050 is above the national average.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is the average SAT score the same as a 50th percentile score?</h3>
+          <p class="text-slate-600 text-sm">Roughly, yes. The average of about 1050 corresponds closely to the 50th percentile (the median), meaning a 1050 scorer performs better than about half of all test-takers.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is a 1200 above the average SAT score?</h3>
+          <p class="text-slate-600 text-sm">Yes. A 1200 is about 150 points above the national average of 1050 and lands near the 75th percentile — a solidly above-average, competitive score for many four-year colleges.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the average SAT score for college admissions?</h3>
+          <p class="text-slate-600 text-sm">It depends on the college. The national average is about 1050, but selective universities average 1400+, top-20 schools average 1450–1550, and Ivy League admits average 1500+. Always compare against your specific target schools.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
