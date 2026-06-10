@@ -1,0 +1,179 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Desmos Calculator on the SAT - College Board Version Guide (2026)";
+const pageDescription = "Everything about the Desmos graphing calculator on the Digital SAT: the College Board version, whether Desmos is allowed, how to use it in Bluebook, and tips to score higher with it.";
+const pageKeywords = "Desmos calculator SAT, Desmos college board, Desmos college board version, Desmos SAT, is Desmos allowed on the SAT, Desmos graphing calculator SAT, college board Desmos calculator, Desmos Bluebook, Desmos assessment calculator";
+
+const breadcrumbs = [
+  { name: "Desmos Calculator on the SAT", item: "/desmos-calculator-sat" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Desmos allowed on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A built-in Desmos graphing calculator is embedded in the Bluebook testing app and is available on every question of the Digital SAT math section. You access it on-screen during the test — you do not download or install anything. You cannot use Desmos from your own phone, tablet, or browser during the exam."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the College Board version of Desmos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The College Board version of Desmos is a slightly restricted edition of the standard Desmos graphing calculator, built into Bluebook for use on the SAT, PSAT, and AP exams. It includes graphing, tables, sliders, and most standard functions, but locks down anything that would give an unfair advantage. You can practice with the same version for free at student.desmos.com/calculator (the test-mode calculator)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you bring your own calculator if Desmos is built in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Even though Desmos is built into the test, you may still bring your own approved handheld calculator as a backup. Many students use Desmos for graphing and a handheld for quick arithmetic. Both are permitted on the entire math section."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Desmos available on the PSAT and AP exams too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The same embedded Desmos graphing calculator is available in Bluebook for the PSAT/NMSQT, PSAT 8/9, the Digital SAT, and on the math sections of digital AP exams where a calculator is permitted."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I practice with the SAT Desmos calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best way is to take official Bluebook practice tests, which use the exact embedded calculator you'll see on test day. You can also use the free Desmos testing calculator online to drill specific skills like graphing functions, solving systems of equations, and finding intersections, zeros, and maximums."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center gap-2 text-xs text-slate-400">
+        <li><a href="/" class="hover:text-indigo-600 transition-colors">Home</a></li>
+        <li>/</li>
+        <li><span class="text-slate-600">Desmos Calculator on the SAT</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        The Desmos Calculator on the SAT
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        The Digital SAT comes with a built-in Desmos graphing calculator on every math question. Here's how the College Board version works, what it can do, and how to use it to score higher.
+      </p>
+    </div>
+
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <div class="not-prose bg-emerald-50 border border-emerald-200 rounded-xl p-6 my-8">
+        <p class="text-sm text-emerald-900 mb-0">
+          <strong>Quick answer:</strong> Yes, Desmos is allowed on the SAT — it's built right into the Bluebook app and available on the entire math section. You don't install anything; it appears as an on-screen tool. You may also bring your own <a href="/sat-approved-calculators" class="text-emerald-700 underline font-semibold">approved handheld calculator</a> as a backup.
+        </p>
+      </div>
+
+      <h2>Is Desmos Allowed on the SAT?</h2>
+      <p>
+        Yes. Since the SAT went fully digital, College Board has embedded a <strong>Desmos graphing calculator</strong> directly into the Bluebook testing application. It is available on <strong>every question</strong> of the math section — there is no longer a no-calculator portion. You open it with a single click and it floats over your test, so you can graph, compute, and check your work without leaving the question.
+      </p>
+      <p>
+        One key rule: you can only use the <em>embedded</em> Desmos. Opening Desmos on your own phone, tablet, or laptop during the exam is not allowed and would be a violation of test security.
+      </p>
+
+      <h2>What Is the College Board Version of Desmos?</h2>
+      <p>
+        The "College Board version" is a test-secure edition of the standard Desmos graphing calculator. It includes nearly all of the functionality students use in class — graphing, tables, sliders, statistics, and regressions — but runs in a locked-down environment so no one can gain an unfair advantage. Functionally, it is the same Desmos millions of students already use, with a testing wrapper.
+      </p>
+      <p>
+        You can practice with the identical tool for free using the Desmos <strong>testing calculator</strong> (the version Desmos publishes specifically for exams). Practicing on the real thing — rather than a TI handheld — is the single best way to get comfortable before test day.
+      </p>
+
+      <h2>What the SAT Desmos Calculator Can Do</h2>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">Task</th>
+              <th class="px-4 py-3 text-left">How Desmos Helps</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 border border-slate-200">
+            <tr><td class="px-4 py-3 font-semibold">Solving equations</td><td class="px-4 py-3">Type the equation, graph it, and read the x-intercepts (zeros) directly off the graph.</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">Systems of equations</td><td class="px-4 py-3">Graph both equations; the intersection point is the solution — click it to see exact coordinates.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Finding min/max</td><td class="px-4 py-3">Graph the function and click the turning point to get the vertex or extreme value.</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">Tables of values</td><td class="px-4 py-3">Create a table to evaluate a function at multiple inputs at once.</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">Regressions</td><td class="px-4 py-3">Fit a line or curve to data points (y₁ ~ mx₁ + b) for statistics questions.</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">Sliders</td><td class="px-4 py-3">Add a variable and drag a slider to see how changing a parameter affects a graph.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Desmos Tips to Score Higher on SAT Math</h2>
+      <ul>
+        <li><strong>Graph word problems.</strong> Many algebra questions become trivial once you graph the equation and read the answer off the screen — no algebra required.</li>
+        <li><strong>Use intersections for systems.</strong> Instead of solving by substitution, graph both equations and click where they cross.</li>
+        <li><strong>Type fractions and exact values.</strong> Desmos keeps answers exact, so you avoid rounding errors that trip up handheld users.</li>
+        <li><strong>Click points for coordinates.</strong> Zeros, intercepts, and vertices are all clickable — Desmos hands you the exact coordinates.</li>
+        <li><strong>Don't over-rely on it.</strong> For simple arithmetic, a quick mental estimate or handheld can be faster than typing into Desmos.</li>
+      </ul>
+
+      <h2>Desmos vs. a Handheld Calculator</h2>
+      <p>
+        You can use both on the SAT, and the strongest test-takers do. Desmos is unbeatable for graphing, systems, and visual problem-solving, while a familiar handheld like a <a href="/sat-approved-calculators" class="text-indigo-600 hover:underline">TI-84</a> can be faster for basic arithmetic. The right move is to practice with both during prep so you instinctively reach for the better tool on each question.
+      </p>
+
+      <h2>Is Desmos on the PSAT and AP Exams?</h2>
+      <p>
+        Yes. The same embedded Desmos calculator appears in Bluebook for the <a href="/psat-score-calculator" class="text-indigo-600 hover:underline">PSAT/NMSQT</a>, PSAT 8/9, the Digital SAT, and the calculator-permitted math sections of digital AP exams. If you learn Desmos for the SAT, those skills carry over directly.
+      </p>
+
+      <p>
+        Once you've mastered the calculator, see how your practice results translate into a real score with our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">free SAT score calculator</a> and <a href="/sat-math-score-calculator" class="text-indigo-600 hover:underline">SAT math score calculator</a>.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is Desmos allowed on the SAT?</h3>
+          <p class="text-slate-600 text-sm">Yes. A built-in Desmos graphing calculator is embedded in Bluebook and available on every math question of the Digital SAT. You access it on-screen — no download required. You cannot use Desmos from your own phone, tablet, or browser during the exam.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the College Board version of Desmos?</h3>
+          <p class="text-slate-600 text-sm">It's a test-secure edition of the standard Desmos graphing calculator, built into Bluebook for the SAT, PSAT, and AP exams. It includes graphing, tables, sliders, and regressions, but is locked down for exam security. You can practice with the same tool using the free Desmos testing calculator.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Can you bring your own calculator if Desmos is built in?</h3>
+          <p class="text-slate-600 text-sm">Yes. You may still bring your own approved handheld as a backup. Many students use Desmos for graphing and a handheld for quick arithmetic — both are permitted on the entire math section.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Is Desmos available on the PSAT and AP exams too?</h3>
+          <p class="text-slate-600 text-sm">Yes. The same embedded Desmos calculator is available in Bluebook for the PSAT/NMSQT, PSAT 8/9, the Digital SAT, and calculator-permitted math sections of digital AP exams.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How do I practice with the SAT Desmos calculator?</h3>
+          <p class="text-slate-600 text-sm">Take official Bluebook practice tests, which use the exact embedded calculator. You can also use the free Desmos testing calculator to drill graphing, solving systems, and finding intersections, zeros, and maximums.</p>
+        </div>
+      </div>
+
+      <p class="text-xs text-slate-400 mt-8">
+        Desmos is a trademark of Desmos Studio PBC. SAT® and PSAT/NMSQT® are registered trademarks of the College Board. Neither is affiliated with satcalculator.co. Always confirm current testing tools on the official College Board website.
+      </p>
+    </article>
+  </main>
+</Layout>

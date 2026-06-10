@@ -1,0 +1,177 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SATCalculator from '../components/SATCalculator';
+
+const pageTitle = "SAT Score Range Explained (2026) - 400 to 1600 Scale & What's Good";
+const pageDescription = "Understand the SAT score range: the 400-1600 total scale, 200-800 section scores, what counts as a good SAT score range, and how your score compares by percentile and college tier.";
+const pageKeywords = "SAT score range, SAT scores range, good SAT score range, SAT score range 2026, SAT scores range 2026, what is the SAT score range, SAT section score range, SAT total score range";
+
+const breadcrumbs = [
+  { name: "SAT Score Range", item: "/sat-score-range" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the SAT score range?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The SAT total score ranges from 400 to 1600. It is the sum of two sections — Reading & Writing and Math — each scored on a range of 200 to 800. The lowest possible score is 400 and the highest (perfect) score is 1600."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good SAT score range?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good SAT score range is generally 1200-1600. A score of 1200-1350 is above average and competitive for many state universities, 1350-1500 is strong for selective colleges, and 1500-1600 is excellent and competitive for the most selective schools. The national average is about 1050."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the SAT section score range?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each SAT section — Reading & Writing and Math — is scored from 200 to 800 in 10-point increments. The two section scores add together to produce your total score of 400 to 1600."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What SAT score range do most students fall in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The middle 50% of test-takers score roughly between 900 and 1200. About half of all students score within about 150 points of the 1050 national average, so scores in the 900-1200 band are the most common."
+      }
+    }
+  ]
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="mb-6">
+      <ol class="flex items-center gap-2 text-xs text-slate-400">
+        <li><a href="/" class="hover:text-indigo-600 transition-colors">Home</a></li>
+        <li>/</li>
+        <li><span class="text-slate-600">SAT Score Range</span></li>
+      </ol>
+    </nav>
+
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        SAT Score Range Explained
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        The SAT is scored on a <strong>400–1600</strong> scale, built from two <strong>200–800</strong> sections. Here's what the full range means, what counts as a good range, and where your score lands.
+      </p>
+    </div>
+
+    <!-- Calculator Component -->
+    <div class="mb-16">
+      <SATCalculator client:load />
+    </div>
+
+    <article class="prose prose-slate max-w-3xl mx-auto">
+      <h2>What Is the SAT Score Range?</h2>
+      <p>
+        The <strong>total SAT score ranges from 400 to 1600</strong>. That total is simply the sum of your two section scores:
+      </p>
+      <ul>
+        <li><strong>Reading &amp; Writing:</strong> 200–800</li>
+        <li><strong>Math:</strong> 200–800</li>
+      </ul>
+      <p>
+        Add the two together and you get a composite between 400 (the lowest possible) and 1600 (a perfect score). Section scores move in 10-point increments, so totals always end in a multiple of 10.
+      </p>
+
+      <h2>SAT Score Range Breakdown</h2>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">Score Component</th>
+              <th class="px-4 py-3 text-left">Minimum</th>
+              <th class="px-4 py-3 text-left">Maximum</th>
+              <th class="px-4 py-3 text-left">Increment</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 border border-slate-200">
+            <tr><td class="px-4 py-3 font-semibold">Reading &amp; Writing</td><td class="px-4 py-3">200</td><td class="px-4 py-3">800</td><td class="px-4 py-3">10 pts</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">Math</td><td class="px-4 py-3">200</td><td class="px-4 py-3">800</td><td class="px-4 py-3">10 pts</td></tr>
+            <tr><td class="px-4 py-3 font-semibold text-indigo-700">Total Score</td><td class="px-4 py-3">400</td><td class="px-4 py-3">1600</td><td class="px-4 py-3">10 pts</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>What Is a Good SAT Score Range?</h2>
+      <p>
+        "Good" depends on your college goals, but here is how the 400–1600 range maps to competitiveness. The national average is about <a href="/average-sat-score" class="text-indigo-600 hover:underline">1050</a>, so anything above that is above average.
+      </p>
+      <div class="not-prose overflow-x-auto my-8">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-3 text-left">Score Range</th>
+              <th class="px-4 py-3 text-left">Percentile</th>
+              <th class="px-4 py-3 text-left">What It Means</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 border border-slate-200">
+            <tr class="bg-emerald-50"><td class="px-4 py-3 font-bold text-emerald-800">1500–1600</td><td class="px-4 py-3">99th+</td><td class="px-4 py-3">Excellent — Ivy League / Top 10 range</td></tr>
+            <tr class="bg-blue-50"><td class="px-4 py-3 font-bold text-blue-800">1400–1490</td><td class="px-4 py-3">94th–98th</td><td class="px-4 py-3">Very strong — top-50 universities</td></tr>
+            <tr><td class="px-4 py-3 font-bold text-slate-800">1300–1390</td><td class="px-4 py-3">86th–93rd</td><td class="px-4 py-3">Strong — competitive for many schools</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-bold text-slate-800">1200–1290</td><td class="px-4 py-3">74th–85th</td><td class="px-4 py-3">Above average — solid for state schools</td></tr>
+            <tr><td class="px-4 py-3 font-semibold">1050–1190</td><td class="px-4 py-3">50th–73rd</td><td class="px-4 py-3">Average to above average</td></tr>
+            <tr class="bg-slate-50"><td class="px-4 py-3 font-semibold">400–1040</td><td class="px-4 py-3">Below 50th</td><td class="px-4 py-3">Below the national average</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-400">
+        Percentiles reflect the latest College Board data and may vary slightly by year. Look up an exact figure with our <a href="/sat-percentile-calculator" class="text-indigo-600 hover:underline">SAT percentile calculator</a>.
+      </p>
+
+      <h2>What Score Range Do Most Students Fall In?</h2>
+      <p>
+        Because the SAT distribution clusters around the ~1050 average, the <strong>middle 50% of test-takers score roughly between 900 and 1200</strong>. Scores at the extremes — below 700 or above 1500 — are far less common. This is why even a modest gain near the middle of the range can move your percentile substantially.
+      </p>
+
+      <h2>Understanding the "Middle 50%" Range for Colleges</h2>
+      <p>
+        Colleges publish their own score ranges, usually as a <strong>middle-50% range</strong> (the 25th to 75th percentile of admitted students). If a school's range is 1350–1500, it means 25% of admits scored below 1350 and 25% scored above 1500. To be competitive, aim for at or above the 75th-percentile figure of your target schools. For a deeper breakdown by college tier, see <a href="/blog/what-is-a-good-sat-score" class="text-indigo-600 hover:underline">what is a good SAT score</a>.
+      </p>
+
+      <h2>How Your Raw Score Becomes a Scaled Score in This Range</h2>
+      <p>
+        You don't earn points directly on the 400–1600 scale — you answer questions, and College Board converts your <strong>raw score</strong> (number correct) into a <strong>scaled score</strong> within the range using equating and Item Response Theory. On the adaptive Digital SAT, your Module 1 performance also affects your scoring ceiling. To see where your practice results land in the range, run them through our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT score calculator</a>, or read <a href="/how-to-calculate-sat-score" class="text-indigo-600 hover:underline">how to calculate your SAT score</a>.
+      </p>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the SAT score range?</h3>
+          <p class="text-slate-600 text-sm">The SAT total score ranges from 400 to 1600. It's the sum of two sections — Reading &amp; Writing and Math — each scored from 200 to 800. The lowest possible total is 400 and a perfect score is 1600.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is a good SAT score range?</h3>
+          <p class="text-slate-600 text-sm">Generally 1200–1600. A 1200–1350 is above average and competitive for many state universities, 1350–1500 is strong for selective colleges, and 1500–1600 is excellent for the most selective schools. The national average is about 1050.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What is the SAT section score range?</h3>
+          <p class="text-slate-600 text-sm">Each section — Reading &amp; Writing and Math — is scored from 200 to 800 in 10-point increments. The two section scores add together to produce your 400–1600 total.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What SAT score range do most students fall in?</h3>
+          <p class="text-slate-600 text-sm">The middle 50% of test-takers score roughly between 900 and 1200. About half of all students score within about 150 points of the 1050 national average, making the 900–1200 band the most common.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
