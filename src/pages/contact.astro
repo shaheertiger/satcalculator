@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Contact Us | satcalculator.co";
+const pageDescription = "Get in touch with the satcalculator.co team. Send questions, feedback, corrections, or partnership inquiries about our free SAT and ACT score tools.";
+const pageKeywords = "contact satcalculator.co, SAT calculator contact, feedback, support, partnership inquiries";
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact satcalculator.co",
+  "url": "https://satcalculator.co/contact",
+  "description": pageDescription,
+  "publisher": {
+    "@type": "Organization",
+    "name": "satcalculator.co",
+    "url": "https://satcalculator.co",
+    "email": "contact@satcalculator.co"
+  }
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={[{ name: "Contact Us", item: "/contact" }]}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(contactSchema)} />
+  </Fragment>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2" aria-label="satcalculator.co homepage">
+        <div class="w-8 h-8 gradient-bg rounded-lg flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+        </div>
+        <span class="text-xl font-bold text-slate-800 tracking-tight font-heading">satcalculator<span class="text-indigo-600">.co</span></span>
+      </a>
+      <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Score Calculator</a>
+        <a href="/about" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">About</a>
+        <a href="/privacy-policy" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Privacy Policy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 class="text-3xl sm:text-4xl font-black text-slate-900 font-heading mb-6">Contact Us</h1>
+
+      <div class="prose prose-slate max-w-none space-y-8 text-sm leading-relaxed text-slate-600">
+
+        <section>
+          <p>
+            We genuinely value hearing from the students, parents, teachers, and counselors who use satcalculator.co. Whether you've spotted an error in one of our scoring tables, have a question about how a calculator works, want to suggest a new tool, or are interested in a partnership, we read every message.
+          </p>
+          <p>
+            The fastest way to reach us is by email. We aim to respond to all inquiries within <strong>2&ndash;3 business days</strong>.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">Email Us</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose">
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+              <h3 class="font-bold text-slate-800 mb-1 font-heading">General &amp; Feedback</h3>
+              <p class="text-sm text-slate-600 mb-2">Questions, suggestions, corrections, or anything else.</p>
+              <a href="mailto:contact@satcalculator.co" class="text-indigo-600 hover:underline font-medium">contact@satcalculator.co</a>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+              <h3 class="font-bold text-slate-800 mb-1 font-heading">Privacy Questions</h3>
+              <p class="text-sm text-slate-600 mb-2">Data, cookies, and privacy-related requests.</p>
+              <a href="mailto:privacy@satcalculator.co" class="text-indigo-600 hover:underline font-medium">privacy@satcalculator.co</a>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+              <h3 class="font-bold text-slate-800 mb-1 font-heading">Partnerships &amp; Press</h3>
+              <p class="text-sm text-slate-600 mb-2">Collaborations, advertising, and media inquiries.</p>
+              <a href="mailto:contact@satcalculator.co" class="text-indigo-600 hover:underline font-medium">contact@satcalculator.co</a>
+            </div>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+              <h3 class="font-bold text-slate-800 mb-1 font-heading">Report a Correction</h3>
+              <p class="text-sm text-slate-600 mb-2">Found a number that looks off? Tell us the page and what you expected.</p>
+              <a href="mailto:contact@satcalculator.co" class="text-indigo-600 hover:underline font-medium">contact@satcalculator.co</a>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">Before You Email</h2>
+          <p>Many common questions are already answered across our site. You may find what you need here:</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><a href="/how-to-calculate-sat-score" class="text-indigo-600 hover:underline">How to calculate your SAT score</a> and <a href="/how-digital-sat-is-scored" class="text-indigo-600 hover:underline">how the Digital SAT is scored</a>.</li>
+            <li><a href="/sat-approved-calculators" class="text-indigo-600 hover:underline">SAT approved calculators</a> and the <a href="/desmos-calculator-sat" class="text-indigo-600 hover:underline">Desmos calculator policy</a>.</li>
+            <li><a href="/blog/what-is-a-good-sat-score" class="text-indigo-600 hover:underline">What is a good SAT score</a>, plus <a href="/sat-score-range" class="text-indigo-600 hover:underline">score ranges</a> and the <a href="/average-sat-score" class="text-indigo-600 hover:underline">average SAT score</a>.</li>
+            <li><a href="/about" class="text-indigo-600 hover:underline">About our methodology</a> &mdash; how we build our score estimates.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-slate-800 font-heading mb-3">A Note on Score Accuracy</h2>
+          <p>
+            satcalculator.co is an independent educational tool and is <strong>not affiliated with the College Board or ACT, Inc.</strong> Our calculators provide estimates based on publicly released practice-test data; they cannot replace your official score report. If you believe a result is inaccurate, please email us the specific inputs you used and we'll investigate.
+          </p>
+        </section>
+
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-50 border-t border-slate-200 py-8">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-400">&copy; {new Date().getFullYear()} satcalculator.co. All rights reserved.</p>
+      <div class="flex items-center gap-6 text-xs text-slate-400">
+        <a href="/" class="hover:text-slate-600">Home</a>
+        <a href="/about" class="hover:text-slate-600">About</a>
+        <a href="/privacy-policy" class="hover:text-slate-600">Privacy Policy</a>
+        <a href="/terms-of-service" class="hover:text-slate-600">Terms of Service</a>
+        <a href="/disclaimer" class="hover:text-slate-600">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+</Layout>

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 
 const pageTitle = "Privacy Policy | SAT Score Calculator - satcalculator.co";
 const pageDescription = "Read the satcalculator.co privacy policy. Learn how we handle your data, cookies, and analytics. SAT scores never leave your browser.";
-const lastUpdated = "February 8, 2026";
+const lastUpdated = "June 10, 2026";
 ---
 
 <Layout title={pageTitle} description={pageDescription} breadcrumbs={[{ name: "Privacy Policy", item: "/privacy-policy" }]}>
@@ -18,8 +18,9 @@ const lastUpdated = "February 8, 2026";
       </a>
       <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
         <a href="/" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Score Calculator</a>
+        <a href="/about" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">About</a>
+        <a href="/contact" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Contact</a>
         <a href="/privacy-policy" class="text-sm font-medium text-indigo-600 transition-colors">Privacy Policy</a>
-        <a href="/terms-of-service" class="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Terms of Service</a>
       </nav>
     </div>
   </header>
@@ -27,7 +28,14 @@ const lastUpdated = "February 8, 2026";
   <main class="flex-grow">
     <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 class="text-3xl sm:text-4xl font-black text-slate-900 font-heading mb-2">Privacy Policy</h1>
-      <p class="text-sm text-slate-400 mb-10">Last updated: {lastUpdated}</p>
+      <p class="text-sm text-slate-400 mb-6">Last updated: {lastUpdated}</p>
+
+      <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-5 mb-10 text-sm text-indigo-900">
+        <p class="font-bold mb-1">Advertising &amp; Cookies — At a Glance</p>
+        <p class="mb-0">
+          satcalculator.co is free to use and supported by advertising. We display ads through <strong>Google AdSense</strong>, and we use cookies and similar technologies (including third-party advertising and analytics cookies) to run the site, measure traffic, and show relevant ads. Your SAT scores are processed in your browser and are never sent to our servers. You can opt out of personalized advertising any time via <a href="https://www.google.com/settings/ads" class="underline" rel="noopener noreferrer" target="_blank">Google Ads Settings</a>. Full details are below.
+        </p>
+      </div>
 
       <div class="prose prose-slate max-w-none space-y-8 text-sm leading-relaxed text-slate-600">
 
