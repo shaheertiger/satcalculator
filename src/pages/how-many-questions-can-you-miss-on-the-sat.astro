@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "How Many Questions Can You Miss on the SAT? (1600, 1500, 1400)";
+const pageDescription = "How many questions can you miss on the SAT and still hit your target score? See how many you can get wrong for a 1600, 1550, 1520, 1500, 1400, and more — for both Math and Reading & Writing.";
+const pageKeywords = "how many questions can you miss on the sat, how many questions can i miss on sat for 1520, how many questions can i get wrong on sat for 1520, what score is 6 incorrect answers on sat, how many questions can you get wrong on the sat, how many can you miss for a 1500 sat, how many questions to miss for 1600 sat, sat questions wrong to score";
+
+const breadcrumbs = [
+  { name: "How Many Questions Can You Miss on the SAT", item: "/how-many-questions-can-you-miss-on-the-sat" }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many questions can you miss on the SAT and still get a 1600?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On a typical Digital SAT form, you usually need a perfect or near-perfect raw score for a 1600. On most forms you can miss 0 questions, though some generous forms allow you to miss 1 question in a single section and still score 800. Because each test is equated differently, the safest path to a 1600 is to answer every question correctly on the hard Module 2 path."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many questions can I miss for a 1520 on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 1520 generally requires roughly 760 in each section. On the hard module path, that typically means missing about 2-4 questions total across the whole test — for example, getting 1-2 wrong in Math and 1-2 wrong in Reading & Writing. The exact number depends on the specific test form's scoring curve."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What score is 6 incorrect answers on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Six wrong answers on the hard module path usually lands you somewhere around 1480-1530, depending on how those mistakes are split between the two sections. If all six are in one section, that section drops more steeply (to roughly 700-720) while the other stays near 800. Spreading mistakes evenly tends to produce a slightly higher total."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it matter which questions I miss on the SAT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The Digital SAT uses Item Response Theory (IRT), so each question carries its own difficulty weight. Missing a hard question generally costs fewer points than missing an easy one. Your Module 1 performance also routes you to an easier or harder Module 2 — and the hard path is required to reach the highest scores."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many questions can you miss and still get an 800 in one section?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On the hard Module 2 path, many forms let you miss 0-1 questions in a section and still earn an 800. On more generous forms you may be able to miss 2 in Reading & Writing and still score 800, because that section has more questions (54 vs 44 in Math). On the easy module path, an 800 is not reachable regardless of how few you miss."
+      }
+    }
+  ]
+};
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": pageTitle,
+  "description": pageDescription,
+  "author": {
+    "@type": "Organization",
+    "name": "satcalculator.co"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "satcalculator.co"
+  },
+  "datePublished": "2026-06-24",
+  "dateModified": "2026-06-24"
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords} breadcrumbs={breadcrumbs}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  </Fragment>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+    <!-- Hero -->
+    <div class="text-center mb-10">
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-heading mb-4">
+        How Many Questions Can You Miss on the SAT?
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Wondering <strong>how many questions you can miss on the SAT</strong> and still hit your target? This guide breaks down how many you can get wrong for a 1600, 1550, 1520, 1500, 1400, and more — for both Math and Reading &amp; Writing on the 2026 Digital SAT.
+      </p>
+    </div>
+
+    <article class="prose prose-slate max-w-3xl mx-auto">
+
+      <h2>The Short Answer</h2>
+      <p>
+        There is <strong>no single fixed number</strong> of questions you can miss for a given score. The Digital SAT is adaptive and each test form is scored with its own curve (a process called <strong>equating</strong>). That said, the estimates below — based on official Bluebook practice test scoring tables — give you a reliable ballpark.
+      </p>
+      <p>
+        Two things drive how many questions you can afford to miss:
+      </p>
+      <ul>
+        <li><strong>Your module path.</strong> Strong Module 1 performance routes you to the <strong>hard Module 2</strong>, which is the only path that can reach the top scores. On the easy path, your section score is capped around 600-650 no matter how few you miss.</li>
+        <li><strong>The specific test form.</strong> A harder form has a more forgiving curve; an easier form is stricter. The numbers below assume an average form on the hard path.</li>
+      </ul>
+
+      <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 not-prose my-8">
+        <h3 class="text-lg font-bold text-indigo-900 mb-2">Quick Reference: Questions to Miss (Hard Path)</h3>
+        <p class="text-sm text-indigo-700">
+          <strong>Reading &amp; Writing:</strong> 54 questions total &nbsp;•&nbsp; <strong>Math:</strong> 44 questions total<br />
+          These are approximate. Your exact result depends on the form and which questions you miss.
+        </p>
+      </div>
+
+      <h2>How Many Questions Can You Miss for Each Target Score?</h2>
+      <p>
+        The table below shows the approximate <strong>total number of questions</strong> you can miss across the entire test (out of 98) to reach a target composite score on the hard module path.
+      </p>
+      <div class="not-prose overflow-x-auto my-6">
+        <table class="w-full text-sm border-collapse bg-white shadow-sm rounded-lg overflow-hidden text-center">
+          <thead class="bg-slate-800 text-white">
+            <tr>
+              <th class="px-4 py-2">Target Total Score</th>
+              <th class="px-4 py-2">Approx. Questions You Can Miss (of 98)</th>
+              <th class="px-4 py-2">Per-Section Guidance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-emerald-50 border-b border-slate-100"><td class="py-2 font-bold">1600</td><td class="py-2">0 (occasionally 1)</td><td class="py-2 text-slate-600">Essentially perfect in both sections</td></tr>
+            <tr class="bg-white border-b border-slate-100"><td class="py-2 font-bold">1550</td><td class="py-2">1–3</td><td class="py-2 text-slate-600">~1 wrong per section</td></tr>
+            <tr class="bg-slate-50 border-b border-slate-100"><td class="py-2 font-bold">1520</td><td class="py-2">2–4</td><td class="py-2 text-slate-600">~1–2 in Math, ~1–2 in R&amp;W</td></tr>
+            <tr class="bg-white border-b border-slate-100"><td class="py-2 font-bold">1500</td><td class="py-2">4–6</td><td class="py-2 text-slate-600">~2–3 per section</td></tr>
+            <tr class="bg-slate-50 border-b border-slate-100"><td class="py-2 font-bold">1450</td><td class="py-2">7–10</td><td class="py-2 text-slate-600">~3–5 per section</td></tr>
+            <tr class="bg-white border-b border-slate-100"><td class="py-2 font-bold">1400</td><td class="py-2">11–15</td><td class="py-2 text-slate-600">~5–8 per section</td></tr>
+            <tr class="bg-slate-50 border-b border-slate-100"><td class="py-2 font-bold">1300</td><td class="py-2">18–24</td><td class="py-2 text-slate-600">~9–12 per section</td></tr>
+            <tr class="bg-white"><td class="py-2 font-bold">1200</td><td class="py-2">26–32</td><td class="py-2 text-slate-600">~13–16 per section</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-400">
+        Estimates assume the hard Module 2 path on an average-difficulty form. For a personalized estimate, use our <a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT Score Calculator</a>.
+      </p>
+
+      <h2>How Many Questions Can You Miss for a 1600?</h2>
+      <p>
+        A 1600 means an 800 in <em>both</em> Reading &amp; Writing and Math. On most Digital SAT forms, this requires a <strong>perfect raw score</strong>. Some generous forms allow you to miss a single question in one section and still earn 800 there, but you cannot count on it. To be safe, aim to answer every question correctly — and you must be on the hard Module 2 path in both sections.
+      </p>
+
+      <h2>How Many Questions Can You Miss for a 1520?</h2>
+      <p>
+        A 1520 typically corresponds to about <strong>760 per section</strong>. On the hard path that usually means missing roughly <strong>2–4 questions total</strong> — for instance, 1–2 wrong in Math (out of 44) and 1–2 wrong in Reading &amp; Writing (out of 54). If your mistakes are concentrated in one section, that section will drop faster, so you may need the other section closer to 800 to balance it out.
+      </p>
+
+      <h2>What Score Is 6 Incorrect Answers on the SAT?</h2>
+      <p>
+        Six wrong answers on the hard path generally lands around <strong>1480–1530</strong>. How those six mistakes are distributed matters:
+      </p>
+      <ul>
+        <li><strong>Split 3 and 3:</strong> roughly 760 + 760 ≈ <strong>1520</strong>.</li>
+        <li><strong>All 6 in one section:</strong> that section falls to about 700–720 while the other stays near 800, for a total around <strong>1500–1520</strong>.</li>
+        <li><strong>5 and 1:</strong> somewhere in between, around <strong>1490–1510</strong>.</li>
+      </ul>
+      <p>
+        Because Math has fewer questions (44) than Reading &amp; Writing (54), each Math miss tends to cost slightly more scaled points than each R&amp;W miss.
+      </p>
+
+      <h2>Why Missing the Same Number Can Give Different Scores</h2>
+      <p>
+        The Digital SAT uses <strong>Item Response Theory (IRT)</strong>, where every question has its own difficulty weight. Missing a hard question usually costs fewer points than missing an easy one. On top of that, your Module 1 performance routes you to an easier or harder Module 2 — and only the hard path can reach the highest scores. This is why a calculator or scoring table can only estimate a range, not a guaranteed number.
+      </p>
+
+      <div class="bg-amber-50 border-l-4 border-amber-500 p-4 not-prose my-8">
+        <h3 class="text-lg font-bold text-amber-900 mb-2">The One Rule That Always Helps</h3>
+        <p class="text-sm text-amber-700">
+          There is <strong>no penalty for guessing</strong> on the Digital SAT. A blank answer and a wrong answer both score 0 points, so never leave a question blank. Answering every question is free score insurance.
+        </p>
+      </div>
+
+      <h2>Estimate Your Own Score</h2>
+      <p>
+        Want to know exactly where your raw score lands? Enter how many questions you got right on each module and let our tools do the math:
+      </p>
+      <ul>
+        <li><a href="/sat-score-calculator" class="text-indigo-600 hover:underline">SAT Score Calculator</a> — convert raw module scores to an estimated 400–1600 total.</li>
+        <li><a href="/sat-math-score-calculator" class="text-indigo-600 hover:underline">SAT Math Score Calculator</a> — focus on your Math section.</li>
+        <li><a href="/sat-practice-test-score-calculator" class="text-indigo-600 hover:underline">Practice Test Score Calculator</a> — score a Bluebook practice test.</li>
+        <li><a href="/how-to-calculate-sat-score" class="text-indigo-600 hover:underline">How to Calculate Your SAT Score</a> — the full step-by-step method.</li>
+      </ul>
+
+      <h2>Frequently Asked Questions</h2>
+      <div class="not-prose space-y-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How many questions can you miss on the SAT and still get a 1600?</h3>
+          <p class="text-slate-600 text-sm">Usually 0 — a 1600 typically requires a perfect raw score. Some generous forms let you miss 1 question in a single section and still earn 800 there, but plan to answer everything correctly on the hard module path.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How many questions can I miss for a 1520?</h3>
+          <p class="text-slate-600 text-sm">About 2–4 questions total on the hard path — roughly 1–2 wrong in Math and 1–2 wrong in Reading &amp; Writing. The exact number depends on the form's scoring curve.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">What score is 6 incorrect answers on the SAT?</h3>
+          <p class="text-slate-600 text-sm">Roughly 1480–1530 on the hard path, depending on how the six mistakes split between sections. Spreading them evenly (3 and 3) tends to produce a slightly higher total than concentrating them in one section.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">Does it matter which questions I miss?</h3>
+          <p class="text-slate-600 text-sm">Yes. With Item Response Theory, harder questions are weighted more, so missing an easy question generally costs more than missing a hard one. Your Module 1 performance also determines whether you reach the high-scoring hard path.</p>
+        </div>
+        <div class="bg-white border border-slate-200 rounded-xl p-6">
+          <h3 class="font-bold text-slate-900 mb-2">How many can you miss and still get an 800 in one section?</h3>
+          <p class="text-slate-600 text-sm">On the hard path, typically 0–1, and on generous forms up to 2 in Reading &amp; Writing. On the easy module path, an 800 is not reachable no matter how few you miss.</p>
+        </div>
+      </div>
+    </article>
+  </main>
+</Layout>
