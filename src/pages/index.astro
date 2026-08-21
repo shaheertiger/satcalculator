@@ -122,6 +122,7 @@ const faqSchema = {
 
 ---
 
+<Layout title={pageTitle} description={pageDescription} keywords={pageKeywords}>
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(siteNavSchema)} />
     <script type="application/ld+json" set:html={JSON.stringify(webAppSchema)} />
