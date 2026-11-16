@@ -1,0 +1,266 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/act-percentile-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/act-percentile-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/act-sat-score-converter",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/act-sat-score-converter/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/act-score-calculator-without-science",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/act-score-calculator-without-science/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/act-score-equivalent-sat",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/act-score-equivalent-sat/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/average-sat-score",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/average-sat-score/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/can-you-superscore-digital-sat",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/can-you-superscore-digital-sat/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/desmos-calculator-sat",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/desmos-calculator-sat/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/digital-sat-score-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/digital-sat-score-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/highest-sat-score",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/highest-sat-score/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-digital-sat-is-scored",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-digital-sat-is-scored/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-many-questions-can-you-miss-on-the-sat",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-many-questions-can-you-miss-on-the-sat/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-calculate-sat-score",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-calculate-sat-score/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/math-sat-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/math-sat-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/psat-score-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/psat-score-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-act-score-converter",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-act-score-converter/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-approved-calculators",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-approved-calculators/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-math-score-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-math-score-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-percentile-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-percentile-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-practice-test-score-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-practice-test-score-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-score-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-score-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-score-equivalent-act",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-score-equivalent-act/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-score-range",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-score-range/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-superscore-calculator",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sat-superscore-calculator/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/disclaimer/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service/",
+      "destination": "/disclaimer/",
+      "permanent": true
+    },
+    {
+      "source": "/ja",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ja/",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}
