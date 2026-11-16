@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import GuideIndex from '../../../components/GuideIndex.astro';
+import { SITE_NAME } from '../../../consts';
+const guides = await getCollection('guides');
+---
+<Base title={`ガイド一覧｜${SITE_NAME}`} description="iPhoneの写真の非表示、iCloud、アプリのロック、Safariのプライベートブラウズ、バックアップの暗号化など、プライバシー設定のガイド一覧です。">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="パンくずリスト"><a href="/">ホーム</a><span class="sep">/</span>ガイド一覧</nav>
+    <div class="prose-page"><h1>ガイド一覧</h1><p>iPhoneのプライバシー設定を、カテゴリ別にまとめています。</p></div>
+    <GuideIndex guides={guides} />
+  </div>
+</Base>

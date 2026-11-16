@@ -1,0 +1,165 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import GuideRow from '../../../components/GuideRow.astro';
+import { SITE_NAME, SITE_URL } from '../../../consts';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide, all: guides } }));
+}
+const { guide, all } = Astro.props;
+const d = guide.data;
+const { Content, headings } = await render(guide);
+const bodyToc = headings.filter((h) => h.depth === 2);
+const toc = [
+  { slug: 'kantan-na-kotae', text: `簡潔な答え：${d.h1.replace(/（.*?）$/, '')}` },
+  ...bodyToc,
+  { slug: 'yoku-aru-shitsumon', text: 'よくある質問' },
+  ...(d.conclusion ? [{ slug: 'matome', text: 'まとめ' }] : []),
+];
+const image = `/images/guides/${guide.id}.webp`;
+const url = `${SITE_URL}/ja/guides/${guide.id}/`;
+const body = guide.body ?? '';
+const plain = body.replace(/^---[\s\S]*?---/, '').replace(/[#>*_`|\-\[\]()!]/g, '').replace(/\(\/[^)]*\)/g, '');
+const wordCount = plain.replace(/\s+/g, '').length; // Japanese: characters
+// HowTo: the first numbered procedure in the article body
+const howToSteps = (() => {
+  const stepHeads = headings.filter((h) => h.depth === 3 && /^ステップ\s*\d+\s*[：:]/.test(h.text));
+  if (stepHeads.length >= 2) {
+    const firstNum = stepHeads.findIndex((h, i) => i > 0 && /ステップ\s*1\s*[：:]/.test(h.text));
+    const run = firstNum > 0 ? stepHeads.slice(0, firstNum) : stepHeads;
+    return run.map((h) => h.text.replace(/^ステップ\s*\d+\s*[：:]\s*/, ''));
+  }
+  const m = body.match(/(?:^|\n)((?:\d+\.\s+.+\n?){2,})/);
+  if (!m) return [];
+  return m[1].trim().split('\n').map((l) => l.replace(/^\d+\.\s+/, '').replace(/\*\*|\[|\]\([^)]*\)/g, '').trim()).filter(Boolean);
+})();
+const fmt = (dt: Date) => `${dt.getFullYear()}年${dt.getMonth() + 1}月${dt.getDate()}日`;
+const related = d.related
+  .map((s) => all.find((g) => g.id === s))
+  .filter((g): g is NonNullable<typeof g> => Boolean(g))
+  .slice(0, 3);
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: d.h1,
+    description: d.description,
+    url,
+    image: { '@type': 'ImageObject', url: `${SITE_URL}${image}`, width: 1200, height: 630 },
+    wordCount,
+    keywords: d.keyword,
+    articleSection: d.category,
+    speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.article-head h1', '.summary'] },
+    datePublished: d.published.toISOString(),
+    dateModified: d.updated.toISOString(),
+    inLanguage: 'ja',
+    author: { '@type': 'Organization', name: `${SITE_NAME} 編集部`, url: `${SITE_URL}/about/` },
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: `${SITE_URL}/` },
+    mainEntityOfPage: url,
+  },
+  ...(howToSteps.length >= 2
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'HowTo',
+        name: d.h1,
+        description: d.description,
+        image: `${SITE_URL}${image}`,
+        step: howToSteps.map((t, i) => ({ '@type': 'HowToStep', position: i + 1, name: t.slice(0, 80), text: t, url: `${url}#${bodyToc[0]?.slug ?? ''}` })),
+      }]
+    : []),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: d.faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'ホーム', item: `${SITE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'ガイド一覧', item: `${SITE_URL}/ja/guides/` },
+      { '@type': 'ListItem', position: 3, name: d.h1, item: url },
+    ],
+  },
+];
+---
+<Base title={d.title} description={d.description} image={image} imageAlt={d.imageAlt} type="article" published={d.published} modified={d.updated} jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="パンくずリスト">
+      <a href="/">ホーム</a><span class="sep">/</span><a href="/ja/guides/">ガイド一覧</a><span class="sep">/</span>{d.category}
+    </nav>
+    <div class="article-layout">
+      <article>
+        <header class="article-head">
+          <a class="cat" href="/ja/guides/">{d.category}</a>
+          <h1>{d.h1}</h1>
+          <p class="meta">
+            <span>更新 <time datetime={d.updated.toISOString().slice(0, 10)}>{fmt(d.updated)}</time></span>
+            <span>約{d.readingMinutes}分で読めます</span>
+            <span>{SITE_NAME} 編集部</span>
+          </p>
+        </header>
+        <p class="hero-lead">{d.description}</p>
+        <figure class="hero-img">
+          <img src={image} alt={d.imageAlt} width="1200" height="630" fetchpriority="high" decoding="async" />
+        </figure>
+        <section class="quick-answer" aria-labelledby="kantan-na-kotae">
+          <h2 id="kantan-na-kotae">簡潔な答え：{d.h1.replace(/（.*?）$/, '')}</h2>
+          <ul>{d.summary.map((s) => <li>{s}</li>)}</ul>
+        </section>
+        <section class="verdict" aria-label="この方法で守られること・守られないこと">
+          <div class="v-protect">
+            <p class="v-title">守られること</p>
+            <ul>{d.verdict.protects.map((s) => <li>{s}</li>)}</ul>
+          </div>
+          <div class="v-expose">
+            <p class="v-title">見えてしまうこと</p>
+            <ul>{d.verdict.exposes.map((s) => <li>{s}</li>)}</ul>
+          </div>
+        </section>
+
+        <nav class="toc toc-inline" aria-labelledby="toc-a">
+          <p class="toc-title" id="toc-a">目次</p>
+          <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+        </nav>
+        <div class="prose">
+          <Content />
+        </div>
+        <section class="faq" aria-labelledby="yoku-aru-shitsumon">
+          <h2 id="yoku-aru-shitsumon">よくある質問</h2>
+          {d.faq.map((f) => (
+            <div class="faq-item">
+              <h3>{f.q}</h3>
+              <p>{f.a}</p>
+            </div>
+          ))}
+        </section>
+        {related.length > 0 && (
+          <aside class="related" aria-labelledby="rel-title">
+            <p class="related-title" id="rel-title">あわせて読みたい</p>
+            <ul class="index-list">{related.map((g) => <GuideRow guide={g} />)}</ul>
+          </aside>
+        )}
+        {d.conclusion && (
+          <section class="conclusion" aria-labelledby="matome">
+            <h2 id="matome">まとめ</h2>
+            {d.conclusion.split(/\n\s*\n/).map((para) => <p>{para.trim()}</p>)}
+          </section>
+        )}
+        <section class="sources" aria-labelledby="src-title">
+          <h2 id="src-title">参考資料</h2>
+          <ul>{d.sources.map((s) => <li><a href={s.url} rel="noopener" target="_blank">{s.title}</a></li>)}</ul>
+        </section>
+      </article>
+      <aside class="toc-side">
+        <nav class="toc" aria-labelledby="toc-b">
+          <p class="toc-title" id="toc-b">目次</p>
+          <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+        </nav>
+      </aside>
+    </div>
+  </div>
+</Base>
