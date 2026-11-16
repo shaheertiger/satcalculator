@@ -108,10 +108,12 @@ img { max-width: 100%; height: auto; display: block; }
 .v-expose li::before { content: ""; position: absolute; left: .15em; top: .62em; width: .55em; height: .55em; border-radius: 50%; background: var(--shu); }
 .v-expose ul { background: var(--surface); box-shadow: 0 0 0 8px var(--surface); }
 
-.summary { margin: 32px 0 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--ai); }
-.summary h2 { font-size: 14px; font-weight: 700; color: var(--ai); margin: 0 0 4px; }
-.summary ul { margin: 0; padding-left: 1.1em; }
-.summary li + li { margin-top: 4px; }
+.hero-lead { font-size: 17px; line-height: 1.9; color: var(--sumi-2); margin: 18px 0 0; max-width: 40em; }
+.quick-answer { margin: 36px 0 0; }
+.quick-answer h2 { font-family: var(--serif); font-weight: 800; font-size: clamp(21px, 3vw, 25px); line-height: 1.5; margin: 0 0 14px; padding-top: 18px; border-top: 2px solid var(--sumi); scroll-margin-top: 20px; }
+.quick-answer ul { margin: 0; padding-left: 1.3em; }
+.quick-answer li { margin: .45em 0; }
+.quick-answer li::marker { color: var(--ai); }
 
 .toc { font-size: 14px; line-height: 1.65; }
 .toc h2 { font-size: 13px; font-weight: 700; color: var(--nezumi); margin: 0 0 10px; letter-spacing: .1em; }
@@ -145,17 +147,21 @@ img { max-width: 100%; height: auto; display: block; }
 .prose a { word-break: break-word; }
 
 .faq { margin-top: 72px; }
+.faq > h2 { scroll-margin-top: 20px; }
 .faq > h2, .sources > h2, .related > h2 { font-family: var(--serif); font-weight: 800; font-size: 23px; margin: 0 0 12px; padding-top: 18px; border-top: 2px solid var(--sumi); }
-.faq details { border-bottom: 1px solid var(--line); }
-.faq summary { list-style: none; cursor: pointer; padding: 16px 32px 16px 0; font-weight: 700; line-height: 1.65; position: relative; }
-.faq summary::-webkit-details-marker { display: none; }
-.faq summary::after { content: ""; position: absolute; right: 6px; top: 50%; width: 10px; height: 10px; border-right: 2px solid var(--nezumi); border-bottom: 2px solid var(--nezumi); transform: translateY(-70%) rotate(45deg); transition: transform .2s; }
-.faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
-.faq details p { margin: 0 0 18px; color: var(--sumi-2); }
+.faq-item { padding: 16px 0 4px; border-bottom: 1px solid var(--line); }
+.faq-item h3 { font-size: 17px; font-weight: 700; line-height: 1.65; margin: 0 0 6px; scroll-margin-top: 20px; }
+.faq-item p { margin: 0 0 14px; color: var(--sumi-2); }
+.conclusion { margin-top: 56px; }
+.conclusion > h2 { font-family: var(--serif); font-weight: 800; font-size: 23px; margin: 0 0 12px; padding-top: 18px; border-top: 2px solid var(--sumi); scroll-margin-top: 20px; }
+.related-title { font-family: var(--serif); font-weight: 800; font-size: 18px; margin: 0 0 4px; }
 .sources { margin-top: 56px; font-size: 14px; }
 .sources ul { padding-left: 1.2em; margin: 0; }
 .sources li { margin: 4px 0; }
-.related { margin-top: 72px; max-width: var(--readw); }
+.related { margin-top: 48px; padding: 18px 20px 4px; background: var(--surface); border: 1px solid var(--line); }
+.related .row { grid-template-columns: 120px minmax(0, 1fr); gap: 16px; padding: 12px 0; }
+.related .row h3 { font-size: 16px; }
+.related .row p { display: none; }
 .prose-page { max-width: var(--readw); padding-top: 24px; }
 .prose-page h1 { font-family: var(--serif); font-weight: 800; font-size: clamp(27px, 4.4vw, 38px); line-height: 1.42; margin: 16px 0 8px; }
 h1, h2, h3, .row h3 { word-break: auto-phrase; font-feature-settings: "palt" 1; }
