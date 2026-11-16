@@ -112,17 +112,17 @@ const jsonLd = [
         </section>
         <section class="verdict" aria-label="この方法で守られること・守られないこと">
           <div class="v-protect">
-            <h2>守られること</h2>
+            <p class="v-title">守られること</p>
             <ul>{d.verdict.protects.map((s) => <li>{s}</li>)}</ul>
           </div>
           <div class="v-expose">
-            <h2>見えてしまうこと</h2>
+            <p class="v-title">見えてしまうこと</p>
             <ul>{d.verdict.exposes.map((s) => <li>{s}</li>)}</ul>
           </div>
         </section>
 
         <nav class="toc toc-inline" aria-labelledby="toc-a">
-          <h2 id="toc-a">目次</h2>
+          <p class="toc-title" id="toc-a">目次</p>
           <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
         </nav>
         <div class="prose">
@@ -156,7 +156,7 @@ const jsonLd = [
       </article>
       <aside class="toc-side">
         <nav class="toc" aria-labelledby="toc-b">
-          <h2 id="toc-b">目次</h2>
+          <p class="toc-title" id="toc-b">目次</p>
           <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
         </nav>
       </aside>

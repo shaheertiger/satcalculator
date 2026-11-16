@@ -19,8 +19,8 @@ const guides = defineCollection({
       exposes: z.array(z.string()).min(1).max(4),  // 見えてしまうこと / 守られないこと
     }),
     eyecatch: z.string().max(18),  // short catchphrase printed on the hero image
-    conclusion: z.string().min(80).optional(),  // TODO: make required once all guides have it. 「まとめ」 paragraph(s); blank line = new paragraph
-    faq: z.array(z.object({ q: z.string(), a: z.string() })).min(3),
+    conclusion: z.string().min(80),  // 「まとめ」 paragraph(s); blank line = new paragraph
+    faq: z.array(z.object({ q: z.string(), a: z.string() })).min(5),
     sources: z.array(z.object({ title: z.string(), url: z.string().url() })).min(1),
     related: z.array(z.string()).default([]),   // other guide slugs
     order: z.number().default(100),

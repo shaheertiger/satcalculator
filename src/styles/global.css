@@ -91,7 +91,7 @@ img { max-width: 100%; height: auto; display: block; }
 .verdict { display: grid; grid-template-columns: minmax(0, 1fr); margin: 32px 0 0; border: 2px solid var(--ai-deep); }
 @media (min-width: 600px) { .verdict { grid-template-columns: 1fr 1fr; } }
 .verdict > div { padding: 18px 20px 20px; }
-.verdict h2 { font-family: var(--serif); font-size: 16px; font-weight: 800; margin: 0 0 8px; letter-spacing: .06em; display: flex; align-items: center; gap: 8px; }
+.verdict .v-title { font-family: var(--serif); font-size: 16px; font-weight: 800; margin: 0 0 8px; letter-spacing: .06em; display: flex; align-items: center; gap: 8px; }
 .verdict ul { list-style: none; margin: 0; padding: 0; font-size: 14.5px; line-height: 1.7; }
 .verdict li { padding-left: 1.5em; position: relative; }
 .verdict li + li { margin-top: 6px; }
@@ -104,7 +104,7 @@ img { max-width: 100%; height: auto; display: block; }
     linear-gradient(90deg, var(--lattice) 2px, transparent 2px);
   background-size: 100% 46px, 64px 100%;
 }
-.v-expose h2 { color: var(--shu); }
+.v-expose .v-title { color: var(--shu); }
 .v-expose li::before { content: ""; position: absolute; left: .15em; top: .62em; width: .55em; height: .55em; border-radius: 50%; background: var(--shu); }
 .v-expose ul { background: var(--surface); box-shadow: 0 0 0 8px var(--surface); }
 
@@ -116,7 +116,7 @@ img { max-width: 100%; height: auto; display: block; }
 .quick-answer li::marker { color: var(--ai); }
 
 .toc { font-size: 14px; line-height: 1.65; }
-.toc h2 { font-size: 13px; font-weight: 700; color: var(--nezumi); margin: 0 0 10px; letter-spacing: .1em; }
+.toc .toc-title { font-size: 13px; font-weight: 700; color: var(--nezumi); margin: 0 0 10px; letter-spacing: .1em; }
 .toc ol { margin: 0; padding: 0; list-style: none; counter-reset: t; }
 .toc li { counter-increment: t; display: grid; grid-template-columns: 1.8em 1fr; padding: 6px 0; border-top: 1px solid var(--line); }
 .toc li::before { content: counter(t); color: var(--nezumi); font-variant-numeric: tabular-nums; }
