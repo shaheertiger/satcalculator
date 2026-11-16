@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import GuideIndex from '../components/GuideIndex.astro';
+import ShojiArt from '../components/ShojiArt.astro';
+import { SITE_NAME, SITE_TAGLINE, SITE_URL } from '../consts';
+
+const guides = await getCollection('guides');
+const jsonLd = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: SITE_URL + '/', inLanguage: 'ja' }];
+---
+<Base title={`${SITE_NAME}｜${SITE_TAGLINE}`} description="iPhoneで写真を非表示にする方法、iCloud同期の止め方、アプリの隠し方、写真保管庫アプリの選び方まで。設定画面に沿って、何が守られて何が守られないのかを正直に解説します。" jsonLd={jsonLd}>
+  <div class="wrap">
+    <section class="home-hero">
+      <div>
+        <h1>隠すことと、<br />守ることは違う。</h1>
+        <p>iPhoneの「非表示」は障子のようなもの。目隠しにはなりますが、鍵ではありません。写真・アプリ・データについて、標準機能で守れることと守れないことを、設定手順と一緒に解説します。</p>
+      </div>
+      <ShojiArt />
+    </section>
+    <GuideIndex guides={guides} />
+  </div>
+</Base>

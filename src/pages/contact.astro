@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE_NAME } from '../consts';
+---
+<Base title={`お問い合わせ｜${SITE_NAME}`} description="iPhoneプライバシーガイドへのお問い合わせ方法。">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="パンくずリスト"><a href="/">ホーム</a><span class="sep">/</span>お問い合わせ</nav>
+    <article class="prose-page prose">
+      <h1>お問い合わせ</h1>
+      <p>記事内容の誤りのご指摘、ご意見、広告に関するお問い合わせは、以下のメールアドレスまでお送りください。</p>
+      <p><a href="mailto:contact@satcalculator.co">contact@satcalculator.co</a></p>
+      <p>個別のiPhoneのトラブル対応やデータ復旧のご依頼にはお応えできません。端末の不具合はAppleサポートにご相談ください。</p>
+    </article>
+  </div>
+</Base>

@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import GuideRow from './GuideRow.astro';
+interface Props { guides: CollectionEntry<'guides'>[] }
+const order = ['写真', 'iCloud', 'アプリ', 'Safari', 'セキュリティ'];
+const { guides } = Astro.props;
+const sorted = [...guides].sort((a, b) => a.data.order - b.data.order);
+const groups = order.map((c) => [c, sorted.filter((g) => g.data.category === c)] as const).filter(([, l]) => l.length);
+---
+{groups.map(([cat, list]) => (
+  <section class="index-group" aria-labelledby={`cat-${cat}`}>
+    <h2 id={`cat-${cat}`}>{cat}</h2>
+    <ul class="index-list">{list.map((g) => <GuideRow guide={g} />)}</ul>
+  </section>
+))}

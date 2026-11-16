@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE_NAME } from '../consts';
+---
+<Base title={`運営者情報｜${SITE_NAME}`} description="iPhoneプライバシーガイドの運営方針と編集方針について。">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="パンくずリスト"><a href="/">ホーム</a><span class="sep">/</span>運営者情報</nav>
+    <article class="prose-page prose">
+      <h1>運営者情報</h1>
+      <p>{SITE_NAME}（satcalculator.co）は、iPhoneの写真・アプリ・データのプライバシー設定を、日本語でわかりやすく解説する独立系の情報サイトです。</p>
+      <h2>編集方針</h2>
+      <ul>
+        <li>手順はAppleの公式サポート情報とApple プラットフォームセキュリティガイドを確認したうえで記載し、各記事の末尾に参考資料を掲載しています。</li>
+        <li>iOSのバージョンによってメニューの名前や場所が変わる場合は、その旨を本文に明記します。</li>
+        <li>特定のアプリを販売・推奨する立場にはなく、アフィリエイトリンクは掲載していません。サイトの運営費は広告収入でまかなっています。</li>
+        <li>「隠すこと」と「暗号化で守ること」の違いなど、機能の限界も正直にお伝えします。</li>
+      </ul>
+      <h2>誤りを見つけたら</h2>
+      <p>記事の内容に誤りや古い情報があれば、<a href="/contact/">お問い合わせ</a>からお知らせください。確認のうえ修正します。</p>
+      <p>本サイトはApple Inc.とは関係がありません。iPhone、iCloud、Safari、Face IDはApple Inc.の商標です。</p>
+    </article>
+  </div>
+</Base>

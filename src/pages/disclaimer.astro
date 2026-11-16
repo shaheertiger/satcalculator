@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE_NAME } from '../consts';
+---
+<Base title={`免責事項｜${SITE_NAME}`} description="iPhoneプライバシーガイドの免責事項。">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="パンくずリスト"><a href="/">ホーム</a><span class="sep">/</span>免責事項</nav>
+    <article class="prose-page prose">
+      <h1>免責事項</h1>
+      <p>当サイトの情報は、執筆時点で確認できた内容に基づいています。iOSのアップデートにより、設定項目の名称・場所・動作が変わることがあります。</p>
+      <p>当サイトの情報を利用したことによって生じたデータの消失その他の損害について、当サイトは責任を負いかねます。設定の変更や写真の削除を行う前に、必ずバックアップを作成してください。</p>
+      <p>当サイトからリンクしている外部サイトの内容について、当サイトは責任を負いません。</p>
+    </article>
+  </div>
+</Base>
