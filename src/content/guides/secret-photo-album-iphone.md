@@ -6,7 +6,7 @@ keyword: "iphone 写真 非 表示 パスワード"
 category: "写真"
 published: 2026-11-16
 updated: 2026-11-16
-readingMinutes: 8
+readingMinutes: 7
 eyecatch: "6項目で抜けなく設定"
 imageAlt: "iPhoneの「設定」＞「アプリ」＞「写真」画面で、「Face IDを使用」がオン、「非表示アルバムを表示」がオフになっているイラスト"
 order: 4
