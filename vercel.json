@@ -233,16 +233,6 @@
       "permanent": true
     },
     {
-      "source": "/blog",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/blog/:path*",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/terms-of-service",
       "destination": "/disclaimer/",
       "permanent": true
@@ -259,6 +249,71 @@
     },
     {
       "source": "/ja/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-you-take-the-sat-after-high-school",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-you-take-the-sat-after-high-school/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-you-use-a-calculator-on-the-sat",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/can-you-use-a-calculator-on-the-sat/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-calculate-sat-math-score",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-calculate-sat-math-score/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-a-calculator-allowed-on-the-sat",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/is-a-calculator-allowed-on-the-sat/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-a-good-sat-score",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-a-good-sat-score/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*/",
       "destination": "/",
       "permanent": true
     }
