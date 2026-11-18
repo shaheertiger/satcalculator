@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE_NAME } from '../consts';
+import { AUTHOR_ROLE, SITE_NAME } from '../consts';
 ---
 <Base title={`運営者情報｜${SITE_NAME}`} description="iPhoneプライバシーガイドの運営方針と編集方針について。">
   <div class="wrap">
@@ -9,7 +9,7 @@ import { SITE_NAME } from '../consts';
       <h1>運営者情報</h1>
       <p>{SITE_NAME}（satcalculator.co）は、iPhoneの写真・アプリ・データのプライバシー設定を、日本語でわかりやすく解説する独立系の情報サイトです。</p>
       <h2 id="author">著者</h2>
-      <p>当サイトの記事はShaheerが執筆・更新しています。各記事の手順はAppleの公式サポート情報をもとに確認しています。</p>
+      <p>当サイトの記事はShaheer（{AUTHOR_ROLE}）が執筆・更新しています。各記事の手順はAppleの公式サポート情報をもとに確認しています。</p>
       <h2>編集方針</h2>
       <ul>
         <li>手順はAppleの公式サポート情報とApple プラットフォームセキュリティガイドを確認したうえで記載し、各記事の末尾に参考資料を掲載しています。</li>

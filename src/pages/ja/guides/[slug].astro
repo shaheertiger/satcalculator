@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../../layouts/Base.astro';
 import GuideRow from '../../../components/GuideRow.astro';
-import { SITE_NAME, SITE_URL, AUTHOR_NAME } from '../../../consts';
+import { SITE_NAME, SITE_URL, AUTHOR_NAME, AUTHOR_ROLE } from '../../../consts';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
@@ -66,7 +66,7 @@ const jsonLd = [
     datePublished: d.published.toISOString(),
     dateModified: d.updated.toISOString(),
     inLanguage: 'ja',
-    author: { '@type': 'Person', name: AUTHOR_NAME, url: `${SITE_URL}/about/#author` },
+    author: { '@type': 'Person', name: AUTHOR_NAME, jobTitle: AUTHOR_ROLE, url: `${SITE_URL}/about/#author` },
     publisher: { '@type': 'Organization', name: SITE_NAME, url: `${SITE_URL}/` },
     mainEntityOfPage: url,
   },
@@ -120,7 +120,7 @@ const jsonLd = [
             <span>公開 <time datetime={d.published.toISOString().slice(0, 10)}>{fmt(d.published)}</time></span>
             <span>更新 <time datetime={d.updated.toISOString().slice(0, 10)}>{fmt(d.updated)}</time></span>
             <span>約{d.readingMinutes}分で読めます</span>
-            <span>著者：<a href="/about/#author" rel="author">{AUTHOR_NAME}</a></span>
+            <span>著者：<a href="/about/#author" rel="author">{AUTHOR_NAME}</a>（{AUTHOR_ROLE}）</span>
           </p>
         </header>
         <p class="hero-lead">{d.description}</p>
