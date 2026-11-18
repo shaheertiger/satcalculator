@@ -12,9 +12,19 @@ const { guide, all } = Astro.props;
 const d = guide.data;
 const { Content, headings } = await render(guide);
 const bodyToc = headings.filter((h) => h.depth === 2);
+// Each frontmatter method must have a matching "## 方法N：…" heading in the body.
+const methods = (d.methods ?? []).map((m, i) => {
+  const h = bodyToc.find((x) => x.text.startsWith(`方法${i + 1}：`));
+  if (!h) throw new Error(`${guide.id}: methods[${i}] "${m.name}" has no "## 方法${i + 1}：…" heading in the body`);
+  return { ...m, n: i + 1, slug: h.slug };
+});
+const picks = methods.filter((m) => m.pick);
 const toc = [
   { slug: 'kantan-na-kotae', text: `簡潔な答え：${d.h1.replace(/（.*?）$/, '')}` },
+  ...(d.criteria ? [{ slug: 'hyoka-kijun', text: 'この記事の評価基準' }] : []),
+  ...(methods.length ? [{ slug: 'hikaku', text: `${methods.length}つの方法の比較` }] : []),
   ...bodyToc,
+  ...(d.checklist ? [{ slug: 'checklist', text: '選ぶ前のチェックリスト' }] : []),
   { slug: 'yoku-aru-shitsumon', text: 'よくある質問' },
   ...(d.conclusion ? [{ slug: 'matome', text: 'まとめ' }] : []),
 ];
@@ -60,6 +70,16 @@ const jsonLd = [
     publisher: { '@type': 'Organization', name: SITE_NAME, url: `${SITE_URL}/` },
     mainEntityOfPage: url,
   },
+  ...(methods.length
+    ? [{
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        name: d.h1,
+        numberOfItems: methods.length,
+        itemListOrder: 'https://schema.org/ItemListOrderAscending',
+        itemListElement: methods.map((m) => ({ '@type': 'ListItem', position: m.n, name: m.name, url: `${url}#${m.slug}` })),
+      }]
+    : []),
   ...(howToSteps.length >= 2
     ? [{
         '@context': 'https://schema.org',
@@ -97,6 +117,7 @@ const jsonLd = [
           <a class="cat" href="/ja/guides/">{d.category}</a>
           <h1>{d.h1}</h1>
           <p class="meta">
+            <span>公開 <time datetime={d.published.toISOString().slice(0, 10)}>{fmt(d.published)}</time></span>
             <span>更新 <time datetime={d.updated.toISOString().slice(0, 10)}>{fmt(d.updated)}</time></span>
             <span>約{d.readingMinutes}分で読めます</span>
             <span>{SITE_NAME} 編集部</span>
@@ -109,6 +130,13 @@ const jsonLd = [
         <section class="quick-answer" aria-labelledby="kantan-na-kotae">
           <h2 id="kantan-na-kotae">簡潔な答え：{d.h1.replace(/（.*?）$/, '')}</h2>
           <ul>{d.summary.map((s) => <li>{s}</li>)}</ul>
+          {picks.length > 0 && (
+            <dl class="picks">
+              {picks.map((m) => (
+                <div><dt>{m.pick}</dt><dd><a href={`#${m.slug}`}>方法{m.n}：{m.name}</a><span>{m.bestFor}</span></dd></div>
+              ))}
+            </dl>
+          )}
         </section>
         <section class="verdict" aria-label="この方法で守られること・守られないこと">
           <div class="v-protect">
@@ -121,6 +149,34 @@ const jsonLd = [
           </div>
         </section>
 
+        {d.criteria && (
+          <section class="criteria" aria-labelledby="hyoka-kijun">
+            <h2 id="hyoka-kijun">この記事の評価基準</h2>
+            <p>各方法は、Appleの公式サポート文書とプラットフォームセキュリティガイドの記載をもとに、次の基準で比べています。</p>
+            <ol>{d.criteria.map((c) => <li><strong>{c.name}</strong>：{c.detail}</li>)}</ol>
+          </section>
+        )}
+        {methods.length > 0 && (
+          <section class="compare" aria-labelledby="hikaku">
+            <h2 id="hikaku">{methods.length}つの方法の比較</h2>
+            <div class="table-scroll">
+              <table>
+                <thead><tr><th>方法</th><th>向いている人・場面</th><th>守りの強さ</th><th>手間</th><th>費用</th></tr></thead>
+                <tbody>
+                  {methods.map((m) => (
+                    <tr>
+                      <td><a href={`#${m.slug}`}>{m.n}. {m.name}</a></td>
+                      <td>{m.bestFor}</td>
+                      <td><span class={`lv lv-${m.strength}`}>{m.strength}</span></td>
+                      <td>{m.effort}</td>
+                      <td>{m.cost}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
         <nav class="toc toc-inline" aria-labelledby="toc-a">
           <p class="toc-title" id="toc-a">目次</p>
           <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
@@ -128,6 +184,12 @@ const jsonLd = [
         <div class="prose">
           <Content />
         </div>
+        {d.checklist && (
+          <section class="checklist" aria-labelledby="checklist">
+            <h2 id="checklist">選ぶ前のチェックリスト</h2>
+            <ul>{d.checklist.map((c) => <li>{c}</li>)}</ul>
+          </section>
+        )}
         <section class="faq" aria-labelledby="yoku-aru-shitsumon">
           <h2 id="yoku-aru-shitsumon">よくある質問</h2>
           {d.faq.map((f) => (
@@ -137,17 +199,17 @@ const jsonLd = [
             </div>
           ))}
         </section>
-        {related.length > 0 && (
-          <aside class="related" aria-labelledby="rel-title">
-            <p class="related-title" id="rel-title">あわせて読みたい</p>
-            <ul class="index-list">{related.map((g) => <GuideRow guide={g} />)}</ul>
-          </aside>
-        )}
         {d.conclusion && (
           <section class="conclusion" aria-labelledby="matome">
             <h2 id="matome">まとめ</h2>
             {d.conclusion.split(/\n\s*\n/).map((para) => <p>{para.trim()}</p>)}
           </section>
+        )}
+        {related.length > 0 && (
+          <aside class="related" aria-labelledby="rel-title">
+            <p class="related-title" id="rel-title">あわせて読みたい</p>
+            <ul class="index-list">{related.map((g) => <GuideRow guide={g} />)}</ul>
+          </aside>
         )}
         <section class="sources" aria-labelledby="src-title">
           <h2 id="src-title">参考資料</h2>

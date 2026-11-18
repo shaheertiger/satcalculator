@@ -20,6 +20,18 @@ const guides = defineCollection({
     }),
     eyecatch: z.string().max(18),  // short catchphrase printed on the hero image
     conclusion: z.string().min(80),  // 「まとめ」 paragraph(s); blank line = new paragraph
+    // Numbered options ("方法1：…" H2s in the body, in the same order). Drives the
+    // comparison table, the 目的別のおすすめ picks and the ItemList schema.
+    methods: z.array(z.object({
+      name: z.string().max(40),
+      bestFor: z.string().max(40),                     // 向いている人・場面
+      strength: z.enum(['低', '中', '高']),            // 守りの強さ / 効果
+      effort: z.enum(['かんたん', 'ふつう', '手間がかかる']),
+      cost: z.string().max(24),                        // e.g. 無料（標準機能）
+      pick: z.string().max(16).optional(),             // e.g. いちばん手軽
+    })).min(2).max(10).optional(),
+    criteria: z.array(z.object({ name: z.string(), detail: z.string() })).min(3).max(5).optional(), // この記事の評価基準
+    checklist: z.array(z.string()).min(3).max(6).optional(), // 選ぶ前のチェックリスト
     faq: z.array(z.object({ q: z.string(), a: z.string() })).min(5),
     sources: z.array(z.object({ title: z.string(), url: z.string().url() })).min(1),
     related: z.array(z.string()).default([]),   // other guide slugs

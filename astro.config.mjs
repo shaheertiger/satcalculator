@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import fs from 'node:fs';
 import path from 'node:path';
+import rehypeMethodCards from './src/lib/rehype-method-cards.mjs';
 
 const SITE = 'https://satcalculator.co';
 
@@ -20,6 +21,7 @@ const newest = Object.values(guideMeta).map((m) => m.updated).sort().at(-1);
 export default defineConfig({
   site: SITE,
   trailingSlash: 'always',
+  markdown: { rehypePlugins: [rehypeMethodCards] },
   integrations: [
     sitemap({
       filter: (page) => !page.endsWith('/ja/'),
