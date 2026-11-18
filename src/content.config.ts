@@ -29,9 +29,9 @@ const guides = defineCollection({
       effort: z.enum(['かんたん', 'ふつう', '手間がかかる']),
       cost: z.string().max(24),                        // e.g. 無料（標準機能）
       pick: z.string().max(16).optional(),             // e.g. いちばん手軽
-    })).min(2).max(10).optional(),
-    criteria: z.array(z.object({ name: z.string(), detail: z.string() })).min(3).max(5).optional(), // この記事の評価基準
-    checklist: z.array(z.string()).min(3).max(6).optional(), // 選ぶ前のチェックリスト
+    })).min(2).max(10),
+    criteria: z.array(z.object({ name: z.string(), detail: z.string() })).min(3).max(5), // この記事の評価基準
+    checklist: z.array(z.string()).min(3).max(6), // 選ぶ前のチェックリスト
     faq: z.array(z.object({ q: z.string(), a: z.string() })).min(5),
     sources: z.array(z.object({ title: z.string(), url: z.string().url() })).min(1),
     related: z.array(z.string()).default([]),   // other guide slugs
