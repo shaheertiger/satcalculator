@@ -66,7 +66,7 @@ const jsonLd = [
     datePublished: d.published.toISOString(),
     dateModified: d.updated.toISOString(),
     inLanguage: 'ja',
-    author: { '@type': 'Person', name: AUTHOR_NAME, url: `${SITE_URL}/about/` },
+    author: { '@type': 'Person', name: AUTHOR_NAME, url: `${SITE_URL}/about/#author` },
     publisher: { '@type': 'Organization', name: SITE_NAME, url: `${SITE_URL}/` },
     mainEntityOfPage: url,
   },
@@ -120,7 +120,7 @@ const jsonLd = [
             <span>公開 <time datetime={d.published.toISOString().slice(0, 10)}>{fmt(d.published)}</time></span>
             <span>更新 <time datetime={d.updated.toISOString().slice(0, 10)}>{fmt(d.updated)}</time></span>
             <span>約{d.readingMinutes}分で読めます</span>
-            <span>著者：<a href="/about/" rel="author">{AUTHOR_NAME}</a></span>
+            <span>著者：<a href="/about/#author" rel="author">{AUTHOR_NAME}</a></span>
           </p>
         </header>
         <p class="hero-lead">{d.description}</p>
